@@ -126,7 +126,7 @@ a.drop-link:hover {
         left: 0px;
         height: 100vh;
         width: 100vw;
-        background-color: rgb(191,199,160);
+        background-color: var(--main-color);
         padding: 0;
         visibility: hidden;
         opacity: 0;
