@@ -1,11 +1,12 @@
 footer {
     color: white;
+    position: absolute 0 0 0 0;
     }
   
   .footer_text{
       text-align: center;
       font-size: 1.5rem;
-      background-color: rgb(191,199,160);
+      background-color: rgb(247,65,0);
       width: 100%;
       color: white;
       padding: 1rem;
@@ -15,7 +16,7 @@ footer {
   .footer-contact {
     width: 100%;
     padding: 1rem;
-    background-color: rgb(227, 236, 191);
+    background-color: rgb(247,65,0);
     color: white;
   }
   
