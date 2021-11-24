@@ -1,0 +1,31 @@
+footer {
+    color: white;
+    }
+  
+  .footer_text{
+      text-align: center;
+      font-size: 1.5rem;
+      background-color: rgb(191,199,160);
+      width: 100%;
+      color: white;
+      padding: 1rem;
+      font-size: 16px;
+  }
+  
+  .footer-contact {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(227, 236, 191);
+    color: white;
+  }
+  
+  .inner-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  i {
+    margin-right: 5px;
+  }
