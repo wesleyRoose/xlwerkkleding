@@ -79,6 +79,11 @@ i.left {
     margin-left: 5px;
 }
 
+a.login {
+    background-color: var(--white);
+    color: var(--main-color) !important;
+}
+
 /* Dropdown styling */
 
 /* div.dropdown {
@@ -111,11 +116,6 @@ a.drop-link:hover {
     color: rgb(100, 100, 100);
     transition: color 0.2s ease-in;
 } */
-
-a.login {
-    background-color: var(--white);
-    color: var(--main-color);
-}
 
 /* Responsive header styling */
 
