@@ -16,7 +16,7 @@ header {
     flex: 2;
     padding: 1.3rem;
     padding-left: 2rem;
-    padding-top: 1.5rem;
+    padding-top: 1.3rem;
 }
 
 .logo-link {
@@ -81,7 +81,7 @@ i.left {
 
 /* Dropdown styling */
 
-div.dropdown {
+/* div.dropdown {
     position: absolute;
     top: 79px;
     width: 122px;
@@ -110,6 +110,11 @@ a.drop-link {
 a.drop-link:hover {
     color: rgb(100, 100, 100);
     transition: color 0.2s ease-in;
+} */
+
+a.login {
+    background-color: var(--white);
+    color: var(--main-color);
 }
 
 /* Responsive header styling */
