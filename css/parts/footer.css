@@ -1,6 +1,9 @@
 footer {
     color: white;
-    }
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
   
   .footer_text{
       text-align: center;
