@@ -1,4 +1,4 @@
-    <?php include("header.php"); ?>
+    <?php include("../../templates/header.php"); ?>
     <link rel="stylesheet" href="../css/style.css">
 
     <!-- Begin code voor login -->
@@ -44,4 +44,4 @@
     </div>
     <script type="text/javascript" src="../js/login.js"></script>
 
-<?php include "footer.php"; ?>
+<?php include "../footer.php"; ?>
