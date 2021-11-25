@@ -1,4 +1,4 @@
-    <?php include_once("header.php"); ?>
+    <?php include("header.php"); ?>
     <!-- Begin code voor login -->
     <div class="containerlogin">
         <div class="beginlogincontent" >
@@ -42,5 +42,4 @@
     </div>
     <script type="text/javascript" src="../js/login.js"></script>
 
-<br> <br> <br>
 <?php include "footer.php"; ?>
