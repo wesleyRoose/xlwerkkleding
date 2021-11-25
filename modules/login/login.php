@@ -32,7 +32,7 @@
                 <input type="hidden" placeholder="email" name="email" class="mail"> <br>
                 <!-- begin button met PHP link voor verzenden -->
                 <button type="submit" class="btn" name="inlogbutton">Login</button>
-                    <input type="hidden" name="tk" value="<?php echo gettoken(); ?>">
+                   <!-- <input type="hidden" name="tk" value="\"> -->
                 <a class="vergeetenaanmeldknop" href="registreren.php">Registeer u nu!</a>
             </form>
             <?php 
