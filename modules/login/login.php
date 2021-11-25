@@ -44,4 +44,4 @@
     </div>
     <script type="text/javascript" src="../js/login.js"></script>
 
-<?php include "../footer.php"; ?>
+<?php include "../../templates/footer.php"; ?>
