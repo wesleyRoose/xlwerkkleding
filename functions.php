@@ -31,3 +31,17 @@ function sha256($string)
   $hashstring = hash("md5", $string);
   return $hashstring;
 }
+
+// checks if the file exists and includes it, if not returns error message
+function fileExistsInclude($filePath)
+{
+  if (file_exists($filePath)) {
+    include($filePath);
+    exit;
+  } else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: " . $filePath . " does not exist.";
+    echo $errorMessage;
+    exit;
+  }
+}
