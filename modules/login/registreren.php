@@ -1,4 +1,4 @@
-<?php include_once("header.php"); ?>
+<?php include_once("../../templates/header.php"); ?>
 
 <head>
     <meta charset="UTF-8">
@@ -89,4 +89,4 @@
     </div>
     <script type="text/javascript" src="../js/login.js"></script>
 
-<?php include "footer.php"; ?>
+<?php include "../../templates/footer.php"; ?>
