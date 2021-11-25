@@ -20,7 +20,7 @@
                 <nav class="menu" id="menu">
                     <div class="menu-wrap">
                         <ul class="menu-list">
-                            <li class="navitem"><a class="nav-item" href="index.php">Home</a></li>  
+                            <li class="navitem"><a class="nav-item" href="../php/index.php">Home</a></li>  
                             <li class="navitem"><a class="nav-item" href="categorie.php">Dropdown</a></li>
                             <li class="navitem"><a class="nav-item" href="over.php">Over</a></li> 
                             <li class="navitem"><a class="nav-item login" href="php/login.php">Login</a></li> 
