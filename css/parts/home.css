@@ -1,5 +1,9 @@
 /* Card Styling */
 
+div.home {
+    margin-top: 15px;
+}
+
 div.cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -31,4 +35,10 @@ div.card {
     color: var(--white);
     text-decoration: none;
     cursor: pointer;
+    transition: color 0.2s ease-in;
+}
+
+.card-link:hover {
+    color: rgb(221, 221, 221);
+    transition: color 0.2s ease-in;
 }
