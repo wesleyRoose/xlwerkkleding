@@ -23,7 +23,7 @@
                             <li class="navitem"><a class="nav-item" href="index.php">Home</a></li>  
                             <li class="navitem"><a class="nav-item" href="categorie.php">Dropdown</a></li>
                             <li class="navitem"><a class="nav-item" href="over.php">Over</a></li> 
-                            <li class="navitem"><a class="nav-item login" href="login.php">Login</a></li> 
+                            <li class="navitem"><a class="nav-item login" href="php/login.php">Login</a></li> 
                         </ul>
                     </div>
                 </nav>
