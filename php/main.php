@@ -11,19 +11,19 @@
 
         <div class="mySlides">
           <div class="numbertext">1 / 3</div>
-          <img class="sliderImg" src="./img/placeholder.png">
+          <img class="sliderImg" src="../img/placeholder.png">
           <div class="sliderText">Caption Text</div>
         </div>
 
         <div class="mySlides">
           <div class="numbertext">2 / 3</div>
-          <img class="sliderImg" src="./img/placeholder.png">
+          <img class="sliderImg" src="../img/placeholder.png">
           <div class="sliderText">Caption Two</div>
         </div>
 
         <div class="mySlides">
           <div class="numbertext">3 / 3</div>
-          <img class="sliderImg" src="./img/placeholder.png">
+          <img class="sliderImg" src="../img/placeholder.png">
           <div class="sliderText">Caption Three</div>
         </div>
 
