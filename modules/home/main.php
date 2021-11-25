@@ -1,4 +1,4 @@
-<?php include "../../templates/header.php";?>;
+<?php include "../../templates/header.php";?>
 <main>
   <section class="mainFlexContainer">
     <div class="home">
