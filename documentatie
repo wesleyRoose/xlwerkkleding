@@ -1,5 +1,6 @@
 Kleuren:
-
+rgb(247,65,0) oranje
+white
 
 
 
@@ -9,38 +10,7 @@ Vragen:
  2. wat wilt u op de hoofdpagina te zien krijgen.
  3. wilt u een voorbeeld product toe sturen wat er voor informatie in moet bij een product.
  4. is er een account bij shopify.
- 5. voor welke beroepen is de site voor bedoeld
+ 5. voor welke beroepen is de site voor bedoeld.
+ 6. 
 
 
-
- /* Slideshow container */
-.slideshow-container {
-  height: 500px;
-  width: 1000px;
-  position: relative;
-  margin: auto;
-  border: solid rgb(191,199,160);
-  border-radius: 1rem;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
