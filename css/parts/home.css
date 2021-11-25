@@ -57,6 +57,7 @@ div.card {
 
 /* Slideshow container */
 .slideshow-container {
+  position: relative;
   margin: auto;
 }
 
