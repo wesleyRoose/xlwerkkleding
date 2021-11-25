@@ -13,7 +13,7 @@
 }
 
 .i{
-	color: rgb(191,199,160);;
+	color: rgb(247,65,0);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -34,7 +34,7 @@
 	left: 10px;
 	top: 50%;
 	transform: translateY(-50%);
-	color: rgb(191,199,160);
+	color: rgb(247,65,0);
 	font-size: 18px;
 	transition: .3s;
 }
@@ -45,7 +45,7 @@
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	color: rgb(191,199,160);
+	color: rgb(247,65,0);
 	transition: .4s;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .input-div.focus > .i > i{
-	color: rgb(191,199,160);
+	color: rgb(247,65,0);
 }
 
 .input-div > div > input{
@@ -81,7 +81,7 @@
 	background: none;
 	padding: 0.5rem 0.7rem;
 	font-size: 1.2rem;
-	color: rgb(191,199,160);
+	color: rgb(247,65,0);
 }
 
 .input-div.pass{
@@ -92,7 +92,7 @@
 	display: block;
 	text-align: right;
 	text-decoration: none;
-	color: rgb(191,199,160);
+	color: rgb(247,65,0);
 	font-size: 0.9rem;
     transition: .3s;
 }
@@ -111,7 +111,7 @@
 }
 .beginlogincontent h2{
 	margin: 15px 0;
-	color: rgb(191,199,160);
+	color: rgb(247,65,0);
     text-transform: uppercase;
 }
 
@@ -127,7 +127,7 @@
 	border: none;
 	background-size: 200%;
 	font-size: 1.2rem;
-    background-color: rgb(191,199,160);
+    background-color: rgb(247,65,0);
 	color: white;
 	text-transform: uppercase;
 	margin: 1rem 0;
