@@ -1,4 +1,6 @@
     <?php include("header.php"); ?>
+    <link rel="stylesheet" href="../css/style.css">
+
     <!-- Begin code voor login -->
     <div class="containerlogin">
         <div class="beginlogincontent" >

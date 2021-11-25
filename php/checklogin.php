@@ -30,7 +30,7 @@ if (isset($_POST["gebruikersnaam"]) == true and $_POST["email"] == '') {
             // zal gaan kijken of het een Admin is en stuurt hem dan door naar een andere pagina
             if ($_SESSION["rechten"] == 2) {
                 // exit code want dan voert ie alles wat eronder staat niet meer uit en zo voorkom je verkeerde doorlinks
-                header("location:backoffice.php");
+                header("location:registreren.php");
             } else {
                 header("location:index.php");
 
