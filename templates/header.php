@@ -18,7 +18,7 @@
             <div class="header">
                 <div class="logo">
                     <a class="logo-link" href="index.php">
-                        <img src="./img/xlwerkkleding-logo.jpg" alt="XLwerkkleding Logo" class="logo-img">
+                        <img src="<?php echo ROOT_URL ?>img/xlwerkkleding-logo.jpg" alt="XLwerkkleding Logo" class="logo-img">
                     </a>
                 </div>
                 <nav class="menu" id="menu">
