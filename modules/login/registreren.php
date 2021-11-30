@@ -1,3 +1,5 @@
+<?php include_once("../../config.php"); ?>
+
 <?php include_once("../../templates/header.php"); ?>
 <script type="text/javascript">
     const inputs = document.querySelectorAll(".input");
