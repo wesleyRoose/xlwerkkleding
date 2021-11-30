@@ -1,5 +1,5 @@
 <?php
-    include_once "connectie.php";
+    include_once "../../config.php";
 
     // Variabelen voor makkelijkere code
     $voornaam = "";
