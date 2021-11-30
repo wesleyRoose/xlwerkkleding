@@ -24,6 +24,11 @@ header {
     text-decoration: none;
 }
 
+.logo-img {
+    width: 100px;
+    height: 40px;
+}
+
 .menu {
     flex: 2;
     padding: 1rem;
