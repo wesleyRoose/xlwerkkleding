@@ -2,6 +2,7 @@
 // maakt weer verbinding met database
 include("../../config.php");
 include("../login/registreercheck.php");
+include("../../functions.php");
 // zal zeggen dat we nog niet ingelogd zijn en zal dus dit gaan checken, ook kan je maar na 1 sec weer opnieuw inloggen.
 $_SESSION["ingelogd"] = false;
 sleep(1);
@@ -54,4 +55,3 @@ if (isset($_POST["gebruikersnaam"]) == true and $_POST["email"] == '') {
     header("location:login.php");
     exit();
 };
-?>
