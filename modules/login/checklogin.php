@@ -1,7 +1,7 @@
 <?php
 // maakt weer verbinding met database
-include_once("connectie.php");
-include_once("registreercheck.php");
+include("../templates/config.php");
+include_once("../login/registreercheck.php");
 // zal zeggen dat we nog niet ingelogd zijn en zal dus dit gaan checken, ook kan je maar na 1 sec weer opnieuw inloggen.
 $_SESSION["ingelogd"] = false;
 sleep(1);
