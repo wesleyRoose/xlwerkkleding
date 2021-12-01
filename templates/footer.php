@@ -11,8 +11,7 @@
                 </ul>
             </div>
         </footer>
-        <script src="./js/script.js"></script>
+        <script src="<?php echo ROOT_URL ?>js/script.js"></script>
         </div>
-        </body>
-
-        </html>
+    </body>
+</html>

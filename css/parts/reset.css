@@ -4,6 +4,7 @@
 
 :root {
   --main-color: rgb(247, 65, 0);
+  --sub-color: rgb(253, 96, 39);
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
 }
@@ -29,4 +30,25 @@ html {
 
 section {
   padding: 0px 2.5rem 0px 2.5rem;
+}
+
+button {
+  padding: 0.5rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--main-color);
+  color: var(--white);
+  width: 100%;
+  transition: background-color .3s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--sub-color);
+  transition: background-color .3s ease-in-out;
+}
+
+ul, ol {
+  list-style-type: none;
 }
