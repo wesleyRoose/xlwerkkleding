@@ -1,9 +1,13 @@
 <?php
 
+if (!defined('ROOT_URL')) {
+  define("ROOT_URL", "http://localhost/phpdocs/xlwerkkleding/");
+}
 
-define("ROOT_URL", "http://localhost/phpdocs/xlwerkkleding/");
 
-session_start();
+if (session_status() != PHP_SESSION_ACTIVE) {
+  session_start();
+}
 
 
 $dbServername = "localhost";
