@@ -19,14 +19,14 @@
         <header>
             <div class="header">
                 <div class="logo">
-                    <a class="logo-link" href="index.php">
+                    <a class="logo-link" href="<?php echo ROOT_URL ?>">
                         <img src="<?php echo ROOT_URL ?>img/xlwerkkleding-logo.jpg" alt="XLwerkkleding Logo" class="logo-img">
                     </a>
                 </div>
                 <nav class="menu" id="menu">
                     <div class="menu-wrap">
                         <ul class="menu-list">
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>index.php">Home</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>">Home</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/webshop/index.php">WebShop</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/over/index.php">Over</a></li>
                             <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/index.php">Login</a></li>
