@@ -1,3 +1,4 @@
+    <?php include("../../config.php");?>
     <?php include("../../templates/header.php"); ?>
     <link rel="stylesheet" href="../../css/style.css">
 

@@ -9,6 +9,7 @@ var label7 = document.getElementById("label7");
 var label8 = document.getElementById("label8");
 var label9 = document.getElementById("label9");
 var label10 = document.getElementById("label10");
+var label11 = document.getElementById("label11");
 
 // Functies die wanneer er op de inputs worden geklikt, zorgen dat de tekst erin weggaat.
 function none1 () {
@@ -50,4 +51,9 @@ function none9 () {
 function none10 () {
     label10.style.display = "none";
 };
+
+function none11 () {
+    label11.style.display = "none";
+};
+
 

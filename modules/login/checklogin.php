@@ -1,5 +1,5 @@
 <?php
-    // maakt weer verbinding met database
+    // maakt weer verbinding met bestanden
         include("../../config.php");
         include("../login/registreercheck.php");
         include("../../functions.php");
@@ -9,19 +9,19 @@
             sleep(1);
             $msg = '';
     // wanneer gebruikersnaam is ingevuld en de input mail (fop stukje) niet, voer dat eronder uit
-            if (isset($_POST["gebruikersnaam"]) == true and $_POST["email"] == '') {
+            if (isset($_POST["Voornaam"]) == true and $_POST["email"] == '') {
 
     // kijken of het token overeenkomt, zo ja ga door
             if ($_POST["tk"] == $_SESSION["tk"]) {
             unset($_SESSION["tk"]);
-            $gebruikersnaam = cleaninput($_POST["gebruikersnaam"],30);
+            $Voornaam = cleaninput($_POST["Voornaam"],30);
             $wachtwoord1 = cleaninput($_POST["wachtwoord"], 20);
 
     // maak het wachtwoord sterk door met salt te werken
             $wachtwoord1 = sha256($salt.$wachtwoord1);
 
     // database stukje erin
-            $sql = "select * from gebruikers where gebruikersnaam = '".$gebruikersnaam."' and wachtwoord = '".$wachtwoord1."'";
+            $sql = "select * from gebruikers where Voornaam = '".$Voornaam."' and wachtwoord = '".$wachtwoord1."'";
             $result = mysqli_query($conn,$sql);
 
     // als de gevonden rij 1 gebruiker is dan heb je hem gevonden en voer je eronder uit
@@ -51,7 +51,7 @@
                 exit();
             }
         } else {
-            
+
     // laat de hacker 1sec wachten en stopt meteen de code
             sleep(1);
             echo " niet gelukt3!";
