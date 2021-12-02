@@ -1,35 +1,121 @@
 footer {
+  color: white;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.footer_text{
+    text-align: center;
+    font-size: 1.5rem;
     color: white;
-    width: 100%;
-    margin-top: 30px;
-    /* position: absolute;
-    bottom: 0; */
-  }
-  
-  .footer_text{
-      text-align: center;
-      font-size: 1.5rem;
-      background-color: rgb(247,65,0);
-      width: 100%;
-      color: white;
-      padding: 1rem;
-      font-size: 16px;
-  }
-  
-  .footer-contact {
-    width: 100%;
     padding: 1rem;
-    background-color: rgb(247,65,0);
-    color: white;
-  }
-  
-  .inner-content {
-    display: flex;
-    flex-flow: row wrap;
+    font-size: 16px;
+}
+
+.footer-contact {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(247,65,0);
+  color: white;
+}
+
+.footer-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  cursor: pointer;
+}
+
+.footer-link {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.upper {
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--sub-color);
+  color: var(--white);
+}
+
+.block {
+  display: flex;
+  flex-flow: column nowrap;}
+
+div.adress-block {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.m-left {
+  margin: 0 20px 0 0;
+  display: grid;
+  place-items: center;
+}
+
+.bottom {
+  background-color: var(--main-color);
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  color: white;
+  padding: var(--padding);
+  height: 80px;
+}
+
+.full-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.full-width {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.lower {
+  text-transform: none;
+}
+
+.lower:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Code */
+
+@media (max-width: 500px) {
+  .upper {
+    flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
   }
-  
-  i {
-    margin-right: 5px;
+
+  .block {
+    margin: 15px 0 15px 0;
   }
+
+  .bottom {
+    height: 100px;
+  }
+
+  .full-width {
+    flex-flow: column-reverse;
+  }
+
+  .footer_text {
+    padding: 0;
+  }
+}
