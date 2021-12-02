@@ -22,5 +22,27 @@ if (file_exists('../../functions.php')) {
 }
 
 
-if ($_SESSION["token"] == $_POST["token"] && $_POST["name1"] == "") {
+if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
+
+  $passwordInput = sha256($_POST["password"]);
+  $usernameInput = $_POST["username"];
+
+
+  $preparedSql = 'SELECT wachtwoord FROM gebruikers WHERE gebruikersnaam=?';
+
+  if ($conn->prepare($preparedSql) == true) {
+
+    $stmt = $conn->prepare($preparedSql);
+    $stmt->bind_param("s", $usernameInput);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+
+
+    $data = mysqli_fetch_array($result);
+
+    if ($data["wachtwoord"] == $passwordInput) {
+      echo "Ingelogd!";
+    }
+  }
 }

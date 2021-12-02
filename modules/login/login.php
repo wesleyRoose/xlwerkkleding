@@ -2,10 +2,9 @@
 
     session_start();
 
-    $_SESSION["token"] = sha1(rand());
-    ?>
-    <?php include("../../templates/header.php"); ?>
-    <link rel="stylesheet" href="../../css/style.css">
+    $_SESSION["token"] = sha1($salt . rand());
+
+    include("../../templates/header.php"); ?>
 
     <!-- Begin code voor login -->
     <div class="containerlogin">
@@ -34,7 +33,9 @@
                         <input onclick="none2()" type="password" name="password" placeholder="password">
                     </div>
                 </div>
-                <input type="text" name="token" class="token" value="<?php echo $_SESSION['token'] ?>">
+                <input type="text" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
+                <input type="text" id="email1" name="email1">
+
                 <!-- begin button met PHP link voor verzenden -->
                 <button type="submit" class="btn" name="submit">Login</button>
                 <!-- <input type="hidden" name="tk" value="\"> -->

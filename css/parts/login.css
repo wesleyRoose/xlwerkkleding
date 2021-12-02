@@ -90,7 +90,11 @@
   margin-bottom: 4px;
 }
 
-.token {
+#token {
+  display: none;
+}
+
+#email1 {
   display: none;
 }
 
