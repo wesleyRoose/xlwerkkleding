@@ -49,7 +49,6 @@ include("../../templates/header.php");?>
                                 atque aspernatur dolore, 
                                 nostrum totam adipisci expedita, 
                                 veniam molestias. 
-                                Eius, totam fugiat! Delectus?
                             </li>
                         </div>
                     </ul>

@@ -6,6 +6,7 @@
   --main-color: rgb(247, 65, 0);
   --sub-color: rgb(253, 96, 39);
   --white: rgb(255, 255, 255);
+  --broken-white: rgb(245, 245, 245);
   --black: rgb(0, 0, 0);
 }
 
@@ -23,7 +24,7 @@ html {
   width: 100vw;
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
-  background-color: rgb(245, 245, 245);
+  background-color: var(--broken-white);
 }
 
 /* Reset of certain elements */
