@@ -1,42 +1,50 @@
 <?php
-    include_once "../../config.php";
-    include_once "../../functions.php";
 
-    // Variabelen voor makkelijkere code
-    $Achternaam = "";
-    $geboortedatum = "";
-    $woonplaats = "";
-    $postcode = "";
-    $telefoon = "";
-    $email = "";
-    $Voornaam = "";
-    $wachtwoord1 = "";
-    $wachtwoord2 = "";
-    $errors = array();
-    
+//Start Session
+session_start();
 
-    if (isset($_POST["registreerknop"])) {
+//Include Files
+if (file_exists('../../config.php')) {
+    include('../../config.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: ../../config.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
 
-        // Krijgt hieronder alle ingevulde variabelen
-        $email = cleaninput($_POST["email"],30);
-        $Voornaam = cleaninput($_POST["Voornaam"],30);
-        $Achternaam = cleaninput($_POST["Achternaam"],40);
-        $wachtwoord1 = cleaninput($_GET["wachtwoord1"],80);
-        $wachtwoord2 = cleaninput($_POST["wachtwoord2"],80);
+if (file_exists('../../functions.php')) {
+    include('../../functions.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: ../../functions.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
 
-        // Alle verplichte velden worden hieronder gecheckt of het ingevuld is.
-        if (empty($email)) { array_push($errors, header ('location: registreren.php')); }
-        if (empty($Voornaam)) { array_push($errors, header ('location: registreren.php')); }
-        if ($wachtwoord1 != $wachtwoord2) { array_push($errors, header ('location: registreren.php'));}
+if (isset($_POST["registerSubmit"])) {
 
-        // verbinding met database zodat hij alles onder het kopje gebruikers stopt
-        if (count($errors) == 0) {
-            $wachtwoord1 = sha256($salt.$wachtwoord1);
-            $query = "INSERT INTO gebruikers (email, Voornaam, Achternaam, wachtwoord) 
-                      VALUES('$email', '$Voornaam', '$Achternaam', '$wachtwoord1')";
-            mysqli_query($conn, $query);
-            $_SESSION['succes'] = "Je bent nu ingelogd!";
-            header('location: login.php');
-        }
+    // Catch Form Values and clean them for sql trickery
+    $email = cleaninput($_POST["email"], 30);
+    $username = cleaninput($_POST["username"], 30);
+    $fName = cleaninput($_POST["fName"], 30);
+
+    $lName = cleaninput($_POST["lName"], 40);
+    $password = cleaninput($_GET["password"], 80);
+    $repeatpassword = cleaninput($_POST["repeatpassword"], 80);
+    $phoneNumber = cleaninput($_POST["phoneNumber"], 40);
+    $firm = cleaninput($_POST["firm"], 40);
+
+    //Check if the passwords match up
+    if ($password != $repeatpassword) {
+        //if they dont match create a error message and exit
+        $errorMessage = "De wachtwoorden zijn niet gelijk!";
+        exit;
+    } else {
+        //If they match hash it
+        $hashedPassword = sha256($password);
     }
-?>
+
+    //Prepare the SQL statement
+    $preparedSQL = "INSERT INTO `users` (`email`, `username`, `firstName`, `lastName`, `password`, 'phoneNumber`, `firm`) VALUES (`?`, `?`, `?`, `?`, `?`, `?`, `?`);";
+}
