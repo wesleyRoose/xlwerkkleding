@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="Dutch">
+    <meta name="description" content="XLwerkkleding">
+    <meta name="keywords" content="XLwerkkleding, werkkleding, kleding, XL, werk, werkkledij, bouwkledij, bouw">
+    <meta name="author" content="&copy; XLwerkkleding">
+    <meta http-equiv="content-language" content="nl">
     <!--Custom CSS-->
     <link rel="stylesheet" href="<?php echo ROOT_URL ?>css/style.css">
     <!--FontAwesome-->
