@@ -1,4 +1,4 @@
-    <?php include("../../config.php");
+<?php include("../../config.php");
 
     session_start();
 
@@ -7,39 +7,30 @@
     include("../../templates/header.php"); ?>
 
     <!-- Begin code voor login -->
-    <div class="containerlogin">
-        <div class="beginlogincontent">
+    <section class="containerlogin">
+        <div class="reglog">
             <!-- titel met PHP verstuur methode -->
             <form method="post" action="checklogin.php">
-                <h2 class="title">Welkom</h2>
+                <h2 class="title">Log hier in</h2>
                 <br>
-                <!-- gebruikersnaam met icoon ernaast -->
-                <div class="input-div one">
-                    <div class="i">
-                        <i class="fas fa-user"></i>
-                    </div>
+                <div class="input-div">
                     <div class="div">
-
-                        <input onclick="none1()" type="text" name="username" placeholder="username">
-
+                        <label>Gebruikersnaam</label><br>
+                        <input type="text" name="username" placeholder="Typ hier...">
                     </div>
                 </div>
-                <!-- wachtwoord met icoon ernaast -->
-                <div class="input-div pass">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
+                <div class="input-div">
                     <div class="div">
-                        <input onclick="none2()" type="password" name="password" placeholder="password">
+                        <label>Wachtwoord</label><br>
+                        <input type="password" name="password" placeholder="Typ hier...">
                     </div>
                 </div>
-                <input type="text" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
-                <input type="text" id="email1" name="email1">
-
-                <!-- begin button met PHP link voor verzenden -->
-                <button type="submit" class="btn" name="submit">Login</button>
-                <!-- <input type="hidden" name="tk" value="\"> -->
-                <a class="vergeetenaanmeldknop" href="registreren.php">Registeer u nu!</a>
+                <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
+                <input type="hidden" id="email1" name="email1">
+                <input type="submit" value="Login" class="button m-less">
+                <div class="reg-btn">
+                    <a class="register-btn lower" href="registreren.php">Registreer hier</a>
+                </div>
             </form>
             <?php
             if (isset($_GET["msg"])) {
@@ -47,7 +38,7 @@
             }
             ?>
         </div>
-    </div>
+    </section>
     <script type="text/javascript" src="../js/login.js"></script>
 
     <?php include "../../templates/footer.php"; ?>

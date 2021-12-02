@@ -5,9 +5,25 @@
 :root {
   --main-color: rgb(247, 65, 0);
   --sub-color: rgb(253, 96, 39);
+  --light: rgb(248, 145, 107);
   --white: rgb(255, 255, 255);
   --broken-white: rgb(245, 245, 245);
   --black: rgb(0, 0, 0);
+}
+
+::placeholder {
+  color: var(--white);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px var(--light) inset !important;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: var(--white) !important;
 }
 
 /* Overall Reset */
@@ -33,7 +49,7 @@ section {
   padding: 0px 2.5rem 0px 2.5rem;
 }
 
-button {
+button, .button {
   padding: 0.5rem;
   margin-top: 30px;
   text-transform: uppercase;
@@ -47,11 +63,28 @@ button {
   font-weight: 800;
 }
 
-button:hover {
+button:hover, .button:hover {
   background-color: var(--sub-color);
   transition: background-color .3s ease-in-out;
 }
 
 ul, ol {
   list-style-type: none;
+}
+
+input[type=password], input[type=text], input[type=email] {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  padding: 0.5rem;
+  background-color: var(--light) !important;
+  width: 350px;
+  margin-top: 5px;
+  color: var(--white) !important;
+}
+
+@media (max-width:500px) {
+  input[type=password], input[type=text], input[type=email] {
+    width: 250px;
+  }
 }

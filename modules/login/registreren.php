@@ -4,104 +4,67 @@
 
 <!-- Begin code voor registreren -->
 <div class="containerlogin">
-    <div class="beginlogincontent">
+    <div class="reglog">
         <form method="post" action="registreercheck.php">
-            <h2 class="title">Registreer u hier</h2>
+            <h2 class="title">Registreer hier</h2>
             <br>
-
-            <!-- Email met icoon ernaast -->
-            <div class="input-div pass">
-                <div class="i">
-                    <i class="fas fa-at"></i>
-                </div>
+            <div class="input-div">
                 <div class="div">
-                    <h5 id="label7">E-Mail*</h5>
-                    <input onclick="none7()" type="email" class="input" name="email" value="" required>
+                    <label>Email*</label><br>
+                    <input required type="email" class="input" name="email">
                 </div>
             </div>
-
-            <div class="input-div pass">
-                <div class="i">
-                    <i class="fas fa-user"></i>
-                </div>
+            <div class="input-div">
                 <div class="div">
-                    <h5 id="label8">Gebruikersnaam*</h5>
-                    <input onclick="none15()" type="text" class="input" name="username" required>
+                    <label>Gebruikersnaam*</label><br>
+                    <input required type="text" class="input" name="username">
                 </div>
             </div>
-
-            <!-- Voornaam met icoon ernaast -->
-            <div class="input-div pass">
-                <div class="i">
-                    <i class="fas fa-user"></i>
-                </div>
+            <div class="input-div">
                 <div class="div">
-                    <h5 id="label8">Voornaam*</h5>
-                    <input onclick="none8()" type="text" class="input" name="fName" required>
+                    <label>Voornaam*</label><br>
+                    <input required type="text" class="input" name="name">
                 </div>
             </div>
-
-            <!-- Achternaam met icoon ernaast -->
-            <div class="input-div pass">
-                <div class="i">
-                    <i class="fas fa-user"></i>
-                </div>
+            <div class="input-div">
                 <div class="div">
-                    <h5 id="label11">Achternaam*</h5>
-                    <input onclick="none11()" type="text" class="input" name="lName" required>
+                    <label>Achternaam*</label><br>
+                    <input required type="text" class="input" name="surname">
                 </div>
             </div>
-
-            <div class="input-div pass">
+            <div class="input-div">
                 <div class="div">
-                    <h5 id="label12">Email*</h5>
-                    <input onclick="none12()" type="text" class="input" name="email" required>
+                    <label>Firma</label><br>
+                    <input type="text" class="input" name="fname">
                 </div>
             </div>
-
-            <div class="input-div pass">
+            <div class="input-div">
                 <div class="div">
-                    <h5 id="label13">Mobiel-Nummer*</h5>
-                    <input onclick="none13()" type="text" class="input" name="phoneNumber" required>
+                    <label>Tel. Nummer</label><br>
+                    <input type="text" class="input" name="phoneNumber">
                 </div>
             </div>
-
-            <div class="input-div pass">
+            <div class="input-div">
                 <div class="div">
-                    <h5 id="label14">Firma</h5>
-                    <input onclick="none14()" type="text" class="input" name="firm">
+                    <label>Wachtwoord*</label><br>
+                    <input required type="password" class="input" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                 </div>
             </div>
-
-            <!-- Wachtwoord met icoon ernaast -->
-            <div class="input-div pass">
-                <div class="i">
-                    <i class="fas fa-lock"></i>
-                </div>
+            <div class="input-div">
                 <div class="div">
-                    <h5 id="label9">Wachtwoord*</h5>
-                    <input onclick="none9()" type="password" class="input" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-                </div>
-            </div>
-
-            <!-- Wachtwoord met icoon ernaast -->
-            <div class="input-div pass">
-                <div class="i">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <div class="div">
-                    <h5 id="label10">Herhaal wachtwoord*</h5>
-                    <input onclick="none10()" type="password" class="input" name="repeatPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <label>Herhaal Wachtwoord*</label><br>
+                    <input required type="password" class="input" name="repeatpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                 </div>
             </div>
 
             <!-- Account en registreer knop/link -->
-            <button type="submit" class="btn" name="registerSubmit">Registreer</button>
-            <a class="vergeetenaanmeldknop">Velden met een * zijn verplicht!</a>
-            <a class="vergeetenaanmeldknop" href="login.php">Heeft u al een account? Klik dan hier!</a>
+            <input type="submit" value="Registreer" class="button m-less">
+            <div class="reg-btn">
+                <a class="">Velden met * zijn verplicht!</a><br>
+                <a class="register-btn lower" href="login.php">Log hier in</a>
+            </div>
         </form>
     </div>
 </div>
-<script type="text/javascript" src="<?php echo ROOT_URL ?>js/login.js"></script>
 
 <?php include "../../templates/footer.php"; ?>
