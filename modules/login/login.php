@@ -1,4 +1,9 @@
-    <?php include("../../config.php");?>
+    <?php include("../../config.php");
+
+    session_start();
+
+    $_SESSION["token"] = sha1(rand());
+    ?>
     <?php include("../../templates/header.php"); ?>
     <link rel="stylesheet" href="../../css/style.css">
 
@@ -16,7 +21,7 @@
                     </div>
                     <div class="div">
 
-                        <input onclick="none1()" type="text" name="gebruikersnaam" placeholder="gebruikersnaam">
+                        <input onclick="none1()" type="text" name="username" placeholder="username">
 
                     </div>
                 </div>
@@ -26,13 +31,12 @@
                         <i class="fas fa-lock"></i>
                     </div>
                     <div class="div">
-                        <input onclick="none2()" type="password" name="wachtwoord" placeholder="Wachtwoord">
+                        <input onclick="none2()" type="password" name="password" placeholder="password">
                     </div>
                 </div>
-                <!-- fop stukje -->
-                <input type="hidden" placeholder="email" name="email" class="mail"> <br>
+                <input type="text" name="token" class="token" value="<?php echo $_SESSION['token'] ?>">
                 <!-- begin button met PHP link voor verzenden -->
-                <button type="submit" class="btn" name="inlogbutton">Login</button>
+                <button type="submit" class="btn" name="submit">Login</button>
                 <!-- <input type="hidden" name="tk" value="\"> -->
                 <a class="vergeetenaanmeldknop" href="registreren.php">Registeer u nu!</a>
             </form>
