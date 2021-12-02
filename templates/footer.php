@@ -42,8 +42,8 @@
                 </p>
                 <div class="footer-icons">
                     <a href="https://www.facebook.com/bouwkledij" target="_blank" class="footer-link"><i class="fab fa-facebook m-left"></i></a>
-                    <a href="https://www.instagram.com/webshopbouwkledij/" target="_blank" class="footer-link"><i class="fab fa-linkedin m-left"></i></a>
-                    <a href="https://www.linkedin.com/company/bouwkledij/" target="_blank" class="footer-link"><i class="fab fa-instagram m-left"></i></a>
+                    <a href="https://www.linkedin.com/company/bouwkledij/" target="_blank" class="footer-link"><i class="fab fa-linkedin m-left"></i></a>
+                    <a href="https://www.instagram.com/webshopbouwkledij/" target="_blank" class="footer-link"><i class="fab fa-instagram m-left"></i></a>
                 </div>
             </div>
         </div>
