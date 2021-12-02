@@ -2,9 +2,9 @@
         <div class="upper">
             <div class="block">
                 <h3>Menu</h3>
-                <a class="footer-link lower" href="#">Home</a>
-                <a class="footer-link lower" href="#">Webshop</a>
-                <a class="footer-link lower" href="#">Over</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>">Home</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/webshop/index.php">Webshop</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/over/index.php">Over</a>
             </div>
             <div class="block">
                 <h3>Contact</h3>
@@ -19,14 +19,10 @@
             </div>
             <div class="block">
                 <h3>Klantenservice</h3>
-                <a class="footer-link lower" href="#">Algemene Voorwaaden</a>
-                <a class="footer-link lower" href="#">Verzenden & Leveren</a>
-                <a class="footer-link lower" href="#">Klachten</a>
-                <a class="footer-link lower" href="#">Disclaimer</a>
-                    <!-- <div class="kvk">
-                        <p>KVK: &nbsp;82344348234</p>
-                        <p>BTW: NL584884848</p>
-                    </div> -->
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/index.php">Algemene Voorwaaden</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/index.php">Verzenden & Leveren</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/index.php">Klachten</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/index.php">Disclaimer</a>
                 </div>
             <div class="block">
                 <h3>Betaalmethoden</h3>
