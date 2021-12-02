@@ -28,7 +28,7 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
   $usernameInput = $_POST["username"];
 
 
-  $preparedSql = 'SELECT wachtwoord FROM gebruikers WHERE gebruikersnaam=?';
+  $preparedSql = 'SELECT * FROM gebruikers WHERE gebruikersnaam=?';
 
   if ($conn->prepare($preparedSql) == true) {
 
@@ -42,7 +42,11 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
     $data = mysqli_fetch_array($result);
 
     if ($data["wachtwoord"] == $passwordInput) {
-      echo "Ingelogd!";
+      if ($data["rechten"] == 1) {
+        $_SESSION["sessionStatus"] = 1;
+      } else if ($data["rechten"] == 2) {
+        $_SESSION["sessionStatus"] = 2;
+      }
     }
   }
 }
