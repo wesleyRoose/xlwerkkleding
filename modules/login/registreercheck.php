@@ -28,15 +28,15 @@ if (isset($_POST["registerSubmit"])) {
     $email = cleaninput($_POST["email"], 30);
     $username = cleaninput($_POST["username"], 30);
     $fName = cleaninput($_POST["fName"], 30);
-
     $lName = cleaninput($_POST["lName"], 40);
-    $password = cleaninput($_GET["password"], 80);
-    $repeatpassword = cleaninput($_POST["repeatpassword"], 80);
-    $phoneNumber = cleaninput($_POST["phoneNumber"], 40);
+    $password = cleaninput($_POST["password"], 20);
+    $repeatPassword = cleaninput($_POST["repeatPassword"], 20);
+    $phoneNumber = cleaninput($_POST["phoneNumber"], 15);
     $firm = cleaninput($_POST["firm"], 40);
 
+
     //Check if the passwords match up
-    if ($password != $repeatpassword) {
+    if ($password != $repeatPassword) {
         //if they dont match create a error message and exit
         $errorMessage = "De wachtwoorden zijn niet gelijk!";
         exit;
@@ -46,5 +46,15 @@ if (isset($_POST["registerSubmit"])) {
     }
 
     //Prepare the SQL statement
-    $preparedSQL = "INSERT INTO `users` (`email`, `username`, `firstName`, `lastName`, `password`, 'phoneNumber`, `firm`) VALUES (`?`, `?`, `?`, `?`, `?`, `?`, `?`);";
+    $preparedSQL = "INSERT INTO `users` (email, username, firstName, lastName, password, phoneNumber, firm) VALUES (?, ?, ?, ?, ?, ?, ?);";
+
+    //Catch error
+    if ($conn->prepare($preparedSQL) == true) {
+        //Bind and excecute Statement
+        $stmt = $conn->prepare($preparedSQL);
+        $stmt->bind_param("sssssss", $email, $username, $fName, $lName, $hashedPassword, $phoneNumber, $firm);
+        $stmt->execute();
+    } else {
+        exit;
+    }
 }
