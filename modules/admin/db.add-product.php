@@ -34,9 +34,9 @@ $p_color = "[p-color]";
 $p_description = "[p-description]";
 $p_id = "[p-id]";
 
-// sql
+// sql insert into `product`
 
-$sql = "INSERT INTO `product`(`p-name`, `p-price`, `p-category`, `p-sector`, `p-brand`, `p-size`, `p-color`, `p-description`, `p-id`)"
-VALUES ("{$p_name}','{$p_price}','{$p_category}','{$p_sector}','{$p_brand}','{$p_size}','{$p_color}','{$p_description}','{$p_id}')";
+$sql = "INSERT INTO `product`(`p-name`, `p-price`, `p-category`, `p-sector`, `p-brand`, `p-size`, `p-color`, `p-description`, `p-id`)";
+VALUES ("{$p_name},{$p_price},{$p_category},{$p_sector},{$p_brand},{$p_size},{$p_color},{$p_description},{$p_id})";
 
 ?>
