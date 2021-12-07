@@ -33,10 +33,12 @@ include("../../templates/header.php"); ?>
             </div>
         </form>
         <?php
-        if ($_SESSION["sessionStatus"] != 0 && $_SESSION["sessionStatus"] != 6) {
-            echo "<p>Login Succesvol!</p>";
-        } else if ($_SESSION["sessionStatus"] == 6) {
-            echo "<p>Login was niet Succesvol!</p>";
+        if (isset($_SESSION["sessionStatus"])) {
+            if ($_SESSION["sessionStatus"] != 0 && $_SESSION["sessionStatus"] != 6) {
+                echo "<p>Login Succesvol!</p>";
+            } else if ($_SESSION["sessionStatus"] == 6) {
+                echo "<p>Login was niet Succesvol!</p>";
+            }
         }
         ?>
     </div>
