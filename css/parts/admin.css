@@ -1,0 +1,8 @@
+/* add-product.php styling */
+
+.input-form {
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+}
+
