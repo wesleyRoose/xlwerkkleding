@@ -101,3 +101,9 @@ textarea {
   background-color: var(--light);
   margin-top: 5px;
 }
+
+@media (max-width:500px) {
+  form {
+    width: 250px;
+  }
+}
