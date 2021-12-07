@@ -2,12 +2,12 @@
 include("../../config.php");
 include("../../functions.php");
 
-include("../../templates/header.php");?>
+include("../../templates/header-admin.php");?>
 
 <main class="add-products">
     <section class="add-products-s">
         <div class="input-form">
-            <form action="#" method="post" class="product-form" id="product-form">
+            <form action="db.add-product.php" method="post" class="product-form" id="product-form">
                 <h3>Hier kun je producten toevoegen</h3>
                 <label>Product Naam</label><br>
                 <input type="text" name="p-name" id="p-name" class="p-input"><br>
@@ -31,4 +31,4 @@ include("../../templates/header.php");?>
     </section>
 </main>
 
-<?php include("../../templates/footer.php");?>
+<?php include("../../templates/footer-admin.php");?>
