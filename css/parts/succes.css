@@ -1,0 +1,13 @@
+.centered {
+    display: grid;
+    place-items: center;
+    margin: auto;
+    margin-top: 20rem;
+    width: 404px;
+}
+
+.btn-s {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
