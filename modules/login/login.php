@@ -33,8 +33,10 @@ include("../../templates/header.php"); ?>
             </div>
         </form>
         <?php
-        if (isset($_POST["msg"])) {
-            echo '<p>' . $_POST["msg"] . '</p>';
+        if ($_SESSION["sessionStatus"] != 0 && $_SESSION["sessionStatus"] != 6) {
+            echo "<p>Login Succesvol!</p>";
+        } else if ($_SESSION["sessionStatus"] == 6) {
+            echo "<p>Login was niet Succesvol!</p>";
         }
         ?>
     </div>

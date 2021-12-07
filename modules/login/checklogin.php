@@ -60,13 +60,15 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
         $_SESSION["sessionStatus"] = 2;
       }
       sleep(2);
-      echo "<h3>Hello World</h3>";
-      echo "<h3>Session Status is " . $_SESSION["sessionStatus"];
+      header($sHeaderLocationOnSucces);
     } else {
-      $_SESSION["sessionStatus"] = 0;
+      $_SESSION["sessionStatus"] = 6;
       sleep(2);
       header($sHeaderLocationOnFail);
-      echo "<h3>Password is incorrect</h3>";
     }
+  } else {
+    $_SESSION["sessionStatus"] = 6;
   }
+} else {
+  $_SESSION["sessionStatus"] = 6;
 }
