@@ -2,7 +2,7 @@
 include("../../config.php");
 include("../../functions.php");
 
-include("../../templates/header.php");?>
+include("../../templates/header-admin.php");?>
 
 <main class="add-products">
     <section class="add-products-s">
@@ -31,4 +31,4 @@ include("../../templates/header.php");?>
     </section>
 </main>
 
-<?php include("../../templates/footer.php");?>
+<?php include("../../templates/footer-admin.php");?>
