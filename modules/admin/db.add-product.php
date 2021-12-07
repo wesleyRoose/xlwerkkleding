@@ -23,21 +23,21 @@ if (file_exists('../../functions.php')) {
 }
 
 // variabels 
+$p_id = "";
+$p_name = $_POST["p_name"];
+$p_price = $_POST["p_price"];
+$p_category = $_POST["p_gategory"];
+$p_sector = $_POST["p_sector"];
+$p_brand = $_POST["[p_brand"];
+$p_size = $_POST["p_size"];
+$p_color = $_POST["p_color"];
+$p_description = $_POST["p_description"];
 
-$p_name = "[p_name]";
-$p_price = "[p_price]";
-$p_category = "[p_gategory]";
-$p_sector = "[p_sector]";
-$p_brand = "[p_brand]";
-$p_size = "[p_size]";
-$p_color = "[p_color]";
-$p_description = "[p_description]";
-$p_id = "[p_id]";
 
 // sql insert into `product`
 
-$sql = "INSERT INTO product(p_name, p_price, p_category, p_sector, p_brand, p_size, p_color, p_description, p_id);
-VALUES ("'{$p_name}', '{$p_price}', '{$p_category}', '{$p_sector}', '{$p_brand}', '{$p_size}', '{$p_color}', '{$p_description}', '{$p_id}'");
+$sql1 = "INSERT INTO `product` (`p_name`, `p_price, `p_category`,`p_sector`,`p_brand`,`p_size`,`p_color`,`p_description`)
+                VALUES ('$p_name', '$p_price' , '$p_category', '$p_sector', '$p_brand', '$p_size', '$p_color', '$p_description');";
 
 header("location:<?php echo ROOT_URL ?>modules/other/succes.php");
 exit();
