@@ -118,7 +118,15 @@ function preparedInsertIntoQuery($oConnect, $iNumberOfRows, $sTableName, $aRowNa
     call_user_func_array(array($stmt, "bind_param"), $params);
 
     // Execute Statement
-    $stmt->execute();
+    if ($stmt->execute()) {
+      return true;
+    } else {
+      // Create error message and return false
+      $errorMsg = "";
+      $errorMsg .= "Execute failed.";
+      echo $errorMsg;
+      return false;
+    }
   } else {
     // Create error message and exit
     $errorMsg = "";

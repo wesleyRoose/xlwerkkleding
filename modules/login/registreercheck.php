@@ -48,6 +48,6 @@ if (isset($_POST["registerSubmit"])) {
     // Creating Arrays for function
     $aRowNames = array("email", "username", "firstName", "lastName", "password", "phoneNumber", "Firm");
     $aValues = array($email, $username, $fName, $lName, $hashedPassword, $phoneNumber, $firm);
-    // Create and excecute prepared statement
+    // Create and execute prepared statement
     preparedInsertIntoQuery($conn, 7, "users", $aRowNames, "sssssss", $aValues);
 }
