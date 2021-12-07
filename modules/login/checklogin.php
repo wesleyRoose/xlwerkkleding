@@ -30,7 +30,7 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
   $usernameInput = $_POST["username"];
 
   //Prepare SQL Statement
-  $preparedSql = 'SELECT * FROM gebruikers WHERE gebruikersnaam=?';
+  $preparedSql = 'SELECT * FROM users WHERE username=?';
 
   //Catch error
   if ($conn->prepare($preparedSql) == true) {
@@ -44,11 +44,11 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
     //Catch result in a array
     $data = mysqli_fetch_array($result);
     //Check if password is correct
-    if ($data["wachtwoord"] == $passwordInput) {
+    if ($data["password"] == $passwordInput) {
       //Give the right rights for the account
-      if ($data["rechten"] == 1) {
+      if ($data["rights"] == 1) {
         $_SESSION["sessionStatus"] = 1;
-      } else if ($data["rechten"] == 2) {
+      } else if ($data["rights"] == 2) {
         $_SESSION["sessionStatus"] = 2;
       }
     }
