@@ -38,7 +38,7 @@ $p_description = $_POST["p_description"];
 
 $sql1 = "INSERT INTO `product` (`p_name`, `p_price, `p_category`,`p_sector`,`p_brand`,`p_size`,`p_color`,`p_description`)
                 VALUES ('$p_name', '$p_price' , '$p_category', '$p_sector', '$p_brand', '$p_size', '$p_color', '$p_description');";
-
+.
 header("location:<?php echo ROOT_URL ?>modules/other/succes.php");
 exit();
 
