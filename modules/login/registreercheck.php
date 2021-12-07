@@ -45,16 +45,9 @@ if (isset($_POST["registerSubmit"])) {
         $hashedPassword = sha256($password);
     }
 
-    //Prepare the SQL statement
-    $preparedSQL = "INSERT INTO `users` (email, username, firstName, lastName, password, phoneNumber, firm) VALUES (?, ?, ?, ?, ?, ?, ?);";
-
-    //Catch error
-    if ($conn->prepare($preparedSQL) == true) {
-        //Bind and excecute Statement
-        $stmt = $conn->prepare($preparedSQL);
-        $stmt->bind_param("sssssss", $email, $username, $fName, $lName, $hashedPassword, $phoneNumber, $firm);
-        $stmt->execute();
-    } else {
-        exit;
-    }
+    // Creating Arrays for function
+    $aRowNames = array("email", "username", "firstName", "lastName", "password", "phoneNumber", "Firm");
+    $aValues = array($email, $username, $fName, $lName, $hashedPassword, $phoneNumber, $firm);
+    // Create and excecute prepared statement
+    preparedInsertIntoQuery($conn, 7, "users", $aRowNames, "sssssss", $aValues);
 }

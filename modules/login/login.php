@@ -1,44 +1,46 @@
 <?php include("../../config.php");
 
-    session_start();
+session_start();
 
-    $_SESSION["token"] = sha1($salt . rand());
+$_SESSION["token"] = sha1($salt . rand());
 
-    include("../../templates/header.php"); ?>
+include("../../templates/header.php"); ?>
 
-    <!-- Begin code voor login -->
-    <section class="containerlogin">
-        <div class="reglog">
-            <!-- titel met PHP verstuur methode -->
-            <form method="post" action="checklogin.php">
-                <h2 class="title">Log hier in</h2>
-                <br>
-                <div class="input-div">
-                    <div class="div">
-                        <label>Gebruikersnaam</label><br>
-                        <input type="text" name="username" placeholder="Typ hier...">
-                    </div>
+<!-- Begin code voor login -->
+<section class="containerlogin">
+    <div class="reglog">
+        <!-- titel met PHP verstuur methode -->
+        <form method="post" action="checklogin.php">
+            <h2 class="title">Log hier in</h2>
+            <br>
+            <div class="input-div">
+                <div class="div">
+                    <label>Gebruikersnaam</label><br>
+                    <input type="text" name="username" placeholder="Typ hier...">
                 </div>
-                <div class="input-div">
-                    <div class="div">
-                        <label>Wachtwoord</label><br>
-                        <input type="password" name="password" placeholder="Typ hier...">
-                    </div>
+            </div>
+            <div class="input-div">
+                <div class="div">
+                    <label>Wachtwoord</label><br>
+                    <input type="password" name="password" placeholder="Typ hier...">
                 </div>
-                <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
-                <input type="hidden" id="email1" name="email1">
-                <input type="submit" value="Login" class="button m-less">
-                <div class="reg-btn">
-                    <a class="register-btn lower" href="registreren.php">Registreer hier</a>
-                </div>
-            </form>
-            <?php
-            if (isset($_GET["msg"])) {
-                echo '<p>' . $_GET["msg"] . '</p>';
-            }
-            ?>
-        </div>
-    </section>
-    <script type="text/javascript" src="../js/login.js"></script>
+            </div>
+            <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
+            <input type="hidden" id="email1" name="email1">
+            <input type="submit" value="Login" class="button m-less">
+            <div class="reg-btn">
+                <a class="register-btn lower" href="registreren.php">Registreer hier</a>
+            </div>
+        </form>
+        <?php
+        if ($_SESSION["sessionStatus"] != 0 && $_SESSION["sessionStatus"] != 6) {
+            echo "<p>Login Succesvol!</p>";
+        } else if ($_SESSION["sessionStatus"] == 6) {
+            echo "<p>Login was niet Succesvol!</p>";
+        }
+        ?>
+    </div>
+</section>
+<script type="text/javascript" src="../js/login.js"></script>
 
-    <?php include "../../templates/footer.php"; ?>
+<?php include "../../templates/footer.php"; ?>
