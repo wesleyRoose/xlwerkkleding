@@ -24,19 +24,19 @@ if (file_exists('../../functions.php')) {
 
 // variabels 
 
-$p_name = "[p-name]";
-$p_price = "[p-price]";
-$p_category = "[p-gategory]";
-$p_sector = "[p-sector]";
-$p_brand = "[p-brand]";
-$p_size = "[p-size]";
-$p_color = "[p-color]";
-$p_description = "[p-description]";
-$p_id = "[p-id]";
+$p_name = "[p_name]";
+$p_price = "[p_price]";
+$p_category = "[p_gategory]";
+$p_sector = "[p_sector]";
+$p_brand = "[p_brand]";
+$p_size = "[p_size]";
+$p_color = "[p_color]";
+$p_description = "[p_description]";
+$p_id = "[p_id]";
 
 // sql insert into `product`
 
-$sql = "INSERT INTO `product`(`p-name`, `p-price`, `p-category`, `p-sector`, `p-brand`, `p-size`, `p-color`, `p-description`, `p-id`)";
+$sql = "INSERT INTO product(p_name, p_price, p_category, p_sector, p_brand, p_size, p_color, p_description, p_id);
 VALUES ("'{$p_name}', '{$p_price}', '{$p_category}', '{$p_sector}', '{$p_brand}', '{$p_size}', '{$p_color}', '{$p_description}', '{$p_id}'");
 
 header("location:<?php echo ROOT_URL ?>modules/other/succes.php");
