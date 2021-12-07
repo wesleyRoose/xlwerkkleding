@@ -49,7 +49,7 @@ section {
   padding: 0px 2.5rem 0px 2.5rem;
 }
 
-button, .button {
+button, .button, input[type=submit] {
   padding: 0.5rem;
   margin-top: 30px;
   text-transform: uppercase;
@@ -63,7 +63,7 @@ button, .button {
   font-weight: 800;
 }
 
-button:hover, .button:hover {
+button:hover, .button:hover, input[type=submit]:hover {
   background-color: var(--sub-color);
   transition: background-color .3s ease-in-out;
 }
@@ -87,4 +87,17 @@ input[type=password], input[type=text], input[type=email] {
   input[type=password], input[type=text], input[type=email] {
     width: 250px;
   }
+}
+
+textarea {
+  font-family: "Poppins", sans-serif;
+  resize: none;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem;
+  color: var(--white);
+  background-color: var(--light);
+  margin-top: 5px;
 }
