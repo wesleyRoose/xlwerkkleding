@@ -23,6 +23,9 @@ if (file_exists('../../functions.php')) {
 }
 
 // variabels 
+
+$location .= 'Location: ' . ROOT_URL . 'modules/other/succes.php';
+
 $p_id = "";
 $p_name = $_POST["p_name"];
 $p_price = $_POST["p_price"];
@@ -38,8 +41,7 @@ $p_description = $_POST["p_description"];
 
 $sql1 = "INSERT INTO `product` (`p_name`, `p_price, `p_category`,`p_sector`,`p_brand`,`p_size`,`p_color`,`p_description`)
                 VALUES ('$p_name', '$p_price' , '$p_category', '$p_sector', '$p_brand', '$p_size', '$p_color', '$p_description');";
-.
-header("location:<?php echo ROOT_URL ?>modules/other/succes.php");
+header($location);
 exit();
 n
 ?>
