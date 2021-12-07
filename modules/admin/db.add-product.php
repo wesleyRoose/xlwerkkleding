@@ -41,5 +41,5 @@ $sql1 = "INSERT INTO `product` (`p_name`, `p_price, `p_category`,`p_sector`,`p_b
 .
 header("location:<?php echo ROOT_URL ?>modules/other/succes.php");
 exit();
-
+n
 ?>
