@@ -1,8 +1,36 @@
 <?php
-include("../../config.php");
-include("../../functions.php");
 
-include("../../templates/header-admin.php");?>
+session_start();
+
+if (file_exists('config.php')) {
+    include('config.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: config.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+if (file_exists('functions.php')) {
+    include('functions.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: functions.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+
+
+if ($_SESSION["sessionStatus"] == 1) {
+    include ROOT_URL . "templates/header-user.php";
+} else if ($_SESSION["sessionStatus"] == 2) {
+    include ROOT_URL . "templates/header-admin.php";
+} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+    include ROOT_URL . "templates/header.php";
+}
+
+?>
 
 <main class="add-products">
     <section class="add-products-s">
@@ -33,4 +61,4 @@ include("../../templates/header-admin.php");?>
     </section>
 </main>
 
-<?php include("../../templates/footer-admin.php");?>
+<?php include("../../templates/footer-admin.php"); ?>

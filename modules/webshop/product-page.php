@@ -1,8 +1,35 @@
 <?php
-include("../../config.php");
-include("../../functions.php");
 
-include("../../templates/header.php");?>
+session_start();
+
+if (file_exists('config.php')) {
+    include('config.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: config.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+if (file_exists('functions.php')) {
+    include('functions.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: functions.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+
+
+if ($_SESSION["sessionStatus"] == 1) {
+    include ROOT_URL . "templates/header-user.php";
+} else if ($_SESSION["sessionStatus"] == 2) {
+    include ROOT_URL . "templates/header-admin.php";
+} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+    include ROOT_URL . "templates/header.php";
+}
+?>
 
 <main class="product-page">
     <section class="product-page">
@@ -13,7 +40,9 @@ include("../../templates/header.php");?>
                 </div>
                 <div class="product-info">
                     <ul class="info-list">
-                        <li class="product-list-item"><h3>Leren Jas Bouw</h3></li>
+                        <li class="product-list-item">
+                            <h3>Leren Jas Bouw</h3>
+                        </li>
                         <li class="product-list-item smaller">Jassen</li>
                         <li class="product-list-item smaller">Bouw</li>
                         <li class="product-list-item smaller">Merk</li>
@@ -36,19 +65,19 @@ include("../../templates/header.php");?>
                         <div class="description">
                             <h3 class="desc-title">Beschrijving</h3>
                             <li class="product-list-item smaller">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                                Quae possimus magni provident 
-                                commodi saepe harum fuga facere 
-                                atque aspernatur dolore, 
-                                nostrum totam adipisci expedita, 
-                                veniam molestias. 
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Quae possimus magni provident
+                                commodi saepe harum fuga facere
+                                atque aspernatur dolore,
+                                nostrum totam adipisci expedita,
+                                veniam molestias.
                                 Eius, totam fugiat! Delectus?
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                                Quae possimus magni provident 
-                                commodi saepe harum fuga facere 
-                                atque aspernatur dolore, 
-                                nostrum totam adipisci expedita, 
-                                veniam molestias. 
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Quae possimus magni provident
+                                commodi saepe harum fuga facere
+                                atque aspernatur dolore,
+                                nostrum totam adipisci expedita,
+                                veniam molestias.
                             </li>
                         </div>
                     </ul>
@@ -58,4 +87,10 @@ include("../../templates/header.php");?>
     </section>
 </main>
 
-<?php include("../../templates/footer.php");?>
+<?php if ($_SESSION["sessionStatus"] == 1) {
+    include ROOT_URL . "templates/footer-user.php";
+} else if ($_SESSION["sessionStatus"] == 2) {
+    include ROOT_URL . "templates/footer-admin.php";
+} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+    include ROOT_URL . "templates/footer.php";
+} ?>
