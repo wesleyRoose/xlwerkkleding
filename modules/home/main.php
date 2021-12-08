@@ -1,9 +1,7 @@
 <?php
 
-session_start();
-
-if (file_exists('../../config.php')) {
-    include('../../config.php');
+if (file_exists('./config.php')) {
+    include('./config.php');
 } else {
     $errorMessage = "";
     $errorMessage .= "PHP ERROR: config.php does not exist.";
@@ -11,28 +9,17 @@ if (file_exists('../../config.php')) {
     exit;
 }
 
-if (file_exists('../../functions.php')) {
-    include('../../functions.php');
-} else {
-    $errorMessage = "";
-    $errorMessage .= "PHP ERROR: functions.php does not exist.";
-    echo $errorMessage;
-    exit;
-}
-
 
 
 if ($_SESSION["sessionStatus"] == 1) {
-    include "../../templates/header-user.php";
+    include "./templates/header-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
-    include "../../templates/header-admin.php";
+    include "./templates/header-admin.php";
 } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-    include "../../templates/header.php";
+    include "./templates/header.php";
 }
 
-
-
-include "./templates/header.php"; ?>
+?>
 <main>
     <section class="mainFlexContainer">
         <div class="home">
@@ -164,12 +151,10 @@ include "./templates/header.php"; ?>
 <?php
 
 if ($_SESSION["sessionStatus"] == 1) {
-    include "../../templates/footer-user.php";
+    include "./templates/footer-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
-    include "../../templates/footer-admin.php";
+    include "./templates/footer-admin.php";
 } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-    include "../../templates/footer.php";
+    include "./templates/footer.php";
 }
 ?>
-
-<?php include "./templates/footer.php"; ?>
