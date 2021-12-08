@@ -31,7 +31,7 @@ if (isset($_POST["addProductButton"])) {
 
 
     // PLACEHOLDER MUST REPLACE
-    $p_foto = $_POST["foto"];
+    $p_foto = $_POST["p_foto"];
 
     // Clean inputs for not wanted characters
     $p_name = cleaninput($_POST['p_name'], 20);
