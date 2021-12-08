@@ -2,6 +2,11 @@ Kleuren:
 rgb(247,65,0) oranje
 white
 
+Session var $sessionStatus:
+  1 ingelogd als users
+  2 ingelogd als admin
+  6 uitgelogd
+
 
 
 

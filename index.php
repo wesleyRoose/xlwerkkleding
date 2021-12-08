@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION["sessionStatus"])) {
-  $_SESSION["sessionStatus"] = 0;
+  $_SESSION["sessionStatus"] = 6;
 }
 
 
