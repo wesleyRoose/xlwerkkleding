@@ -130,7 +130,7 @@ function preparedInsertIntoQuery($oConnect, $iNumberOfRows, $sTableName, $aRowNa
   } else {
     // Create error message and exit
     $errorMsg = "";
-    $errorMsg .= "Prepared Statement aint right.";
+    $errorMsg .= "Prepared Statement: " . $sPreparedSql . " aint right.";
     echo $errorMsg;
     exit;
   }

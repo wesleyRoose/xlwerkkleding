@@ -2,7 +2,7 @@
 include("../../config.php");
 include("../../functions.php");
 
-include("../../templates/header-admin.php");?>
+include("../../templates/header-admin.php"); ?>
 
 <main class="add-products">
     <section class="add-products-s">
@@ -27,10 +27,10 @@ include("../../templates/header-admin.php");?>
                 <input type="file" name="p_file" id="p_file" class="p-input"><br>
                 <label>Beschrijving</label><br>
                 <textarea name="p_description" id="p_description" rows="8" placeholder="Type Here"></textarea><br>
-                <input type="submit" value="Voeg Toe" class="button">
+                <input type="submit" name="addProductButton" value="Voeg Toe" class="button">
             </form>
         </div>
     </section>
 </main>
 
-<?php include("../../templates/footer-admin.php");?>
+<?php include("../../templates/footer-admin.php"); ?>
