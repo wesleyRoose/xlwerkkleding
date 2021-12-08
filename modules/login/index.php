@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 if (file_exists('../../config.php')) {
   include('../../config.php');

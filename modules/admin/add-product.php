@@ -72,6 +72,3 @@ if ($_SESSION["sessionStatus"] == 1) {
 }
 
 ?>
-
-
-<?php include("../../templates/footer-admin.php"); ?>

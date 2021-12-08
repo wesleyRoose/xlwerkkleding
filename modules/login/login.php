@@ -1,10 +1,38 @@
-<?php include("../../config.php");
+<?php
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
-$_SESSION["token"] = sha1($salt . rand());
+if (file_exists('../../config.php')) {
+    include('../../config.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: config.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
 
-include("../../templates/header.php"); ?>
+
+
+if ($_SESSION["sessionStatus"] == 1) {
+    include "../../templates/header-user.php";
+} else if ($_SESSION["sessionStatus"] == 2) {
+    include "../../templates/header-admin.php";
+} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+    include "../../templates/header.php";
+}
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+$token = sha1($salt . rand());
+
+$_SESSION["token"] = $token;
+
+
+?>
 
 <!-- Begin code voor login -->
 <section class="containerlogin">

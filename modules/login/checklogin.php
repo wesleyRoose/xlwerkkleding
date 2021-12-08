@@ -24,11 +24,11 @@ if (file_exists('../../functions.php')) {
 
 // Create a Header location string to return user to login if input is incorrect
 $sHeaderLocationOnFail = "";
-$sHeaderLocationOnFail .= 'Location: ' . ROOT_URL . 'modules/login/login.php';
+$sHeaderLocationOnFail .= 'Location: ' . ROOT_URL . 'modules/login/failure.php';
 
 // Create a Header location string to return user to login if input is correct
 $sHeaderLocationOnSucces = "";
-$sHeaderLocationOnSucces .= 'Location: ' . ROOT_URL . 'modules/login/login.php';
+$sHeaderLocationOnSucces .= 'Location: ' . ROOT_URL . 'modules/login/succes.php';
 
 //Check on session token and honeypot
 if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
@@ -68,7 +68,9 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
     }
   } else {
     $_SESSION["sessionStatus"] = 6;
+    echo "test2";
   }
 } else {
   $_SESSION["sessionStatus"] = 6;
+  echo "test1";
 }
