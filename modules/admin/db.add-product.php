@@ -27,14 +27,14 @@ if (file_exists('../../functions.php')) {
 $location .= 'Location: ' . ROOT_URL . 'modules/other/succes.php';
 
 $p_id = "";
-$p_name = $_POST["p_name"];
-$p_price = $_POST["p_price"];
-$p_category = $_POST["p_gategory"];
-$p_sector = $_POST["p_sector"];
-$p_brand = $_POST["[p_brand"];
-$p_size = $_POST["p_size"];
-$p_color = $_POST["p_color"];
-$p_description = $_POST["p_description"];
+$p_name = cleaninput($_POST["p_name"]);
+$p_price = cleaninput($_POST["p_price"]);
+$p_category = cleaninput($_POST["p_gategory"]);
+$p_sector = cleaninput($_POST["p_sector"]);
+$p_brand = cleaninput($_POST["[p_brand"]);
+$p_size = cleaninput($_POST["p_size"]);
+$p_color = cleaninput($_POST["p_color"]);
+$p_description = cleaninput($_POST["p_description"]);
 
 
 // sql insert into `product`
@@ -42,6 +42,7 @@ $p_description = $_POST["p_description"];
 $sql1 = "INSERT INTO `product` (`p_name`, `p_price, `p_category`,`p_sector`,`p_brand`,`p_size`,`p_color`,`p_description`)
                 VALUES ('$p_name', '$p_price' , '$p_category', '$p_sector', '$p_brand', '$p_size', '$p_color', '$p_description');";
 header($location);
+
+print_r($sql1);
 exit();
-n
 ?>
