@@ -27,15 +27,15 @@ if (file_exists('../../functions.php')) {
 $location .= 'Location: ' . ROOT_URL . 'modules/other/succes.php';
 
 $p_id = "";
-$p_name = cleaninput($_POST["p_name"]);
-$p_price = cleaninput($_POST["p_price"]);
-$p_category = cleaninput($_POST["p_gategory"]);
-$p_sector = cleaninput($_POST["p_sector"]);
-$p_brand = cleaninput($_POST["[p_brand"]);
-$p_size = cleaninput($_POST["p_size"]);
-$p_color = cleaninput($_POST["p_color"]);
-$p_description = cleaninput($_POST["p_description"]);
-$p_foto = cleaninput($_POST["p_foto"]);
+$p_name = cleaninput($_POST['p_name']);
+$p_price = cleaninput($_POST['p_price']);
+$p_category = cleaninput($_POST['p_gategory']);
+$p_sector = cleaninput($_POST['p_sector']);
+$p_brand = cleaninput($_POST['p_brand']);
+$p_size = cleaninput($_POST['p_size']);
+$p_color = cleaninput($_POST['p_color']);
+$p_description = cleaninput($_POST['p_description']);
+$p_foto = cleaninput($_POST['p-foto']);
 
 
 // sql insert into `product`
