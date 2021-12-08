@@ -51,12 +51,10 @@ a.nav-item {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-    transition: color 0.2s ease-out;
 }
 
 a.nav-item:hover {
-    color: rgb(221, 221, 221);
-    transition: color 0.2s ease-in;
+    text-decoration: underline;
 }
 
 .actief {

@@ -23,6 +23,8 @@ include("../../templates/header-admin.php");?>
                 <input type="text" name="p_size" id="p_size" class="p-input"><br>
                 <label>Kleur</label><br>
                 <input type="text" name="p_color" id="p_color" class="p-input"><br>
+                <label>Foto</label><br>
+                <input type="file" name="p_file" id="p_file" class="p-input"><br>
                 <label>Beschrijving</label><br>
                 <textarea name="p_description" id="p_description" rows="8" placeholder="Type Here"></textarea><br>
                 <input type="submit" value="Voeg Toe" class="button">
