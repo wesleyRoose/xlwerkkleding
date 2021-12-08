@@ -16,8 +16,8 @@ if (file_exists('config.php')) {
   exit;
 }
 
-if (file_exists('functions.php')) {
-  include('functions.php');
+if (file_exists('ROOT_URL . functions.php')) {
+  include('ROOT_URL . functions.php');
 } else {
   $errorMessage = "";
   $errorMessage .= "PHP ERROR: functions.php does not exist.";
