@@ -35,12 +35,13 @@ $p_brand = cleaninput($_POST["[p_brand"]);
 $p_size = cleaninput($_POST["p_size"]);
 $p_color = cleaninput($_POST["p_color"]);
 $p_description = cleaninput($_POST["p_description"]);
+$p_foto = cleaninput($_POST["p_foto"]);
 
 
 // sql insert into `product`
 
-$sql1 = "INSERT INTO `product` (`p_name`, `p_price, `p_category`,`p_sector`,`p_brand`,`p_size`,`p_color`,`p_description`)
-                VALUES ('$p_name', '$p_price' , '$p_category', '$p_sector', '$p_brand', '$p_size', '$p_color', '$p_description');";
+$sql1 = "INSERT INTO `product` (`p_name`, `p_price, `p_category`,`p_sector`,`p_brand`,`p_size`,`p_color`,`p_description`,`p_foto`)
+                VALUES ('$p_name', '$p_price' , '$p_category', '$p_sector', '$p_brand', '$p_size', '$p_color', '$p_description', '$p_foto');";
 header($location);
 
 print_r($sql1);
