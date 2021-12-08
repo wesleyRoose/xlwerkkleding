@@ -50,7 +50,7 @@ header {
 a.nav-item {
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
+    color: var(--white);
 }
 
 a.nav-item:hover {
