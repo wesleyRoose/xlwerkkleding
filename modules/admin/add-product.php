@@ -35,7 +35,7 @@ if ($_SESSION["sessionStatus"] == 1) {
 <main class="add-products">
     <section class="add-products-s">
         <div class="input-form">
-            <form action="db.add-product.php" method="post" class="product-form" id="product-form" autocomplete="off">
+            <form action="db.add-product.php" method="post" class="product-form" id="product-form" autocomplete="off" enctype="multipart/form-data">
                 <h3>Hier kun je producten toevoegen</h3>
                 <label>Product Naam</label><br>
                 <input type="text" name="p_name" id="p_name" class="p-input"><br>
@@ -51,12 +51,18 @@ if ($_SESSION["sessionStatus"] == 1) {
                 <input type="text" name="p_size" id="p_size" class="p-input"><br>
                 <label>Kleur</label><br>
                 <input type="text" name="p_color" id="p_color" class="p-input"><br>
+
+
                 <label>Foto</label><br>
-                <input type="file" name="p_file" id="p_file" class="p-input"><br>
+                <input type="file" name="file"><br>
+
+
                 <label>Beschrijving</label><br>
                 <textarea name="p_description" id="p_description" rows="8" placeholder="Type Here"></textarea><br>
                 <input type="submit" value="Voeg Toe" class="button">
-            </form>
+</form>
+
+
         </div>
     </section>
 </main>
