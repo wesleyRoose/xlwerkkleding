@@ -71,6 +71,5 @@ $_SESSION["token"] = $token;
         ?>
     </div>
 </section>
-<script type="text/javascript" src="../js/login.js"></script>
 
 <?php include "../../templates/footer.php"; ?>
