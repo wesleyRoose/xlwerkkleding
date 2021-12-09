@@ -52,6 +52,3 @@ if ($_SESSION["sessionStatus"] == 1) {
     include "../../templates/footer.php";
 }
 ?>
-
-
-<?php include_once "footer.php"; ?>
