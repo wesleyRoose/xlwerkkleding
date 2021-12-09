@@ -41,40 +41,40 @@ if ($_SESSION["sessionStatus"] == 1) {
           <h1 class="title">Webshop</h1>
             <div class="filter-bar">
               <div class="select-container">
-                  <label>Types</label><br>
-                  <select name="types" class="webshop-filter-select">
-                      <option value="Jassen">Jassen</option>
-                      <option value="Overallen">Overallen</option>
-                      <option value="Broeken">Broeken</option>
-                    <option value="Overige">Overige</option>
-                  </select>
+                <label>Types</label><br>
+                <select name="types" class="webshop-filter-select">
+                    <option value="Jassen">Jassen</option>
+                    <option value="Overallen">Overallen</option>
+                    <option value="Broeken">Broeken</option>
+                  <option value="Overige">Overige</option>
+                </select>
               </div>
               <div class="select-container">
-                  <label>Sector</label><br>
-                  <select name="types" class="webshop-filter-select">
-                      <option value="Bouw">Bouw</option>
-                      <option value="Zorg">Zorg</option>
-                      <option value="Schoonmaak">Schoonmaak</option>
-                      <option value="Kantoor">Kantoor</option>
-                      <option value="Fabriek">Fabriek</option>
-                  </select>
+                <label>Sector</label><br>
+                <select name="types" class="webshop-filter-select">
+                    <option value="Bouw">Bouw</option>
+                    <option value="Zorg">Zorg</option>
+                    <option value="Schoonmaak">Schoonmaak</option>
+                    <option value="Kantoor">Kantoor</option>
+                    <option value="Fabriek">Fabriek</option>
+                </select>
               </div>
               <div class="select-container">
-                  <label>Merk</label><br>
-                  <select name="types" class="webshop-filter-select">
-                      <option value="Merk1">Merk1</option>
-                      <option value="Merk2">Merk2</option>
-                      <option value="Merk3">Merk3</option>
-                      <option value="Merk4">Merk4</option>
-                      <option value="Merk5">Merk5</option>
-                  </select>
+                <label>Merk</label><br>
+                <select name="types" class="webshop-filter-select">
+                    <option value="Merk1">Merk1</option>
+                    <option value="Merk2">Merk2</option>
+                    <option value="Merk3">Merk3</option>
+                    <option value="Merk4">Merk4</option>
+                    <option value="Merk5">Merk5</option>
+                </select>
               </div>
               <div class="select-container">
-                  <label>Geslacht</label><br>
-                  <select name="types" class="webshop-filter-select">
-                      <option value="Merk1">Man</option>
-                      <option value="Merk2">Vrouw</option>
-                  </select>
+                <label>Geslacht</label><br>
+                <select name="types" class="webshop-filter-select">
+                    <option value="Merk1">Man</option>
+                    <option value="Merk2">Vrouw</option>
+                </select>
               </div>
               <div class="select-container">
                 <input type="submit" class="button sub" value="Filter">
