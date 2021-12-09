@@ -2,6 +2,10 @@
 
 session_start();
 
+if(!isset($_SESSION["sessionStatus"])){
+  $_SESSION["sessionStatus"] = 0;
+}
+
 if (file_exists('../../config.php')) {
   include('../../config.php');
 } else {
