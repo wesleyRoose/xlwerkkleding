@@ -38,19 +38,19 @@ $_SESSION["token"] = $token;
 <section class="containerlogin">
     <div class="reglog">
         <!-- titel met PHP verstuur methode -->
-        <form method="post" action="checklogin.php">
+        <form method="post" action="checklogin.php" autocomplete="off">
             <h2 class="title">Log hier in</h2>
             <br>
             <div class="input-div">
                 <div class="div">
                     <label>Gebruikersnaam</label><br>
-                    <input type="text" name="username" placeholder="Typ hier...">
+                    <input type="text" name="username">
                 </div>
             </div>
             <div class="input-div">
                 <div class="div">
                     <label>Wachtwoord</label><br>
-                    <input type="password" name="password" placeholder="Typ hier...">
+                    <input type="password" name="password">
                 </div>
             </div>
             <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
@@ -71,6 +71,5 @@ $_SESSION["token"] = $token;
         ?>
     </div>
 </section>
-<script type="text/javascript" src="../js/login.js"></script>
 
 <?php include "../../templates/footer.php"; ?>

@@ -15,7 +15,7 @@ div.cards {
 div.card {
   background-color: var(--main-color);
   height: 300px;
-  width: 275px;
+  width: 100%;
   border-radius: 3px;
   margin-right: 15px;
   margin-top: 15px;

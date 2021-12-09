@@ -19,16 +19,6 @@ if (file_exists('../../functions.php')) {
     echo $errorMessage;
     exit;
 }
-
-
-
-if ($_SESSION["sessionStatus"] == 1) {
-    include "../../templates/header-user.php";
-} else if ($_SESSION["sessionStatus"] == 2) {
-    include "../../templates/header-admin.php";
-} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-    include "../../templates/header.php";
-}
 ?>
 
 <head>
@@ -40,16 +30,3 @@ if ($_SESSION["sessionStatus"] == 1) {
         <button class="button"><a class="btn-s" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">GA TERUG</a></button>
     </div>
 </section>
-
-<?php
-
-
-if ($_SESSION["sessionStatus"] == 1) {
-    include "../../templates/footer-user.php";
-} else if ($_SESSION["sessionStatus"] == 2) {
-    include "../../templates/footer-admin.php";
-} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-    include "../../templates/footer.php";
-}
-
-?>

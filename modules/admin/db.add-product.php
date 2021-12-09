@@ -31,7 +31,8 @@ if (isset($_POST["addProductButton"])) {
 
 
     // PLACEHOLDER MUST REPLACE
-    $p_foto = $_POST["foto"];
+    //$p_foto = $_POST["p_file"];
+    $p_foto = "test";
 
     // Clean inputs for not wanted characters
     $p_name = cleaninput($_POST['p_name'], 20);
@@ -57,7 +58,7 @@ if (isset($_POST["addProductButton"])) {
 
     $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $p_foto);
 
-    if (preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sissssssb", $aValues)) {
+    if (preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sisssssss", $aValues)) {
       header($sLocationSucces);
     } else {
       header($sLocationFailure);

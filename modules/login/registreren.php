@@ -34,7 +34,7 @@ if ($_SESSION["sessionStatus"] == 1) {
 <!-- Begin code voor registreren -->
 <div class="containerlogin">
     <div class="reglog">
-        <form method="post" action="registreercheck.php">
+        <form method="post" action="registreercheck.php" autocomplete="off">
             <h2 class="title">Registreer hier</h2>
             <br>
             <div class="input-div">
