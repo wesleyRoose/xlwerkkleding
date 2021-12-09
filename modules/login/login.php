@@ -13,7 +13,9 @@ if (file_exists('../../config.php')) {
     exit;
 }
 
-
+if(!isset($_SESSION["sessionStatus"])){
+    $_SESSION["sessionStatus"] = 0;
+}
 
 if ($_SESSION["sessionStatus"] == 1) {
     include "../../templates/header-user.php";
