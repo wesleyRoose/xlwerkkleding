@@ -62,6 +62,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
+        <h3>Uitgelichte Producten</h3>
         <div class="cards">
             <div class="card">
                 <div class="image">

@@ -23,6 +23,7 @@
 
 .webshop-filter-select {
     width: 100%;
+    height: 25px;
     outline: none;
     border: none;
     border-radius: 3px;
@@ -32,7 +33,7 @@
 
 .sub {
     padding: 0 !important;
-    height: 23.2px !important;
+    height: 25px !important;
     margin-top: 34px !important;
     color: var(--main-color) !important;
     background-color: var(--white) !important;

@@ -7,7 +7,7 @@ div.home {
 div.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 50px;
+  grid-gap: 15px;
   margin-top: 15px;
   width: 100%;
 }
@@ -153,11 +153,4 @@ div.card {
 .active,
 .dot:hover {
   background-color: #717171;
-}
-
-
-@media (max-width: 1400px) {
-  div.cards {
-    grid-gap: 15px;
-  }
 }

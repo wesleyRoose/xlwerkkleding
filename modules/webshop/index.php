@@ -166,6 +166,15 @@ if ($_SESSION["sessionStatus"] == 1) {
                     <a href="#" class="card-link">Klik hier</a>
                 </div>
             </div>
+            <div class="card">
+                <div class="image">
+                    <img src="<?php echo ROOT_URL ?>img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                </div>
+                <div class="text">
+                    <h3>Product 1</h3>
+                    <a href="#" class="card-link">Klik hier</a>
+                </div>
+            </div>
         </div>
     </section>
 </main>
