@@ -44,13 +44,13 @@ $_SESSION["token"] = $token;
             <div class="input-div">
                 <div class="div">
                     <label>Gebruikersnaam</label><br>
-                    <input type="text" name="username" placeholder="Typ hier...">
+                    <input type="text" name="username">
                 </div>
             </div>
             <div class="input-div">
                 <div class="div">
                     <label>Wachtwoord</label><br>
-                    <input type="password" name="password" placeholder="Typ hier...">
+                    <input type="password" name="password">
                 </div>
             </div>
             <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
