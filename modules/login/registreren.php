@@ -69,8 +69,8 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="input-div">
                 <div class="div">
-                    <label>Tel. Nummer</label><br>
-                    <input type="text" class="input" name="phoneNumber">
+                    <label>Tel. Nummer*</label><br>
+                    <input required type="text" class="input" name="phoneNumber">
                 </div>
             </div>
             <div class="input-div">
