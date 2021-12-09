@@ -69,11 +69,11 @@ if (isset($_POST["addProductButton"])) {
 
 
 //file upload directory
-$targetDir = "./img/product_images";
+$targetDir = "./img/product_images/";
 
-if(isset($_POST["submit"])){
-    if(!empty($_FILES["file"]["name"])){
-        $fileName = basename($_FILES["file"]["name"]);
+if(isset($_POST["addProductButton"])){
+    if(!empty($_FILES["file"]["product_images"])){
+        $fileName = basename($_FILES["file"]["product_images"]);
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
@@ -83,7 +83,7 @@ if(isset($_POST["submit"])){
         if(in_array($fileType, $allowTypes)){
 
             //upload file to server
-            if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+            if(move_uploaded_file($_FILES["img"]["product_images"], $targetFilePath)){
 
                 //insert image file name into database
                 $insert = $db->query("INSERT into images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
@@ -100,7 +100,12 @@ if(isset($_POST["submit"])){
         }
     }else{
         $statusMsg = 'Please select a file to upload.';
-    }
-  }   
+    } 
+} else {
+    echo "Hello World";
+}
+    
     // Display status message
-    echo $statusMsg;
+    if(isset($statusMsg)){
+        echo $statusMsg;
+    }

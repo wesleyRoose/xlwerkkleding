@@ -59,7 +59,7 @@ if ($_SESSION["sessionStatus"] == 1) {
 
                 <label>Beschrijving</label><br>
                 <textarea name="p_description" id="p_description" rows="8" placeholder="Type Here"></textarea><br>
-                <input type="submit" value="Voeg Toe" class="button">
+                <input name="addProductButton" type="submit" value="Voeg Toe" class="button">
 </form>
 
 
