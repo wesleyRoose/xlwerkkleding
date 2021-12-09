@@ -101,6 +101,6 @@ if(isset($_POST["submit"])){
     }else{
         $statusMsg = 'Please select a file to upload.';
     }
-    
+  }   
     // Display status message
     echo $statusMsg;
