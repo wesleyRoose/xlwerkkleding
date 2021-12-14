@@ -31,8 +31,8 @@ if (isset($_POST["addProductButton"])) {
 
 
     // PLACEHOLDER MUST REPLACE
-    //$p_foto = $_POST["p_file"];
-    $p_foto = "test";
+    var_dump($_POST["p_file"]);
+    $p_foto = $_POST["p_file"];
 
     // Clean inputs for not wanted characters
     $p_name = cleaninput($_POST['p_name'], 20);
@@ -58,10 +58,11 @@ if (isset($_POST["addProductButton"])) {
 
     $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $p_foto);
 
-    if (preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sisssssss", $aValues)) {
+    if (preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sissssssb", $aValues)) {
       header($sLocationSucces);
     } else {
-      header($sLocationFailure);
+      // header($sLocationFailure);
+      echo preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sissssssb", $aValues);
     }
   }
 }
@@ -71,41 +72,41 @@ if (isset($_POST["addProductButton"])) {
 //file upload directory
 $targetDir = "./img/product_images/";
 
-if(isset($_POST["addProductButton"])){
-    if(!empty($_FILES["file"]["product_images"])){
-        $fileName = basename($_FILES["file"]["product_images"]);
-        $targetFilePath = $targetDir . $fileName;
-        $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+if (isset($_POST["addProductButton"])) {
+  if (!empty($_FILES["file"]["product_images"])) {
+    $fileName = basename($_FILES["file"]["product_images"]);
+    $targetFilePath = $targetDir . $fileName;
+    $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-        //Allow certain file format
+    //Allow certain file format
 
-        $allowTypes = array('jpg','png','gif','pdf');
-        if(in_array($fileType, $allowTypes)){
+    $allowTypes = array('jpg', 'png', 'gif', 'pdf');
+    if (in_array($fileType, $allowTypes)) {
 
-            //upload file to server
-            if(move_uploaded_file($_FILES["img"]["product_images"], $targetFilePath)){
+      //upload file to server
+      if (move_uploaded_file($_FILES["img"]["product_images"], $targetFilePath)) {
 
-                //insert image file name into database
-                $insert = $db->query("INSERT into images (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
-                if($insert){
-                    $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
-                }else{
-                    $statusMsg = "File upload failed, please try again.";
-                } 
-            }else{
-                $statusMsg = "Sorry, there was an error uploading your file.";
-            }
-        }else{
-            $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+        //insert image file name into database
+        $insert = $db->query("INSERT into images (file_name, uploaded_on) VALUES ('" . $fileName . "', NOW())");
+        if ($insert) {
+          $statusMsg = "The file " . $fileName . " has been uploaded successfully.";
+        } else {
+          $statusMsg = "File upload failed, please try again.";
         }
-    }else{
-        $statusMsg = 'Please select a file to upload.';
-    } 
-} else {
-    echo "Hello World";
-}
-    
-    // Display status message
-    if(isset($statusMsg)){
-        echo $statusMsg;
+      } else {
+        $statusMsg = "Sorry, there was an error uploading your file.";
+      }
+    } else {
+      $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
     }
+  } else {
+    $statusMsg = 'Please select a file to upload.';
+  }
+} else {
+  echo "Hello World";
+}
+
+// Display status message
+if (isset($statusMsg)) {
+  echo $statusMsg;
+}

@@ -68,9 +68,7 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
     }
   } else {
     $_SESSION["sessionStatus"] = 6;
-    echo "test2";
   }
 } else {
   $_SESSION["sessionStatus"] = 6;
-  echo "test1";
 }

@@ -54,13 +54,13 @@ if ($_SESSION["sessionStatus"] == 1) {
 
 
                 <label>Foto</label><br>
-                <input type="file" name="file"><br>
+                <input type="file" name="p_file"><br>
 
 
                 <label>Beschrijving</label><br>
                 <textarea name="p_description" id="p_description" rows="8" placeholder="Type Here"></textarea><br>
                 <input name="addProductButton" type="submit" value="Voeg Toe" class="button">
-</form>
+            </form>
 
 
         </div>
