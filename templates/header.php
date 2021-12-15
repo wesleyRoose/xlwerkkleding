@@ -18,7 +18,6 @@
     <link rel="icon" type="image/x-icon" href="<?php echo ROOT_URL ?>img/favicon.ico">
     <title>XLwerkkleding - Home</title>
 </head>
-
 <body>
     <div class="view">
         <noscript>

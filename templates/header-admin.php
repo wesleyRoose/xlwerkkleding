@@ -17,6 +17,11 @@
 </head>
 <body>
     <div class="view">
+        <noscript>
+            <div class="noscript">
+                <p>Hey, blijkbaar heb je JavaScript niet aanstaan, zet dit aan voor een functionele website :)</p>
+            </div>
+        </noscript>
         <header>
             <div class="header">
                 <div class="logo">

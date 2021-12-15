@@ -1,9 +1,9 @@
 div.noscript {
     width: 100%;
-    background-color: red;
+    background-color: var(--black);
     color: var(--white);
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     padding: 0.5rem;
     height: 100px;
 }
