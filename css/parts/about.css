@@ -1,0 +1,44 @@
+.about {
+    margin-top: 15px;
+}
+
+.about-wrapper {
+    margin-top: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.about-text {
+    margin-right: 15px;
+}
+
+.about-image {
+    border-radius: 3px;
+}
+
+.about-image:last-of-type {
+    margin-right: 15px;
+}
+
+@media (max-width:500px) {
+    .about-wrapper {
+        flex-flow:  column-reverse nowrap;
+    }
+
+    .about-text {
+        margin-right: 0px;
+    }
+
+    .about-image {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .about-image:first-of-type {
+        margin-bottom: 15px;
+    }
+
+    .about-image:last-of-type {
+        margin-right: 0px;
+    }
+}
