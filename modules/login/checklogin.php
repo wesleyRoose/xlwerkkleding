@@ -22,53 +22,58 @@ if (file_exists('../../functions.php')) {
   exit;
 }
 
-// Create a Header location string to return user to login if input is incorrect
-$sHeaderLocationOnFail = "";
-$sHeaderLocationOnFail .= 'Location: ' . ROOT_URL . 'modules/login/failure.php';
+if ($_SESSION["sessionStatus"] != 6 || !empty($_SESSION["sessionStatus"])) {
+  header('Location: ' . ROOT_URL . 'index.php');
+} else {
 
-// Create a Header location string to return user to login if input is correct
-$sHeaderLocationOnSucces = "";
-$sHeaderLocationOnSucces .= 'Location: ' . ROOT_URL . 'modules/login/succes.php';
+  // Create a Header location string to return user to login if input is incorrect
+  $sHeaderLocationOnFail = "";
+  $sHeaderLocationOnFail .= 'Location: ' . ROOT_URL . 'modules/login/index.php?login=fail';
 
-//Check on session token and honeypot
-if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
+  // Create a Header location string to return user to login if input is correct
+  $sHeaderLocationOnSucces = "";
+  $sHeaderLocationOnSucces .= 'Location: ' . ROOT_URL . 'index.php?login=succes';
 
-  //Recover input values
-  $passwordInput = sha256($_POST["password"]);
-  $usernameInput = $_POST["username"];
+  //Check on session token and honeypot
+  if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
 
-  //Prepare SQL Statement
-  $preparedSql = 'SELECT * FROM users WHERE username=?';
+    //Recover input values
+    $passwordInput = sha256($_POST["password"]);
+    $usernameInput = $_POST["username"];
 
-  //Catch error
-  if ($conn->prepare($preparedSql) == true) {
-    //Bind and excecute Statement
-    $stmt = $conn->prepare($preparedSql);
-    $stmt->bind_param("s", $usernameInput);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    //Prepare SQL Statement
+    $preparedSql = 'SELECT * FROM users WHERE username=?';
+
+    //Catch error
+    if ($conn->prepare($preparedSql) == true) {
+      //Bind and excecute Statement
+      $stmt = $conn->prepare($preparedSql);
+      $stmt->bind_param("s", $usernameInput);
+      $stmt->execute();
+      $result = $stmt->get_result();
 
 
-    //Catch result in a array
-    $data = mysqli_fetch_array($result);
-    //Check if password is correct
-    if ($data["password"] == $passwordInput) {
-      //Give the right rights for the account
-      if ($data["rights"] == 1) {
-        $_SESSION["sessionStatus"] = 1;
-      } else if ($data["rights"] == 2) {
-        $_SESSION["sessionStatus"] = 2;
+      //Catch result in a array
+      $data = mysqli_fetch_array($result);
+      //Check if password is correct
+      if ($data["password"] == $passwordInput) {
+        //Give the right rights for the account
+        if ($data["rights"] == 1) {
+          $_SESSION["sessionStatus"] = 1;
+        } else if ($data["rights"] == 2) {
+          $_SESSION["sessionStatus"] = 2;
+        }
+        sleep(2);
+        header($sHeaderLocationOnSucces);
+      } else {
+        $_SESSION["sessionStatus"] = 6;
+        sleep(2);
+        header($sHeaderLocationOnFail);
       }
-      sleep(2);
-      header($sHeaderLocationOnSucces);
     } else {
       $_SESSION["sessionStatus"] = 6;
-      sleep(2);
-      header($sHeaderLocationOnFail);
     }
   } else {
     $_SESSION["sessionStatus"] = 6;
   }
-} else {
-  $_SESSION["sessionStatus"] = 6;
 }

@@ -20,5 +20,10 @@ if (file_exists('../../functions.php')) {
   exit;
 }
 
+if ($_SESSION["sessionStatus"] != 6 || !empty($_SESSION["sessionStatus"])) {
+  header('Location: ' . ROOT_URL . 'index.php');
+} else {
 
-include('login.php');
+
+  include('login.php');
+}
