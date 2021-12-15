@@ -15,7 +15,6 @@
     <link rel="icon" type="image/x-icon" href="<?php echo ROOT_URL ?>img/favicon.ico">
     <title>XLwerkkleding - Admin</title>
 </head>
-
 <body>
     <div class="view">
         <header>
@@ -29,7 +28,7 @@
                     <div class="menu-wrap">
                         <ul class="menu-list">
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>">Home</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/overview.php">Overview</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/overview.php">Products</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Users</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">Product Toevoegen</a></li>
                             <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/logout.php">Logout</a></li>
