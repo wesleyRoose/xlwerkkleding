@@ -20,7 +20,23 @@ if (file_exists('../../functions.php')) {
   exit;
 }
 
+if (file_exists('../../library/db.class.php')) {
+  include('../../library/db.class.php');
+} else {
+  $errorMessage = "";
+  $errorMessage .= "PHP ERROR: db.class.php does not exist.";
+  echo $errorMessage;
+  exit;
+}
 
+if (file_exists('./loadAboutData.php')) {
+  include('./loadAboutData.php');
+} else {
+  $errorMessage = "";
+  $errorMessage .= "PHP ERROR: loadAboutData.php does not exist.";
+  echo $errorMessage;
+  exit;
+}
 
 if ($_SESSION["sessionStatus"] == 1) {
   include "../../templates/header-user.php";
@@ -29,41 +45,35 @@ if ($_SESSION["sessionStatus"] == 1) {
 } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
   include "../../templates/header.php";
 }
+
 ?>
 
 <main class="about">
   <section class="about">
     <h3>Over XLwerkkleding</h3>
     <div class="about-wrapper">
-        <div class="about-block about-text">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at 
-          doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum. 
-          Velit, quae cumque?
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at 
-          doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum. 
-          Velit, quae cumque?
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at 
-          doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum. 
-          Velit, quae cumque?
-        </div>
-        <div class="about-block">
-            <img src="<?php echo ROOT_URL ?>img/placeholder.png" alt="Placeholder Image" class="about-image">
-        </div>
+      <div class="about-block about-text">
+        <h4><?php echo $sHtmlContent['title']; ?></h4>
+        <?php echo $sHtmlContent['content']; ?>
       </div>
-      <div class="about-wrapper">
-        <div class="about-block">
-            <img src="<?php echo ROOT_URL ?>img/placeholder.png" alt="Placeholder Image" class="about-image">
-        </div>
-        <div class="about-block about-text">
-          <h4>Lorem Ipsum</h4>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at 
-          doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum. 
-          Velit, quae cumque?
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at 
-          doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum. 
-          Velit, quae cumque?
-        </div>
+      <div class="about-block">
+        <img src="<?php echo ROOT_URL ?>img/placeholder.png" alt="Placeholder Image" class="about-image">
       </div>
+    </div>
+    <div class="about-wrapper">
+      <div class="about-block">
+        <img src="<?php echo ROOT_URL ?>img/placeholder.png" alt="Placeholder Image" class="about-image">
+      </div>
+      <div class="about-block about-text">
+        <h4>Lorem Ipsum</h4>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at
+        doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum.
+        Velit, quae cumque?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at
+        doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum.
+        Velit, quae cumque?
+      </div>
+    </div>
   </section>
 </main>
 
