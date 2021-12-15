@@ -3,7 +3,7 @@
             <div class="block">
                 <h3>Menu</h3>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>">Home</a>
-                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/admin/overview.php">Overview</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/admin/overview.php">Products</a>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Users</a>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">Product Toevoegen</a>
             </div>

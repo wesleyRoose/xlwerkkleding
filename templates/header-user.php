@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,9 +14,13 @@
     <link rel="icon" type="image/x-icon" href="<?php echo ROOT_URL ?>img/favicon.ico">
     <title>XLwerkkleding - User</title>
 </head>
-
 <body>
     <div class="view">
+        <noscript>
+            <div class="noscript">
+                <p>Hey, blijkbaar heb je JavaScript niet aanstaan, zet dit aan voor een functionele website :)</p>
+            </div>
+        </noscript>
         <header>
             <div class="header">
                 <div class="logo">
