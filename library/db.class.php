@@ -1,31 +1,32 @@
 <?php
 
-class db
+class  db
 {
 
-  private $dbServername = "localhost";
-  private $dbUsername = "";
-  private $dbPassword = "";
-  private $dbName = "";
-  private $oConnection = null;
+  private static $dbServername = "localhost";
+  private static $dbUsername = "";
+  private static $dbPassword = "";
+  private static $dbName = "";
+  private static $oConnection;
 
-  function __construct()
+  public static function init($dbServername = false, $dbUsername = false, $dbPassword = "", $dbName = false)
   {
-    $this->dbServername = "localhost";
-    $this->dbUsername = "root";
-    $this->dbPassword = "";
-    $this->dbName = "xlwerkkleding";
-    $this->oConnection = mysqli_connect($this->dbServername, $this->dbUsername, $this->dbPassword, $this->dbName);
+    self::$dbServername = "localhost";
+    self::$dbUsername = "root";
+    self::$dbPassword = "";
+    self::$dbName = "xlwerkkleding";
+
+    self::$oConnection = mysqli_connect(self::$dbServername, self::$dbUsername, self::$dbPassword, self::$dbName);
   }
 
   // Execute Prepared Statement
   // Connection Object,Type in the form of a string, prepared sql statement in form of a string, variable types in form of a string, values in form of a Array
-  private function executePreparedStatement($sType, $sPreparedSql, $sSql_types, $aValue)
+  static private function executePreparedStatement($sType, $sPreparedSql, $sSql_types, $aValue)
   {
     //Catch error
-    if ($this->oConnection->prepare($sPreparedSql) == true) {
+    if (self::$oConnection->prepare($sPreparedSql) == true) {
       //Bind and excecute Statement
-      $stmt = $this->oConnection->prepare($sPreparedSql);
+      $stmt = self::$oConnection->prepare($sPreparedSql);
       // Merge arrays together to use in the bind_params
       $params = array_merge(array($sSql_types), $aValue);
       foreach ($params as $key => $value) {
@@ -51,49 +52,22 @@ class db
       } else {
         // Create error message and return false
         $errorMsg = "";
-        $errorMsg .= "Execute failed.";
+        $errorMsg .= "Execute failed. " . __LINE__ . ' ' . __FILE__;
         echo $errorMsg;
         return false;
       }
     } else {
       // Create error message and exit
       $errorMsg = "";
-      $errorMsg .= "Prepared Statement: " . $sPreparedSql . " aint right.";
+      $errorMsg .= "Prepared Statement: " . $sPreparedSql . " aint right. "  . __LINE__ . ' ' . __FILE__;
       echo $errorMsg;
       exit;
     }
   }
 
 
-
-  private function addPreparedValues($iNumberOfColumns)
-  {
-    // Starting Values string
-    $sPreparedSqlValues = "(";
-
-    // Creating Int counter for the while loop
-    $j = 0;
-
-    // Adding Values to the sPreparedSqlValues string from the Values Array
-    while ($j <= $iNumberOfColumns) {
-      // Checking where we are in the array, if we are not at the end we add a "?, "
-      if ($j < $iNumberOfColumns) {
-        $sPreparedSqlValues .= "?, ";
-      }
-
-      // Checking where we are in the array, if we are at the end we add a "?)"
-      if ($j == $iNumberOfColumns) {
-        $sPreparedSqlValues .= "?)";
-      }
-      // Add 1 to the counter
-      $j++;
-    }
-    return $sPreparedSqlValues;
-  }
-
-
   // Connection Object, Name of the Table string, Names of the Columns in a Array, Variable types for the values in string format, Values of the Columns in a array format
-  function insert($sTableName, $aColumnName, $sSql_types, $aValues)
+  private static function insert($sTableName, $aColumnName, $sSql_types, $aValues)
   {
     if (sizeof($aColumnName) == sizeof($aValues) && sizeof($aColumnName) == strlen($sSql_types)) {
 
@@ -128,22 +102,41 @@ class db
       // Adding ColumnName and " VALUES " to the Prepared Statement
       $sPreparedSql .= $sPreparedSqlColumnName . " VALUES ";
 
-      $sPreparedSqlValues = $this->addPreparedValues($iNumberOfColumns);
+      // Starting Values string
+      $sPreparedSqlValues = "(";
+
+      // Creating Int counter for the while loop
+      $j = 0;
+
+      // Adding Values to the sPreparedSqlValues string from the Values Array
+      while ($j <= $iNumberOfColumns) {
+        // Checking where we are in the array, if we are not at the end we add a "?, "
+        if ($j < $iNumberOfColumns) {
+          $sPreparedSqlValues .= "?, ";
+        }
+
+        // Checking where we are in the array, if we are at the end we add a "?)"
+        if ($j == $iNumberOfColumns) {
+          $sPreparedSqlValues .= "?)";
+        }
+        // Add 1 to the counter
+        $j++;
+      }
 
       // Finishing Prepared SQL statement
       $sPreparedSql .= $sPreparedSqlValues . ";";
 
       // Call function to execute statement
-      $this->executePreparedStatement("INSERT", $sPreparedSql, $sSql_types, $aValues);
+      self::executePreparedStatement("INSERT", $sPreparedSql, $sSql_types, $aValues);
     } else {
-      echo "Lengths don't matchup";
+      echo "Lengths don't matchup" . __LINE__ . ' ' . __FILE__;
     }
   }
 
 
   // Select query
   // Connection object, table name in form of a string, where selector in form of a array, variable types in form of a string, values in form of a Array
-  public function select($sTableName, $aWhereValue, $sSql_types, $aColumnValue)
+  public static function select($sTableName, $aWhereValue, $sSql_types, $aColumnValue)
   {
     //Set Vars
     $iNumberOfColumns = sizeof($aColumnValue);
@@ -166,12 +159,12 @@ class db
       $sPreparedSql .= $sPreparedSqlExtension;
     }
     // Call function to execute statement
-    return $this->executePreparedStatement("SELECT", $sPreparedSql, $sSql_types, $aColumnValue);
+    return self::executePreparedStatement("SELECT", $sPreparedSql, $sSql_types, $aColumnValue);
   }
 
   // $SQL = $db_found->prepare("UPDATE members SET username=?, password=? WHERE email=?");
 
-  public function doUpdateQuery($sTableName, $sWhereValue, $sSql_types, $aColumnName, $aNewValue)
+  public static function doUpdateQuery($sTableName, $sWhereValue, $sSql_types, $aColumnName, $aNewValue)
   {
     //Set Vars
     $iNumberOfColumns = sizeof($aColumnName);
@@ -198,6 +191,6 @@ class db
 
     $sPreparedSql .= $sPreparedSqlExtension . ' WHERE ' . $sWhereValue . '=?';
     // Call function to execute statement
-    $this->executePreparedStatement("SELECT", $sPreparedSql, $sSql_types, $aNewValue);
+    self::executePreparedStatement("SELECT", $sPreparedSql, $sSql_types, $aNewValue);
   }
 }

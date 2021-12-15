@@ -20,15 +20,6 @@ if (file_exists('../../functions.php')) {
   exit;
 }
 
-if (file_exists('../../library/db.class.php')) {
-  include('../../library/db.class.php');
-} else {
-  $errorMessage = "";
-  $errorMessage .= "PHP ERROR: db.class.php does not exist.";
-  echo $errorMessage;
-  exit;
-}
-
 if (file_exists('./loadAboutData.php')) {
   include('./loadAboutData.php');
 } else {
@@ -53,8 +44,10 @@ if ($_SESSION["sessionStatus"] == 1) {
     <h3>Over XLwerkkleding</h3>
     <div class="about-wrapper">
       <div class="about-block about-text">
-        <h4><?php echo $sHtmlContent['title']; ?></h4>
-        <?php echo $sHtmlContent['content']; ?>
+        <h4><?php
+            echo $sHtmlTopContent['title']; ?>
+        </h4>
+        <?php echo $sHtmlTopContent['content']; ?>
       </div>
       <div class="about-block">
         <img src="<?php echo ROOT_URL ?>img/placeholder.png" alt="Placeholder Image" class="about-image">
@@ -65,13 +58,10 @@ if ($_SESSION["sessionStatus"] == 1) {
         <img src="<?php echo ROOT_URL ?>img/placeholder.png" alt="Placeholder Image" class="about-image">
       </div>
       <div class="about-block about-text">
-        <h4>Lorem Ipsum</h4>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at
-        doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum.
-        Velit, quae cumque?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo aut sit consequuntur at
-        doloribus sunt a maxime ducimus fugit numquam quod, odio quos, vitae fuga sequi laborum.
-        Velit, quae cumque?
+        <h4><?php
+            echo $sHtmlLowerContent['title']; ?>
+        </h4>
+        <?php echo $sHtmlLowerContent['content']; ?>
       </div>
     </div>
   </section>
