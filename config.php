@@ -10,7 +10,6 @@ $dbUsername = "root";
 $dbPassword = "";
 $dbName = "xlwerkkleding";
 
-
 $db = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName);
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 $salt = "8Err6pl5sI";
