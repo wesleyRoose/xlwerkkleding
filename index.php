@@ -1,10 +1,12 @@
 <?php
 
+
 session_start();
 
 if (!isset($_SESSION["sessionStatus"])) {
   $_SESSION["sessionStatus"] = 6;
 }
+
 
 
 if (file_exists('config.php')) {
@@ -16,6 +18,9 @@ if (file_exists('config.php')) {
   exit;
 }
 
+
+
+
 if (file_exists('functions.php')) {
   include('functions.php');
 } else {
@@ -24,5 +29,7 @@ if (file_exists('functions.php')) {
   echo $errorMessage;
   exit;
 }
+
+
 
 fileExistsInclude('./modules/home/main.php');

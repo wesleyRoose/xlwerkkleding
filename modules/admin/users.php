@@ -20,24 +20,29 @@ if (file_exists('../../functions.php')) {
   exit;
 }
 
+if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
+  header('Location: ' . ROOT_URL . 'index.php');
+} else {
 
 
-if ($_SESSION["sessionStatus"] == 1) {
-  include "../../templates/header-user.php";
-} else if ($_SESSION["sessionStatus"] == 2) {
-  include "../../templates/header-admin.php";
-} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-  include "../../templates/header.php";
-}
+  if ($_SESSION["sessionStatus"] == 1) {
+    include "../../templates/header-user.php";
+  } else if ($_SESSION["sessionStatus"] == 2) {
+    include "../../templates/header-admin.php";
+  } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+    include "../../templates/header.php";
+  }
 
 ?>
 
-<!--MAIN-->
+  <!--MAIN-->
 
 <?php if ($_SESSION["sessionStatus"] == 1) {
-  include "../../templates/footer-user.php";
-} else if ($_SESSION["sessionStatus"] == 2) {
-  include "../../templates/footer-admin.php";
-} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-  include "../../templates/footer.php";
-} ?>
+    include "../../templates/footer-user.php";
+  } else if ($_SESSION["sessionStatus"] == 2) {
+    include "../../templates/footer-admin.php";
+  } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+    include "../../templates/footer.php";
+  }
+}
+?>
