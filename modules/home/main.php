@@ -66,7 +66,7 @@ if ($_SESSION["sessionStatus"] == 1) {
         <div class="cards">
             <div class="card">
                 <div class="image">
-                    <img src="./img/placeholder.png" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/placeholder.png" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
@@ -75,7 +75,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="card">
                 <div class="image">
-                    <img src="./img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
@@ -84,7 +84,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="card">
                 <div class="image">
-                    <img src="./img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
@@ -93,7 +93,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="card">
                 <div class="image">
-                    <img src="./img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
@@ -102,7 +102,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="card">
                 <div class="image">
-                    <img src="./img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
@@ -111,7 +111,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="card">
                 <div class="image">
-                    <img src="./img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
@@ -120,7 +120,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="card">
                 <div class="image">
-                    <img src="./img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
@@ -129,7 +129,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="card">
                 <div class="image">
-                    <img src="./img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
@@ -138,7 +138,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             </div>
             <div class="card">
                 <div class="image">
-                    <img src="./img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
                 </div>
                 <div class="text">
                     <h3>Product 1</h3>
