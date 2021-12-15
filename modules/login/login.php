@@ -13,7 +13,7 @@ if (file_exists('../../config.php')) {
     exit;
 }
 
-if(!isset($_SESSION["sessionStatus"])){
+if (!isset($_SESSION["sessionStatus"])) {
     $_SESSION["sessionStatus"] = 0;
 }
 
@@ -63,11 +63,11 @@ $_SESSION["token"] = $token;
             </div>
         </form>
         <?php
-        if (isset($_SESSION["sessionStatus"])) {
-            if ($_SESSION["sessionStatus"] != 0 && $_SESSION["sessionStatus"] != 6) {
-                echo "<p>Login Succesvol!</p>";
-            } else if ($_SESSION["sessionStatus"] == 6) {
-                echo "<p>Login was niet Succesvol!</p>";
+        if (!empty($_GET)) {
+            if ($_GET['login'] == 'fail') {
+                $sLoginMsg = '';
+                $sLoginMsg = '<p>U bent niet ingelogd, probeer het nog een keer.</p>';
+                echo $sLoginMsg;
             }
         }
         ?>
