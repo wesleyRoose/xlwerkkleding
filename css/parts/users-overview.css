@@ -1,0 +1,89 @@
+.users-overview {
+    margin-top: 15px;
+}
+
+.users-overview-searchbar {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 32px;
+}
+
+.user-filter-form {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--light);
+    color: var(--white);
+    padding: 0 0.5rem 0 0.5rem;
+    margin-left: 20px;
+    margin-top: 5px;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.radio {
+    width: unset;
+}
+
+.radio:first-of-type {
+    margin-left: 15px;
+}
+
+.user-overview {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 30px;
+}
+
+.user-record {
+    width: 100%;
+    background-color: var(--sub-color);
+    color: var(--white);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.user-data-fields{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.user-data {
+    margin-right: 15px;
+    margin-top: 2px;
+}
+
+.user-data:first-of-type {
+    margin-left: 15px;
+}
+
+.small {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    background-color: var(--white);
+    color: var(--main-color);
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.small:hover {
+    background-color: var(--white);
+}
+
+.small-icon {
+    display: grid;
+    place-items: center;
+}
+
+.user-record-btns {
+    display: flex;
+    flex-flow: row nowrap;
+}
