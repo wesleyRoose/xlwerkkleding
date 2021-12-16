@@ -68,7 +68,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
       $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $p_foto);
 
-      db::insert('product', $aColumnName, "sisssssss", $aValues);
+      db::insert('product', $aColumnName, $aValues, "sisssssss");
     }
   }
 }

@@ -46,7 +46,8 @@ $aWhereValue = array('p_id');
 $aColumnValue = array(1);
 $sHtmlTopContent = db::select("product", $aWhereValue, 'i', $aColumnValue);
 
-var_dump($sHtmlTopContent);
+    $i = 0;
+    while($i < )
 
 
     if ($_SESSION["sessionStatus"] == 1) {
