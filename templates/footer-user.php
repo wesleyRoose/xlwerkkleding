@@ -1,4 +1,12 @@
-<footer>
+    <footer>
+        <div class="floating-btn">
+            <button class="shopping-cart-btn">
+                <i class="fas fa-shopping-cart cart-btn"></i>
+            </button>
+            <div class="notification">
+                0
+            </div>
+        </div>
         <div class="upper">
             <div class="block">
                 <h3>Menu</h3>

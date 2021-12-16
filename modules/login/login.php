@@ -37,41 +37,43 @@ $_SESSION["token"] = $token;
 ?>
 
 <!-- Begin code voor login -->
-<section class="containerlogin">
-    <div class="reglog">
-        <!-- titel met PHP verstuur methode -->
-        <form method="post" action="checklogin.php" autocomplete="off">
-            <h2 class="title">Log hier in</h2>
-            <br>
-            <div class="input-div">
-                <div class="div">
-                    <label>Gebruikersnaam</label><br>
-                    <input type="text" name="username">
+<main class="login-container">
+    <section class="containerlogin">
+        <div class="reglog">
+            <!-- titel met PHP verstuur methode -->
+            <form method="post" action="checklogin.php" autocomplete="off">
+                <h2 class="title">Log hier in</h2>
+                <br>
+                <div class="input-div">
+                    <div class="div">
+                        <label>Gebruikersnaam</label><br>
+                        <input type="text" name="username">
+                    </div>
                 </div>
-            </div>
-            <div class="input-div">
-                <div class="div">
-                    <label>Wachtwoord</label><br>
-                    <input type="password" name="password">
+                <div class="input-div">
+                    <div class="div">
+                        <label>Wachtwoord</label><br>
+                        <input type="password" name="password">
+                    </div>
                 </div>
-            </div>
-            <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
-            <input type="hidden" id="email1" name="email1">
-            <input type="submit" value="Login" class="button m-less">
-            <div class="reg-btn">
-                <a class="register-btn lower" href="registreren.php">Registreer hier</a>
-            </div>
-        </form>
-        <?php
-        if (!empty($_GET)) {
-            if ($_GET['login'] == 'fail') {
-                $sLoginMsg = '';
-                $sLoginMsg = '<p>U bent niet ingelogd, probeer het nog een keer.</p>';
-                echo $sLoginMsg;
+                <input type="hidden" name="token" id="token" value="<?php echo $_SESSION['token'] ?>">
+                <input type="hidden" id="email1" name="email1">
+                <input type="submit" value="Login" class="button m-less">
+                <div class="reg-btn">
+                    <a class="register-btn lower" href="registreren.php">Registreer hier</a>
+                </div>
+            </form>
+            <?php
+            if (!empty($_GET)) {
+                if ($_GET['login'] == 'fail') {
+                    $sLoginMsg = '';
+                    $sLoginMsg = '<p>U bent niet ingelogd, probeer het nog een keer.</p>';
+                    echo $sLoginMsg;
+                }
             }
-        }
-        ?>
-    </div>
-</section>
+            ?>
+        </div>
+    </section>
+</main>
 
 <?php include "../../templates/footer.php"; ?>

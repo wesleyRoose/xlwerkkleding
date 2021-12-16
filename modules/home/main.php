@@ -20,7 +20,7 @@ if ($_SESSION["sessionStatus"] == 1) {
 }
 
 ?>
-<main>
+<main class="home-container">
     <section class="mainFlexContainer">
         <div class="home">
             <h1>Welkom</h1>
