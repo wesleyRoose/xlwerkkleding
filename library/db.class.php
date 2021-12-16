@@ -52,6 +52,7 @@ class  db
       } else {
         // Create error message and return false
         $errorMsg = "";
+        print_r($sPreparedSql);
         $errorMsg .= "Execute failed. " . __LINE__ . ' ' . __FILE__;
         echo $errorMsg;
         return false;
@@ -67,7 +68,7 @@ class  db
 
 
   // Connection Object, Name of the Table string, Names of the Columns in a Array, Variable types for the values in string format, Values of the Columns in a array format
-  private static function insert($sTableName, $aColumnName, $sSql_types, $aValues)
+  public static function insert($sTableName, $aColumnName, $sSql_types, $aValues)
   {
     if (sizeof($aColumnName) == sizeof($aValues) && sizeof($aColumnName) == strlen($sSql_types)) {
 
@@ -129,7 +130,7 @@ class  db
       // Call function to execute statement
       self::executePreparedStatement("INSERT", $sPreparedSql, $sSql_types, $aValues);
     } else {
-      echo "Lengths don't matchup" . __LINE__ . ' ' . __FILE__;
+      echo "Lengths don't matchup " . __LINE__ . ' ' . __FILE__;
     }
   }
 

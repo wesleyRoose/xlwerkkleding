@@ -23,60 +23,24 @@ if (file_exists('../../functions.php')) {
   exit;
 }
 
+if (file_exists('../../library/db.class.php')) {
+  include('../../library/db.class.php');
+} else {
+  $errorMessage = "";
+  $errorMessage .= "PHP ERROR: ../../library/db.class.php does not exist.";
+  echo $errorMessage;
+  exit;
+}
+
 if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
   header('Location: ' . ROOT_URL . 'index.php');
 } else {
 
-
-
-
-//database voor product
-$servername = "localhost";
-$username = "";
-$password = "";
-$dbname = "xlwerkkleding";
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-// sql to create table
-$sql = "CREATE TABLE 'product' (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-p_name VARCHAR(100) NOT NULL,
-p_price int(5) NOT NULL,
-p_category VARCHAR(75)NOT NULL, 
-p_sector VARCHAR(100) NOT NULL,
-p_brand VARCHAR(100) NOT NULL,
-p_size int(4) NOT NULL,
-p_color VARCHAR(50) NOT NULL,
-p_description text() NOT NULL,
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)";
-
-$sql = "INSERT INTO product (p_name, p_price, p_category, p_sector, p_brand, p_size, p_color, p_description )
-VALUES (?,?,?,?,?,?,?,?)";
-
-// if ($conn->query($sql) === TRUE) {
-//   echo "Table product created successfully";
-// } else {
-//   echo "Error creating table: " . $conn->error;
-// }
-
-
-
-
   // Check if button is pressed
   if (isset($_POST["addProductButton"])) {
     // Check if nothing is empty
-    if (!empty($_POST["p_name"]) && !empty($_POST["p_price"]) && !empty($_POST["p_category"]) && !empty($_POST["p_sector"]) && !empty($_POST["p_brand"]) && !empty($_POST["p_size"]) && !empty($_POST["p_color"]) && !empty($_POST["p_description"])/* && !empty($_POST["foto"])*/) {
+    if (!empty($_POST["p_name"]) && !empty($_POST["p_price"]) && !empty($_POST["p_category"]) && !empty($_POST["p_sector"]) && !empty($_POST["p_brand"]) && !empty($_POST["p_size"]) && !empty($_POST["p_color"]) && !empty($_POST["p_description"])) {
 
-
-
-      // // PLACEHOLDER MUST REPLACE
-      // var_dump($_POST["p_file"]);
-      // $p_foto = $_POST["p_file"];
 
       // Clean inputs for not wanted characters
       $p_name = cleaninput($_POST['p_name'], 100);
@@ -99,19 +63,22 @@ VALUES (?,?,?,?,?,?,?,?)";
 
       $p_foto = "Test";
       // Create Arrays for function parameters
-      $aRowNames = array("p_name", "p_price", "p_category", "p_sector", "p_brand", "p_size", "p_color", "p_description", "p_foto");
+      $aColumnName = array("p_name", "p_price", "p_category", "p_sector", "p_brand", "p_size", "p_color", "p_description", "p_foto");
 
       $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $p_foto);
-      if (preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sissssss", $aValues)) {
-        header($sLocationSucces);
-      } else {
-        // header($sLocationFailure);
-        echo preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sisssssss", $aValues);
-      }
+
+
+      db::init();
+      db::insert('product', $aColumnName, "sisssssss", $aValues);
+
+      // if (preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sissssss", $aValues)) {
+      //   header($sLocationSucces);
+      // } else {
+      //   // header($sLocationFailure);
+      //   echo preparedInsertIntoQuery($conn, 9, "product", $aRowNames, "sisssssss", $aValues);
+      // }
     }
   }
-
-
 
   // //file upload directory
   // $targetDir = "./img/product_images/";
@@ -155,4 +122,3 @@ VALUES (?,?,?,?,?,?,?,?)";
   //   echo $statusMsg;
   // }
 }
-
