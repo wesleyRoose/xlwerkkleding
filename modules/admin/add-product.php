@@ -33,6 +33,44 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
         include "../../templates/header.php";
     }
 
+//database voor product
+    $servername = "localhost";
+    $username = "";
+    $password = "";
+    $dbname = "xlwerkkleding";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    
+    // sql to create table
+    $sql = "CREATE TABLE product (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    p_name VARCHAR(100) NOT NULL,
+    p_price int(5) NOT NULL,
+    p_category VARCHAR(75)NOT NULL, 
+    p_sector VARCHAR(100) NOT NULL,
+    p_brand VARCHAR(100) NOT NULL,
+    p_size int(4) NOT NULL,
+    p_color VARCHAR(50) NOT NULL,
+    p_description text() NOT NULL,
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )";
+    
+    $sql = "INSERT INTO product (p_name, p_price, p_category, p_sector, p_brand, p_size, p_color, p_description )
+    VALUES ('', '', '', '', '', '', '', '')";
+
+    if ($conn->query($sql) === TRUE) {
+      echo "Table MyGuests created successfully";
+    } else {
+      echo "Error creating table: " . $conn->error;
+    }
+    
+    $conn->close();
+
 ?>
 
     <main class="add-products">

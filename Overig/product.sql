@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Tabelstructuur voor tabel `product`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE IF NOT EXISTS `product` (
   `p-name` varchar(100) NOT NULL,
   `p-price` int(5) NOT NULL,
   `p-category` varchar(75) NOT NULL,
@@ -40,10 +40,8 @@ CREATE TABLE `product` (
   `p-id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Indexen voor geëxporteerde tabellen
---
-
+INSERT INTO `product`(`p_name`, `p_price`, `p_category`, `p_sector`, `p_brand`, `p_size`, `p_color`, `p_description`, `p-foto`, `p_id`)
+ VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10])
 --
 -- Indexen voor tabel `product`
 --
