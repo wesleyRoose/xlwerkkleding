@@ -46,22 +46,22 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
           <!---Different Form--->
           <form action="#" method="post" class="user-filter-form">
             <div class="select-container radio">
-              <input type="checkbox" name="ID" class="input_filter" value="ID">
+              <input type="radio" name="selectValue" class="input_filter" value="ID">
               <label for="ID">ID</label><br>
             </div>
             <div class="select-container radio">
-              <input type="checkbox" name="name" class="input_filter" value="Naam">
+              <input type="radio" name="selectValue" class="input_filter" value="Naam">
               <label for="name">Naam</label><br>
             </div>
             <div class="select-container radio">
-              <input type="checkbox" name="e-mail" class="input_filter" value="E-mail">
+              <input type="radio" name="selectValue" class="input_filter" value="E-mail">
               <label for="e-mail">E-Mail</label><br>
             </div>
             <div class="select-container radio">
-              <input type="checkbox" name="firma" class="input_filter" value="Firma">
+              <input type="radio" name="selectValue" class="input_filter" value="Firma">
               <label for="firma">Firma</label><br>
             </div>
-          </form>
+          </form>radio
         </div>
 
         <div class="user-overview">
