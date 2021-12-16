@@ -44,7 +44,9 @@ $aWhereValue = array('p_id');
 
 // Getting top content from database
 $aColumnValue = array(1);
-$sHtmlTopContent = db::select("aboutHtml", $aWhereValue, 'i', $aColumnValue);
+$sHtmlTopContent = db::select("product", $aWhereValue, 'i', $aColumnValue);
+
+var_dump($sHtmlTopContent);
 
 
     if ($_SESSION["sessionStatus"] == 1) {
