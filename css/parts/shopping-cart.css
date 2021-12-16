@@ -1,0 +1,18 @@
+.shopping-field{
+    background-color: var(--light);
+    height: 600px;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-radius: 100px;
+}
+
+.cart-name{
+font-size: medium;
+padding-top: 4rem;
+padding-left: 6rem;
+padding-bottom: 0.5rem;
+border-bottom: dotted black;
+width: 95%;
+margin-left: 2rem;
+}
