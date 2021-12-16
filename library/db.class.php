@@ -23,6 +23,7 @@ class  db
   // Connection Object,Type in the form of a string, prepared sql statement in form of a string, variable types in form of a string, values in form of a Array
   static private function executePreparedStatement($sType, $sPreparedSql, $sSql_types, $aValue)
   {
+    db::init();
     //Catch error
     if (self::$oConnection->prepare($sPreparedSql) == true) {
       //Bind and excecute Statement
@@ -47,7 +48,8 @@ class  db
           return $data;
         } else if ($sType == "INSERT") {
           // If $sType is INSERT return true
-          return true;
+          $execute = true;
+          return $execute;
         }
       } else {
         // Create error message and return false
@@ -64,6 +66,7 @@ class  db
       echo $errorMsg;
       exit;
     }
+    return true;
   }
 
 
