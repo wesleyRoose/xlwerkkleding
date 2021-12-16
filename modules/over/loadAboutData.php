@@ -9,9 +9,6 @@ if (file_exists('../../library/db.class.php')) {
   exit;
 }
 
-// initialize db class
-db::init();
-
 $aWhereValue = array('status', 'location');
 
 // Getting top content from database
