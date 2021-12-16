@@ -1,7 +1,9 @@
     <footer>
         <div class="floating-btn">
             <button class="shopping-cart-btn">
-                <i class="fas fa-shopping-cart cart-btn"></i>
+                <a href="<?php echo ROOT_URL ?>modules/shopping-cart/index.php" class="btn-link">
+                    <i class="fas fa-shopping-cart cart-btn"></i>
+                </a>
             </button>
             <div class="notification">
                 0

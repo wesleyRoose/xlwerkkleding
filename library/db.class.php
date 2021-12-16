@@ -21,18 +21,27 @@ class  db
 
   // Execute Prepared Statement
   // Connection Object,Type in the form of a string, prepared sql statement in form of a string, variable types in form of a string, values in form of a Array
-  static private function executePreparedStatement($sType, $sPreparedSql, $sSql_types, $aValue)
+  static private function executePreparedStatement($sType, $sPreparedSql, $sSql_types, $aValue, $aWhereColumnValue = false)
   {
+    // Initialize database
     db::init();
     //Catch error
     if (self::$oConnection->prepare($sPreparedSql) == true) {
       //Bind and excecute Statement
       $stmt = self::$oConnection->prepare($sPreparedSql);
       // Merge arrays together to use in the bind_params
-      $params = array_merge(array($sSql_types), $aValue);
-      foreach ($params as $key => $value) {
-        $params[$key] = &$params[$key];
+      if ($sType == "UPDATE") {
+        $params = array_merge(array($sSql_types), $aValue, $aWhereColumnValue);
+        foreach ($params as $key => $value) {
+          $params[$key] = &$params[$key];
+        }
+      } else {
+        $params = array_merge(array($sSql_types), $aValue);
+        foreach ($params as $key => $value) {
+          $params[$key] = &$params[$key];
+        }
       }
+
 
       // Binding parameters trough array
       call_user_func_array(array($stmt, "bind_param"), $params);
@@ -71,7 +80,7 @@ class  db
 
 
   // Connection Object, Name of the Table string, Names of the Columns in a Array, Variable types for the values in string format, Values of the Columns in a array format
-  public static function insert($sTableName, $aColumnName, $sSql_types, $aValues)
+  public static function insert($sTableName, $aColumnName, $aValues, $sSql_types)
   {
     if (sizeof($aColumnName) == sizeof($aValues) && sizeof($aColumnName) == strlen($sSql_types)) {
 
@@ -140,7 +149,7 @@ class  db
 
   // Select query
   // Connection object, table name in form of a string, where selector in form of a array, variable types in form of a string, values in form of a Array
-  public static function select($sTableName, $aWhereValue, $sSql_types, $aColumnValue)
+  public static function select($sTableName, $aWhereValue, $aColumnValue, $sSql_types)
   {
     //Set Vars
     $iNumberOfColumns = sizeof($aColumnValue);
@@ -168,33 +177,39 @@ class  db
 
   // $SQL = $db_found->prepare("UPDATE members SET username=?, password=? WHERE email=?");
 
-  public static function doUpdateQuery($sTableName, $sWhereValue, $sSql_types, $aColumnName, $aNewValue)
+  public static function update($sTableName, $sSql_types, $aWhereValue, $aWhereColumnValue, $aColumnName, $aNewValue)
   {
     //Set Vars
     $iNumberOfColumns = sizeof($aColumnName);
     $iNumberOfColumns--;
 
+
     // Starting Prepared SQL String
     $sPreparedSql = '';
-    $sPreparedSql .= 'UPDATE ' . $sTableName . 'SET ';
+    $sPreparedSql .= 'UPDATE ' . $sTableName . ' SET ';
     //Creating counter for while loop
     $i = 0;
     //Starting Extension for the 
     $sPreparedSqlExtension = '';
     while ($i <= $iNumberOfColumns) {
-      if ($i < $iNumberOfColumns) {
-        $sPreparedSqlExtension .= $aColumnName[$i];
-        $sPreparedSqlExtension .= "=?, ";
-      }
-      if ($i == $iNumberOfColumns) {
-        $sPreparedSqlExtension .= $aColumnName[$i];
-      }
+      $sPreparedSqlExtension .= $aColumnName[$i];
+      $sPreparedSqlExtension .= "=?, ";
       // Add 1 to the counter
       $i++;
     }
-
-    $sPreparedSql .= $sPreparedSqlExtension . ' WHERE ' . $sWhereValue . '=?';
-    // Call function to execute statement
-    self::executePreparedStatement("SELECT", $sPreparedSql, $sSql_types, $aNewValue);
+    $sPreparedSqlExtension .= 'WHERE ';
+    $i = 0;
+    if (sizeof($aWhereValue) > 0) {
+      //Starting Extension for the 
+      $sPreparedSqlExtension = '';
+      while ($i <= $iNumberOfColumns) {
+        $sPreparedSqlExtension .= ' AND ' . $aWhereValue[$i];
+        $sPreparedSqlExtension .= '=?';
+        // Add 1 to the counter
+        $i++;
+      }
+      // Call function to execute statement
+      self::executePreparedStatement("UPDATE", $sPreparedSql, $sSql_types, $aNewValue, $aWhereColumnValue);
+    }
   }
 }

@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 15px;
     right: 2rem;
-    background-color: var(--flt-btn-color);
+    background-color: var(--black);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -11,17 +11,21 @@
 }
 
 .shopping-cart-btn:hover {
-    background-color: var(--flt-btn-color);
+    background-color: var(--black);
 }
 
 .cart-btn {
     margin: 0;
 }
 
+.btn-link {
+    color: var(--white);
+}
+
 .notification {
     position: fixed;
     border-radius: 50%;
-    background-color: var(--flt-btn-color-sub);
+    background-color: var(--notification);
     width: 20px;
     height: 20px;
     bottom: 50px;
