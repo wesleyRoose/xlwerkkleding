@@ -61,7 +61,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
               <input type="radio" name="selectValue" class="input_filter" value="Firma">
               <label for="firma">Firma</label><br>
             </div>
-          </form>radio
+          </form>
         </div>
 
         <div class="user-overview">
