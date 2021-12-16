@@ -18,6 +18,10 @@
     margin: 0;
 }
 
+.btn-link {
+    color: var(--white);
+}
+
 .notification {
     position: fixed;
     border-radius: 50%;
