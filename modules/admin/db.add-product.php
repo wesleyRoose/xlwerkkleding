@@ -30,6 +30,42 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 
 
+//database voor product
+$servername = "localhost";
+$username = "";
+$password = "";
+$dbname = "xlwerkkleding";
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// sql to create table
+$sql = "CREATE TABLE 'product' (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+$p_name VARCHAR(100) NOT NULL,
+p_price int(5) NOT NULL,
+p_category VARCHAR(75)NOT NULL, 
+p_sector VARCHAR(100) NOT NULL,
+p_brand VARCHAR(100) NOT NULL,
+p_size int(4) NOT NULL,
+p_color VARCHAR(50) NOT NULL,
+p_description text() NOT NULL,
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+
+$sql = "INSERT INTO product (p_name, p_price, p_category, p_sector, p_brand, p_size, p_color, p_description )
+VALUES ('p_name', 'p_price', 'p_category', 'p_sector', 'p_brand', 'p_size', 'p_color', 'p_description')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Table product created successfully";
+} else {
+  echo "Error creating table: " . $conn->error;
+}
+
+$conn->close();
+
 
   // Check if button is pressed
   if (isset($_POST["addProductButton"])) {
