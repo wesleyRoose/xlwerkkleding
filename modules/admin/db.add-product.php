@@ -43,14 +43,14 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $p_foto = $_POST["p_file"];
 
       // Clean inputs for not wanted characters
-      $p_name = cleaninput($_POST['p_name'], 20);
-      $p_price = cleaninput($_POST['p_price'], 10);
-      $p_category = cleaninput($_POST['p_category'], 20);
-      $p_sector = cleaninput($_POST['p_sector'], 20);
-      $p_brand = cleaninput($_POST['p_brand'], 20);
-      $p_size = cleaninput($_POST['p_size'], 20);
-      $p_color = cleaninput($_POST['p_color'], 20);
-      $p_description = cleaninput($_POST['p_description'], 60);
+      $p_name = cleaninput($_POST['p_name'], 100);
+      $p_price = cleaninput($_POST['p_price'], 5);
+      $p_category = cleaninput($_POST['p_category'], 75);
+      $p_sector = cleaninput($_POST['p_sector'], 100);
+      $p_brand = cleaninput($_POST['p_brand'], 100);
+      $p_size = cleaninput($_POST['p_size'], 4);
+      $p_color = cleaninput($_POST['p_color'], 50);
+      $p_description = cleaninput($_POST['p_description'], 150);
 
       // Create header location url for a succesfull insert
       $sLocationSucces = "";
@@ -119,3 +119,4 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     echo $statusMsg;
   }
 }
+

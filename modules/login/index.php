@@ -20,7 +20,9 @@ if (file_exists('../../functions.php')) {
   exit;
 }
 
-if ($_SESSION["sessionStatus"] != 6 || !empty($_SESSION["sessionStatus"])) {
+var_dump($_SESSION["sessionStatus"]);
+
+if (!empty($_SESSION["sessionStatus"]) && $_SESSION["sessionStatus"] != 6) {
   header('Location: ' . ROOT_URL . 'index.php');
 } else {
 

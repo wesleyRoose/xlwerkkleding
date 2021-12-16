@@ -14,7 +14,7 @@ if (file_exists('../../config.php')) {
 }
 
 if (!isset($_SESSION["sessionStatus"])) {
-    $_SESSION["sessionStatus"] = 0;
+    $_SESSION["sessionStatus"] = null;
 }
 
 if ($_SESSION["sessionStatus"] == 1) {
@@ -32,7 +32,6 @@ if (!isset($_SESSION)) {
 $token = sha1($salt . rand());
 
 $_SESSION["token"] = $token;
-
 
 ?>
 
