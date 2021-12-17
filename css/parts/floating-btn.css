@@ -46,6 +46,8 @@
     }
 }
 
+/* Dark mode for shopping-cart btn */
+
 @media (prefers-color-scheme: dark) {
     .shopping-cart-btn {
         background-color: var(--white);
