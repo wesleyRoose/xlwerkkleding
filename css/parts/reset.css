@@ -127,13 +127,13 @@ textarea {
 /* Dark Mode */
 
 @media (prefers-color-scheme: light) {
-  body,html {
+  body, html {
     background-color: var(--broken-white);
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  body,html {
+  body, html {
     background-color: var(--black);
     color: var(--white);
   }
