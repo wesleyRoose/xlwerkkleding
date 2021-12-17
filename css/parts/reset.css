@@ -143,5 +143,6 @@ textarea {
 
 If a user has set their system preferences to dark, 
 the browser will automatically detect that and use prefers-color-scheme:dark.
+Same for if a user has set preference to light :)
 
 */
