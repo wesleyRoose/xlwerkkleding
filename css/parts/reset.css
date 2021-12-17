@@ -123,3 +123,25 @@ textarea {
     width: 250px;
   }
 }
+
+/* Dark Mode */
+
+@media (prefers-color-scheme: light) {
+  body,html {
+    background-color: var(--broken-white);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body,html {
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+
+/* 
+
+If a user has set their system preferences to dark, 
+the browser will automatically detect that and use prefers-color-scheme:dark.
+
+*/
