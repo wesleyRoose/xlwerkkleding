@@ -21,27 +21,20 @@ class  db
 
   // Execute Prepared Statement
   // Connection Object,Type in the form of a string, prepared sql statement in form of a string, variable types in form of a string, values in form of a Array
-  static private function executePreparedStatement($sType, $sPreparedSql, $sSql_types, $aValue, $aWhereColumnValue = false)
+  static private function executePreparedStatement($sType = "", $sPreparedSql = "", $sSql_types = "", $aValue = array())
   {
     // Initialize database
     db::init();
     //Catch error
-    if (self::$oConnection->prepare($sPreparedSql) == true) {
+    if (self::$oConnection->prepare($sPreparedSql)) {
       //Bind and excecute Statement
       $stmt = self::$oConnection->prepare($sPreparedSql);
       // Merge arrays together to use in the bind_params
-      if ($sType == "UPDATE") {
-        $params = array_merge(array($sSql_types), $aValue, $aWhereColumnValue);
-        foreach ($params as $key => $value) {
-          $params[$key] = &$params[$key];
-        }
-      } else {
-        $params = array_merge(array($sSql_types), $aValue);
-        foreach ($params as $key => $value) {
-          $params[$key] = &$params[$key];
-        }
-      }
 
+      $params = array_merge(array($sSql_types), $aValue);
+      foreach ($params as $key => $value) {
+        $params[$key] = &$params[$key];
+      }
 
       // Binding parameters trough array
       call_user_func_array(array($stmt, "bind_param"), $params);
@@ -54,11 +47,13 @@ class  db
           $result = $stmt->get_result();
           //Catch result in a array
           $data = mysqli_fetch_array($result);
+          if ($data == NULL) {
+            echo "There are no results";
+          }
           return $data;
         } else if ($sType == "INSERT") {
           // If $sType is INSERT return true
-          $execute = true;
-          return $execute;
+
         }
       } else {
         // Create error message and return false
@@ -147,6 +142,19 @@ class  db
   }
 
 
+  // Select All query
+  //table name in form of a string
+  public static function selectAll($sTableName, $sSql_types)
+  {
+
+    // Starting Prepared SQL String
+    $sPreparedSql = '';
+    $sPreparedSql .= 'SELECT * FROM ' . $sTableName;
+
+    // Call function to execute statement
+    return self::executePreparedStatement("SELECT", $sPreparedSql);
+  }
+
   // Select query
   // Connection object, table name in form of a string, where selector in form of a array, variable types in form of a string, values in form of a Array
   public static function select($sTableName, $aWhereValue, $aColumnValue, $sSql_types)
@@ -171,6 +179,7 @@ class  db
       }
       $sPreparedSql .= $sPreparedSqlExtension;
     }
+    echo $sPreparedSql;
     // Call function to execute statement
     return self::executePreparedStatement("SELECT", $sPreparedSql, $sSql_types, $aColumnValue);
   }
