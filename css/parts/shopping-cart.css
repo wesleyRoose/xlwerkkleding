@@ -1,18 +1,34 @@
+.shopping-cart{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .shopping-field{
     background-color: var(--light);
     height: 600px;
-    margin-top: 2rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    border-radius: 100px;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    border-radius: 5px;
 }
 
 .cart-name{
-font-size: medium;
-padding-top: 4rem;
+font-size: 25px;
+font-style: oblique;
+padding-top: 1.5rem;
 padding-left: 6rem;
 padding-bottom: 0.5rem;
 border-bottom: dotted black;
-width: 95%;
-margin-left: 2rem;
+width: 100%;
+
+}
+
+.shopping-bestellen{
+padding-left: 5rem;
+width: 12rem;
+height: 2rem;
+position:absolute;
+right:290px;
+bottom:10px;
 }

@@ -39,12 +39,20 @@ session_start();
 ?>
 
 <!-- begin pagina -->
-<div class="shopping-field">
-    <div class="cart-name">
-        <p> Winkelwagen</p>
+<main class="shopping-cart">
+    <div class="shopping-field">
+        <div class="cart-name">
+            <p> Winkelwagen :</p>
+        </div>
+            <div class="shopping-bestellen">
+                <button value="bestellen" placeholder="bestellen">bestellen</button>
+            </div>  
     </div>
-</div>
+</main>
 
+
+
+<!-- footer -->
 <?php
 
 if ($_SESSION["sessionStatus"] == 1) {
