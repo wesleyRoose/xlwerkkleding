@@ -67,54 +67,6 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="shopping-cart-item">
-                    <div class="shopping-cart-info">
-                        <div class="product-image small-image item-margin">
-
-                        </div>
-                        <div class="shopping-cart-product-number item-margin">
-                            1
-                        </div>
-                        <div class="shopping-cart-product-title item-margin">
-                            Leren Werkschoenen
-                        </div>
-                        <div class="shopping-cart-product-price item-margin">
-                            $25
-                        </div>
-                        <div class="shopping-cart-product-quantity item-margin">
-                            2x
-                        </div>
-                    </div>
-                    <div class="shopping-cart-buttons">
-                        <div class="product-data button small small-icon black">
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="shopping-cart-item">
-                    <div class="shopping-cart-info">
-                        <div class="product-image small-image item-margin">
-
-                        </div>
-                        <div class="shopping-cart-product-number item-margin">
-                            1
-                        </div>
-                        <div class="shopping-cart-product-title item-margin">
-                            Leren Werkschoenen
-                        </div>
-                        <div class="shopping-cart-product-price item-margin">
-                            $25
-                        </div>
-                        <div class="shopping-cart-product-quantity item-margin">
-                            2x
-                        </div>
-                    </div>
-                    <div class="shopping-cart-buttons">
-                        <div class="product-data button small small-icon black">
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="order-button">
                 <button>Afrekenen</button>
