@@ -8,6 +8,7 @@
   --light:            rgb(248, 145, 107);
   --selection-color:  rgb(255, 181, 154);
   --notification:     rgb(224, 60, 0);
+  --scrollbar-color:  rgb(226, 78, 24);
   --white:            rgb(255, 255, 255);
   --broken-white:     rgb(245, 245, 245);
   --black:            rgb(0, 0, 0);
@@ -40,6 +41,38 @@ input:-webkit-autofill{
 ::selection {
   color: var(--white);
   background: var(--selection-color);
+}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--black);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: var(--black);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+  }
+}
+
+@media (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Overall Reset */
