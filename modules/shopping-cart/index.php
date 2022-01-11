@@ -33,29 +33,35 @@ if (file_exists('../../library/db.class.php')) {
 }
 
 if ($_SESSION["sessionStatus"] == 1) {
-    include "../../templates/header-user.php";
+  include "../../templates/header-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
-    include "../../templates/header-admin.php";
+  include "../../templates/header-admin.php";
 } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-    include "../../templates/header.php";
+  include "../../templates/header.php";
 }
 
 $aWhereValue = array('p_id');
 
 // Getting top content from database
 $aColumnValue = array(1);
-$sHtmlTopContent = db::select("product", $aWhereValue, 'i', $aColumnValue);
+$aShoppingShit = db::select("product", $aWhereValue, $aColumnValue, "i");
 
-    $i = 0;
-    while($i < )
+var_dump($aShoppingShit);
+
+for ($i = 0; $i < 10; $i++) {
+  echo $aShoppingShit[$i] . "<br>";
+}
 
 
-    if ($_SESSION["sessionStatus"] == 1) {
-        include "../../templates/footer-user.php";
-    } else if ($_SESSION["sessionStatus"] == 2) {
-        include "../../templates/footer-admin.php";
-    } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-        include "../../templates/footer.php";
-    }
 
-?>
+
+
+
+
+if ($_SESSION["sessionStatus"] == 1) {
+  include "../../templates/footer-user.php";
+} else if ($_SESSION["sessionStatus"] == 2) {
+  include "../../templates/footer-admin.php";
+} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+  include "../../templates/footer.php";
+}

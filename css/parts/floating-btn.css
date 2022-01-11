@@ -45,3 +45,19 @@
         right: 20px;
     }
 }
+
+/* Dark mode for shopping-cart btn */
+
+@media (prefers-color-scheme: dark) {
+    .shopping-cart-btn {
+        background-color: var(--white);
+    }
+
+    .shopping-cart-btn:hover {
+        background-color: var(--white);
+    }
+
+    .btn-link {
+        color: var(--black);
+    }
+}
