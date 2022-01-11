@@ -10,7 +10,8 @@
   --notification:     rgb(224, 60, 0);
   --white:            rgb(255, 255, 255);
   --broken-white:     rgb(245, 245, 245);
-  --black:            rgb(0, 0, 0);  
+  --black:            rgb(0, 0, 0);
+  --darkmode:         rgb(41, 41, 41);
 }
 
 /* Special resets for certain browser elements */
@@ -134,7 +135,7 @@ textarea {
 
 @media (prefers-color-scheme: dark) {
   body, html {
-    background-color: var(--black);
+    background-color: var(--darkmode);
     color: var(--white);
   }
 }
