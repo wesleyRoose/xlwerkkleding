@@ -1,69 +1,70 @@
 .webshop {
-   margin-top: 15px; 
+  margin-top: 15px;
 }
 
 .filter-bar {
-    display: flex;
-    height: 82px;
-    background-color: var(--sub-color);
-    margin-top: 15px;
-    border-radius: 3px;
-    padding: 0.5rem;
-    color: var(--white);
+  display: flex;
+  height: 82px;
+  background-color: var(--sub-color);
+  margin-top: 15px;
+  border-radius: 3px;
+  padding: 0.5rem;
+  color: var(--white);
 }
 
 .select-container {
-    margin-left: 15px;
-    width: 200px;
+  display: flex;
+  margin-left: 15px;
+  width: 400px;
 }
 
 .select-container:first-of-type {
-    margin-left: 0px;
+  margin-left: 0px;
 }
 
 .webshop-filter-select {
-    width: 100%;
-    height: 25px;
-    outline: none;
-    border: none;
-    border-radius: 3px;
-    padding: 0.2rem;
-    margin-top: 10px;
+  width: 100%;
+  height: 25px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding: 0.2rem;
+  margin-top: 10px;
 }
 
 .sub {
-    padding: 0 !important;
-    height: 25px !important;
-    margin-top: 36px !important;
-    color: var(--main-color) !important;
-    background-color: var(--white) !important;
+  padding: 0 !important;
+  height: 25px !important;
+  margin-top: 36px !important;
+  color: var(--main-color) !important;
+  background-color: var(--white) !important;
 }
 
 .label-check {
-    display: flex;
-    flex-flow: row nowrap;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .check-box {
-    margin-left: 5px;
-    margin-top: 2px;
+  margin-left: 5px;
+  margin-top: 2px;
 }
 
 @media (max-width: 500px) {
-    .filter-bar {
-        height: auto;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-    }
+  .filter-bar {
+    height: auto;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
 
-    .select-container {
-        margin-left: 0;
-        width: 100%;
-    }
+  .select-container {
+    margin-left: 0;
+    width: 100%;
+  }
 
-    .label-check {
-        justify-content: space-between;
-    }
+  .label-check {
+    justify-content: space-between;
+  }
 }
