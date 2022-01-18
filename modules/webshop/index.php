@@ -45,7 +45,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             <div class="label-check">
               <label>Types</label>
               <div class="check-box">
-                <input type="checkbox" name="filterCheckBox" value="types" checked>
+                <input type="checkbox" name="filterCheckBox[]" value="types" checked>
               </div>
             </div>
             <select name="types" class="webshop-filter-select">
@@ -59,7 +59,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             <div class="label-check">
               <label>Sector</label>
               <div class="check-box">
-                <input type="checkbox" name="filterCheckBox" value="sector" checked>
+                <input type="checkbox" name="filterCheckBox[]" value="sector" checked>
               </div>
             </div>
             <select name="types" class="webshop-filter-select">
@@ -74,7 +74,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             <div class="label-check">
               <label>Merk</label>
               <div class="check-box">
-                <input type="checkbox" name="filterCheckBox" value="merk" checked>
+                <input type="checkbox" name="filterCheckBox[]" value="merk" checked>
               </div>
             </div>
             <select name="types" class="webshop-filter-select">
@@ -89,7 +89,7 @@ if ($_SESSION["sessionStatus"] == 1) {
             <div class="label-check">
               <label>Geslacht</label>
               <div class="check-box">
-                <input type="checkbox" name="filterCheckBox" value="geslacht" checked>
+                <input type="checkbox" name="filterCheckBox[]" value="geslacht" checked>
               </div>
             </div>
             <select name="types" class="webshop-filter-select">
@@ -112,104 +112,115 @@ if ($_SESSION["sessionStatus"] == 1) {
 
     <?php
 
+    $sDefaultHtml = '';
+    $sDefaultHtml = '<div class="cards">
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/placeholder.png" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+<div class="card">
+<div class="image">
+  <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
+</div>
+<div class="text">
+  <h3>Product 1</h3>
+  <a href="#" class="card-link">Klik hier</a>
+</div>
+</div>
+</div>';
+
     // Generating results from Search engine
+    // Check if formSubmit is pressed
     if (isset($_POST["formSubmit"])) {
-      echo "test";
+      // Check how many and which filters are selected
+      $aFilterCheckBoxes = $_POST["filterCheckBox"];
+      $iFilterLength = count($aFilterCheckBoxes);
+
+      $query = "SELECT * FROM `products` WHERE ";
+
+      // Check if formReset is pressed
     } else if (isset($_POST["formReset"])) {
-      $sHtml = '';
-      $sHtml = '<div class="cards">
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/placeholder.png" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image">
-        <img src=" ' . ROOT_URL . 'img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-      </div>
-      <div class="text">
-        <h3>Product 1</h3>
-        <a href="#" class="card-link">Klik hier</a>
-      </div>
-    </div>
-  </div>';
-      echo $sHtml;
+      echo $sDefaultHtml;
+      // Check if nothing is pressed
+    } else {
+      echo $sDefaultHtml;
     }
 
     ?>
