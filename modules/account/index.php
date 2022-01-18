@@ -36,6 +36,11 @@ session_start();
             include "../../templates/header.php";
         }
     }
+
+    $user_query = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
+
+    $result = $conn->query($user_query);
+    $row = $result->fetch_assoc();
 ?>
 
 <main class="account-page">
@@ -48,42 +53,42 @@ session_start();
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <p class="account-page-info-text">Stefan</p>
+                        <p class="account-page-info-text"><?php echo $row["firstName"];?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <p class="account-page-info-text">Maring</p>
+                        <p class="account-page-info-text"><?php echo $row["lastName"];?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user-tag"></i>
                         </div>
-                        <p class="account-page-info-text">StefanM</p>
+                        <p class="account-page-info-text"><?php echo $row["username"];?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <p class="account-page-info-text">stefan@xlwerkkleding.nl</p>
+                        <p class="account-page-info-text"><?php echo $row["email"];?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <p class="account-page-info-text">01234557879</p>
+                        <p class="account-page-info-text"><?php echo $row["phoneNumber"];?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-building"></i>
                         </div>
-                        <p class="account-page-info-text">XLwerkkleding</p>
+                        <p class="account-page-info-text"><?php echo $row["firm"];?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <button>Verwijder Profiel</button>
