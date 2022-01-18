@@ -82,11 +82,16 @@ if (isset($_POST['addProductButton'])){
     $fileName = $_FILES['p_file']['name'];
     $tempName = $_FILES['p_file']['tmp_name'];
 
+    print_r($fileName);
+    echo '<br>';
+    print_r($tempName);
+    echo '<br>';
+
     if(isset($fileName))
     {
       if(!empty($fileName))
       {
-        $location = "../img/product_img/";
+        $location = "img";
         if(move_uploaded_file($tempName, $location. $fileName))
         {
           echo 'file uploaded';
