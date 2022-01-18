@@ -41,7 +41,12 @@ if ($_SESSION["sessionStatus"] == 1) {
           <h1 class="title">Webshop</h1>
             <div class="filter-bar">
               <div class="select-container">
-                <label>Types</label><br>
+                <div class="label-check">
+                  <label>Types</label>
+                  <div class="check-box">
+                    <input type="checkbox">
+                  </div>
+                </div>
                 <select name="types" class="webshop-filter-select">
                     <option value="Jassen">Jassen</option>
                     <option value="Overallen">Overallen</option>
@@ -50,7 +55,12 @@ if ($_SESSION["sessionStatus"] == 1) {
                 </select>
               </div>
               <div class="select-container">
-                <label>Sector</label><br>
+                <div class="label-check">
+                  <label>Sector</label>
+                  <div class="check-box">
+                    <input type="checkbox">
+                  </div>
+                </div>
                 <select name="types" class="webshop-filter-select">
                     <option value="Bouw">Bouw</option>
                     <option value="Zorg">Zorg</option>
@@ -60,7 +70,12 @@ if ($_SESSION["sessionStatus"] == 1) {
                 </select>
               </div>
               <div class="select-container">
-                <label>Merk</label><br>
+                <div class="label-check">
+                  <label>Merk</label>
+                  <div class="check-box">
+                    <input type="checkbox">
+                  </div>
+                </div>
                 <select name="types" class="webshop-filter-select">
                     <option value="Merk1">Merk1</option>
                     <option value="Merk2">Merk2</option>
@@ -70,7 +85,12 @@ if ($_SESSION["sessionStatus"] == 1) {
                 </select>
               </div>
               <div class="select-container">
-                <label>Geslacht</label><br>
+                <div class="label-check">
+                  <label>Geslacht</label>
+                  <div class="check-box">
+                    <input type="checkbox">
+                  </div>
+                </div>
                 <select name="types" class="webshop-filter-select">
                     <option value="Merk1">Man</option>
                     <option value="Merk2">Vrouw</option>
