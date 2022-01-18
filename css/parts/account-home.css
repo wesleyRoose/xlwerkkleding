@@ -2,10 +2,16 @@
     margin-top: 15px;
 }
 
+.account-page-content {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+}
+
 .account-page-info-box {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .account-page-icon {
@@ -14,14 +20,45 @@
 }
 
 .account-page-info-text {
-    margin-left: 50px;
+    min-width: 250px;
+    margin-left: 30px;
 }
 
-.orange {
+.orange, .orange:hover {
     background-color: var(--main-color);
     color: var(--white) !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
 }
 
 .no-margin {
     margin: 0;
+}
+
+.previous-orders {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 50px;
+}
+
+.previous-order {
+    display: flex;
+    flex-flow: row nowrap;
+    max-height: 50px;
+    max-width: 200px;
+}
+
+.previous-order:first-of-type {
+    margin-top: 5px;
+}
+
+.prev-order-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.prev-btn-link-color {
+    color: var(--white);
 }

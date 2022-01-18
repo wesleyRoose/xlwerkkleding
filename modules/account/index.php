@@ -41,9 +41,9 @@ session_start();
 <main class="account-page">
     <section class="account-page">
         <div class="account-page-wrapper">
-            <h3>Accountoverzicht</h3>
             <div class="account-page-content">
                 <div class="account-page-user-info">
+                <h4>Accountoverzicht</h4>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
@@ -56,31 +56,86 @@ session_start();
                             <i class="fas fa-user"></i>
                         </div>
                         <p class="account-page-info-text">Maring</p>
-                    </div>
-                    <div class="account-page-info-box">
-                        <div class="account-page-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <p class="account-page-info-text">stefan@xlwerkkleding.nl</p>
+                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user-tag"></i>
                         </div>
                         <p class="account-page-info-text">StefanM</p>
+                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
+                    </div>
+                    <div class="account-page-info-box">
+                        <div class="account-page-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p class="account-page-info-text">stefan@xlwerkkleding.nl</p>
+                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <p class="account-page-info-text">01234557879</p>
+                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-building"></i>
                         </div>
                         <p class="account-page-info-text">XLwerkkleding</p>
+                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
+                    <button>Verwijder Profiel</button>
+                </div>
+                <div class="previous-orders">
+                <h4>Bestellingen</h4>
+                    <div class="previous-order">
+                        <div class="prev-order-data">
+                            <p class="prev-order-title">Reflecterende Jas</p>
+                            <p class="prev-order-date">18-1-2022</p>
+                        </div>
+                        <div class="prev-order-btn button small orange">
+                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
+                        </div>
+                    </div>
+                    <div class="previous-order">
+                        <div class="prev-order-data">
+                            <p class="prev-order-title">Reflecterende Jas</p>
+                            <p class="prev-order-date">18-1-2022</p>
+                        </div>
+                        <div class="prev-order-btn button small orange">
+                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
+                        </div>
+                    </div>
+                    <div class="previous-order">
+                        <div class="prev-order-data">
+                            <p class="prev-order-title">Reflecterende Jas</p>
+                            <p class="prev-order-date">18-1-2022</p>
+                        </div>
+                        <div class="prev-order-btn button small orange">
+                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
+                        </div>
+                    </div>
+                    <div class="previous-order">
+                        <div class="prev-order-data">
+                            <p class="prev-order-title">Reflecterende Jas</p>
+                            <p class="prev-order-date">18-1-2022</p>
+                        </div>
+                        <div class="prev-order-btn button small orange">
+                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
+                        </div>
+                    </div>
+                    <div class="previous-order">
+                        <div class="prev-order-data">
+                            <p class="prev-order-title">Reflecterende Jas</p>
+                            <p class="prev-order-date">18-1-2022</p>
+                        </div>
+                        <div class="prev-order-btn button small orange">
+                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
+                        </div>
+                    </div>
+                    <button style="margin-top: 24px;">Meer</button>
                 </div>
             </div>
         </div>
