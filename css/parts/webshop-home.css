@@ -14,8 +14,9 @@
 
 .select-container {
   display: flex;
+  flex-flow: column nowrap;
   margin-left: 15px;
-  width: 400px;
+  width: 200px;
 }
 
 .select-container:first-of-type {

@@ -99,6 +99,8 @@ if ($_SESSION["sessionStatus"] == 1) {
           </div>
           <div class="select-container">
             <input type="submit" name="formSubmit" class="button sub" value="Filter">
+          </div>
+          <div class="select-container">
             <input type="submit" name="formReset" class="button sub" value="Reset">
           </div>
         </div>
