@@ -160,6 +160,8 @@ a.drop-link:hover {
         visibility: visible;
         opacity: 1;
         transition: opacity 0.2s ease-in;
+        overflow: hidden;
+        position: fixed;
     }
 
     .dropdown {

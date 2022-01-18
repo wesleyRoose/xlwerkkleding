@@ -85,6 +85,14 @@ div.card {
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .slideshowBoxContainer, .dot {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
 /* Next & previous buttons */
 .prev,
 .next {

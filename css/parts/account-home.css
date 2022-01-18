@@ -4,7 +4,7 @@
 
 .account-page-content {
     display: flex;
-    flex-direction: row wrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
@@ -64,9 +64,15 @@
     color: var(--white);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+    .account-page-wrapper {
+        display: grid;
+        place-items: center;
+    }
+
     .account-page-content {
         flex-flow: column nowrap;
+        width: 335px;
     }
 
     .previous-orders {

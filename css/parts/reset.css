@@ -152,6 +152,10 @@ textarea {
   margin-top: 5px;
 }
 
+.f-width {
+  width: 100%;
+}
+
 @media (max-width:500px) {
   form {
     width: 250px;

@@ -39,7 +39,7 @@ if ($_SESSION["sessionStatus"] == 1) {
   <section class="webshop">
     <div class="page-wrapper">
       <h1 class="title">Webshop</h1>
-      <form action="" method="post">
+      <form action="" method="post" class="f-width">
         <div class="filter-bar">
           <div class="select-container">
             <div class="label-check">
