@@ -14,7 +14,7 @@
                 <h3>Menu</h3>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>">Home</a>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/webshop/index.php">Webshop</a>
-                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/users/account.php">Account</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/account/index.php">Account</a>
             </div>
             <div class="block">
                 <h3>Contact</h3>

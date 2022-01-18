@@ -51,6 +51,8 @@ if (isset($_POST["registerSubmit"])) {
         $aValues = array($email, $username, $fName, $lName, $hashedPassword, $phoneNumber, $firm);
 
         // Create and execute prepared statement
-        preparedInsertIntoQuery($conn, 7, "users", $aRowNames, "sssssss", $aValues);
+        if (preparedInsertIntoQuery($conn, 7, "users", $aRowNames, "sssssss", $aValues)) {
+            header('Location: ' . ROOT_URL . 'index.php');
+        }
     }
 }

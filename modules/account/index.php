@@ -2,45 +2,45 @@
 
 session_start();
 
-    //config page
-    if (file_exists('../../config.php')) {
-        include('../../config.php');
-    } else {
-        $errorMessage = "";
-        $errorMessage .= "PHP ERROR: config.php does not exist.";
-        echo $errorMessage;
-        exit;
+//config page
+if (file_exists('../../config.php')) {
+    include('../../config.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: config.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+// functions page
+if (file_exists('../../functions.php')) {
+    include('../../functions.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: functions.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+
+if ($_SESSION["sessionStatus"] != 1 && $_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
+    header('Location: ' . ROOT_URL . 'index.php');
+} else {
+
+    //header
+    if ($_SESSION["sessionStatus"] == 1) {
+        include "../../templates/header-user.php";
+    } else if ($_SESSION["sessionStatus"] == 2) {
+        include "../../templates/header-admin.php";
+    } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+        include "../../templates/header.php";
     }
+}
 
-        // functions page
-    if (file_exists('../../functions.php')) {
-        include('../../functions.php');
-    } else {
-        $errorMessage = "";
-        $errorMessage .= "PHP ERROR: functions.php does not exist.";
-        echo $errorMessage;
-        exit;
-    }
+$user_query = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
 
-
-    if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
-        header('Location: ' . ROOT_URL . 'index.php');
-    } else {
-
-        //header
-        if ($_SESSION["sessionStatus"] == 1) {
-            include "../../templates/header-user.php";
-        } else if ($_SESSION["sessionStatus"] == 2) {
-            include "../../templates/header-admin.php";
-        } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-            include "../../templates/header.php";
-        }
-    }
-
-    $user_query = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
-
-    $result = $conn->query($user_query);
-    $row = $result->fetch_assoc();
+$result = $conn->query($user_query);
+$row = $result->fetch_assoc();
 ?>
 
 <main class="account-page">
@@ -48,53 +48,53 @@ session_start();
         <div class="account-page-wrapper">
             <div class="account-page-content">
                 <div class="account-page-user-info">
-                <h4>Accountoverzicht</h4>
+                    <h4>Accountoverzicht</h4>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["firstName"];?></p>
+                        <p class="account-page-info-text"><?php echo $row["firstName"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["lastName"];?></p>
+                        <p class="account-page-info-text"><?php echo $row["lastName"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user-tag"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["username"];?></p>
+                        <p class="account-page-info-text"><?php echo $row["username"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["email"];?></p>
+                        <p class="account-page-info-text"><?php echo $row["email"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["phoneNumber"];?></p>
+                        <p class="account-page-info-text"><?php echo $row["phoneNumber"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-building"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["firm"];?></p>
+                        <p class="account-page-info-text"><?php echo $row["firm"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <button>Verwijder Profiel</button>
                 </div>
                 <div class="previous-orders">
-                <h4>Bestellingen</h4>
+                    <h4>Bestellingen</h4>
                     <div class="previous-order">
                         <div class="prev-order-data">
                             <p class="prev-order-title">Reflecterende Jas</p>
