@@ -38,14 +38,15 @@
 .previous-orders {
     display: flex;
     flex-flow: column nowrap;
-    margin-left: 50px;
+    width: 335px;
 }
 
 .previous-order {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
     max-height: 50px;
-    max-width: 200px;
 }
 
 .previous-order:first-of-type {
@@ -61,4 +62,15 @@
 
 .prev-btn-link-color {
     color: var(--white);
+}
+
+@media (max-width: 500px) {
+    .account-page-content {
+        flex-flow: column nowrap;
+    }
+
+    .previous-orders {
+        margin-left: 0;
+        margin-top: 50px;
+    }
 }

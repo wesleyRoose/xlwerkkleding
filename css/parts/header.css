@@ -122,7 +122,7 @@ a.drop-link:hover {
 
 /* Responsive header styling */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .menu {
         position: absolute; 
         top: 79px;
