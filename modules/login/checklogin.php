@@ -60,6 +60,7 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
     } else if ($data["rights"] == 2) {
       $_SESSION["sessionStatus"] = 2;
     }
+    $_SESSION["sessionAccountId"] = $data["id"];
     sleep(2);
     header($sHeaderLocationOnSucces);
   } else {
