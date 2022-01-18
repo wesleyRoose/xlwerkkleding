@@ -214,9 +214,11 @@ if ($_SESSION["sessionStatus"] == 1) {
       $iFilterLength = count($aFilterCheckBoxes);
 
       print_r(end($aFilterCheckBoxes));
+      $iFilterCounter = $iFilterLength--;
 
       // $query = "SELECT * FROM `product` WHERE `p_id` = 1 AND `p_name` = 'test'";
       if ($iFilterLength == 1) {
+        $sQuery = "SELECT * FROM `product` where ";
       } else if ($iFilterLength == 2) {
       } else if ($iFilterLength == 3) {
       } else if ($iFilterLength == 4) {

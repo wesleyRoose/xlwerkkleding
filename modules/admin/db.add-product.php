@@ -77,6 +77,27 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 
 //file upload
+<<<<<<< HEAD
+if (isset($_POST['addProductButton'])){
+
+    $fileName = $_FILES['p_file']['name'];
+    $tempName = $_FILES['p_file']['tmp_name'];
+
+    print_r($fileName);
+    echo '<br>';
+    print_r($tempName);
+    echo '<br>';
+
+    if(isset($fileName))
+    {
+      if(!empty($fileName))
+      {
+        $location = "img";
+        if(move_uploaded_file($tempName, $location. $fileName))
+        {
+          echo 'file uploaded';
+        }
+=======
 if (isset($_POST['addProductButton'])) {
 
   $fileName = $_FILES['p_file']['name'];
@@ -87,6 +108,7 @@ if (isset($_POST['addProductButton'])) {
       $location = "../img/product_img/";
       if (move_uploaded_file($tempName, $location . $fileName)) {
         echo 'file uploaded';
+>>>>>>> 5ab0c1552aa53ac7dd3a1f6e8bb018ab51c4c55e
       }
     }
   }
