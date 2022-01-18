@@ -33,7 +33,7 @@
                         <ul class="menu-list">
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>">Home</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/webshop/index.php">WebShop</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/users/account.php">Account</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/account/index.php">Account</a></li>
                             <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/logout.php">Logout</a></li>
                         </ul>
                     </div>

@@ -1,0 +1,27 @@
+.account-page, .account-page-content {
+    margin-top: 15px;
+}
+
+.account-page-info-box {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.account-page-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.account-page-info-text {
+    margin-left: 50px;
+}
+
+.orange {
+    background-color: var(--main-color);
+    color: var(--white) !important;
+}
+
+.no-margin {
+    margin: 0;
+}
