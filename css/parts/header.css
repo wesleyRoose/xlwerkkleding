@@ -89,36 +89,51 @@ a.login {
 
 /* Dropdown styling */
 
-/* div.dropdown {
-    position: absolute;
-    top: 79px;
-    width: 122px;
-    background-color: var(--white);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 0.5rem;
-    line-height: 2rem;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s ease-out;
-    z-index: 1;
-}
-
-.display {
-    visibility: visible !important;
-    opacity: 1 !important;
-    transition: opacity 0.2s ease-in;
-}
-
-a.drop-link {
-    color: black;
+.dropdown {
+    position: relative;
+    display: inline-block;
     cursor: pointer;
-    transition: color 0.2s ease-out;
 }
 
-a.drop-link:hover {
-    color: rgb(100, 100, 100);
-    transition: color 0.2s ease-in;
-} */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.fa-chevron-down {
+    margin-left: 5px;
+}
+
+/* Dark Mode (Explaination found in reset.css at bottom) */
+
+@media (prefers-color-scheme: light) {
+    .dropdown-content {
+      background-color: var(--black);
+    }
+
+    .dropdown-item {
+        color: var(--white) !important;
+    }
+}
+  
+  @media (prefers-color-scheme: dark) {
+    .dropdown-content {
+      background-color: var(--broken-white);
+    }
+
+    .dropdown-item {
+        color: var(--black) !important;
+    }
+}
 
 /* Responsive header styling */
 

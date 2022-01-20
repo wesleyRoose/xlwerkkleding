@@ -35,7 +35,13 @@
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/product-overview.php">Products</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Users</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">Product Toevoegen</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/account/index.php">Account</a></li>
+                            <div class="dropdown">
+                                <span>MEER<i class="fas fa-chevron-down"></i></span>
+                                <div class="dropdown-content">
+                                    <li class="navitem"><a class="nav-item dropdown-item" href="<?php echo ROOT_URL ?>modules/webshop/index.php">WebShop</a></li>
+                                    <li class="navitem"><a class="nav-item dropdown-item" href="<?php echo ROOT_URL ?>modules/account/index.php">Account</a></li>
+                                </div>
+                            </div>
                             <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/logout.php">Logout</a></li>
                         </ul>
                     </div>

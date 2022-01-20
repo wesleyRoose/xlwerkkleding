@@ -61,6 +61,12 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
               <input type="radio" name="selectValue" class="input_filter" value="Firma">
               <label for="firma">Firma</label><br>
             </div>
+            <div class="select-container radio">
+              <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
+            </div>
+            <div class="select-container radio">
+              <input type="submit" name="formReset" class="button sub padding-no-margin" value="Reset">
+            </div>
           </form>
         </div>
 
