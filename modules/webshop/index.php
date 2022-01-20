@@ -39,16 +39,16 @@ if ($_SESSION["sessionStatus"] == 1) {
   <section class="webshop">
     <div class="page-wrapper">
       <h1 class="title">Webshop</h1>
-      <form action="" method="post" class="f-width">
+      <form action="index.php" method="post" class="f-width">
         <div class="filter-bar">
           <div class="select-container">
             <div class="label-check">
-              <label>Types</label>
+              <label>Categorie</label>
               <div class="check-box">
-                <input type="checkbox" name="filterCheckBox[]" value="types" checked>
+                <input type="checkbox" name="filterCheckBox[]" value="categories" checked>
               </div>
             </div>
-            <select name="types" class="webshop-filter-select">
+            <select name="categories" class="webshop-filter-select">
               <option value="Jassen">Jassen</option>
               <option value="Overallen">Overallen</option>
               <option value="Broeken">Broeken</option>
@@ -62,7 +62,7 @@ if ($_SESSION["sessionStatus"] == 1) {
                 <input type="checkbox" name="filterCheckBox[]" value="sector" checked>
               </div>
             </div>
-            <select name="types" class="webshop-filter-select">
+            <select name="sector" class="webshop-filter-select">
               <option value="Bouw">Bouw</option>
               <option value="Zorg">Zorg</option>
               <option value="Schoonmaak">Schoonmaak</option>
@@ -74,10 +74,10 @@ if ($_SESSION["sessionStatus"] == 1) {
             <div class="label-check">
               <label>Merk</label>
               <div class="check-box">
-                <input type="checkbox" name="filterCheckBox[]" value="merk" checked>
+                <input type="checkbox" name="filterCheckBox[]" value="brand" checked>
               </div>
             </div>
-            <select name="types" class="webshop-filter-select">
+            <select name="brand" class="webshop-filter-select">
               <option value="Merk1">Merk1</option>
               <option value="Merk2">Merk2</option>
               <option value="Merk3">Merk3</option>
@@ -89,12 +89,12 @@ if ($_SESSION["sessionStatus"] == 1) {
             <div class="label-check">
               <label>Geslacht</label>
               <div class="check-box">
-                <input type="checkbox" name="filterCheckBox[]" value="geslacht" checked>
+                <input type="checkbox" name="filterCheckBox[]" value="gender" checked>
               </div>
             </div>
-            <select name="types" class="webshop-filter-select">
-              <option value="Merk1">Man</option>
-              <option value="Merk2">Vrouw</option>
+            <select name="gender" class="webshop-filter-select">
+              <option value="Man">Man</option>
+              <option value="Vrouw">Vrouw</option>
             </select>
           </div>
           <div class="select-container">
@@ -213,17 +213,57 @@ if ($_SESSION["sessionStatus"] == 1) {
       $aFilterCheckBoxes = $_POST["filterCheckBox"];
       $iFilterLength = count($aFilterCheckBoxes);
 
-      print_r(end($aFilterCheckBoxes));
+
+      // Creating arrays for later use in the query
+      $aQueryData = array();
+
+      // Array for brands
+      // Check if `brand` is selected
+      if (in_array("brand", $aFilterCheckBoxes)) {
+        $aBrand = array();
+        if (isset($_POST["brand"])) {
+          $aBrand = array("p_brand", $_POST["brand"]);
+          array_push()
+        }
+      }
+
+      // Array for Categories
+      // Check if `categories` is selected
+      if (in_array("categories", $aFilterCheckBoxes)) {
+        $aCategories = array();
+        if (isset($_POST["categories"])) {
+          $aCategories = array("p_category", $_POST["categories"]);
+        }
+      }
+
+      // Array for sector
+      // Check if `sector` is selected
+      if (in_array("sector", $aFilterCheckBoxes)) {
+        $aSector = array();
+        if (isset($_POST["sector"])) {
+          $aSector = array("p_sector", $_POST["sector"]);
+        }
+      }
+
+      // Creating an complete array for the Query
+      $aQueryData = array($aBrand, $aCategories, $aSector);
+
+      print_r($aQueryData[0][1]);
+
       $iFilterCounter = $iFilterLength--;
 
       // $query = "SELECT * FROM `product` WHERE `p_id` = 1 AND `p_name` = 'test'";
-      if ($iFilterLength == 1) {
-        $sQuery = "SELECT * FROM `product` where ";
-      } else if ($iFilterLength == 2) {
-      } else if ($iFilterLength == 3) {
-      } else if ($iFilterLength == 4) {
-      } else {
-      }
+
+
+
+      // if ($iFilterLength == 1) {
+
+      // } else if ($iFilterLength == 2) {
+      // } else if ($iFilterLength == 3) {
+      // } else if ($iFilterLength == 4) {
+      // } else {
+      // }
+
 
 
       // Check if formReset is pressed
