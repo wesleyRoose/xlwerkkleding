@@ -77,26 +77,19 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 
 //file upload
-if (isset($_POST['addProductButton']))
-{
 
-    $fileName = $_FILES['p_file']['name'];
-    $tempName = $_FILES['p_file']['tmp_name'];
 
-    print_r($fileName);
-    echo '<br>';
-    print_r($tempName);
-    echo '<br>';
+$pic = $_FILES["p_file"]["name"];
+$folder = "../img/product_img/";
+$path = $folder.$pic; // New variable
 
-    if(isset($fileName))
-    {
-      if(!empty($fileName))
-      {
-        $location = "img";
-        if(move_uploaded_file($tempName, $location. $fileName))
-        {
-          echo 'file uploaded';
-        }
-      }
+if( move_uploaded_file($_FILES["p_file"]["tmp_name"], $path) ) {
+    $mysqli = connectDB();
+    if( upload($id, $path, $mysqli) ) {
+       echo 'File uploaded';
+    } else {
+      echo 'Something went wrong uploading file';
     }
+} else {
+   echo 'Something went wrong uploading file';
 }
