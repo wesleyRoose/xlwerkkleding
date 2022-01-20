@@ -6,4 +6,9 @@
     margin-top: 50px;
 }
 
+.add-product-select {
+    margin: 0 0 0 0;
+    height: 32px !important;
+}
+
 /* end of add-product.php styling */

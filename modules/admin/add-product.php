@@ -46,11 +46,17 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <label>Product Naam</label><br>
                     <input type="text" name="p_name" id="p_name" class="p-input"><br>
                     <label>Categorie</label><br>
-                    <input type="text" name="p_category" id="p_category" class="p-input"><br>
+                    <select name="categories" class="add-product-select webshop-filter-select">
+                        <option value="jassen">Jassen</option>
+                    </select><br>
                     <label>Sectorgroep</label><br>
-                    <input type="text" name="p_sector" id="p_sector" class="p-input"><br>
+                    <select name="sectors" class="add-product-select webshop-filter-select">
+                        <option value="bouw">Bouw</option>
+                    </select><br>
                     <label>Merk</label><br>
-                    <input type="text" name="p_brand" id="p_brand" class="p-input"><br>
+                    <select name="brand" class="add-product-select webshop-filter-select">
+                        <option value="merk1">Merk1</option>
+                    </select><br>
                     <label>Prijs</label><br>
                     <input type="text" name="p_price" id="p_price" class="p-input"><br>
                     <label>Maat</label><br>
