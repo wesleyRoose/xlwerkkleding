@@ -198,69 +198,69 @@ if ($_SESSION["sessionStatus"] == 1) {
     // Check if formSubmit is pressed
     if (isset($_POST["formSubmit"])) {
       // Check how many and which filters are selected
-      $aFilterCheckBoxes = $_POST["filterCheckBox"];
+      if (isset($_POST["filterCheckBox"])) {
+        $aFilterCheckBoxes = $_POST["filterCheckBox"];
 
-      // Creating arrays for later use in the query
-      $aQueryData = array();
+        // Creating arrays for later use in the query
+        $aQueryData = array();
 
-      // Array for brands
-      // Check if `brand` is selected
-      if (in_array("brand", $aFilterCheckBoxes)) {
-        $aBrand = array();
-        if (isset($_POST["brand"])) {
-          $aBrand = array("p_brand", $_POST["brand"]);
-          // Add array to complete array
-          array_push($aQueryData, $aBrand);
+        // Array for brands
+        // Check if `brand` is selected
+        if (in_array("brand", $aFilterCheckBoxes)) {
+          $aBrand = array();
+          if (isset($_POST["brand"])) {
+            $aBrand = array("p_brand", $_POST["brand"]);
+            // Add array to complete array
+            array_push($aQueryData, $aBrand);
+          }
         }
-      }
 
-      // Array for Categories
-      // Check if `categories` is selected
-      if (in_array("categories", $aFilterCheckBoxes)) {
-        $aCategories = array();
-        if (isset($_POST["categories"])) {
-          $aCategories = array("p_category", $_POST["categories"]);
-          // Add array to complete array
-          array_push($aQueryData, $aCategories);
+        // Array for Categories
+        // Check if `categories` is selected
+        if (in_array("categories", $aFilterCheckBoxes)) {
+          $aCategories = array();
+          if (isset($_POST["categories"])) {
+            $aCategories = array("p_category", $_POST["categories"]);
+            // Add array to complete array
+            array_push($aQueryData, $aCategories);
+          }
         }
-      }
 
-      // Array for sector
-      // Check if `sector` is selected
-      if (in_array("sector", $aFilterCheckBoxes)) {
-        $aSector = array();
-        if (isset($_POST["sector"])) {
-          $aSector = array("p_sector", $_POST["sector"]);
-          // Add array to complete array
-          array_push($aQueryData, $aSector);
+        // Array for sector
+        // Check if `sector` is selected
+        if (in_array("sector", $aFilterCheckBoxes)) {
+          $aSector = array();
+          if (isset($_POST["sector"])) {
+            $aSector = array("p_sector", $_POST["sector"]);
+            // Add array to complete array
+            array_push($aQueryData, $aSector);
+          }
         }
-      }
 
-      // print_r($aQueryData);
-      // Check if array is not empty, if so skip first query building
-      if (!empty($aQueryData)) {
-        // Get length of Array for query building
-        $iFilterLength = count($aQueryData);
-
-
-        // $query = "SELECT * FROM `product` WHERE `p_id` = 1 AND `p_name` = 'test'";
+        // print_r($aQueryData);
+        // Check if array is not empty, if so skip first query building
+        if (!empty($aQueryData)) {
+          // Get length of Array for query building
+          $iFilterLength = count($aQueryData);
 
 
+          // $query = "SELECT * FROM `product` WHERE `p_id` = 1 AND `p_name` = 'test'";
 
-        if ($iFilterLength == 1) {
-          $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "'";
-        } else if ($iFilterLength == 2) {
-          $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "'";
-        } else if ($iFilterLength == 3) {
-          $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "' AND `" . $aQueryData[2][0] . "` = '" . $aQueryData[2][1] . "'";
+
+
+          if ($iFilterLength == 1) {
+            $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "'";
+          } else if ($iFilterLength == 2) {
+            $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "'";
+          } else if ($iFilterLength == 3) {
+            $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "' AND `" . $aQueryData[2][0] . "` = '" . $aQueryData[2][1] . "'";
+          }
+          if ($oResult = $conn->query($sQuery)) {
+            $aRow = $oResult->fetch_assoc();
+            print_r($aRow);
+          } else {
+          }
         }
-        if ($oResult = $conn->query($sQuery)) {
-          $aRow = $oResult->fetch_assoc();
-          print_r($aRow);
-        } else {
-        }
-        // 
-        // print_r($aRow);
       }
 
 
