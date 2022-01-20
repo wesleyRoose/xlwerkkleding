@@ -87,3 +87,8 @@
     display: flex;
     flex-flow: row nowrap;
 }
+
+.padding-no-margin {
+    padding: 0 0.5rem 0 0.5rem !important;
+    margin: 0 !important;
+}
