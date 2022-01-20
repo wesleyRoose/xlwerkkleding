@@ -179,7 +179,6 @@ class  db
       }
       $sPreparedSql .= $sPreparedSqlExtension;
     }
-    echo $sPreparedSql;
     // Call function to execute statement
     return self::executePreparedStatement("SELECT", $sPreparedSql, $sSql_types, $aColumnValue);
   }
