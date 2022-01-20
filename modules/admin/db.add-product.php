@@ -77,19 +77,12 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 
 //file upload
-
-
-$pic = $_FILES["p_file"]["name"];
-$folder = "../img/product_img/";
-$path = $folder.$pic; // New variable
-
-if( move_uploaded_file($_FILES["p_file"]["tmp_name"], $path) ) {
-    $mysqli = connectDB();
-    if( upload($id, $path, $mysqli) ) {
-       echo 'File uploaded';
-    } else {
-      echo 'Something went wrong uploading file';
-    }
-} else {
-   echo 'Something went wrong uploading file';
+ if(isset($_POST['addProductButton']))
+{
+  //create one variable
+  $m = "img_product/". $_FILES['p_file']['name'];
+  //use move uploaded file function to move your files
+  move_uploaded_file($_FILES['p_file']['tmp_name'], $m);
+  // tmp_name is call temporary directory to store file and permanently its transter to m variable path
+  echo "upload succesfully.....";
 }
