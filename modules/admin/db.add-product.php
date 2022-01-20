@@ -55,11 +55,10 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       //file upload
 
       //create one variable
-      $m = "img_product/". $_FILES['p_file']['name'];
+      $m = "img_product/" . $_FILES['p_file']['name'];
       //use move uploaded file function to move your files
       move_uploaded_file($_FILES['p_file']['tmp_name'], $m);
       // tmp_name is call temporary directory to store file and permanently its transter to m variable path
-      echo "upload succesfully.....";
 
       // Create header location url for a succesfull insert
       $sLocationSucces = "";
@@ -70,18 +69,16 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $sLocationFailure = "";
       $sLocationFailure = 'Location: ' . ROOT_URL . 'modules/other/failure.php';
 
-      // Placeholder
-      $p_foto = "Test";
       // Create Arrays for function parameters
       $aColumnName = array("p_name", "p_price", "p_category", "p_sector", "p_brand", "p_size", "p_color", "p_description", "p_foto");
 
       $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $m);
 
-      db::insert('product', $aColumnName, $aValues, "sisssssss");
+
+      if (db::insert('product', $aColumnName, $aValues, "sisssssss") != true) {
+        header($sLocationSucces);
+      } else {
+      }
     }
   }
 }
-
-
-
-

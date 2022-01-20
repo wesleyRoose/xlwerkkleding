@@ -53,7 +53,7 @@ class  db
           return $data;
         } else if ($sType == "INSERT") {
           // If $sType is INSERT return true
-
+          return true;
         }
       } else {
         // Create error message and return false

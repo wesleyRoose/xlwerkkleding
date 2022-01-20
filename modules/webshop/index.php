@@ -100,19 +100,8 @@ if ($_SESSION["sessionStatus"] == 1) {
 
     <?php
 
+
     $sDefaultHtml = '';
-    $sDefaultHtml = '<div class="cards">
-<div class="card">
-<div class="image">
-  <img src=" ' . ROOT_URL . 'img/placeholder.png" alt="Placeholder Image" class="card-image">
-</div>
-<div class="text">
-  <h3>Product 1</h3>
-  <p>Bouw</p>
-  <a href="#" class="card-link">Klik hier</a>
-</div>
-</div>
-';
 
     // Generating results from Search engine
     // Check if formSubmit is pressed
@@ -176,13 +165,27 @@ if ($_SESSION["sessionStatus"] == 1) {
             $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "' AND `" . $aQueryData[2][0] . "` = '" . $aQueryData[2][1] . "'";
           }
           if ($oResult = $conn->query($sQuery)) {
-            $aRow = $oResult->fetch_assoc();
-            print_r($aRow);
+            while ($aRow = $oResult->fetch_assoc()) {
+              $sDefaultHtml .= '<div class="cards">
+      <div class="card">
+      <div class="image">
+        <img src=" ' . ROOT_URL . 'modules/admin/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
+      </div>
+      <div class="text">
+        <h3>' . $aRow["p_name"] . '</h3>
+        <p>' . $aRow["p_sector"] . '</p>
+        <a href="' . ROOT_URL . "modules/webshop/product-page.php?productId=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
+      </div>
+      </div>';
+            }
           } else {
           }
         }
       }
 
+
+
+      echo $sDefaultHtml;
 
       // Check if formReset is pressed
     } else if (isset($_POST["formReset"])) {
