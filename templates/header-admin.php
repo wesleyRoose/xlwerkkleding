@@ -32,8 +32,8 @@
                     <div class="menu-wrap">
                         <ul class="menu-list">
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>">Home</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/product-overview.php">Products</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Users</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/product-overview.php">Producten</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Gebruikers</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">Product Toevoegen</a></li>
                             <div class="dropdown">
                                 <span>MEER<i class="fas fa-chevron-down"></i></span>
@@ -42,7 +42,7 @@
                                     <li class="navitem"><a class="nav-item dropdown-item" href="<?php echo ROOT_URL ?>modules/account/index.php">Account</a></li>
                                 </div>
                             </div>
-                            <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/logout.php">Logout</a></li>
+                            <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/logout.php">Loguit</a></li>
                         </ul>
                     </div>
                 </nav>
