@@ -86,18 +86,6 @@ if ($_SESSION["sessionStatus"] == 1) {
             </select>
           </div>
           <div class="select-container">
-            <div class="label-check">
-              <label>Geslacht</label>
-              <div class="check-box">
-                <input type="checkbox" name="filterCheckBox[]" value="gender" checked>
-              </div>
-            </div>
-            <select name="gender" class="webshop-filter-select">
-              <option value="Man">Man</option>
-              <option value="Vrouw">Vrouw</option>
-            </select>
-          </div>
-          <div class="select-container">
             <input type="submit" name="formSubmit" class="button sub" value="Filter">
           </div>
           <div class="select-container">
@@ -211,8 +199,6 @@ if ($_SESSION["sessionStatus"] == 1) {
     if (isset($_POST["formSubmit"])) {
       // Check how many and which filters are selected
       $aFilterCheckBoxes = $_POST["filterCheckBox"];
-      $iFilterLength = count($aFilterCheckBoxes);
-
 
       // Creating arrays for later use in the query
       $aQueryData = array();
@@ -223,7 +209,8 @@ if ($_SESSION["sessionStatus"] == 1) {
         $aBrand = array();
         if (isset($_POST["brand"])) {
           $aBrand = array("p_brand", $_POST["brand"]);
-          array_push()
+          // Add array to complete array
+          array_push($aQueryData, $aBrand);
         }
       }
 
@@ -233,6 +220,8 @@ if ($_SESSION["sessionStatus"] == 1) {
         $aCategories = array();
         if (isset($_POST["categories"])) {
           $aCategories = array("p_category", $_POST["categories"]);
+          // Add array to complete array
+          array_push($aQueryData, $aCategories);
         }
       }
 
@@ -242,28 +231,37 @@ if ($_SESSION["sessionStatus"] == 1) {
         $aSector = array();
         if (isset($_POST["sector"])) {
           $aSector = array("p_sector", $_POST["sector"]);
+          // Add array to complete array
+          array_push($aQueryData, $aSector);
         }
       }
 
-      // Creating an complete array for the Query
-      $aQueryData = array($aBrand, $aCategories, $aSector);
-
-      print_r($aQueryData[0][1]);
-
-      $iFilterCounter = $iFilterLength--;
-
-      // $query = "SELECT * FROM `product` WHERE `p_id` = 1 AND `p_name` = 'test'";
+      // print_r($aQueryData);
+      // Check if array is not empty, if so skip first query building
+      if (!empty($aQueryData)) {
+        // Get length of Array for query building
+        $iFilterLength = count($aQueryData);
 
 
+        // $query = "SELECT * FROM `product` WHERE `p_id` = 1 AND `p_name` = 'test'";
 
-      // if ($iFilterLength == 1) {
 
-      // } else if ($iFilterLength == 2) {
-      // } else if ($iFilterLength == 3) {
-      // } else if ($iFilterLength == 4) {
-      // } else {
-      // }
 
+        if ($iFilterLength == 1) {
+          $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "'";
+        } else if ($iFilterLength == 2) {
+          $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "'";
+        } else if ($iFilterLength == 3) {
+          $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "' AND `" . $aQueryData[2][0] . "` = '" . $aQueryData[2][1] . "'";
+        }
+        if ($oResult = $conn->query($sQuery)) {
+          $aRow = $oResult->fetch_assoc();
+          print_r($aRow);
+        } else {
+        }
+        // 
+        // print_r($aRow);
+      }
 
 
       // Check if formReset is pressed
