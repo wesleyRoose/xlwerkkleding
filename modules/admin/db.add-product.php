@@ -52,6 +52,15 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $p_color = cleaninput($_POST['p_color'], 50);
       $p_description = cleaninput($_POST['p_description'], 150);
 
+      //file upload
+
+      //create one variable
+      $m = "img_product/". $_FILES['p_file']['name'];
+      //use move uploaded file function to move your files
+      move_uploaded_file($_FILES['p_file']['tmp_name'], $m);
+      // tmp_name is call temporary directory to store file and permanently its transter to m variable path
+      echo "upload succesfully.....";
+
       // Create header location url for a succesfull insert
       $sLocationSucces = "";
       $sLocationSucces .= 'Location: ' . ROOT_URL . 'modules/other/succes.php';
@@ -66,7 +75,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       // Create Arrays for function parameters
       $aColumnName = array("p_name", "p_price", "p_category", "p_sector", "p_brand", "p_size", "p_color", "p_description", "p_foto");
 
-      $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $p_foto);
+      $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $m);
 
       db::insert('product', $aColumnName, $aValues, "sisssssss");
     }
@@ -76,13 +85,3 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 
 
-//file upload
- if(isset($_POST['addProductButton']))
-{
-  //create one variable
-  $m = "img_product/". $_FILES['p_file']['name'];
-  //use move uploaded file function to move your files
-  move_uploaded_file($_FILES['p_file']['tmp_name'], $m);
-  // tmp_name is call temporary directory to store file and permanently its transter to m variable path
-  echo "upload succesfully.....";
-}
