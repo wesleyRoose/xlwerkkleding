@@ -21,6 +21,16 @@ if (file_exists('../../functions.php')) {
 }
 
 
+if (file_exists('db.filterTerms.php')) {
+    include('db.filterTerms.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: db.filterTerms.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+
 if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     header('Location: ' . ROOT_URL . 'index.php');
 } else {
@@ -63,17 +73,15 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <label>Kleur</label><br>
                     <input type="text" name="p_color" id="p_color" class="p-input"><br>
                     <label>Categorie</label><br>
-                    <select name="categories" class="add-product-select webshop-filter-select">
-                        <option value="jassen">Jassen</option>
+                    <select name="p_category" class="add-product-select webshop-filter-select">
+                        <?php echo $sCatagoryHtml ?>
                     </select><br>
                     <label>Sectorgroep</label><br>
-                    <select name="sectors" class="add-product-select webshop-filter-select">
-                        <option value="bouw">Bouw</option>
+                    <select name="p_sector" class="add-product-select webshop-filter-select">
+                        <?php echo $sSectorHtml ?>
                     </select><br>
                     <label>Merk</label><br>
-                    <select name="brand" class="add-product-select webshop-filter-select">
-                        <option value="merk1">Merk1</option>
-                    </select><br>
+                    <input type="text" name="p_brand" id="p_brand" class="p-input"><br>
                     <label>Foto</label><br>
                     <input type="file" name="p_file"><br>
                     <label>Beschrijving</label><br>
