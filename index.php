@@ -3,6 +3,7 @@
 
 session_start();
 
+
 if (!isset($_SESSION["sessionStatus"])) {
   $_SESSION["sessionStatus"] = null;
 }

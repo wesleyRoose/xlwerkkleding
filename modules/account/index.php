@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< Updated upstream
 session_start();
 
 
@@ -16,13 +17,17 @@ if (file_exists('../../config.php')) {
 // functions page
 if (file_exists('../../functions.php')) {
     include('../../functions.php');
+=======
+//load controller
+if (file_exists('../../controller.php')) {
+    include('../../controller.php');
+>>>>>>> Stashed changes
 } else {
     $errorMessage = "";
-    $errorMessage .= "PHP ERROR: functions.php does not exist.";
+    $errorMessage .= "PHP ERROR: controller.php does not exist.";
     echo $errorMessage;
     exit;
 }
-
 
 if ($_SESSION["sessionStatus"] != 1 && $_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     header('Location: ' . ROOT_URL . 'index.php');
