@@ -17,10 +17,27 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    color: var(--white);
+}
+
+div.cs-item:nth-last-of-type(odd) {
+    background-color: var(--odd-color);
 }
 
 .categories, .sectors {
     width: 350px;
+    height: 500px;
+    overflow-y: scroll;
+    padding: 20px;
+    background-color: var(--light-gray);
+    color: var(--white);
+    border-radius: 3px;
+}
+
+@media (prefers-color-scheme: light) {
+    .categories, .sectors {
+        background-color: var(--dark-gray);
+    }
 }
 
 .sectors {
