@@ -152,8 +152,18 @@ textarea {
   margin-top: 5px;
 }
 
+/* Classes for simple element resets */
+
 .f-width {
   width: 100%;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 @media (max-width:500px) {
