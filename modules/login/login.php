@@ -1,14 +1,5 @@
 <?php
 
-//load controller
-if (file_exists('../../controller.php')) {
-    include('../../controller.php');
-  } else {
-    $errorMessage = "";
-    $errorMessage .= "PHP ERROR: controller.php does not exist.";
-    echo $errorMessage;
-    exit;
-  }
 
 if (!isset($_SESSION["sessionStatus"])) {
     $_SESSION["sessionStatus"] = null;

@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();
 
 
@@ -10,26 +9,11 @@ if (!isset($_SESSION["sessionStatus"])) {
 
 
 
-if (file_exists('config.php')) {
-  include('config.php');
+if (file_exists('./modules/home/main.php')) {
+  include('./modules/home/main.php');
 } else {
   $errorMessage = "";
-  $errorMessage .= "PHP ERROR: config.php does not exist.";
+  $errorMessage .= "PHP ERROR: main.php does not exist.";
   echo $errorMessage;
   exit;
 }
-
-
-
-
-if (file_exists('functions.php')) {
-  include('functions.php');
-} else {
-  $errorMessage = "";
-  $errorMessage .= "PHP ERROR: functions.php does not exist.";
-  echo $errorMessage;
-  exit;
-}
-
-
-fileExistsInclude('./modules/home/main.php');

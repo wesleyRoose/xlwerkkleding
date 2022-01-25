@@ -13,7 +13,5 @@ if (file_exists('../../controller.php')) {
 if (!empty($_SESSION["sessionStatus"]) && $_SESSION["sessionStatus"] != 6) {
   header('Location: ' . ROOT_URL . 'index.php');
 } else {
-
-
   include('login.php');
 }
