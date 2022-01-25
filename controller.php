@@ -2,9 +2,12 @@
 
 //Start Session
 if (!isset($_SESSION)) {
-    session_start();
+  session_start();
 }
 
+if (!isset($_SESSION["sessionStatus"])) {
+  $_SESSION["sessionStatus"] = 0;
+}
 
 //Include Files
 if (file_exists('../../config.php')) {
