@@ -4,7 +4,7 @@
 @import "parts/footer.css";
 @import "parts/login.css";
 @import "parts/product.css";
-@import "parts/admin.css";
+@import "parts/add-product.css";
 @import "parts/succes.css";
 @import "parts/webshop-home.css";
 @import "parts/about.css";
@@ -14,4 +14,5 @@
 @import "parts/floating-btn.css";
 @import "parts/shopping-cart.css";
 @import "parts/account-home.css";
+@import "parts/admin-home.css";
 

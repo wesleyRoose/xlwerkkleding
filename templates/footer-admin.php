@@ -2,7 +2,7 @@
         <div class="upper">
             <div class="block">
                 <h3>Menu</h3>
-                <a class="footer-link lower" href="<?php echo ROOT_URL ?>">Home</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/admin/admin-home.php">Home</a>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/admin/product-overview.php">Producten</a>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Gebruikers</a>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">Product/termen Toevoegen</a>

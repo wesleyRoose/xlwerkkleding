@@ -1,5 +1,3 @@
-/* add-product.php styling */
-
 .input-form {
     display: grid;
     place-items: center;
@@ -19,4 +17,6 @@
     margin-bottom: 10px;
 }
 
-/* end of add-product.php styling */
+#new_value {
+    width: 100%;
+}
