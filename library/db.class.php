@@ -140,13 +140,14 @@ class  db
       if (self::executePreparedStatement("INSERT", $sPreparedSql, $sSql_types, $aValues)) {
         return true;
       } else {
+        // Creating error array to collect errors
         $aErrorMsg = array();
         array_push($aErrorMsg, "Execute failed " . __LINE__ . ' ' . __FILE__);
         array_push($aErrorMsg, "execute");
         return $aErrorMsg;
       }
     } else {
-      // Creating error msg to fetch
+      // Creating error array to collect errors
       $aErrorMsg = array();
       array_push($aErrorMsg, "Lengths don't matchup " . __LINE__ . ' ' . __FILE__);
       array_push($aErrorMsg, "lengths");
@@ -230,7 +231,7 @@ class  db
         $i++;
       }
       // Call function to execute statement
-      self::executePreparedStatement("UPDATE", $sPreparedSql, $sSql_types, $aNewValue, $aWhereColumnValue);
+      return self::executePreparedStatement("UPDATE", $sPreparedSql, $sSql_types, $aNewValue, $aWhereColumnValue);
     }
   }
 }
