@@ -1,26 +1,14 @@
 <?php
 
-//Start Session
-session_start();
-
-//Include Files
-if (file_exists('../../config.php')) {
-    include('../../config.php');
-} else {
+//load controller
+if (file_exists('../../controller.php')) {
+    include('../../controller.php');
+  } else {
     $errorMessage = "";
-    $errorMessage .= "PHP ERROR: ../../config.php does not exist.";
+    $errorMessage .= "PHP ERROR: controller.php does not exist.";
     echo $errorMessage;
     exit;
-}
-
-if (file_exists('../../functions.php')) {
-    include('../../functions.php');
-} else {
-    $errorMessage = "";
-    $errorMessage .= "PHP ERROR: ../../functions.php does not exist.";
-    echo $errorMessage;
-    exit;
-}
+  }
 
 if (isset($_POST["registerSubmit"])) {
     // Check if everything is not empty
