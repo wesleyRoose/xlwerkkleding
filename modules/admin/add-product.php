@@ -40,7 +40,24 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <label>Waarde</label><br>
                     <input type="text" name="new_value" id="new_value"><br>
                     <input type="submit" name="filterSubmit" value="Voeg toe">
-                    <p class="error-message">DE PLEK VOOR AL UW ERRORS</p>
+                    <p class="error-message">
+                        <?php
+                        // Display result of submit
+                        $sResult = $_GET["msg"]; // Fetching result from url
+                        $sMessage = ""; // Starting error string to display
+
+                        // Create message based on result
+                        if ($sResult == "error") {
+                            $sMessage .= "Deze waarde bestaat al!";
+                        } else if ($sResult == "query") {
+                            $sMessage .= "ERROR, contacteer een beheerder!";
+                        } else if ($sResult == "succes") {
+                            $sMessage .= "De waarde is succesvol toegevoegd!";
+                        }
+                        // Display result message
+                        echo $sMessage;
+                        ?>
+                    </p>
                 </form>
             </div>
             <div class="input-form">
