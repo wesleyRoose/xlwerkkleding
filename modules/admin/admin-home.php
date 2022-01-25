@@ -23,7 +23,7 @@ if ($oResult = $conn->query($sQuery)) {
 
 <main class="admin-home">
     <section class="admin-home">
-        <h1>U bent ingelogd als <?php echo $aRow["firstName"]; ?></h1>
+        <h1>Hallo <?php echo $aRow["firstName"]; ?></h1>
         <div class="admin-home-wrapper">
             <?php
                 // Create Query String

@@ -31,7 +31,7 @@
                 <nav class="menu" id="menu">
                     <div class="menu-wrap">
                         <ul class="menu-list">
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/admin-home.php">Home</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/admin-home.php">Dashboard</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/product-overview.php">Producten</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Gebruikers</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">Product/termen Toevoegen</a></li>
