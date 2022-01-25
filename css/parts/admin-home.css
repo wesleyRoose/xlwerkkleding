@@ -1,0 +1,38 @@
+.admin-home {
+    margin-top: 15px;
+}
+
+.admin-home-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 30px;
+}
+
+.cs-item {
+    padding: 0.5rem;
+    margin: 15px 0 15px 0;
+    background-color: var(--main-color);
+    border-radius: 3px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categories, .sectors {
+    width: 350px;
+}
+
+.sectors {
+    margin-left: 30px;
+}
+
+@media (max-width: 500px) {
+    .admin-home-wrapper {
+        flex-flow: column nowrap;
+    }
+
+    .sectors {
+        margin-left: 0;
+    }
+}
