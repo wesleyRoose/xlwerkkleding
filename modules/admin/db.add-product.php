@@ -57,6 +57,8 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       } else {
         header($sLocationFailure);
       }
+    } else {
+      header('Location: ' . ROOT_URL . 'modules/admin/add-product.php?msg=empty');
     }
   }
 }

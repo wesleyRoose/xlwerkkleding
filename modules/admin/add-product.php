@@ -43,19 +43,22 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <p class="error-message">
                         <?php
                         // Display result of submit
-                        $sResult = $_GET["msg"]; // Fetching result from url
-                        $sMessage = ""; // Starting error string to display
+                        if (isset($_GET["msg"])) {
+                            $sResult = $_GET["msg"]; // Fetching result from url
+                            $sMessage = ""; // Starting error string to display
 
-                        // Create message based on result
-                        if ($sResult == "error") {
-                            $sMessage .= "Deze waarde bestaat al!";
-                        } else if ($sResult == "query") {
-                            $sMessage .= "ERROR, contacteer een beheerder!";
-                        } else if ($sResult == "succes") {
-                            $sMessage .= "De waarde is succesvol toegevoegd!";
+                            // Create message based on result
+                            if ($sResult == "error") {
+                                $sMessage .= "Deze waarde bestaat al!";
+                            } else if ($sResult == "query") {
+                                $sMessage .= "ERROR, contacteer een beheerder!";
+                            } else if ($sResult == "succes") {
+                                $sMessage .= "De waarde is succesvol toegevoegd!";
+                            }
+
+                            // Display result message
+                            echo $sMessage;
                         }
-                        // Display result message
-                        echo $sMessage;
                         ?>
                     </p>
                 </form>
