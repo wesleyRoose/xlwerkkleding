@@ -10,12 +10,20 @@ if (file_exists('../../controller.php')) {
     exit;
 }
 
+// Create query string
+$sQuery = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
+
+// Execute query and catch results in array
+if ($oResult = $conn->query($sQuery)) {
+    $aRow = $oResult->fetch_assoc();
+}
+
 ?>
 
 
 <main class="admin-home">
     <section class="admin-home">
-        <h1>U bent ingelogd als Admin</h1>
+        <h1>U bent ingelogd als <?php echo $aRow["firstName"]; ?></h1>
         <div class="admin-home-wrapper">
             <?php
                 // Create Query String
