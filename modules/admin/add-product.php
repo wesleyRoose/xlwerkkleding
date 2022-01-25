@@ -21,6 +21,16 @@ if (file_exists('../../functions.php')) {
 }
 
 
+if (file_exists('db.filterTerms.php')) {
+    include('db.filterTerms.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: db.filterTerms.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+
 if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     header('Location: ' . ROOT_URL . 'index.php');
 } else {
@@ -33,21 +43,21 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
         include "../../templates/header.php";
     }
 
-
-
-
 ?>
 
     <main class="add-products">
         <section class="add-products-s">
             <div class="input-form">
-                <form action="db.add-terms" method="post" class="term-form" id="term-form" autocomplete="off" enctype="multipart/form-data">
+                <form action="db.add-filterTerms.php" method="post" class="term-form" id="term-form" autocomplete="off" enctype="multipart/form-data">
                     <h3 class="form-header">Hier kun je nieuwe termen toevoegen</h3>
                     <label>Term</label><br>
-                    <input type="text" name="new_term" id="new_term"><br>
+                    <select name="term" class="add-product-select webshop-filter-select">
+                        <option value="category">Categorie</option>
+                        <option value="sector">Sector</option>
+                    </select>
                     <label>Waarde</label><br>
                     <input type="text" name="new_value" id="new_value"><br>
-                    <input type="submit" value="Voeg toe">
+                    <input type="submit" name="filterSubmit" value="Voeg toe">
                     <p class="error-message">DE PLEK VOOR AL UW ERRORS</p>
                 </form>
             </div>
@@ -63,17 +73,15 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <label>Kleur</label><br>
                     <input type="text" name="p_color" id="p_color" class="p-input"><br>
                     <label>Categorie</label><br>
-                    <select name="categories" class="add-product-select webshop-filter-select">
-                        <option value="jassen">Jassen</option>
+                    <select name="p_category" class="add-product-select webshop-filter-select">
+                        <?php echo $sCatagoryHtml ?>
                     </select><br>
                     <label>Sectorgroep</label><br>
-                    <select name="sectors" class="add-product-select webshop-filter-select">
-                        <option value="bouw">Bouw</option>
+                    <select name="p_sector" class="add-product-select webshop-filter-select">
+                        <?php echo $sSectorHtml ?>
                     </select><br>
                     <label>Merk</label><br>
-                    <select name="brand" class="add-product-select webshop-filter-select">
-                        <option value="merk1">Merk1</option>
-                    </select><br>
+                    <input type="text" name="p_brand" id="p_brand" class="p-input"><br>
                     <label>Foto</label><br>
                     <input type="file" name="p_file"><br>
                     <label>Beschrijving</label><br>

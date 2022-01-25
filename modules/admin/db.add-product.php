@@ -52,7 +52,6 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $p_color = cleaninput($_POST['p_color'], 50);
       $p_description = cleaninput($_POST['p_description'], 150);
 
-      //file upload
 
       //create one variable
       $m = "img_product/" . $_FILES['p_file']['name'];
@@ -75,9 +74,10 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $m);
 
 
-      if (db::insert('product', $aColumnName, $aValues, "sisssssss") != true) {
+      if (db::insert('product', $aColumnName, $aValues, "sisssssss") == true) {
         header($sLocationSucces);
       } else {
+        header($sLocationFailure);
       }
     }
   }
