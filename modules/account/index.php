@@ -2,6 +2,7 @@
 
 session_start();
 
+
 //config page
 if (file_exists('../../config.php')) {
     include('../../config.php');
@@ -26,7 +27,6 @@ if (file_exists('../../functions.php')) {
 if ($_SESSION["sessionStatus"] != 1 && $_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     header('Location: ' . ROOT_URL . 'index.php');
 } else {
-
     //header
     if ($_SESSION["sessionStatus"] == 1) {
         include "../../templates/header-user.php";
@@ -41,7 +41,7 @@ $sQuery = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
 
 // Execute query and catch results in array
 if ($oResult = $conn->query($sQuery)) {
-    $aRow = $result->fetch_assoc();
+    $aRow = $oResult->fetch_assoc();
 }
 ?>
 

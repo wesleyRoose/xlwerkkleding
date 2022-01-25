@@ -43,21 +43,21 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
         include "../../templates/header.php";
     }
 
-
-
-
 ?>
 
     <main class="add-products">
         <section class="add-products-s">
             <div class="input-form">
-                <form action="db.add-terms" method="post" class="term-form" id="term-form" autocomplete="off" enctype="multipart/form-data">
+                <form action="db.add-filterTerms.php" method="post" class="term-form" id="term-form" autocomplete="off" enctype="multipart/form-data">
                     <h3 class="form-header">Hier kun je nieuwe termen toevoegen</h3>
                     <label>Term</label><br>
-                    <input type="text" name="new_term" id="new_term"><br>
+                    <select name="term" class="add-product-select webshop-filter-select">
+                        <option value="category">Categorie</option>
+                        <option value="sector">Sector</option>
+                    </select>
                     <label>Waarde</label><br>
                     <input type="text" name="new_value" id="new_value"><br>
-                    <input type="submit" value="Voeg toe">
+                    <input type="submit" name="filterSubmit" value="Voeg toe">
                     <p class="error-message">DE PLEK VOOR AL UW ERRORS</p>
                 </form>
             </div>
