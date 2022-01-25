@@ -41,10 +41,27 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     <main class="add-products">
         <section class="add-products-s">
             <div class="input-form">
+                <form action="db.add-terms" method="post" class="term-form" id="term-form" autocomplete="off" enctype="multipart/form-data">
+                    <h3 class="form-header">Hier kun je nieuwe termen toevoegen</h3>
+                    <label>Term</label><br>
+                    <input type="text" name="new_term" id="new_term"><br>
+                    <label>Waarde</label><br>
+                    <input type="text" name="new_value" id="new_value"><br>
+                    <input type="submit" value="Voeg toe">
+                    <p class="error-message">DE PLEK VOOR AL UW ERRORS</p>
+                </form>
+            </div>
+            <div class="input-form">
                 <form action="db.add-product.php" method="post" class="product-form" id="product-form" autocomplete="off" enctype="multipart/form-data">
-                    <h3>Hier kun je producten toevoegen</h3>
+                    <h3 class="form-header">Hier kun je producten toevoegen</h3>
                     <label>Product Naam</label><br>
                     <input type="text" name="p_name" id="p_name" class="p-input"><br>
+                    <label>Prijs</label><br>
+                    <input type="text" name="p_price" id="p_price" class="p-input"><br>
+                    <label>Maat</label><br>
+                    <input type="text" name="p_size" id="p_size" class="p-input"><br>
+                    <label>Kleur</label><br>
+                    <input type="text" name="p_color" id="p_color" class="p-input"><br>
                     <label>Categorie</label><br>
                     <select name="categories" class="add-product-select webshop-filter-select">
                         <option value="jassen">Jassen</option>
@@ -57,18 +74,8 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <select name="brand" class="add-product-select webshop-filter-select">
                         <option value="merk1">Merk1</option>
                     </select><br>
-                    <label>Prijs</label><br>
-                    <input type="text" name="p_price" id="p_price" class="p-input"><br>
-                    <label>Maat</label><br>
-                    <input type="text" name="p_size" id="p_size" class="p-input"><br>
-                    <label>Kleur</label><br>
-                    <input type="text" name="p_color" id="p_color" class="p-input"><br>
-
-
                     <label>Foto</label><br>
                     <input type="file" name="p_file"><br>
-
-
                     <label>Beschrijving</label><br>
                     <textarea name="p_description" id="p_description" rows="8" placeholder="Type Here"></textarea><br>
                     <input name="addProductButton" type="submit" value="Voeg Toe" class="button">

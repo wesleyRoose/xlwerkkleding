@@ -11,4 +11,12 @@
     height: 32px !important;
 }
 
+.error-message {
+    margin-top: 10px;
+}
+
+.form-header {
+    margin-bottom: 10px;
+}
+
 /* end of add-product.php styling */
