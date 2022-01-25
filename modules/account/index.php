@@ -1,27 +1,8 @@
 <?php
 
-<<<<<<< Updated upstream
-session_start();
-
-
-//config page
-if (file_exists('../../config.php')) {
-    include('../../config.php');
-} else {
-    $errorMessage = "";
-    $errorMessage .= "PHP ERROR: config.php does not exist.";
-    echo $errorMessage;
-    exit;
-}
-
-// functions page
-if (file_exists('../../functions.php')) {
-    include('../../functions.php');
-=======
 //load controller
 if (file_exists('../../controller.php')) {
     include('../../controller.php');
->>>>>>> Stashed changes
 } else {
     $errorMessage = "";
     $errorMessage .= "PHP ERROR: controller.php does not exist.";
@@ -31,16 +12,8 @@ if (file_exists('../../controller.php')) {
 
 if ($_SESSION["sessionStatus"] != 1 && $_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     header('Location: ' . ROOT_URL . 'index.php');
-} else {
-    //header
-    if ($_SESSION["sessionStatus"] == 1) {
-        include "../../templates/header-user.php";
-    } else if ($_SESSION["sessionStatus"] == 2) {
-        include "../../templates/header-admin.php";
-    } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-        include "../../templates/header.php";
-    }
 }
+
 // Create query string
 $sQuery = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
 
@@ -160,7 +133,7 @@ if ($_SESSION["sessionStatus"] == 1) {
     include "../../templates/footer-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
     include "../../templates/footer-admin.php";
-} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+} else {
     include "../../templates/footer.php";
 }
 ?>

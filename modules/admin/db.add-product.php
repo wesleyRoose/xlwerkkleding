@@ -73,7 +73,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
       $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $m);
 
-
+      // Insert data into database
       if (db::insert('product', $aColumnName, $aValues, "sisssssss") == true) {
         header($sLocationSucces);
       } else {

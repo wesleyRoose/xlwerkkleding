@@ -32,5 +32,4 @@ if (file_exists('functions.php')) {
 }
 
 
-
 fileExistsInclude('./modules/home/main.php');

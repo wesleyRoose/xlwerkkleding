@@ -32,4 +32,10 @@ if (file_exists('../../library/db.class.php')) {
   exit;
 }
 
-?>
+if ($_SESSION["sessionStatus"] == 1) {
+  include "../../templates/header-user.php";
+} else if ($_SESSION["sessionStatus"] == 2) {
+  include "../../templates/header-admin.php";
+} else {
+  include "../../templates/header.php";
+}
