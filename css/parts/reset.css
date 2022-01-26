@@ -130,7 +130,7 @@ input[type=password], input[type=text], input[type=email] {
   border-radius: 3px;
   outline: none;
   padding: 0.5rem;
-  background-color: var(--light) !important;
+  background-color: var(--light);
   width: 350px;
   margin-top: 5px;
   color: var(--white) !important;
