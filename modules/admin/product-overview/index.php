@@ -9,6 +9,24 @@ if (file_exists('../../../admin-controller.php')) {
   echo $errorMessage;
   exit;
 }
+
+if (file_exists('../../../library/db.filterTerms.php')) {
+  include('../../../library/db.filterTerms.php');
+} else {
+  $errorMessage = "";
+  $errorMessage .= "PHP ERROR: db.filterTerms.php does not exist.";
+  echo $errorMessage;
+  exit;
+}
+
+if (file_exists('./db.defaultHtml.php')) {
+  include('./db.defaultHtml.php');
+} else {
+  $errorMessage = "";
+  $errorMessage .= "PHP ERROR: ./db.defaultHtml.php does not exist.";
+  echo $errorMessage;
+  exit;
+}
 ?>
 
 <main class="product-overview">
@@ -21,28 +39,29 @@ if (file_exists('../../../admin-controller.php')) {
           <div class="radio-wrapper">
             <div class="select-container radio">
               <input type="radio" name="selectValue" class="input_filter" value="ID">
-              <label for="ID">ID</label><br>
+              <label>ID</label><br>
             </div>
             <div class="select-container radio">
               <input type="radio" name="selectValue" class="input_filter" value="productName">
-              <label for="name">Product Naam</label><br>
+              <label>Product Naam</label><br>
             </div>
             <div class="select-container radio">
               <input type="radio" name="selectValue" class="input_filter" value="brand">
-              <label for="e-mail">Merk</label><br>
+              <label>Merk</label><br>
             </div>
             <div class="select-container radio">
               <input type="radio" name="selectValue" class="input_filter" value="price">
-              <label for="firma">Prijs</label><br>
+              <label>Prijs</label><br>
             </div>
             <div class="select-container radio">
-              <select name="brand" class="webshop-filter-select filter-select">
-                <?php echo $sSectorHtml ?>
+              <select name="sector" class="webshop-filter-select filter-select">
+                <option value="empty">Sector</option>
               </select>
             </div>
             <div class="select-container radio">
-              <select name="brand" class="webshop-filter-select filter-select">
-                <?php echo $sSectorHtml ?>
+              <select name="catagory" class="webshop-filter-select filter-select">
+                <option value="empty">Categorie</option>
+                <?php echo $sCatagoryHtml ?>
               </select>
             </div>
           </div>
@@ -57,26 +76,61 @@ if (file_exists('../../../admin-controller.php')) {
 
       <div class="products-overview">
         <h3>Producten</h3>
-        <div class="product-record">
-          <div class="product-data-fields">
-            <div class="product-data">1</div>
-            <div class="product-data">Geel Hesje</div>
-            <div class="product-data">Bouw</div>
-            <div class="product-data">Merk1</div>
-            <div class="product-data">$15</div>
-          </div>
-          <div class="product-record-btns">
-            <div class="product-data button small small-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <div class="product-data button small small-icon">
-              <i class="fas fa-pencil"></i>
-            </div>
-            <div class="product-data button small small-icon">
-              <i class="fas fa-trash"></i>
-            </div>
-          </div>
-        </div>
+        <table class="product-records-table" style="background-color: var(--sub-color);" border="0">
+          <thead>
+            <tr style="background-color: var(--main-color);">
+              <th>ID</th>
+              <th>Naam</th>
+              <th>Sector</th>
+              <th>Merk</th>
+              <th>Categorie</th>
+              <th>Prijs</th>
+            </tr>
+          </thead>
+          <tr class="product-data-row">
+            <td class="product-data">1</td>
+            <td class="product-data">Geel Hesje</td>
+            <td class="product-data">Bouw</td>
+            <td class="product-data">Merk1</td>
+            <td class="product-data">Hesje</td>
+            <td class="product-data">$15</td>
+            <td>
+              <div class="product-record-btns">
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-pencil"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="product-data-row">
+            <td class=" product-data">1</td>
+            <td class="product-data">Geel Hesje</td>
+            <td class="product-data">Bouw</td>
+            <td class="product-data">Merk1</td>
+            <td class="product-data">Hesje</td>
+            <td class="product-data">$15</td>
+            <td>
+              <div class="product-record-btns">
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-pencil"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+        </table>
       </div>
     </div>
   </section>
