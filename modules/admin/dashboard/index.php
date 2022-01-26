@@ -104,10 +104,10 @@ if ($oResult = $conn->query($sQuery)) {
 </main>
 
 <?php if ($_SESSION["sessionStatus"] == 1) {
-    include "../../templates/footer-user.php";
+    include "../../../templates/footer-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
-    include "../../templates/footer-admin.php";
+    include "../../../templates/footer-admin.php";
 } else {
-    include "../../templates/footer.php";
+    include "../../../templates/footer.php";
 }
 ?>
