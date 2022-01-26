@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link rel="icon" type="image/x-icon" href="<?php echo ROOT_URL ?>img/favicon.ico">
     <title>XLwerkkleding - Admin</title>
 </head>
+
 <body>
     <div class="view">
         <noscript>
@@ -31,10 +33,10 @@
                 <nav class="menu" id="menu">
                     <div class="menu-wrap">
                         <ul class="menu-list">
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/admin-home.php">Dashboard</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/product-overview.php">Producten</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Gebruikers</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">Product/termen Toevoegen</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/dashboard/index.php">Dashboard</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/product-overview/index.php">Producten</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview/index.php">Gebruikers</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/add/index.php">Product/termen Toevoegen</a></li>
                             <div class="dropdown">
                                 <span>MEER<i class="fas fa-chevron-down"></i></span>
                                 <div class="dropdown-content">

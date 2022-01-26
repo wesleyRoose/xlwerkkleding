@@ -1,11 +1,11 @@
 <?php
 
 //load controller
-if (file_exists('../../controller.php')) {
-    include('../../controller.php');
+if (file_exists('../../../admin-controller.php')) {
+    include('../../../admin-controller.php');
 } else {
     $errorMessage = "";
-    $errorMessage .= "PHP ERROR: controller.php does not exist.";
+    $errorMessage .= "PHP ERROR: admin-controller.php does not exist.";
     echo $errorMessage;
     exit;
 }
@@ -99,11 +99,11 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 <?php
 
     if ($_SESSION["sessionStatus"] == 1) {
-        include "../../templates/footer-user.php";
+        include "../../../templates/footer-user.php";
     } else if ($_SESSION["sessionStatus"] == 2) {
-        include "../../templates/footer-admin.php";
+        include "../../../templates/footer-admin.php";
     } else {
-        include "../../templates/footer.php";
+        include "../../../templates/footer.php";
     }
 }
 ?>
