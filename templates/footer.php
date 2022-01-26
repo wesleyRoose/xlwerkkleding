@@ -29,10 +29,10 @@
             </div>
             <div class="block">
                 <h3>Klantenservice</h3>
-                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/index.php">Algemene Voorwaaden</a>
-                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/index.php">Verzenden & Leveren</a>
-                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/index.php">Klachten</a>
-                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/index.php">Disclaimer</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/tos.php">Algemene Voorwaaden</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/send-deliver.php">Verzenden & Leveren</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/complaints.php">Klachten</a>
+                <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/disclaimer.php">Disclaimer</a>
                 </div>
             <div class="block">
                 <h3>Betaalmethoden</h3>

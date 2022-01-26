@@ -50,7 +50,7 @@ div.cs-item:nth-last-of-type(odd) {
         flex-flow: column nowrap;
     }
 
-    .sectors {
-        margin-left: 0;
+    .categories, .sectors, .small-users-overview, .small-products-overview {
+        margin: 30px 0 0 0;
     }
 }

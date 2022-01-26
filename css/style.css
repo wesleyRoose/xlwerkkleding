@@ -1,19 +1,33 @@
-@import "parts/reset.css";
-@import "parts/header.css";
-@import "parts/home.css";
-@import "parts/footer.css";
-@import "parts/login.css";
-@import "parts/product.css";
-@import "parts/add-product.css";
-@import "parts/succes.css";
-@import "parts/webshop-home.css";
-@import "parts/about.css";
-@import "parts/users-overview.css";
-@import "parts/product-overview.css";
-@import "parts/noscript.css";
-@import "parts/floating-btn.css";
-@import "parts/shopping-cart.css";
-@import "parts/account-home.css";
-@import "parts/admin-home.css";
-@import "parts/filter-form.css";
+/* Important */
+@import "parts/important/reset.css";
+
+/* Templates */
+@import "parts/templates/header.css";
+@import "parts/templates/footer.css";
+@import "parts/templates/home.css";
+
+/* Admin Parts */
+@import "parts/admin/filter-form.css";
+@import "parts/admin/admin-home.css";
+@import "parts/admin/users-overview.css";
+@import "parts/admin/product-overview.css";
+@import "parts/admin/add-product.css";
+
+/* Webshop */
+@import "parts/webshop/webshop-home.css";
+@import "parts/webshop/shopping-cart.css";
+@import "parts/webshop/product.css";
+
+/* Account */
+@import "parts/account/account-home.css";
+
+/* Login */
+@import "parts/login/login.css";
+
+/* Other */
+@import "parts/other/noscript.css";
+@import "parts/other/succes.css";
+@import "parts/other/floating-btn.css";
+@import "parts/other/about.css";
+@import "parts/other/service.css";
 

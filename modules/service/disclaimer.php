@@ -10,7 +10,20 @@ if (file_exists('../../controller.php')) {
 }
 ?>
 
-<!--MAIN-->
+<main class="service">
+  <section class="service">
+    <div class="service-wrapper">
+      <h1></h1>
+      <p class="text no-padding">
+
+      </p>
+      <br>
+      <p class="text no-padding">
+        
+      </p>
+    </div>
+  </section>
+</main>
 
 <?php
 
