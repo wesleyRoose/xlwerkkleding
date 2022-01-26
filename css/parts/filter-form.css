@@ -1,0 +1,51 @@
+.filter-search-bar, .radio-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 64px;
+}
+
+.search-input {
+    margin-top: 0 !important;
+    font-weight: bold;
+    border: 3px solid var(--white) !important;
+}
+
+.filter-form {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--light);
+    color: var(--white);
+    padding: 0 0.5rem 0 0.5rem;
+    margin-top: 5px;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.radio {
+    width: unset;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.radio:first-of-type {
+    margin-left: 15px;
+}
+
+.input_filter {
+    margin-right: 5px;
+}
+
+.user-overview {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 30px;
+}
+
+.filter-select {
+    margin-top: 0;
+    width: 150px;
+}

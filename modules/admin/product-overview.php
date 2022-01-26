@@ -15,40 +15,44 @@ if (file_exists('../../controller.php')) {
   <section class="product-overview">
     <div class="product-overview-wrapper">
       <h3>Overzicht van alle producten</h3>
-      <div class="product-overview-searchbar">
-        <form action="#" method="post" class="search-form">
-          <input type="text" name="search" id="search" class="search-input" placeholder="Zoek product...">
-          <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
-        </form>
-        <!---Different Form--->
-        <form action="#" method="post" class="product-filter-form">
-          <div class="select-container radio">
-            <input type="radio" name="SelectValue" class="input_filter" value="ID">
-            <label for="SelectValue">ID</label><br>
-          </div>
-          <div class="select-container radio">
-            <input type="radio" name="SelectValue" class="input_filter" value="Naam">
-            <label for="SelectValue">Product Naam</label><br>
-          </div>
-          <div class="select-container radio">
-            <input type="radio" name="SelectValue" class="input_filter" value="E-mail">
-            <label for="SelectValue">Sector</label><br>
-          </div>
-          <div class="select-container radio">
-            <input type="radio" name="SelectValue" class="input_filter" value="Firma">
-            <label for="SelectValue">Merk</label><br>
-          </div>
-          <div class="select-container radio">
-            <input type="radio" name="SelectValue" class="input_filter" value="Firma">
-            <label for="SelectValue">Prijs</label><br>
-          </div>
-          <div class="select-container radio">
-            <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
-          </div>
-          <div class="select-container radio">
-            <input type="submit" name="formReset" class="button sub padding-no-margin" value="Reset">
-          </div>
-        </form>
+      <div class="filter-search-bar">
+        <form action="#" method="post" class="filter-form">
+            <input type="text" name="search" id="search" class="search-input" placeholder="Zoek user...">
+            <div class="radio-wrapper">
+              <div class="select-container radio">
+                <input type="radio" name="selectValue" class="input_filter" value="ID">
+                <label for="ID">ID</label><br>
+              </div>
+              <div class="select-container radio">
+                <input type="radio" name="selectValue" class="input_filter" value="Product Naam">
+                <label for="name">Product Naam</label><br>
+              </div>
+              <div class="select-container radio">
+                <input type="radio" name="selectValue" class="input_filter" value="Merk">
+                <label for="e-mail">Merk</label><br>
+              </div>
+              <div class="select-container radio">
+                <input type="radio" name="selectValue" class="input_filter" value="Prijs">
+                <label for="firma">Prijs</label><br>
+              </div>
+              <div class="select-container radio">
+                <select name="brand" class="webshop-filter-select filter-select">
+                  <?php echo $sSectorHtml ?>
+                </select>
+              </div>
+              <div class="select-container radio">
+                <select name="brand" class="webshop-filter-select filter-select">
+                  <?php echo $sSectorHtml ?>
+                </select>
+              </div>
+            </div>
+            <!-- <div class="select-container radio">
+              <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
+            </div>
+            <div class="select-container radio">
+              <input type="submit" name="formReset" class="button sub padding-no-margin" value="Reset">
+            </div> -->
+          </form>
       </div>
 
       <div class="products-overview">

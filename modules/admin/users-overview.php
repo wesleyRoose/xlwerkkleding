@@ -16,34 +16,43 @@ if (file_exists('../../controller.php')) {
     <section class="users-overview">
       <div class="users-overview-wrapper">
         <h3>Overzicht van alle gebruikers</h3>
-        <div class="users-overview-searchbar">
-          <form action="#" method="post" class="search-form">
+        <div class="filter-search-bar">
+          <form action="#" method="post" class="filter-form">
             <input type="text" name="search" id="search" class="search-input" placeholder="Zoek user...">
-          </form>
-          <!---Different Form--->
-          <form action="#" method="post" class="user-filter-form">
-            <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="ID">
-              <label for="ID">ID</label><br>
+            <div class="radio-wrapper">
+              <div class="select-container radio">
+                <input type="radio" name="selectValue" class="input_filter" value="ID">
+                <label for="ID">ID</label><br>
+              </div>
+              <div class="select-container radio">
+                <input type="radio" name="selectValue" class="input_filter" value="Product Naam">
+                <label for="name">Product Naam</label><br>
+              </div>
+              <div class="select-container radio">
+                <input type="radio" name="selectValue" class="input_filter" value="Merk">
+                <label for="e-mail">Merk</label><br>
+              </div>
+              <div class="select-container radio">
+                <input type="radio" name="selectValue" class="input_filter" value="Prijs">
+                <label for="firma">Prijs</label><br>
+              </div>
+              <div class="select-container radio">
+                <select name="brand" class="webshop-filter-select filter-select">
+                  <?php echo $sSectorHtml ?>
+                </select>
+              </div>
+              <div class="select-container radio">
+                <select name="brand" class="webshop-filter-select filter-select">
+                  <?php echo $sSectorHtml ?>
+                </select>
+              </div>
             </div>
-            <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="Naam">
-              <label for="name">Naam</label><br>
-            </div>
-            <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="E-mail">
-              <label for="e-mail">E-Mail</label><br>
-            </div>
-            <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="Firma">
-              <label for="firma">Firma</label><br>
-            </div>
-            <div class="select-container radio">
+            <!-- <div class="select-container radio">
               <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
             </div>
             <div class="select-container radio">
               <input type="submit" name="formReset" class="button sub padding-no-margin" value="Reset">
-            </div>
+            </div> -->
           </form>
         </div>
 
