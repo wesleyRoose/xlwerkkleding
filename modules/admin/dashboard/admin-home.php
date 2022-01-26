@@ -1,11 +1,11 @@
 <?php
 
 //load controller
-if (file_exists('../../controller.php')) {
-    include('../../controller.php');
+if (file_exists('../../../admin-controller.php')) {
+    include('../../../admin-controller.php');
 } else {
     $errorMessage = "";
-    $errorMessage .= "PHP ERROR: controller.php does not exist.";
+    $errorMessage .= "PHP ERROR: admin-controller.php does not exist.";
     echo $errorMessage;
     exit;
 }
@@ -51,6 +51,42 @@ if ($oResult = $conn->query($sQuery)) {
                 if ($oResult = $conn->query($sQuery)) {
                     $sHtml = "<div class='sectors'>";
                     $sHtml .= "<h3>Bestaande Sectoren</h3>";
+                    while ($aRow = $oResult->fetch_assoc()) {
+                        $sHtml .= "<div class='cs-item'>" . $aRow["value"] . 
+                        '<button class="product-data button small small-icon">
+                            <i class="fas fa-trash no-margin"></i>
+                        </button>
+                    </div>';
+                    }
+                }
+
+                $sSectorHtml =  $sHtml . '</div>';
+                echo $sSectorHtml;
+
+                // Create Query String
+                $sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'sector'";
+                // Execute query and catch result in array
+                if ($oResult = $conn->query($sQuery)) {
+                    $sHtml = "<div class='small-users-overview'>";
+                    $sHtml .= "<h3>Users Overview</h3>";
+                    while ($aRow = $oResult->fetch_assoc()) {
+                        $sHtml .= "<div class='cs-item'>" . $aRow["value"] . 
+                        '<button class="product-data button small small-icon">
+                            <i class="fas fa-trash no-margin"></i>
+                        </button>
+                    </div>';
+                    }
+                }
+
+                $sSectorHtml =  $sHtml . '</div>';
+                echo $sSectorHtml;
+
+                // Create Query String
+                $sQuery = "SELECT * FROM `products` WHERE `term` = 'sector'";
+                // Execute query and catch result in array
+                if ($oResult = $conn->query($sQuery)) {
+                    $sHtml = "<div class='small-products-overview'>";
+                    $sHtml .= "<h3>Products Overview</h3>";
                     while ($aRow = $oResult->fetch_assoc()) {
                         $sHtml .= "<div class='cs-item'>" . $aRow["value"] . 
                         '<button class="product-data button small small-icon">
