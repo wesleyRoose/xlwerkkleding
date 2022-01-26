@@ -62,16 +62,52 @@ if ($oResult = $conn->query($sQuery)) {
 
             $sSectorHtml =  $sHtml . '</div>';
             echo $sSectorHtml;
+
+            // Create Query String
+            $sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'sector'";
+            // Execute query and catch result in array
+            if ($oResult = $conn->query($sQuery)) {
+                $sHtml = "<div class='small-users-overview'>";
+                $sHtml .= "<h3>Users Overview</h3>";
+                while ($aRow = $oResult->fetch_assoc()) {
+                    $sHtml .= "<div class='cs-item'>" . $aRow["value"] .
+                        '<button class="product-data button small small-icon">
+                            <i class="fas fa-trash no-margin"></i>
+                        </button>
+                    </div>';
+                }
+            }
+
+            $sSectorHtml =  $sHtml . '</div>';
+            echo $sSectorHtml;
+
+            // Create Query String
+            $sQuery = "SELECT * FROM `products` WHERE `term` = 'sector'";
+            // Execute query and catch result in array
+            if ($oResult = $conn->query($sQuery)) {
+                $sHtml = "<div class='small-products-overview'>";
+                $sHtml .= "<h3>Products Overview</h3>";
+                while ($aRow = $oResult->fetch_assoc()) {
+                    $sHtml .= "<div class='cs-item'>" . $aRow["value"] .
+                        '<button class="product-data button small small-icon">
+                            <i class="fas fa-trash no-margin"></i>
+                        </button>
+                    </div>';
+                }
+            }
+
+            $sSectorHtml =  $sHtml . '</div>';
+            echo $sSectorHtml;
             ?>
         </div>
     </section>
 </main>
 
 <?php if ($_SESSION["sessionStatus"] == 1) {
-    include "../../../templates/footer-user.php";
+    include "../../templates/footer-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
-    include "../../../templates/footer-admin.php";
+    include "../../templates/footer-admin.php";
 } else {
-    include "../../../templates/footer.php";
+    include "../../templates/footer.php";
 }
 ?>

@@ -24,15 +24,15 @@ if (file_exists('../../../admin-controller.php')) {
               <label for="ID">ID</label><br>
             </div>
             <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="Product Naam">
+              <input type="radio" name="selectValue" class="input_filter" value="productName">
               <label for="name">Product Naam</label><br>
             </div>
             <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="Merk">
+              <input type="radio" name="selectValue" class="input_filter" value="brand">
               <label for="e-mail">Merk</label><br>
             </div>
             <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="Prijs">
+              <input type="radio" name="selectValue" class="input_filter" value="price">
               <label for="firma">Prijs</label><br>
             </div>
             <div class="select-container radio">
@@ -46,12 +46,12 @@ if (file_exists('../../../admin-controller.php')) {
               </select>
             </div>
           </div>
-          <!-- <div class="select-container radio">
-              <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
-            </div>
-            <div class="select-container radio">
-              <input type="submit" name="formReset" class="button sub padding-no-margin" value="Reset">
-            </div> -->
+          <div class="select-container radio">
+            <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
+          </div>
+          <div class="select-container radio">
+            <input type="submit" name="formReset" class="button sub padding-no-margin" value="Reset">
+          </div>
         </form>
       </div>
 
