@@ -19,14 +19,6 @@ if (file_exists('../../../library/db.filterTerms.php')) {
   exit;
 }
 
-if (file_exists('./db.defaultHtml.php')) {
-  include('./db.defaultHtml.php');
-} else {
-  $errorMessage = "";
-  $errorMessage .= "PHP ERROR: ./db.defaultHtml.php does not exist.";
-  echo $errorMessage;
-  exit;
-}
 ?>
 
 <main class="product-overview">
@@ -34,7 +26,7 @@ if (file_exists('./db.defaultHtml.php')) {
     <div class="product-overview-wrapper">
       <h3>Overzicht van alle producten</h3>
       <div class="filter-search-bar">
-        <form action="#" method="post" class="filter-form">
+        <form action="db.formHandler.php" method="post" class="filter-form">
           <input type="text" name="search" id="search" class="search-input" placeholder="Zoek product...">
           <div class="radio-wrapper">
             <div class="flex-new radio">
