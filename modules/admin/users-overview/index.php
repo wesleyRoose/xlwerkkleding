@@ -60,64 +60,64 @@ if (file_exists('../../../admin-controller.php')) {
 
       <div class="user-overview">
         <h3>Gebruikers</h3>
-        <div class="user-record">
-          <div class="user-data-fields">
-            <div class="user-data">1</div>
-            <div class="user-data">Stefan</div>
-            <div class="user-data">hello@world.nl</div>
-            <div class="user-data">XLwerkkleding BV</div>
-          </div>
-          <div class="user-record-btns">
-            <div class="user-data button small small-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-pencil"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-trash"></i>
-            </div>
-          </div>
-        </div>
-        <div class="user-record">
-          <div class="user-data-fields">
-            <div class="user-data">1</div>
-            <div class="user-data">Stefan</div>
-            <div class="user-data">hello@world.nl</div>
-            <div class="user-data">XLwerkkleding BV</div>
-          </div>
-          <div class="user-record-btns">
-            <div class="user-data button small small-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-pencil"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-trash"></i>
-            </div>
-          </div>
-        </div>
-        <div class="user-record">
-          <div class="user-data-fields">
-            <div class="user-data">1</div>
-            <div class="user-data">Stefan</div>
-            <div class="user-data">hello@world.nl</div>
-            <div class="user-data">XLwerkkleding BV</div>
-          </div>
-          <div class="user-record-btns">
-            <div class="user-data button small small-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-pencil"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-trash"></i>
-            </div>
-          </div>
-        </div>
+        <table class="product-records-table" style="background-color: var(--sub-color);" border="0">
+          <thead>
+            <tr style="background-color: var(--main-color);">
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>Bekijk, Bewerk, Verwijder</th>
+            </tr>
+          </thead>
+          <tr class="product-data-row">
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td>
+              <div class="product-record-btns">
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-pencil"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="product-data-row">
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-records-btns-cell">
+              <div class="product-record-btns">
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-pencil"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+        </table>
       </div>
+    </div>
     </div>
   </section>
 </main>
