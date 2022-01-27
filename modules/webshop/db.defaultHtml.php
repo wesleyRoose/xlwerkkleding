@@ -38,6 +38,17 @@ if (isset($_POST["formSubmit"])) {
       }
     }
 
+    // Array for brand
+    // Check if `brand` is selected
+    if (in_array("brand", $aFilterCheckBoxes)) {
+      $Brand = array();
+      if (isset($_POST["sector"])) {
+        $aBrand = array("p_brand", $_POST["brand"]);
+        // Add array to complete array
+        array_push($aQueryData, $aBrand);
+      }
+    }
+
     // Check if array is not empty, if so skip first query building
     // Get length of Array for query building
     $iFilterLength = count($aQueryData);
@@ -53,13 +64,17 @@ if (isset($_POST["formSubmit"])) {
     } else if ($iFilterLength == 3) {
       // Create Query based on the length of filter
       $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "' AND `" . $aQueryData[2][0] . "` = '" . $aQueryData[2][1] . "'";
+    } else if ($iFilterLength == 4) {
+      // Create Query based on the length of filter
+      $sQuery = "SELECT * FROM `product` WHERE `" . $aQueryData[0][0] . "` = '" . $aQueryData[0][1] . "' AND `" . $aQueryData[1][0] . "` = '" . $aQueryData[1][1] . "' AND `" . $aQueryData[2][0] . "` = '" . $aQueryData[2][1] . "'  AND `" . $aQueryData[3][0] . "` = '" . $aQueryData[3][1] . "'";
     }
 
     // Execute Query on database connection and put the data into a Array
     if ($oResult = $conn->query($sQuery)) {
       // Generate Product Cards
       while ($aRow = $oResult->fetch_assoc()) {
-        $sDefaultHtml .= '
+        if (!empty($aRow)) {
+          $sDefaultHtml .= '
     <div class="card">
       <div class="image">
         <img src=" ' . ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
@@ -70,6 +85,7 @@ if (isset($_POST["formSubmit"])) {
         <a href="' . ROOT_URL . "modules/webshop/product-page.php?product=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
       </div>
     </div>';
+        }
       }
     }
   } else { // If no boxes are selected for the filter, select all

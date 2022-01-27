@@ -75,8 +75,6 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <input type="text" name="p_size" id="p_size" class="p-input"><br>
                     <label>Kleur</label><br>
                     <input type="text" name="p_color" id="p_color" class="p-input"><br>
-                    <label>Merk</label><br>
-                    <input type="text" name="p_brand" id="p_brand" class="p-input"><br>
                     <label>Categorie</label><br>
                     <select name="p_category" class="add-product-select webshop-filter-select">
                         <option value="nvt">Niet van Toepassing</option>

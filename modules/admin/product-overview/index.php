@@ -52,6 +52,12 @@ if (file_exists('../../../library/db.filterTerms.php')) {
               </select>
             </div>
             <div class="flex-new radio">
+              <select name="sector" class="filter-select">
+                <option value="empty">Merk</option>
+                <?php echo $sMerkHtml ?>
+              </select>
+            </div>
+            <div class="flex-new radio">
               <select name="catagory" class="filter-select">
                 <option value="empty">Categorie</option>
                 <?php echo $sCatagoryHtml ?>
