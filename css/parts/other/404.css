@@ -1,0 +1,18 @@
+.s-404 {
+    margin-top: 15px;
+}
+
+.s-404-wrapper {
+    display: grid;
+    place-items: center;
+    height: 50vh;
+}
+
+.s-404-large-font {
+    font-size: 50px;
+}
+
+.s-404-titles {
+    text-align: center;
+    line-height: 5rem;
+}

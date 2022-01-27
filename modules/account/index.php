@@ -1,46 +1,26 @@
 <?php
 
-session_start();
-
-//config page
-if (file_exists('../../config.php')) {
-    include('../../config.php');
+//load controller
+if (file_exists('../../controller.php')) {
+    include('../../controller.php');
 } else {
     $errorMessage = "";
-    $errorMessage .= "PHP ERROR: config.php does not exist.";
+    $errorMessage .= "PHP ERROR: controller.php does not exist.";
     echo $errorMessage;
     exit;
 }
-
-// functions page
-if (file_exists('../../functions.php')) {
-    include('../../functions.php');
-} else {
-    $errorMessage = "";
-    $errorMessage .= "PHP ERROR: functions.php does not exist.";
-    echo $errorMessage;
-    exit;
-}
-
 
 if ($_SESSION["sessionStatus"] != 1 && $_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     header('Location: ' . ROOT_URL . 'index.php');
-} else {
-
-    //header
-    if ($_SESSION["sessionStatus"] == 1) {
-        include "../../templates/header-user.php";
-    } else if ($_SESSION["sessionStatus"] == 2) {
-        include "../../templates/header-admin.php";
-    } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-        include "../../templates/header.php";
-    }
 }
 
-$user_query = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
+// Create query string
+$sQuery = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
 
-$result = $conn->query($user_query);
-$row = $result->fetch_assoc();
+// Execute query and catch results in array
+if ($oResult = $conn->query($sQuery)) {
+    $aRow = $oResult->fetch_assoc();
+}
 ?>
 
 <main class="account-page">
@@ -53,42 +33,42 @@ $row = $result->fetch_assoc();
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["firstName"]; ?></p>
+                        <p class="account-page-info-text"><?php echo $aRow["firstName"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["lastName"]; ?></p>
+                        <p class="account-page-info-text"><?php echo $aRow["lastName"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user-tag"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["username"]; ?></p>
+                        <p class="account-page-info-text"><?php echo $aRow["username"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["email"]; ?></p>
+                        <p class="account-page-info-text"><?php echo $aRow["email"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["phoneNumber"]; ?></p>
+                        <p class="account-page-info-text"><?php echo $aRow["phoneNumber"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-building"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $row["firm"]; ?></p>
+                        <p class="account-page-info-text"><?php echo $aRow["firm"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <button>Verwijder Profiel</button>
@@ -153,7 +133,7 @@ if ($_SESSION["sessionStatus"] == 1) {
     include "../../templates/footer-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
     include "../../templates/footer-admin.php";
-} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+} else {
     include "../../templates/footer.php";
 }
 ?>

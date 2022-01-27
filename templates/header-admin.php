@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link rel="icon" type="image/x-icon" href="<?php echo ROOT_URL ?>img/favicon.ico">
     <title>XLwerkkleding - Admin</title>
 </head>
+
 <body>
     <div class="view">
         <noscript>
@@ -23,7 +25,7 @@
         </noscript>
         <header>
             <div class="header">
-                <div class="logo">
+                <div class="logo" style="flex: 1;">
                     <a class="logo-link" href="<?php echo ROOT_URL ?>">
                         <img src="<?php echo ROOT_URL ?>img/xlwerkkleding-logo.jpg" alt="XLwerkkleding Logo" class="logo-img">
                     </a>
@@ -31,15 +33,15 @@
                 <nav class="menu" id="menu">
                     <div class="menu-wrap">
                         <ul class="menu-list">
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>">Home</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/product-overview.php">Producten</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview.php">Gebruikers</a></li>
-                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">Product Toevoegen</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/dashboard/index.php">Dashboard</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/product-overview/index.php">Producten</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/users-overview/index.php">Gebruikers</a></li>
+                            <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/admin/add/index.php">Product/termen Toevoegen</a></li>
                             <div class="dropdown">
                                 <span>MEER<i class="fas fa-chevron-down"></i></span>
                                 <div class="dropdown-content">
-                                    <li class="navitem"><a class="nav-item dropdown-item" href="<?php echo ROOT_URL ?>modules/webshop/index.php">WebShop</a></li>
-                                    <li class="navitem"><a class="nav-item dropdown-item" href="<?php echo ROOT_URL ?>modules/account/index.php">Account</a></li>
+                                    <li class="navitem dropdown-item"><a class="nav-item dropdown-item" href="<?php echo ROOT_URL ?>modules/webshop/index.php">WebShop</a></li>
+                                    <li class="navitem dropdown-item"><a class="nav-item dropdown-item" href="<?php echo ROOT_URL ?>modules/account/index.php">Account</a></li>
                                 </div>
                             </div>
                             <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/logout.php">Loguit</a></li>

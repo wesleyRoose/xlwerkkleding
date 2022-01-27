@@ -1,0 +1,56 @@
+.admin-home {
+    margin-top: 15px;
+}
+
+.admin-home-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 30px;
+}
+
+.cs-item {
+    padding: 0.5rem;
+    margin: 15px 0 15px 0;
+    background-color: var(--main-color);
+    border-radius: 3px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+}
+
+div.cs-item:nth-last-of-type(odd) {
+    background-color: var(--odd-color);
+}
+
+.categories, .sectors, .small-users-overview, .small-products-overview {
+    width: 350px;
+    height: 500px;
+    overflow-y: scroll;
+    padding: 20px;
+    margin-left: 30px;
+    background-color: var(--light-gray);
+    color: var(--white);
+    border-radius: 3px;
+}
+
+.categories {
+    margin-left: 0 !important;
+}
+
+@media (prefers-color-scheme: light) {
+    .categories, .sectors {
+        background-color: var(--dark-gray);
+    }
+}
+
+@media (max-width: 500px) {
+    .admin-home-wrapper {
+        flex-flow: column nowrap;
+    }
+
+    .categories, .sectors, .small-users-overview, .small-products-overview {
+        margin: 30px 0 0 0;
+    }
+}
