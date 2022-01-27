@@ -26,7 +26,7 @@ if ($oResult = $conn->query($sQuery)) {
 $sSectorHtml = $sHtml;
 
 // Create Query String
-$sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'merk'";
+$sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'brand'";
 // Execute query and catch result in array
 if ($oResult = $conn->query($sQuery)) {
   $sHtml = "";
