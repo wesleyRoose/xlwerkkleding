@@ -35,7 +35,7 @@ if (file_exists('./db.defaultHtml.php')) {
       <h3>Overzicht van alle producten</h3>
       <div class="filter-search-bar">
         <form action="#" method="post" class="filter-form">
-          <input type="text" name="search" id="search" class="search-input" placeholder="Zoek user...">
+          <input type="text" name="search" id="search" class="search-input" placeholder="Zoek product...">
           <div class="radio-wrapper">
             <div class="flex-new radio">
               <input type="radio" name="selectValue" class="input_filter" value="ID">

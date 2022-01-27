@@ -20,102 +20,104 @@ if (file_exists('../../../admin-controller.php')) {
         <form action="#" method="post" class="filter-form">
           <input type="text" name="search" id="search" class="search-input" placeholder="Zoek user...">
           <div class="radio-wrapper">
-            <div class="select-container radio">
+            <div class="flex-new radio">
               <input type="radio" name="selectValue" class="input_filter" value="ID">
-              <label for="ID">ID</label><br>
+              <label>PLACEHOLDER</label><br>
             </div>
-            <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="Product Naam">
-              <label for="name">Product Naam</label><br>
+            <div class="flex-new radio">
+              <input type="radio" name="selectValue" class="input_filter" value="productName">
+              <label>PLACEHOLDER</label><br>
             </div>
-            <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="Merk">
-              <label for="e-mail">Merk</label><br>
+            <div class="flex-new radio">
+              <input type="radio" name="selectValue" class="input_filter" value="brand">
+              <label>PLACEHOLDER</label><br>
             </div>
-            <div class="select-container radio">
-              <input type="radio" name="selectValue" class="input_filter" value="Prijs">
-              <label for="firma">Prijs</label><br>
+            <div class="flex-new radio">
+              <input type="radio" name="selectValue" class="input_filter" value="price">
+              <label>PLACEHOLDER</label><br>
             </div>
-            <div class="select-container radio">
-              <select name="brand" class="webshop-filter-select filter-select">
-                <?php echo $sSectorHtml ?>
+            <div class="flex-new radio">
+              <select name="sector" class="filter-select">
+                <option value="empty">PLACEHOLDER</option>
               </select>
             </div>
-            <div class="select-container radio">
-              <select name="brand" class="webshop-filter-select filter-select">
-                <?php echo $sSectorHtml ?>
+            <div class="flex-new radio">
+              <select name="catagory" class="filter-select">
+                <option value="empty">PLACEHOLDER</option>
+                <?php //echo $sCatagoryHtml 
+                ?>
               </select>
             </div>
           </div>
-          <!-- <div class="select-container radio">
-              <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
-            </div>
-            <div class="select-container radio">
-              <input type="submit" name="formReset" class="button sub padding-no-margin" value="Reset">
-            </div> -->
+          <div class="flex-new radio">
+            <input type="submit" name="formSubmit" class="button no-margin filter-btn" value="Filter">
+          </div>
+          <div class="flex-new radio">
+            <input type="submit" name="formReset" class="button no-margin filter-btn" value="Reset">
+          </div>
         </form>
       </div>
 
       <div class="user-overview">
         <h3>Gebruikers</h3>
-        <div class="user-record">
-          <div class="user-data-fields">
-            <div class="user-data">1</div>
-            <div class="user-data">Stefan</div>
-            <div class="user-data">hello@world.nl</div>
-            <div class="user-data">XLwerkkleding BV</div>
-          </div>
-          <div class="user-record-btns">
-            <div class="user-data button small small-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-pencil"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-trash"></i>
-            </div>
-          </div>
-        </div>
-        <div class="user-record">
-          <div class="user-data-fields">
-            <div class="user-data">1</div>
-            <div class="user-data">Stefan</div>
-            <div class="user-data">hello@world.nl</div>
-            <div class="user-data">XLwerkkleding BV</div>
-          </div>
-          <div class="user-record-btns">
-            <div class="user-data button small small-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-pencil"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-trash"></i>
-            </div>
-          </div>
-        </div>
-        <div class="user-record">
-          <div class="user-data-fields">
-            <div class="user-data">1</div>
-            <div class="user-data">Stefan</div>
-            <div class="user-data">hello@world.nl</div>
-            <div class="user-data">XLwerkkleding BV</div>
-          </div>
-          <div class="user-record-btns">
-            <div class="user-data button small small-icon">
-              <i class="fas fa-eye"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-pencil"></i>
-            </div>
-            <div class="user-data button small small-icon">
-              <i class="fas fa-trash"></i>
-            </div>
-          </div>
-        </div>
+        <table class="product-records-table" style="background-color: var(--sub-color);" border="0">
+          <thead>
+            <tr style="background-color: var(--main-color);">
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>PLACEHOLDER</th>
+              <th>Bekijk, Bewerk, Verwijder</th>
+            </tr>
+          </thead>
+          <tr class="product-data-row">
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td>
+              <div class="product-record-btns">
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-pencil"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="product-data-row">
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-data">PLACEHOLDER</td>
+            <td class="product-records-btns-cell">
+              <div class="product-record-btns">
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-pencil"></i>
+                </div>
+                <div class="product-data button small small-icon">
+                  <i class="fas fa-trash"></i>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+        </table>
       </div>
+    </div>
     </div>
   </section>
 </main>
