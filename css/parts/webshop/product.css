@@ -68,6 +68,16 @@ select:first-of-type {
     font-size: 16px;
 }
 
+.sorter {
+    width: 50%;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 0.2rem;
+    margin-top: 10px;
+}
+
 @media (max-width:1024px) {
     .flex {
         flex-flow: column nowrap;

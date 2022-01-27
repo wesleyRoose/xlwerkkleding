@@ -40,10 +40,10 @@ if ($oResult = $conn->query($sQuery)) {
                         <li class="product-list-item smaller"><?php echo $aRow["p_brand"] ?></li>
                         <li class="product-list-item smaller"><?php echo $aRow["p_price"] ?></li>
                         <div class="selects">
-                            <select name="sizes">
+                            <select name="sizes" class="sorter">
                                 <option value="<?php echo $aRow["p_size"] ?>"><?php echo $aRow["p_size"] ?></option>
                             </select>
-                            <select name="Kleuren">
+                            <select name="Kleuren" class="sorter">
                                 <option value="<?php echo $aRow["p_color"] ?>"><?php echo $aRow["p_color"] ?></option>
                             </select>
                         </div>
