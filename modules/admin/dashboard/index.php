@@ -68,9 +68,9 @@ if ($oResult = $conn->query($sQuery)) {
             // Execute query and catch result in array
             if ($oResult = $conn->query($sQuery)) {
                 $sHtml = "<div class='small-users-overview'>";
-                $sHtml .= "<h3>Users Overview</h3>";
+                $sHtml .= "<h3>PLACEHOLDER</h3>";
                 while ($aRow = $oResult->fetch_assoc()) {
-                    $sHtml .= "<div class='cs-item'>" . $aRow["value"] .
+                    $sHtml .= "<div class='cs-item'>" . "PLACEHOLDER"/*$aRow["value"]*/ .
                         '<button class="product-data button small small-icon">
                             <i class="fas fa-trash no-margin"></i>
                         </button>

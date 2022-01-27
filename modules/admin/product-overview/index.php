@@ -85,6 +85,7 @@ if (file_exists('./db.defaultHtml.php')) {
               <th>Merk</th>
               <th>Categorie</th>
               <th>Prijs</th>
+              <th>Bekijk, Bewerk, Verwijder</th>
             </tr>
           </thead>
           <tr class="product-data-row">
@@ -115,7 +116,7 @@ if (file_exists('./db.defaultHtml.php')) {
             <td class="product-data">Merk1</td>
             <td class="product-data">Hesje</td>
             <td class="product-data">$15</td>
-            <td>
+            <td class="product-records-btns-cell">
               <div class="product-record-btns">
                 <div class="product-data button small small-icon">
                   <i class="fas fa-eye"></i>

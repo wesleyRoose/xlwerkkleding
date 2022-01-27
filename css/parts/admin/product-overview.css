@@ -51,10 +51,14 @@
 }
 
 tr.product-data-row:nth-last-of-type(odd) {
-  background-color: var(--odd-color);
+  background-color: orangered;
 }
 
-.product-data-fields {
+.product-records-table {
+  width: 100%;
+}
+
+product-records-table .product-data-fields {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -87,7 +91,12 @@ tr.product-data-row:nth-last-of-type(odd) {
   place-items: center;
 }
 
+.product-records-btns-cell {
+  width: 15%;
+}
+
 .product-record-btns {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
 }
