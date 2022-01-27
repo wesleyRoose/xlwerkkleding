@@ -1,11 +1,11 @@
 <?php
 
 //load controller
-if (file_exists('../../../controller.php')) {
-  include('../../../controller.php');
+if (file_exists('../../../admin-controller.php')) {
+  include('../../../admin-controller.php');
 } else {
   $errorMessage = "";
-  $errorMessage .= "PHP ERROR: controller.php does not exist.";
+  $errorMessage .= "PHP ERROR: admin-controller.php does not exist.";
   echo $errorMessage;
   exit;
 }
