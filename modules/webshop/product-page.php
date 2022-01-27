@@ -14,7 +14,7 @@ if (file_exists('../../controller.php')) {
 
 
 // Create Query String
-$sQuery = "SELECT * FROM `product` WHERE `p_id` = '" . $_GET["productId"] . "'";
+$sQuery = "SELECT * FROM `product` WHERE `p_id` = '" . $_GET["product"] . "'";
 // Execute Query on database connection and put the data into a Array
 if ($oResult = $conn->query($sQuery)) {
     // Put data into array

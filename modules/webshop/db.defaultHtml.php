@@ -76,7 +76,7 @@ if (isset($_POST["formSubmit"])) {
       <div class="text">
         <h3>' . $aRow["p_name"] . '</h3>
         <p>' . $aRow["p_sector"] . '</p>
-        <a href="' . ROOT_URL . "modules/webshop/product-page.php?productId=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
+        <a href="' . ROOT_URL . "modules/webshop/product-page.php?product=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
       </div>
     </div>';
       }
@@ -96,7 +96,7 @@ if (isset($_POST["formSubmit"])) {
   <div class="text">
     <h3>' . $aRow["p_name"] . '</h3>
     <p>' . $aRow["p_sector"] . '</p>
-    <a href="' . ROOT_URL . "modules/webshop/product-page.php?productId=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
+    <a href="' . ROOT_URL . "modules/webshop/product-page.php?product=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
   </div>
 </div>';
       }
@@ -119,7 +119,7 @@ if (isset($_POST["formSubmit"])) {
   <div class="text">
     <h3>' . $aRow["p_name"] . '</h3>
     <p>' . $aRow["p_sector"] . '</p>
-    <a href="' . ROOT_URL . "modules/webshop/product-page.php?productId=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
+    <a href="' . ROOT_URL . "modules/webshop/product-page.php?product=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
   </div>
 </div>';
     }
@@ -140,7 +140,7 @@ if (isset($_POST["formSubmit"])) {
   <div class="text">
     <h3>' . $aRow["p_name"] . '</h3>
     <p>' . $aRow["p_sector"] . '</p>
-    <a href="' . ROOT_URL . "modules/webshop/product-page.php?productId=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
+    <a href="' . ROOT_URL . "modules/webshop/product-page.php?product=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>
   </div>
 </div>';
     }

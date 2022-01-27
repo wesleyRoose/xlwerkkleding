@@ -56,6 +56,7 @@ if (file_exists('./db.defaultHtml.php')) {
             <div class="flex-new radio">
               <select name="sector" class="filter-select">
                 <option value="empty">Sector</option>
+                <?php echo $sSectorHtml ?>
               </select>
             </div>
             <div class="flex-new radio">
