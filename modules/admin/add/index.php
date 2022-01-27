@@ -86,6 +86,11 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                         <option value="nvt">Niet van Toepassing</option>
                         <?php echo $sSectorHtml ?>
                     </select><br>
+                    <label>Merk</label>
+                    <select name="p_brand" class="add-product-select webshop-filter-select">
+                        <option value="nvt">Niet van Toepassing</option>
+                        <?php echo $sMerkHtml ?>
+                    </select><br>
                     <label>Foto</label><br>
                     <input type="file" name="p_file"><br>
                     <label>Beschrijving</label><br>
