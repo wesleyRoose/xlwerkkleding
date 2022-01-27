@@ -1,23 +1,10 @@
 <?php
 
-session_start();
-
-//config page
-if (file_exists('../../config.php')) {
-    include('../../config.php');
+if (file_exists('../../controller.php')) {
+    include('../../controller.php');
 } else {
     $errorMessage = "";
-    $errorMessage .= "PHP ERROR: config.php does not exist.";
-    echo $errorMessage;
-    exit;
-}
-
-// functions page
-if (file_exists('../../functions.php')) {
-    include('../../functions.php');
-} else {
-    $errorMessage = "";
-    $errorMessage .= "PHP ERROR: functions.php does not exist.";
+    $errorMessage .= "PHP ERROR: controller.php does not exist.";
     echo $errorMessage;
     exit;
 }
@@ -25,15 +12,6 @@ if (file_exists('../../functions.php')) {
 
 if ($_SESSION["sessionStatus"] != 2 && $_SESSION["sessionStatus"] != 1 || empty($_SESSION["sessionStatus"])) {
     header('Location: ' . ROOT_URL . 'index.php');
-} else {
-    //header
-    if ($_SESSION["sessionStatus"] == 1) {
-        include "../../templates/header-user.php";
-    } else if ($_SESSION["sessionStatus"] == 2) {
-        include "../../templates/header-admin.php";
-    } else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
-        include "../../templates/header.php";
-    }
 }
 ?>
 
@@ -80,7 +58,7 @@ if ($_SESSION["sessionStatus"] == 1) {
     include "../../templates/footer-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
     include "../../templates/footer-admin.php";
-} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+} else {
     include "../../templates/footer.php";
 }
 ?>

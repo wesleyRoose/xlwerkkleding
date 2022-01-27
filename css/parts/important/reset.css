@@ -9,7 +9,10 @@
   --selection-color:  rgb(255, 181, 154);
   --notification:     rgb(224, 60, 0);
   --scrollbar-color:  rgb(226, 78, 24);
+  --odd-color:        rgb(178, 34, 34);
   --white:            rgb(255, 255, 255);
+  --light-gray:       rgb(169, 169, 169);
+  --dark-gray:        rgb(105, 105, 105);
   --broken-white:     rgb(245, 245, 245);
   --black:            rgb(0, 0, 0);
   --darkmode:         rgb(41, 41, 41);
@@ -127,7 +130,7 @@ input[type=password], input[type=text], input[type=email] {
   border-radius: 3px;
   outline: none;
   padding: 0.5rem;
-  background-color: var(--light) !important;
+  background-color: var(--light);
   width: 350px;
   margin-top: 5px;
   color: var(--white) !important;
@@ -152,8 +155,18 @@ textarea {
   margin-top: 5px;
 }
 
+/* Classes for simple element resets */
+
 .f-width {
-  width: 100%;
+  width: 100% !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
 }
 
 @media (max-width:500px) {

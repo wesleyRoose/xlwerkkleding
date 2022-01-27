@@ -31,10 +31,6 @@
     padding: 0 !important;
 }
 
-.no-margin {
-    margin: 0;
-}
-
 .previous-orders {
     display: flex;
     flex-flow: column nowrap;

@@ -1,32 +1,11 @@
 <?php
 
-//Start Session
-session_start();
-
-//Include Files
-if (file_exists('../../config.php')) {
-  include('../../config.php');
+//load controller
+if (file_exists('../../controller.php')) {
+  include('../../controller.php');
 } else {
   $errorMessage = "";
-  $errorMessage .= "PHP ERROR: ../../config.php does not exist.";
-  echo $errorMessage;
-  exit;
-}
-
-if (file_exists('../../functions.php')) {
-  include('../../functions.php');
-} else {
-  $errorMessage = "";
-  $errorMessage .= "PHP ERROR: ../../functions.php does not exist.";
-  echo $errorMessage;
-  exit;
-}
-
-if (file_exists('../../library/db.class.php')) {
-  include('../../library/db.class.php');
-} else {
-  $errorMessage = "";
-  $errorMessage .= "PHP ERROR: ../../library/db.class.php does not exist.";
+  $errorMessage .= "PHP ERROR: controller.php does not exist.";
   echo $errorMessage;
   exit;
 }
@@ -58,6 +37,7 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
     if ($data["rights"] == 1) {
       $_SESSION["sessionStatus"] = 1;
     } else if ($data["rights"] == 2) {
+      $sHeaderLocationOnSucces = 'Location: ' . ROOT_URL . 'modules/admin/dashboard/index.php';
       $_SESSION["sessionStatus"] = 2;
     }
     $_SESSION["sessionAccountId"] = $data["id"];
