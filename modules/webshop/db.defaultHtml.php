@@ -62,7 +62,7 @@ if (isset($_POST["formSubmit"])) {
         $sDefaultHtml .= '
     <div class="card">
       <div class="image">
-        <img src=" ' . ROOT_URL . 'modules/admin/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
+        <img src=" ' . ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
       </div>
       <div class="text">
         <h3>' . $aRow["p_name"] . '</h3>
@@ -82,7 +82,7 @@ if (isset($_POST["formSubmit"])) {
         $sDefaultHtml .= '
 <div class="card">
   <div class="image">
-    <img src=" ' . ROOT_URL . 'modules/admin/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
+    <img src=" ' . ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
   </div>
   <div class="text">
     <h3>' . $aRow["p_name"] . '</h3>
@@ -105,7 +105,7 @@ if (isset($_POST["formSubmit"])) {
       $sDefaultHtml .= '
 <div class="card">
   <div class="image">
-    <img src=" ' . ROOT_URL . 'modules/admin/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
+    <img src=" ' . ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
   </div>
   <div class="text">
     <h3>' . $aRow["p_name"] . '</h3>
@@ -126,7 +126,7 @@ if (isset($_POST["formSubmit"])) {
       $sDefaultHtml .= '
 <div class="card">
   <div class="image">
-    <img src=" ' . ROOT_URL . 'modules/admin/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
+    <img src=" ' . ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
   </div>
   <div class="text">
     <h3>' . $aRow["p_name"] . '</h3>
