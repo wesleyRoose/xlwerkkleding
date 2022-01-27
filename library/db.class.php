@@ -25,7 +25,6 @@ class  db
   {
     // Initialize database
     db::init();
-
     //Catch error
     if (self::$oConnection->prepare($sPreparedSql)) {
       //Bind and excecute Statement
@@ -53,14 +52,13 @@ class  db
           }
           return $data;
         } else if ($sType == "INSERT") {
-          // If $sType is INSERT return true, because it is executed
+          // If $sType is INSERT return true
           return true;
-          exit;
-        } else {
         }
       } else {
         // Create error message and return false
         $errorMsg = "";
+        print_r($sPreparedSql);
         $errorMsg .= "Execute failed. " . __LINE__ . ' ' . __FILE__;
         echo $errorMsg;
         return false;
@@ -137,21 +135,9 @@ class  db
       $sPreparedSql .= $sPreparedSqlValues . ";";
 
       // Call function to execute statement
-      if (self::executePreparedStatement("INSERT", $sPreparedSql, $sSql_types, $aValues)) {
-        return true;
-      } else {
-        // Creating error array to collect errors
-        $aErrorMsg = array();
-        array_push($aErrorMsg, "Execute failed " . __LINE__ . ' ' . __FILE__);
-        array_push($aErrorMsg, "execute");
-        return $aErrorMsg;
-      }
+      self::executePreparedStatement("INSERT", $sPreparedSql, $sSql_types, $aValues);
     } else {
-      // Creating error array to collect errors
-      $aErrorMsg = array();
-      array_push($aErrorMsg, "Lengths don't matchup " . __LINE__ . ' ' . __FILE__);
-      array_push($aErrorMsg, "lengths");
-      return $aErrorMsg;
+      echo "Lengths don't matchup " . __LINE__ . ' ' . __FILE__;
     }
   }
 
@@ -231,7 +217,7 @@ class  db
         $i++;
       }
       // Call function to execute statement
-      return self::executePreparedStatement("UPDATE", $sPreparedSql, $sSql_types, $aNewValue, $aWhereColumnValue);
+      self::executePreparedStatement("UPDATE", $sPreparedSql, $sSql_types, $aNewValue, $aWhereColumnValue);
     }
   }
 }

@@ -1,3 +1,5 @@
+/* add-product.php styling */
+
 .input-form {
     display: grid;
     place-items: center;
@@ -9,14 +11,4 @@
     height: 32px !important;
 }
 
-.error-message {
-    margin-top: 10px;
-}
-
-.form-header {
-    margin-bottom: 10px;
-}
-
-#new_value {
-    width: 100%;
-}
+/* end of add-product.php styling */

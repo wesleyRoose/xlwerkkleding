@@ -113,10 +113,6 @@ a.login {
     margin-left: 5px;
 }
 
-.dropdown-item {
-    margin: 10px 0 10px 0;
-}
-
 /* Dark Mode (Explaination found in reset.css at bottom) */
 
 @media (prefers-color-scheme: light) {

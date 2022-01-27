@@ -1,20 +1,37 @@
 <?php
 
+session_start();
 
-if (file_exists('../../controller.php')) {
-    include('../../controller.php');
+if (file_exists('../../config.php')) {
+    include('../../config.php');
 } else {
     $errorMessage = "";
-    $errorMessage .= "PHP ERROR: controller.php does not exist.";
+    $errorMessage .= "PHP ERROR: config.php does not exist.";
+    echo $errorMessage;
+    exit;
+}
+
+if (file_exists('../../functions.php')) {
+    include('../../functions.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: functions.php does not exist.";
     echo $errorMessage;
     exit;
 }
 
 
 
+if ($_SESSION["sessionStatus"] == 1) {
+    include "../../templates/header-user.php";
+} else if ($_SESSION["sessionStatus"] == 2) {
+    include "../../templates/header-admin.php";
+} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
+    include "../../templates/header.php";
+}
 
 // Create Query String
-$sQuery = "SELECT * FROM `product` WHERE `p_id` = '" . $_GET["product"] . "'";
+$sQuery = "SELECT * FROM `product` WHERE `p_id` = '" . $_GET["productId"] . "'";
 // Execute Query on database connection and put the data into a Array
 if ($oResult = $conn->query($sQuery)) {
     // Put data into array
@@ -65,6 +82,6 @@ if ($oResult = $conn->query($sQuery)) {
     include "../../templates/footer-user.php";
 } else if ($_SESSION["sessionStatus"] == 2) {
     include "../../templates/footer-admin.php";
-} else {
+} else if ($_SESSION["sessionStatus"] == 6 || empty($_SESSION["sessionStatus"])) {
     include "../../templates/footer.php";
 } ?>
