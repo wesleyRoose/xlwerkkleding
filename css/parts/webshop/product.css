@@ -69,13 +69,12 @@ select:first-of-type {
 }
 
 .sorter {
-    width: 50%;
+    width: 25%;
     height: 25px;
     outline: none;
     border: none;
     border-radius: 3px;
     padding: 0.2rem;
-    margin-top: 10px;
 }
 
 @media (max-width:1024px) {
