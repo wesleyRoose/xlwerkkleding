@@ -59,7 +59,7 @@ if (file_exists('../../library/db.filterTerms.php')) {
               </div>
             </div>
             <select name="brand" class="webshop-filter-select">
-              <?php echo $sSectorHtml ?>
+              <?php echo $sMerkHtml ?>
             </select>
           </div>
           <div class="select-container">

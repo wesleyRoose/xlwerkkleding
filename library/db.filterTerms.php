@@ -1,7 +1,7 @@
 <?php
 
 // Create Query String
-$sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'category'";
+$sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'category' ORDER BY value";
 // Execute query and catch result in array
 if ($oResult = $conn->query($sQuery)) {
   $sHtml = "";
@@ -14,7 +14,7 @@ $sCatagoryHtml = $sHtml;
 
 
 // Create Query String
-$sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'sector'";
+$sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'sector' ORDER BY value";
 // Execute query and catch result in array
 if ($oResult = $conn->query($sQuery)) {
   $sHtml = "";
@@ -26,7 +26,7 @@ if ($oResult = $conn->query($sQuery)) {
 $sSectorHtml = $sHtml;
 
 // Create Query String
-$sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'brand'";
+$sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'brand' ORDER BY value";
 // Execute query and catch result in array
 if ($oResult = $conn->query($sQuery)) {
   $sHtml = "";
