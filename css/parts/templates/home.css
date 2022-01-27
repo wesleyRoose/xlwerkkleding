@@ -27,6 +27,7 @@ div.card {
 }
 
 .card-image {
+  object-fit: cover;
   width: 100%;
   height: 183px;
   border-top-left-radius: 3px;

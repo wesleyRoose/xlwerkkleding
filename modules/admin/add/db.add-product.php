@@ -32,7 +32,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 
       //create one variable
-      $m = "/img_product/" . $_FILES['p_file']['name'];
+      $m = "img_product/" . $_FILES['p_file']['name'];
       //use move uploaded file function to move your files
       move_uploaded_file($_FILES['p_file']['tmp_name'], $m);
       // tmp_name is call temporary directory to store file and permanently its transter to m variable path
