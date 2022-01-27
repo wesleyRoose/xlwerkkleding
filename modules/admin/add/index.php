@@ -78,10 +78,12 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <input type="text" name="p_brand" id="p_brand" class="p-input"><br>
                     <label>Categorie</label><br>
                     <select name="p_category" class="add-product-select webshop-filter-select">
+                        <option value="nvt">Niet van Toepassing</option>
                         <?php echo $sCatagoryHtml ?>
                     </select><br>
                     <label>Sectorgroep</label><br>
                     <select name="p_sector" class="add-product-select webshop-filter-select">
+                        <option value="nvt">Niet van Toepassing</option>
                         <?php echo $sSectorHtml ?>
                     </select><br>
                     <label>Foto</label><br>

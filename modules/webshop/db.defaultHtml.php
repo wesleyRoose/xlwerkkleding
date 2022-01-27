@@ -14,16 +14,7 @@ if (isset($_POST["formSubmit"])) {
   if (isset($_POST["filterCheckBox"])) {
     $aFilterCheckBoxes = $_POST["filterCheckBox"];
 
-    // Array for brands
-    // Check if `brand` is selected
-    if (in_array("brand", $aFilterCheckBoxes)) {
-      $aBrand = array();
-      if (isset($_POST["brand"])) {
-        $aBrand = array("p_brand", $_POST["brand"]);
-        // Add array to complete array
-        array_push($aQueryData, $aBrand);
-      }
-    }
+
 
     // Array for Categories
     // Check if `categories` is selected

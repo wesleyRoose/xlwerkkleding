@@ -19,14 +19,6 @@ if (file_exists('../../../library/db.filterTerms.php')) {
   exit;
 }
 
-if (file_exists('./db.defaultHtml.php')) {
-  include('./db.defaultHtml.php');
-} else {
-  $errorMessage = "";
-  $errorMessage .= "PHP ERROR: ./db.defaultHtml.php does not exist.";
-  echo $errorMessage;
-  exit;
-}
 ?>
 
 <main class="product-overview">
@@ -34,23 +26,23 @@ if (file_exists('./db.defaultHtml.php')) {
     <div class="product-overview-wrapper">
       <h3>Overzicht van alle producten</h3>
       <div class="filter-search-bar">
-        <form action="#" method="post" class="filter-form">
+        <form action="db.formHandler.php" method="post" class="filter-form">
           <input type="text" name="search" id="search" class="search-input" placeholder="Zoek product...">
           <div class="radio-wrapper">
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="ID">
+              <input type="radio" name="selectValue" class="input_filter" value="p_id">
               <label>ID</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="productName">
+              <input type="radio" name="selectValue" class="input_filter" value="p_name">
               <label>Product Naam</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="brand">
+              <input type="radio" name="selectValue" class="input_filter" value="p_brand">
               <label>Merk</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="price">
+              <input type="radio" name="selectValue" class="input_filter" value="p_price">
               <label>Prijs</label><br>
             </div>
             <div class="flex-new radio">
