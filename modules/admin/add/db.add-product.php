@@ -28,7 +28,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $p_brand = cleaninput($_POST['p_brand'], 100);
       $p_size = cleaninput($_POST['p_size'], 20);
       $p_color = cleaninput($_POST['p_color'], 50);
-      $p_description = cleaninput($_POST['p_description'], 400);
+      $p_description = cleaninput($_POST['p_description'], 700);
 
 
       //create one variable
