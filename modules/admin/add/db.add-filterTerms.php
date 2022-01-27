@@ -19,7 +19,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     // Check if the input is not empty
     if (!empty($_POST["new_value"])) {
       // Clean input for unwanted characters
-      $filterValue = cleaninput($_POST['new_value'], 20);
+      $filterValue = cleaninput($_POST['new_value'], 255);
 
       // Create Arrays for function parameters
       $aColumnName = array("term", "value");

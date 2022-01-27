@@ -26,9 +26,9 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $p_category = cleaninput($_POST['p_category'], 75);
       $p_sector = cleaninput($_POST['p_sector'], 100);
       $p_brand = cleaninput($_POST['p_brand'], 100);
-      $p_size = cleaninput($_POST['p_size'], 4);
+      $p_size = cleaninput($_POST['p_size'], 20);
       $p_color = cleaninput($_POST['p_color'], 50);
-      $p_description = cleaninput($_POST['p_description'], 150);
+      $p_description = cleaninput($_POST['p_description'], 400);
 
 
       //create one variable
