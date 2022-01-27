@@ -48,7 +48,7 @@ if ($_SESSION["sessionStatus"] == 1) {
     <section class="mainFlexContainer">
         <div class="home">
             <h1>Welkom</h1>
-            <p>Slogan....</p>
+            <p>Stijlvol in XL plus.</p>
         </div>
 
         <!-- Slideshow container -->
