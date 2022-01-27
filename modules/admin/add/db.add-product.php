@@ -32,10 +32,19 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 
       //create one variable
-      $m = "img_product/" . $_FILES['p_file']['name'];
+      // $_FILES['p_file']['name'] = "test.jpg";
+      $sImgPath = "img_product/" . $_FILES['p_file']['name'];
       //use move uploaded file function to move your files
-      move_uploaded_file($_FILES['p_file']['tmp_name'], $m);
+      move_uploaded_file($_FILES['p_file']['tmp_name'], $sImgPath);
       // tmp_name is call temporary directory to store file and permanently its transter to m variable path
+
+      $microtime =  $_SERVER['REQUEST_TIME'];
+
+      // Rename uploaded file
+      rename("img_product/".$_FILES['p_file']['name'], "img_product/". $p_sector . "-". $microtime .  "." . pathinfo("img_product/".$_FILES['p_file']['name'])['extension']);
+
+      // Create string for img path for in db
+      $sDbImgPath = "img_product/". $p_sector . "-" . $microtime . "." . pathinfo("img_product/".$_FILES['p_file']['name'])['extension'];
 
       // Create header location url for a succesfull insert
       $sLocationSucces = "";
@@ -49,7 +58,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       // Create Arrays for function parameters
       $aColumnName = array("p_name", "p_price", "p_category", "p_sector", "p_brand", "p_size", "p_color", "p_description", "p_foto");
 
-      $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $m);
+      $aValues = array($p_name, $p_price, $p_category, $p_sector, $p_brand, $p_size, $p_color, $p_description, $sDbImgPath);
 
       // Insert data into database
       if (db::insert('product', $aColumnName, $aValues, "sisssssss") == true) {
