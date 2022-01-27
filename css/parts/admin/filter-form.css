@@ -1,3 +1,10 @@
+.flex-new {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 10px;
+}
+
 .filter-search-bar, .radio-wrapper {
     display: flex;
     flex-flow: row nowrap;
@@ -49,4 +56,16 @@
 .filter-select {
     margin-top: 0;
     width: 150px;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 0.2rem;
+}
+
+.filter-btn {
+    background-color: var(--white) !important;
+    color: var(--main-color) !important;
+    height: 25px !important;
+    padding: 0 10px 0 10px !important;
 }

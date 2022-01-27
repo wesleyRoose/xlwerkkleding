@@ -37,39 +37,39 @@ if (file_exists('./db.defaultHtml.php')) {
         <form action="#" method="post" class="filter-form">
           <input type="text" name="search" id="search" class="search-input" placeholder="Zoek user...">
           <div class="radio-wrapper">
-            <div class="select-container radio">
+            <div class="flex-new radio">
               <input type="radio" name="selectValue" class="input_filter" value="ID">
               <label>ID</label><br>
             </div>
-            <div class="select-container radio">
+            <div class="flex-new radio">
               <input type="radio" name="selectValue" class="input_filter" value="productName">
               <label>Product Naam</label><br>
             </div>
-            <div class="select-container radio">
+            <div class="flex-new radio">
               <input type="radio" name="selectValue" class="input_filter" value="brand">
               <label>Merk</label><br>
             </div>
-            <div class="select-container radio">
+            <div class="flex-new radio">
               <input type="radio" name="selectValue" class="input_filter" value="price">
               <label>Prijs</label><br>
             </div>
-            <div class="select-container radio">
-              <select name="sector" class="webshop-filter-select filter-select">
+            <div class="flex-new radio">
+              <select name="sector" class="filter-select">
                 <option value="empty">Sector</option>
               </select>
             </div>
-            <div class="select-container radio">
-              <select name="catagory" class="webshop-filter-select filter-select">
+            <div class="flex-new radio">
+              <select name="catagory" class="filter-select">
                 <option value="empty">Categorie</option>
                 <?php echo $sCatagoryHtml ?>
               </select>
             </div>
           </div>
-          <div class="select-container radio">
-            <input type="submit" name="formSubmit" class="button sub padding-no-margin" value="Filter">
+          <div class="flex-new radio">
+            <input type="submit" name="formSubmit" class="button no-margin filter-btn" value="Filter">
           </div>
-          <div class="select-container radio">
-            <input type="submit" name="formReset" class="button sub padding-no-margin" value="Reset">
+          <div class="flex-new radio">
+            <input type="submit" name="formReset" class="button no-margin filter-btn" value="Reset">
           </div>
         </form>
       </div>
