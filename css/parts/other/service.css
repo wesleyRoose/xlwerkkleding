@@ -5,3 +5,15 @@
 .service-wrapper {
     padding: 50px 20rem 50px 20rem;
 }
+
+@media (max-width: 1024px) {
+    .service-wrapper {
+        padding: 50px 5rem 50px 5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .service-wrapper {
+        padding: 0;
+    }
+}
