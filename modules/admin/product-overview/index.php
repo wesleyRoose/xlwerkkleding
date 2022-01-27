@@ -30,19 +30,19 @@ if (file_exists('../../../library/db.filterTerms.php')) {
           <input type="text" name="search" id="search" class="search-input" placeholder="Zoek product...">
           <div class="radio-wrapper">
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="ID">
+              <input type="radio" name="selectValue" class="input_filter" value="p_id">
               <label>ID</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="productName">
+              <input type="radio" name="selectValue" class="input_filter" value="p_name">
               <label>Product Naam</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="brand">
+              <input type="radio" name="selectValue" class="input_filter" value="p_brand">
               <label>Merk</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="price">
+              <input type="radio" name="selectValue" class="input_filter" value="p_price">
               <label>Prijs</label><br>
             </div>
             <div class="flex-new radio">
