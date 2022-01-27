@@ -37,6 +37,7 @@ if ($_SESSION["token"] == $_POST["token"] && $_POST["email1"] == "") {
     if ($data["rights"] == 1) {
       $_SESSION["sessionStatus"] = 1;
     } else if ($data["rights"] == 2) {
+      $sHeaderLocationOnSucces = 'Location: ' . ROOT_URL . 'modules/admin/dashboard/index.php';
       $_SESSION["sessionStatus"] = 2;
     }
     $_SESSION["sessionAccountId"] = $data["id"];
