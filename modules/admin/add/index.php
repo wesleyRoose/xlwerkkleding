@@ -36,6 +36,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <select name="term" class="add-product-select webshop-filter-select">
                         <option value="category">Categorie</option>
                         <option value="sector">Sector</option>
+                        <option value="brand">Merk</option>
                     </select>
                     <label>Waarde</label><br>
                     <input type="text" name="new_value" id="new_value"><br>
@@ -85,6 +86,11 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <select name="p_sector" class="add-product-select webshop-filter-select">
                         <option value="nvt">Niet van Toepassing</option>
                         <?php echo $sSectorHtml ?>
+                    </select><br>
+                    <label>Merk</label>
+                    <select name="p_brand" class="add-product-select webshop-filter-select">
+                        <option value="nvt">Niet van Toepassing</option>
+                        <?php echo $sMerkHtml ?>
                     </select><br>
                     <label>Foto</label><br>
                     <input type="file" name="p_file"><br>

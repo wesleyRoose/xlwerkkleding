@@ -11,8 +11,8 @@ if (file_exists('../../controller.php')) {
 }
 
 
-if (file_exists('db.filterTerms.php')) {
-  include('db.filterTerms.php');
+if (file_exists('../../library/db.filterTerms.php')) {
+  include('../../library/db.filterTerms.php');
 } else {
   $errorMessage = "";
   $errorMessage .= "PHP ERROR: db.filterTerms.php does not exist.";

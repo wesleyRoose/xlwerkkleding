@@ -29,11 +29,11 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $aResult = db::insert('filterterms', $aColumnName, $aValues, "ss");
 
       if ($aResult[1] == "execute") {
-        header('Location: ' . ROOT_URL . 'modules/admin/add-product.php?msg=error');
+        header('Location: ' . ROOT_URL . 'modules/admin/add/index.php?msg=error');
       } else if ($aResult[1] == "lengths") {
-        header('Location: ' . ROOT_URL . 'modules/admin/add-product.php?msg=query');
+        header('Location: ' . ROOT_URL . 'modules/admin/add/index.php?msg=query');
       } else {
-        header('Location: ' . ROOT_URL . 'modules/admin/add-product.php?msg=succes');
+        header('Location: ' . ROOT_URL . 'modules/admin/add/index.php?msg=succes');
       }
     }
   }
