@@ -71,7 +71,9 @@ if ($oResult = $conn->query($sQuery)) {
                         <p class="account-page-info-text"><?php echo $aRow["firm"]; ?></p>
                         <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
-                    <button>Verwijder Profiel</button>
+                    <form action="db.delete-user.php" method="post" class="f-width">
+                        <input name="del_user_btn" type="submit" value="Verwijder Profiel">
+                    </form>
                 </div>
                 <div class="previous-orders">
                     <h4>Bestellingen</h4>
