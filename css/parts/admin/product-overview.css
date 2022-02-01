@@ -51,7 +51,7 @@
 }
 
 tr.product-data-row:nth-last-of-type(odd) {
-  background-color: orangered;
+  background-color: var(--odd-color-two);
 }
 
 .product-records-table {

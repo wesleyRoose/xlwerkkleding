@@ -10,6 +10,7 @@
   --notification:     rgb(224, 60, 0);
   --scrollbar-color:  rgb(226, 78, 24);
   --odd-color:        rgb(178, 34, 34);
+  --odd-color-two:    rgb(255, 69, 0);
   --white:            rgb(255, 255, 255);
   --light-gray:       rgb(169, 169, 169);
   --dark-gray:        rgb(105, 105, 105);
@@ -153,6 +154,10 @@ textarea {
   color: var(--white);
   background-color: var(--light);
   margin-top: 5px;
+}
+
+tr {
+  height: 60px;
 }
 
 /* Classes for simple element resets */
