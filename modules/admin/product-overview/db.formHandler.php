@@ -106,13 +106,13 @@ if (isset($_POST["formSubmit"])) {
   <td class="product-data">&#8364 ' . $aRow["p_price"] . '</td>
   <td class="product-records-btns-cell">
     <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["p_id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
         <i class="fas fa-eye"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["p_id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
         <i class="fas fa-pencil"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=' . $aRow["p_id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
         <i class="fas fa-trash"></i>
       </a>
     </div>
@@ -142,13 +142,13 @@ if (isset($_POST["formSubmit"])) {
     <td class="product-data">&#8364 ' . $aRow["p_price"] . '</td>
     <td class="product-records-btns-cell">
       <div class="product-record-btns">
-        <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["p_id"] . '" class="product-data button small small-icon">
+        <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
           <i class="fas fa-eye"></i>
         </a>
-        <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["p_id"] . '" class="product-data button small small-icon">
+        <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
           <i class="fas fa-pencil"></i>
         </a>
-        <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=' . $aRow["p_id"] . '" class="product-data button small small-icon">
+        <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
           <i class="fas fa-trash"></i>
         </a>
       </div>
@@ -177,13 +177,13 @@ if (isset($_POST["formSubmit"])) {
     <td class="product-data">&#8364 ' . $aRow["p_price"] . '</td>
     <td class="product-records-btns-cell">
       <div class="product-record-btns">
-        <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["p_id"] . '" class="product-data button small small-icon">
+        <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
           <i class="fas fa-eye"></i>
         </a>
-        <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["p_id"] . '" class="product-data button small small-icon">
+        <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
           <i class="fas fa-pencil"></i>
         </a>
-        <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=s' . $aRow["p_id"] . '" class="product-data button small small-icon">
+        <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=s' . $aRow["p_id"] . ' class="product-data button small small-icon">
           <i class="fas fa-trash"></i>
         </a>
       </div>

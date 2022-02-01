@@ -42,13 +42,13 @@ if (isset($_POST["formSubmit"])) {
   <td class="product-data">' . $aRow["firm"] . '</td>
   <td class="product-records-btns-cell">
     <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-view/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-eye"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-pencil"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-delete/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-trash"></i>
       </a>
     </div>
@@ -78,13 +78,13 @@ if (isset($_POST["formSubmit"])) {
   <td class="product-data">' . $aRow["firm"] . '</td>
   <td class="product-records-btns-cell">
     <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-view/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-eye"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-pencil"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-delete/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-trash"></i>
       </a>
     </div>
@@ -113,13 +113,13 @@ if (isset($_POST["formSubmit"])) {
   <td class="product-data">' . $aRow["firm"] . '</td>
   <td class="product-records-btns-cell">
     <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-view/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-eye"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-pencil"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=s' . $aRow["id"] . '" class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-delete/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-trash"></i>
       </a>
     </div>
