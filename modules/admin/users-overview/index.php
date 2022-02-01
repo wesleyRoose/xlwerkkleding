@@ -17,36 +17,32 @@ if (file_exists('../../../admin-controller.php')) {
     <div class="users-overview-wrapper">
       <h3>Overzicht van alle gebruikers</h3>
       <div class="filter-search-bar">
-        <form action="#" method="post" class="filter-form">
-          <input type="text" name="search" id="search" class="search-input" placeholder="Zoek user...">
+        <form action="index.php" method="post" class="filter-form">
+          <input type="text" name="search" id="search" class="search-input" placeholder="Zoek gebruiker...">
           <div class="radio-wrapper">
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="ID">
-              <label>PLACEHOLDER</label><br>
+              <input type="radio" name="selectValue" class="input_filter" value="id">
+              <label>ID</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="productName">
-              <label>PLACEHOLDER</label><br>
+              <input type="radio" name="selectValue" class="input_filter" value="username">
+              <label>Gebruikersnaam</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="brand">
-              <label>PLACEHOLDER</label><br>
+              <input type="radio" name="selectValue" class="input_filter" value="email">
+              <label>E-mail</label><br>
             </div>
             <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="price">
-              <label>PLACEHOLDER</label><br>
+              <input type="radio" name="selectValue" class="input_filter" value="firstName">
+              <label>Voornaam</label><br>
             </div>
             <div class="flex-new radio">
-              <select name="sector" class="filter-select">
-                <option value="empty">PLACEHOLDER</option>
-              </select>
+              <input type="radio" name="selectValue" class="input_filter" value="lastName">
+              <label>Achternaam</label><br>
             </div>
             <div class="flex-new radio">
-              <select name="catagory" class="filter-select">
-                <option value="empty">PLACEHOLDER</option>
-                <?php //echo $sCatagoryHtml 
-                ?>
-              </select>
+              <input type="radio" name="selectValue" class="input_filter" value="firm">
+              <label>Firma</label><br>
             </div>
           </div>
           <div class="flex-new radio">
@@ -63,12 +59,12 @@ if (file_exists('../../../admin-controller.php')) {
         <table class="product-records-table" style="background-color: var(--sub-color);" border="0">
           <thead>
             <tr style="background-color: var(--main-color);">
-              <th>PLACEHOLDER</th>
-              <th>PLACEHOLDER</th>
-              <th>PLACEHOLDER</th>
-              <th>PLACEHOLDER</th>
-              <th>PLACEHOLDER</th>
-              <th>PLACEHOLDER</th>
+              <th>ID</th>
+              <th>Gebruikersnaam</th>
+              <th>E-mail</th>
+              <th>Voornaam</th>
+              <th>Achternaam</th>
+              <th>Firma</th>
               <th>Bekijk, Bewerk, Verwijder</th>
             </tr>
           </thead>
