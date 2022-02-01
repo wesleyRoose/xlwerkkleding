@@ -72,48 +72,15 @@ if (file_exists('../../../admin-controller.php')) {
               <th>Bekijk, Bewerk, Verwijder</th>
             </tr>
           </thead>
-          <tr class="product-data-row">
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td>
-              <div class="product-record-btns">
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-eye"></i>
-                </div>
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-pencil"></i>
-                </div>
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-trash"></i>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr class="product-data-row">
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-data">PLACEHOLDER</td>
-            <td class="product-records-btns-cell">
-              <div class="product-record-btns">
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-eye"></i>
-                </div>
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-pencil"></i>
-                </div>
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-trash"></i>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <?php if (file_exists('db.formHandler.php')) {
+            include('db.formHandler.php');
+          } else {
+            $errorMessage = "";
+            $errorMessage .= "PHP ERROR: db.formHandler.php does not exist.";
+            echo $errorMessage;
+            exit;
+          }
+          ?>
 
         </table>
       </div>
