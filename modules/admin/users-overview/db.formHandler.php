@@ -60,7 +60,7 @@ if (isset($_POST["formSubmit"])) {
   // If there is no user input
   if ($bTextInput != true && !isset($aSelectValues)) {
     $sQuery = "";
-    $sQuery .= "SELECT * FROM `product`;";
+    $sQuery .= "SELECT * FROM `users`;";
   }
 
   // Check if there are dropdown values, if so add it to the sQuery if it exists
@@ -126,7 +126,7 @@ if (isset($_POST["formSubmit"])) {
 } else if (isset($_POST["formReset"])) {
   // Create query
   $sQuery = "";
-  $sQuery .= "SELECT * FROM `product`;";
+  $sQuery .= "SELECT * FROM `users`;";
 
   // Execute Query on database connection and put the data into a Array
   if ($oResult = $conn->query($sQuery)) {
