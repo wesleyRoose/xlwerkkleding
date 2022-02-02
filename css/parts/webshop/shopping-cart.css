@@ -54,7 +54,7 @@
     }
 
     .small-image {
-        display: none;
+        display: none !important;
     }
 
     .item-margin {
