@@ -26,7 +26,7 @@ if (file_exists('../../../library/db.filterTerms.php')) {
     <div class="product-overview-wrapper">
       <h3>Overzicht van alle producten</h3>
       <div class="filter-search-bar">
-        <form action="db.formHandler.php" method="post" class="filter-form">
+        <form action="index.php" method="post" class="filter-form">
           <input type="text" name="search" id="search" class="search-input" placeholder="Zoek product...">
           <div class="radio-wrapper">
             <div class="flex-new radio">
@@ -36,10 +36,6 @@ if (file_exists('../../../library/db.filterTerms.php')) {
             <div class="flex-new radio">
               <input type="radio" name="selectValue" class="input_filter" value="p_name">
               <label>Product Naam</label><br>
-            </div>
-            <div class="flex-new radio">
-              <input type="radio" name="selectValue" class="input_filter" value="p_brand">
-              <label>Merk</label><br>
             </div>
             <div class="flex-new radio">
               <input type="radio" name="selectValue" class="input_filter" value="p_price">
@@ -52,7 +48,7 @@ if (file_exists('../../../library/db.filterTerms.php')) {
               </select>
             </div>
             <div class="flex-new radio">
-              <select name="sector" class="filter-select">
+              <select name="brand" class="filter-select">
                 <option value="empty">Merk</option>
                 <?php echo $sMerkHtml ?>
               </select>
@@ -84,52 +80,18 @@ if (file_exists('../../../library/db.filterTerms.php')) {
               <th>Merk</th>
               <th>Categorie</th>
               <th>Prijs</th>
-              <th>Bekijk, Bewerk, Verwijder</th>
+              <th class="product-records-btns-cell">Bekijk, Bewerk, Verwijder</th>
             </tr>
           </thead>
-          <tr class="product-data-row">
-            <td class="product-data">1</td>
-            <td class="product-data">Geel Hesje</td>
-            <td class="product-data">Bouw</td>
-            <td class="product-data">Merk1</td>
-            <td class="product-data">Hesje</td>
-            <td class="product-data">$15</td>
-            <td>
-              <div class="product-record-btns">
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-eye"></i>
-                </div>
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-pencil"></i>
-                </div>
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-trash"></i>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr class="product-data-row">
-            <td class=" product-data">1</td>
-            <td class="product-data">Geel Hesje</td>
-            <td class="product-data">Bouw</td>
-            <td class="product-data">Merk1</td>
-            <td class="product-data">Hesje</td>
-            <td class="product-data">$15</td>
-            <td class="product-records-btns-cell">
-              <div class="product-record-btns">
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-eye"></i>
-                </div>
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-pencil"></i>
-                </div>
-                <div class="product-data button small small-icon">
-                  <i class="fas fa-trash"></i>
-                </div>
-              </div>
-            </td>
-          </tr>
-
+          <?php if (file_exists('db.formHandler.php')) {
+            include('db.formHandler.php');
+          } else {
+            $errorMessage = "";
+            $errorMessage .= "PHP ERROR: db.formHandler.php does not exist.";
+            echo $errorMessage;
+            exit;
+          }
+          ?>
         </table>
       </div>
     </div>

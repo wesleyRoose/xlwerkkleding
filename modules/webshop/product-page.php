@@ -28,7 +28,7 @@ if ($oResult = $conn->query($sQuery)) {
         <div class="page-wrapper">
             <div class="flex">
                 <div class="product-image-wrapper">
-                    <img src="<?php echo ROOT_URL . 'modules/admin/' . $aRow["p_foto"] ?>" alt="Placeholder Image" class="product-image">
+                    <img src="<?php echo ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] ?>" alt="Placeholder Image" class="product-image">
                 </div>
                 <div class="product-info">
                     <ul class="info-list">
