@@ -26,13 +26,12 @@ if (isset($_POST["formSubmit"])) {
       // If there is a text input, add it to the query
       $sQuery = "SELECT * FROM `users` WHERE `" . $sRadioValue . "` LIKE '%" . $sTextInput . "%'";
     }
-  }
 
-  // Execute Query on database connection and put the data into a Array
-  if ($oResult = $conn->query($sQuery)) {
-    // Generate Product Table
-    while ($aRow = $oResult->fetch_assoc()) {
-      $sHtml .= '
+    // Execute Query on database connection and put the data into a Array
+    if ($oResult = $conn->query($sQuery)) {
+      // Generate Product Table
+      while ($aRow = $oResult->fetch_assoc()) {
+        $sHtml .= '
 <tr class="product-data-row">
   <td class="product-data">' . $aRow["id"] . '</td>
   <td class="product-data">' . $aRow["username"] . '</td>
@@ -55,9 +54,10 @@ if (isset($_POST["formSubmit"])) {
   </td>
 </tr>
       ';
+      }
     }
+    echo $sHtml;
   }
-  echo $sHtml;
   // if reset is pressed
 } else if (isset($_POST["formReset"])) {
   // Create query

@@ -91,8 +91,35 @@ if (file_exists('../../../library/db.filterTerms.php')) {
             echo $errorMessage;
             exit;
           }
+
+          if (file_exists('db.prevNextHandler.php')) {
+            include('db.prevNextHandler.php');
+          } else {
+            $errorMessage = "";
+            $errorMessage .= "PHP ERROR: db.prevNextHandler.php does not exist.";
+            echo $errorMessage;
+            exit;
+          }
           ?>
         </table>
+        <form action="index.php" method="post">
+          <div class="filter-search-bar">
+
+            <?php
+            if (isset($_SESSION["iDisplayItems"])) {
+              if ($_SESSION["iDisplayItems"] > 0) {
+                $sPrevHtml = '<div class="flex-new radio">
+                <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
+              </div>';
+                echo $sPrevHtml;
+              }
+            }
+            ?>
+            <div class="flex-new radio">
+              <input type="submit" name="next" class="button no-margin filter-btn" value="Volgende">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>
