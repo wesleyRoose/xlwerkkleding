@@ -12,11 +12,12 @@ if (!isset($_SESSION["iDisplayItems"])) {
 // Check if button is pressed
 if (isset($_POST["formSubmit"])) {
   // Unset session vars
-  if (isset($_SESSION["iDisplayItems"])) {
-    unset($_SESSION['iDisplayItems']);
-  }
   if (isset($_SESSION["aQueryResult"])) {
     unset($_SESSION["aQueryResult"]);
+  }
+
+  if (isset($_SESSION["iDisplayItems"])) {
+    $_SESSION["iDisplayItems"] = 0;
   }
 
   // If there is a input text, filter unwanted characters
@@ -105,84 +106,28 @@ if (isset($_POST["formSubmit"])) {
       $sQuery .= "SELECT * FROM `product` WHERE `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "' AND `" . $aSelectValues[2][0] . "` = '" . $aSelectValues[2][1] . "'";
     }
   }
-  // Execute Query on database connection and put the data into a Array
-  if ($oResult = $conn->query($sQuery)) {
-    // Generate Product Table
-    while ($aRow = $oResult->fetch_assoc()) {
-      $aResult[] = $aRow;
-      $sHtml .= '
-<tr class="product-data-row">
-  <td class="product-data">' . $aRow["p_id"] . '</td>
-  <td class="product-data">' . $aRow["p_name"] . '</td>
-  <td class="product-data">' . $aRow["p_sector"] . '</td>
-  <td class="product-data">' . $aRow["p_brand"] . '</td>
-  <td class="product-data">' . $aRow["p_category"] . '</td>
-  <td class="product-data">&#8364 ' . $aRow["p_price"] . '</td>
-  <td class="product-records-btns-cell">
-    <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-eye"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-pencil"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-trash"></i>
-      </a>
-    </div>
-  </td>
-</tr>
-      ';
-    }
-  }
-  $_SESSION["aQueryResult"] = $aResult;
-  echo $sHtml;
   // if reset is pressed
 } else if (isset($_POST["formReset"])) {
   // Unset session vars
-  if (isset($_SESSION["iDisplayItems"])) {
-    unset($_SESSION['iDisplayItems']);
-  }
   if (isset($_SESSION["aQueryResult"])) {
     unset($_SESSION["aQueryResult"]);
+  }
+
+  if (isset($_SESSION["iDisplayItems"])) {
+    $_SESSION["iDisplayItems"] = 0;
   }
 
   // Create query
   $sQuery = "";
   $sQuery .= "SELECT * FROM `product`";
 
-  // Execute Query on database connection and put the data into a Array
-  if ($oResult = $conn->query($sQuery)) {
-    // Generate Product Table
-    while ($aRow = $oResult->fetch_assoc()) {
-      $aResult[] = $aRow;
-      $sHtml .= '
-  <tr class="product-data-row">
-    <td class="product-data">' . $aRow["p_id"] . '</td>
-    <td class="product-data">' . $aRow["p_name"] . '</td>
-    <td class="product-data">' . $aRow["p_sector"] . '</td>
-    <td class="product-data">' . $aRow["p_brand"] . '</td>
-    <td class="product-data">' . $aRow["p_category"] . '</td>
-    <td class="product-data">&#8364 ' . $aRow["p_price"] . '</td>
-    <td class="product-records-btns-cell">
-      <div class="product-record-btns">
-        <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
-          <i class="fas fa-eye"></i>
-        </a>
-        <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
-          <i class="fas fa-pencil"></i>
-        </a>
-        <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=' . $aRow["p_id"] . ' class="product-data button small small-icon">
-          <i class="fas fa-trash"></i>
-        </a>
-      </div>
-    </td>
-  </tr>';
-    }
-  }
-  $_SESSION["aQueryResult"] = $aResult;
-  echo $sHtml;
+
   // if nothing is pressed
+} else if (isset($_POST["prev"])) {
+  $_SESSION["iDisplayItems"] -= 2;
+  print_r($_SESSION["aQueryResult"]);
+} else if (isset($_POST["next"])) {
+  $_SESSION["iDisplayItems"] += 2;
 } else {
   // Unset session vars
   if (isset($_SESSION["aQueryResult"])) {
@@ -192,48 +137,43 @@ if (isset($_POST["formSubmit"])) {
   // Create query
   $sQuery = "";
   $sQuery .= "SELECT * FROM `product`";
+}
 
-  // Execute Query on database connection and put the data into a Array
-  if ($oResult = $conn->query($sQuery)) {
-    // Generate Product Table
-    while ($aRow = $oResult->fetch_assoc()) {
-      $aResult[] = $aRow;
-    }
+// Execute Query on database connection and put the data into a Array
+if ($oResult = $conn->query($sQuery)) {
+  // Generate Product Table
+  while ($aRow = $oResult->fetch_assoc()) {
+    $aResult[] = $aRow;
   }
-  $_SESSION["aQueryResult"] = $aResult;
-  for ($x = $_SESSION["iDisplayItems"] + 2; $_SESSION["iDisplayItems"] < $x; $_SESSION["iDisplayItems"]++) {
+}
+$_SESSION["aQueryResult"] = $aResult;
+for ($x = $_SESSION["iDisplayItems"] + 2, $y = $_SESSION["iDisplayItems"]; $y < $x && $y < count($_SESSION["aQueryResult"]) && $y >= 0; $y++) {
+  echo "<br>";
 
-    $sHtml .= '
-    <tr class="product-data-row">
-      <td class="product-data">' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_id"] . '</td>
-      <td class="product-data">' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_name"] . '</td>
-      <td class="product-data">' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_sector"] . '</td>
-      <td class="product-data">' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_brand"] . '</td>
-      <td class="product-data">' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_category"] . '</td>
-      <td class="product-data">&#8364 ' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_price"] . '</td>
-      <td class="product-records-btns-cell">
-        <div class="product-record-btns">
-          <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_id"] . ' class="product-data button small small-icon">
-            <i class="fas fa-eye"></i>
-          </a>
-          <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_id"] . ' class="product-data button small small-icon">
-            <i class="fas fa-pencil"></i>
-          </a>
-          <a href=' . ROOT_URL . 'modules/admin/product-delete/index.php?product=s' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_id"] . ' class="product-data button small small-icon">
-            <i class="fas fa-trash"></i>
-          </a>
-        </div>
-      </td>
-    </tr>';
-  }
-
-  echo $sHtml;
+  echo $y;
+  echo "<br>";
+  $sHtml .= '
+<tr class="product-data-row">
+  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_id"] . '</td>
+  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_name"] . '</td>
+  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_sector"] . '</td>
+  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_brand"] . '</td>
+  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_category"] . '</td>
+  <td class="product-data">&#8364 ' . $_SESSION["aQueryResult"][$y]["p_price"] . '</td>
+  <td class="product-records-btns-cell">
+    <div class="product-record-btns">
+      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_id"] . ' class="product-data button small small-icon">
+        <i class="fas fa-eye"></i>
+      </a>
+      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_id"] . ' class="product-data button small small-icon">
+        <i class="fas fa-pencil"></i>
+      </a>
+      <a href=' . ROOT_URL . 'modules/admin/product-overview/db.deleteProduct.php?product=' . $_SESSION["aQueryResult"][$_SESSION["iDisplayItems"]]["p_id"] . ' class="product-data button small small-icon">
+        <i class="fas fa-trash"></i>
+      </a>
+    </div>
+  </td>
+</tr>';
 }
 
-if (isset($_POST["next"])) {
-  $_SESSION["iDisplayItems"] + 2;
-}
-
-if (isset($_POST["prev"])) {
-  $_SESSION["iDisplayItems"] - 2;
-}
+echo $sHtml;

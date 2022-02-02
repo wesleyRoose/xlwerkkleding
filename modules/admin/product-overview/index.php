@@ -106,14 +106,20 @@ if (file_exists('../../../library/db.filterTerms.php')) {
           <div class="filter-search-bar">
 
             <?php
-            if (isset($_SESSION["iDisplayItems"])) {
-              if ($_SESSION["iDisplayItems"] > 0) {
-                $sPrevHtml = '<div class="flex-new radio">
-                <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
-              </div>';
-                echo $sPrevHtml;
-              }
-            }
+            // if (isset($_SESSION["iDisplayItems"])) {
+            //   if ($_SESSION["iDisplayItems"] > 0) {
+            //     $sPrevHtml = '<div class="flex-new radio">
+            //     <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
+            //   </div>';
+            //     echo $sPrevHtml;
+            //   }
+            // }
+            ?>
+            <div class="flex-new radio">
+              <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
+            </div>
+            <?php
+            echo $_SESSION["iDisplayItems"];
             ?>
             <div class="flex-new radio">
               <input type="submit" name="next" class="button no-margin filter-btn" value="Volgende">
