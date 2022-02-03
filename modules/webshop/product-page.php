@@ -21,6 +21,14 @@ if ($oResult = $conn->query($sQuery)) {
     $aRow = $oResult->fetch_assoc();
 }
 
+// Create Array from string
+$aSizes = explode(", ", $aRow["p_size"]);
+$sSizeDropHtml = "";
+// Generate Select Html
+foreach ($aSizes as $value) {
+    $sSizeDropHtml .= '<option value="' . $value . '">' . $value . '</option>';
+}
+
 ?>
 
 <main class="product-page">
@@ -41,7 +49,9 @@ if ($oResult = $conn->query($sQuery)) {
                         <li class="product-list-item smaller"> &#8364;<?php echo $aRow["p_price"] ?></li>
                         <div class="selects">
                             <select name="sizes" class="sorter">
-                                <option value="<?php echo $aRow["p_size"] ?>"><?php echo $aRow["p_size"] ?></option>
+                                <?php
+                                echo $sSizeDropHtml;
+                                ?>
                             </select>
                             <select name="Kleuren" class="sorter">
                                 <option value="<?php echo $aRow["p_color"] ?>"><?php echo $aRow["p_color"] ?></option>

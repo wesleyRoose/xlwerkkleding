@@ -7,6 +7,7 @@ Session var $sessionStatus:
   2 ingelogd als admin
   6 uitgelogd
 
+<<<<<<< Updated upstream:documentatie/documentatie.txt
 Vragen:
  1. Is er al een logo?
  2. Wilt u een voorbeeld product toe sturen?
@@ -36,3 +37,15 @@ Vragen voor klant:
 3. Wat zijn de categorieën die er bij opbrengst minimaal nodig zijn?
 4. Hebben de foto's die jullie plaatsen een vaste grootte?
 5. Kunt u een slogan aanleveren?
+=======
+
+
+Wat moet er nog gedaan worden(03-02-2022):
+1. products overview voor admins werkend krijgen edit
+2. users overview voor admins werkend krijgen edit
+3. account pagina werkend edit
+4. meerdere maten per product fixen
+5. bestellingen
+6. facatures
+7. home pagina dynamisch
+>>>>>>> Stashed changes:documentatie/documentatie
