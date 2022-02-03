@@ -24,6 +24,7 @@ div.card {
 .text {
   color: var(--white);
   padding-left: 5px;
+  overflow: hidden;
 }
 
 .card-image {

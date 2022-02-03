@@ -17,6 +17,7 @@
 @import "parts/webshop/webshop-home.css";
 @import "parts/webshop/shopping-cart.css";
 @import "parts/webshop/product.css";
+@import "parts/webshop/checkout.css";
 
 /* Account */
 @import "parts/account/account-home.css";
