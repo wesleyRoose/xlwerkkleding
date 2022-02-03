@@ -173,6 +173,9 @@ if ($_SESSION["sessionStatus"] == 1) {
     </section>
 </main>
 
+<!--Load slides.js for the carrousel-->
+<script src="<?php echo ROOT_URL ?>js/slides.js"></script>
+
 <?php
 
 if ($_SESSION["sessionStatus"] == 1) {

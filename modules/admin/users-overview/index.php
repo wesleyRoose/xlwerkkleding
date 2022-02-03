@@ -85,7 +85,7 @@ if (file_exists('../../../admin-controller.php')) {
             <?php
             if (isset($_SESSION["iUserDisplayItems"])) {
               if ($_SESSION["iUserDisplayItems"] > 0) {
-                $sPrevHtml = '<div class="flex-new radio">
+                $sPrevHtml = '<div class="flex-new radio no-margin">
                 <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
               </div>';
                 echo $sPrevHtml;

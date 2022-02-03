@@ -33,43 +33,43 @@ if ($oResult = $conn->query($sQuery)) {
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $aRow["firstName"]; ?></p>
-                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
+                        <p class="account-page-info-text" id="acc_item_1"><?php echo $aRow["firstName"]; ?></p>
+                        <button class="small orange" onclick="makeEditable('acc_item_1');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $aRow["lastName"]; ?></p>
-                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
+                        <p class="account-page-info-text" id="acc_item_2"><?php echo $aRow["lastName"]; ?></p>
+                        <button class="small orange" onclick="makeEditable('acc_item_2');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user-tag"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $aRow["username"]; ?></p>
-                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
+                        <p class="account-page-info-text" id="acc_item_3"><?php echo $aRow["username"]; ?></p>
+                        <button class="small orange" onclick="makeEditable('acc_item_3');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $aRow["email"]; ?></p>
-                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
+                        <p class="account-page-info-text" id="acc_item_4"><?php echo $aRow["email"]; ?></p>
+                        <button class="small orange" onclick="makeEditable('acc_item_4');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $aRow["phoneNumber"]; ?></p>
-                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
+                        <p class="account-page-info-text" id="acc_item_5"><?php echo $aRow["phoneNumber"]; ?></p>
+                        <button class="small orange" onclick="makeEditable('acc_item_5');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-building"></i>
                         </div>
-                        <p class="account-page-info-text"><?php echo $aRow["firm"]; ?></p>
-                        <button class="small orange"><i class="fas fa-pencil no-margin"></i></button>
+                        <p class="account-page-info-text" id="acc_item_6"><?php echo $aRow["firm"]; ?></p>
+                        <button class="small orange" onclick="makeEditable('acc_item_6');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <form action="db.delete-user.php" method="post" class="f-width">
                         <input name="del_user_btn" type="submit" value="Verwijder Profiel">
