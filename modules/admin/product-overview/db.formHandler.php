@@ -136,6 +136,23 @@ if (isset($_POST["formSubmit"])) {
   $sProductTableQuery .= "SELECT * FROM `product`";
 }
 
+if (isset($_GET["msg"])) {
+  if ($_GET["msg"] == "del") {
+    // Unset session vars
+    if (isset($_SESSION["aProductQueryResult"])) {
+      unset($_SESSION["aProductQueryResult"]);
+    }
+
+    if (isset($_SESSION["iProductDisplayItems"])) {
+      $_SESSION["iProductDisplayItems"] = 0;
+    }
+
+    // Create query
+    $sProductTableQuery = "";
+    $sProductTableQuery .= "SELECT * FROM `product`;";
+  }
+}
+
 
 // Execute Query on database connection and put the data into a Array
 if (isset($sProductTableQuery)) {

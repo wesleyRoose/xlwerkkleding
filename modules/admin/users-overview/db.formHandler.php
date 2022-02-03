@@ -52,6 +52,21 @@ if (isset($_POST["formSubmit"])) {
   $sUserTableQuery .= "SELECT * FROM `users`;";
 }
 
+if ($_GET["msg"] == "del") {
+  // Unset session vars
+  if (isset($_SESSION["aUserQueryResult"])) {
+    unset($_SESSION["aUserQueryResult"]);
+  }
+
+  if (isset($_SESSION["iUserDisplayItems"])) {
+    $_SESSION["iUserDisplayItems"] = 0;
+  }
+
+  // Create query
+  $sUserTableQuery = "";
+  $sUserTableQuery .= "SELECT * FROM `users`;";
+}
+
 
 
 // Execute Query on database connection and put the data into a Array
@@ -88,7 +103,7 @@ if (isset($_SESSION["aUserQueryResult"])) {
       <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $_SESSION["aUserQueryResult"][$y]["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-pencil"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/users-delete/index.php?user=' . $_SESSION["aUserQueryResult"][$y]["id"] . ' class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/users-overview/db.deleteUser.php?user=' . $_SESSION["aUserQueryResult"][$y]["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-trash"></i>
       </a>
     </div>
