@@ -38,7 +38,7 @@ if ($oResult = $conn->query($sQuery)) {
                         <li class="product-list-item smaller"><?php echo $aRow["p_category"] ?></li>
                         <li class="product-list-item smaller"><?php echo $aRow["p_sector"] ?></li>
                         <li class="product-list-item smaller"><?php echo $aRow["p_brand"] ?></li>
-                        <li class="product-list-item smaller"><?php echo $aRow["p_price"] ?></li>
+                        <li class="product-list-item smaller"> &#8364;<?php echo $aRow["p_price"] ?></li>
                         <div class="selects">
                             <select name="sizes" class="sorter">
                                 <option value="<?php echo $aRow["p_size"] ?>"><?php echo $aRow["p_size"] ?></option>
