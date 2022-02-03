@@ -106,24 +106,23 @@ if (file_exists('../../../library/db.filterTerms.php')) {
           <div class="filter-search-bar">
 
             <?php
-            // if (isset($_SESSION["iDisplayItems"])) {
-            //   if ($_SESSION["iDisplayItems"] > 0) {
-            //     $sPrevHtml = '<div class="flex-new radio">
-            //     <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
-            //   </div>';
-            //     echo $sPrevHtml;
-            //   }
-            // }
+            if (isset($_SESSION["iDisplayItems"])) {
+              if ($_SESSION["iDisplayItems"] > 0) {
+                $sPrevHtml = '<div class="flex-new radio">
+                <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
+              </div>';
+                echo $sPrevHtml;
+              }
+            }
+            if (isset($_SESSION["iDisplayItems"]) && isset($_SESSION["aQueryResult"])) {
+              if ($_SESSION["iDisplayItems"] + 20 <= count($_SESSION["aQueryResult"])) {
+                $sNextHtml = '<div class="flex-new radio">
+                <input type="submit" name="next" class="button no-margin filter-btn" value="Volgende">
+              </div>';
+                echo $sNextHtml;
+              }
+            }
             ?>
-            <div class="flex-new radio">
-              <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
-            </div>
-            <?php
-            echo $_SESSION["iDisplayItems"];
-            ?>
-            <div class="flex-new radio">
-              <input type="submit" name="next" class="button no-margin filter-btn" value="Volgende">
-            </div>
           </div>
         </form>
       </div>
