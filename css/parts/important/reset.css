@@ -107,6 +107,7 @@ button, .button, input[type=submit] {
   padding: 0.5rem;
   margin-top: 30px;
   text-transform: uppercase;
+  text-decoration: none;
   border: none;
   border-radius: 3px;
   background-color: var(--main-color);
