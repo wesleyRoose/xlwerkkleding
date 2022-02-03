@@ -91,15 +91,6 @@ if (file_exists('../../../library/db.filterTerms.php')) {
             echo $errorMessage;
             exit;
           }
-
-          if (file_exists('db.prevNextHandler.php')) {
-            include('db.prevNextHandler.php');
-          } else {
-            $errorMessage = "";
-            $errorMessage .= "PHP ERROR: db.prevNextHandler.php does not exist.";
-            echo $errorMessage;
-            exit;
-          }
           ?>
         </table>
         <form action="index.php" method="post">
