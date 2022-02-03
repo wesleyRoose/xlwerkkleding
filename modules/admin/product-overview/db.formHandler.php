@@ -136,47 +136,6 @@ if (isset($_POST["formSubmit"])) {
   $sTableQuery .= "SELECT * FROM `product`";
 }
 
-// Execute Query on database connection and put the data into a Array
-if (isset($sTableQuery)) {
-  if ($oResult = $conn->query($sTableQuery)) {
-    // Generate Product Table
-    while ($aRowResult = $oResult->fetch_assoc()) {
-      $aResult[] = $aRowResult;
-    }
-  }
-  if (isset($aResult)) {
-    $_SESSION["aQueryResult"] = $aResult;
-  }
-}
-// Check if there is a result, else create sTableHtml to return
-if (isset($_SESSION["aQueryResult"])) {
-  for ($x = $_SESSION["iDisplayItems"] + 10, $y = $_SESSION["iDisplayItems"]; $y < $x && $y < count($_SESSION["aQueryResult"]) && $y >= 0; $y++) {
-    $sTableHtml = '
-<tr class="product-data-row">
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_id"] . '</td>
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_name"] . '</td>
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_sector"] . '</td>
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_brand"] . '</td>
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_category"] . '</td>
-  <td class="product-data">&#8364 ' . $_SESSION["aQueryResult"][$y]["p_price"] . '</td>
-  <td class="product-records-btns-cell">
-    <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_SESSION["aQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-eye"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $_SESSION["aQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-pencil"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-overview/db.deleteProduct.php?product=' . $_SESSION["aQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-trash"></i>
-      </a>
-    </div>
-  </td>
-</tr>';
-  }
-} else {
-  $sTableHtml = "<p>Geen Producten Gevonden</p>";
-}
 
 if (!isset($sTableHtml)) {
   // Create query
@@ -198,6 +157,8 @@ if (isset($sTableQuery)) {
 }
 // Check if there is a result, else create sTableHtml to return
 if (isset($_SESSION["aQueryResult"])) {
+  print_r($_SESSION["aQueryResult"]);
+  $sTableHtml = "";
   for ($x = $_SESSION["iDisplayItems"] + 10, $y = $_SESSION["iDisplayItems"]; $y < $x && $y < count($_SESSION["aQueryResult"]) && $y >= 0; $y++) {
     $sTableHtml .= '
 <tr class="product-data-row">
@@ -222,6 +183,8 @@ if (isset($_SESSION["aQueryResult"])) {
   </td>
 </tr>';
   }
+} else {
+  $sTableHtml = "<p>Geen Producten Gevonden</p>";
 }
 
 echo $sTableHtml;
