@@ -175,6 +175,10 @@ tr {
   padding: 0 !important;
 }
 
+.background-color {
+  background-color: var(--main-color);
+}
+
 @media (max-width:500px) {
   form {
     width: 250px;
