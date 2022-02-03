@@ -7,9 +7,6 @@ Session var $sessionStatus:
   2 ingelogd als admin
   6 uitgelogd
 
-
-
-
 Vragen:
  1. Is er al een logo?
  2. Wilt u een voorbeeld product toe sturen?
@@ -31,8 +28,7 @@ Wat moet er nog gedaan worden(25-01-2022):
 4. eerste 20/25 producten inladen daarna de volgende 20/25(webshop)
 5. account pagina werkend
 6. meerdere maten per product fixen
-
-
+7. Easter Eggs
 
 Vragen voor klant:
 1. Is er een ander/nieuw browser icon(voor boven in de hoek, weet je)?
