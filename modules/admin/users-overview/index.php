@@ -79,6 +79,29 @@ if (file_exists('../../../admin-controller.php')) {
           ?>
 
         </table>
+        <form action="index.php" method="post">
+          <div class="filter-search-bar">
+
+            <?php
+            if (isset($_SESSION["iUserDisplayItems"])) {
+              if ($_SESSION["iUserDisplayItems"] > 0) {
+                $sPrevHtml = '<div class="flex-new radio">
+                <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
+              </div>';
+                echo $sPrevHtml;
+              }
+            }
+            if (isset($_SESSION["iUserDisplayItems"]) && isset($_SESSION["aUserQueryResult"])) {
+              if ($_SESSION["iUserDisplayItems"] + 4 <= count($_SESSION["aUserQueryResult"])) {
+                $sNextHtml = '<div class="flex-new radio">
+                <input type="submit" name="next" class="button no-margin filter-btn" value="Volgende">
+              </div>';
+                echo $sNextHtml;
+              }
+            }
+            ?>
+          </div>
+        </form>
       </div>
     </div>
     </div>

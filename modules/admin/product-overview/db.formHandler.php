@@ -118,17 +118,21 @@ if (isset($_POST["formSubmit"])) {
   // Create query
   $sProductTableQuery = "";
   $sProductTableQuery .= "SELECT * FROM `product`";
+} else if (isset($_POST["prev"])) { // Check if previous button is pressed
+  // Remove 10 from the product display counter
+  $_SESSION["iProductDisplayItems"] -= 2;
+} else if (isset($_POST["next"])) { // Check if next button is pressed
+  // Remove 10 from the product display counter
+  $_SESSION["iProductDisplayItems"] += 2;
+} else {  // if nothing is pressed
 
-
-  // if nothing is pressed
-} else if (isset($_POST["prev"])) {
-  $_SESSION["iProductDisplayItems"] -= 10;
-} else if (isset($_POST["next"])) {
-  $_SESSION["iProductDisplayItems"] += 10;
-} else {
   // Unset session vars
   if (isset($_SESSION["aProductQueryResult"])) {
     unset($_SESSION["aProductQueryResult"]);
+  }
+
+  if (isset($_SESSION["iProductDisplayItems"])) {
+    $_SESSION["iProductDisplayItems"] = 0;
   }
 
   // Create query
@@ -136,6 +140,7 @@ if (isset($_POST["formSubmit"])) {
   $sProductTableQuery .= "SELECT * FROM `product`";
 }
 
+// If it is a return header from delete
 if (isset($_GET["msg"])) {
   if ($_GET["msg"] == "del") {
     // Unset session vars
@@ -155,13 +160,15 @@ if (isset($_GET["msg"])) {
 
 
 // Execute Query on database connection and put the data into a Array
+// Check if there is a query to execute
 if (isset($sProductTableQuery)) {
+  // If the query is succesfull put it in a array
   if ($oResult = $conn->query($sProductTableQuery)) {
-    // Generate Product Table
     while ($aRowResult = $oResult->fetch_assoc()) {
       $aResult[] = $aRowResult;
     }
   }
+  // If there are results in array aResult put it in a session var
   if (isset($aResult)) {
     $_SESSION["aProductQueryResult"] = $aResult;
   }
@@ -169,7 +176,9 @@ if (isset($sProductTableQuery)) {
 // Check if there is a result, else create sProductTableHtml to return
 if (isset($_SESSION["aProductQueryResult"])) {
   $sProductTableHtml = "";
-  for ($x = $_SESSION["iProductDisplayItems"] + 10, $y = $_SESSION["iProductDisplayItems"]; $y < $x && $y < count($_SESSION["aProductQueryResult"]) && $y >= 0; $y++) {
+  // Loop through the first ten items after the counter
+  for ($x = $_SESSION["iProductDisplayItems"] + 2, $y = $_SESSION["iProductDisplayItems"]; $y < $x && $y < count($_SESSION["aProductQueryResult"]) && $y >= 0; $y++) {
+    // Create a html table
     $sProductTableHtml .= '
 <tr class="product-data-row">
   <td class="product-data">' . $_SESSION["aProductQueryResult"][$y]["p_id"] . '</td>
@@ -196,5 +205,5 @@ if (isset($_SESSION["aProductQueryResult"])) {
 } else {
   $sProductTableHtml = "<p>Geen Producten Gevonden</p>";
 }
-
+// Echo table on screen
 echo $sProductTableHtml;

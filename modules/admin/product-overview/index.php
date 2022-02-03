@@ -97,16 +97,18 @@ if (file_exists('../../../library/db.filterTerms.php')) {
           <div class="filter-search-bar">
 
             <?php
-            if (isset($_SESSION["iDisplayItems"])) {
-              if ($_SESSION["iDisplayItems"] > 0) {
+            // Show Prev button only when there are items on prev
+            if (isset($_SESSION["iProductDisplayItems"])) {
+              if ($_SESSION["iProductDisplayItems"] > 0) {
                 $sPrevHtml = '<div class="flex-new radio">
                 <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
               </div>';
                 echo $sPrevHtml;
               }
             }
-            if (isset($_SESSION["iDisplayItems"]) && isset($_SESSION["aQueryResult"])) {
-              if ($_SESSION["iDisplayItems"] + 20 <= count($_SESSION["aQueryResult"])) {
+            // Show next button only when there are items on next
+            if (isset($_SESSION["iProductDisplayItems"]) && isset($_SESSION["aProductQueryResult"])) {
+              if ($_SESSION["iProductDisplayItems"] + 4 <= count($_SESSION["aProductQueryResult"])) {
                 $sNextHtml = '<div class="flex-new radio">
                 <input type="submit" name="next" class="button no-margin filter-btn" value="Volgende">
               </div>';

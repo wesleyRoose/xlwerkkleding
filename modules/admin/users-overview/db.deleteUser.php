@@ -1,15 +1,5 @@
 <?php
 
-
-// Unset session vars
-if (isset($_SESSION["aUserQueryResult"])) {
-  unset($_SESSION["aUserQueryResult"]);
-}
-
-if (isset($_SESSION["iUserDisplayItems"])) {
-  $_SESSION["iUserDisplayItems"] = 0;
-}
-
 //load controller
 if (file_exists('../../../admin-controller.php')) {
   include('../../../admin-controller.php');
@@ -18,6 +8,16 @@ if (file_exists('../../../admin-controller.php')) {
   $errorMessage .= "PHP ERROR: admin-controller.php does not exist.";
   echo $errorMessage;
   exit;
+}
+
+
+// Unset session vars
+if (isset($_SESSION["aUserQueryResult"])) {
+  unset($_SESSION["aUserQueryResult"]);
+}
+
+if (isset($_SESSION["iUserDisplayItems"])) {
+  $_SESSION["iUserDisplayItems"] = 0;
 }
 
 //Query to delete the selected product from database
