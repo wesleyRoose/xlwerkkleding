@@ -52,21 +52,22 @@ if (isset($_POST["formSubmit"])) {
   $sUserTableQuery .= "SELECT * FROM `users`;";
 }
 
-if ($_GET["msg"] == "del") {
-  // Unset session vars
-  if (isset($_SESSION["aUserQueryResult"])) {
-    unset($_SESSION["aUserQueryResult"]);
-  }
+if (isset($_GET["msg"])) {
+  if ($_GET["msg"] == "del") {
+    // Unset session vars
+    if (isset($_SESSION["aUserQueryResult"])) {
+      unset($_SESSION["aUserQueryResult"]);
+    }
 
-  if (isset($_SESSION["iUserDisplayItems"])) {
-    $_SESSION["iUserDisplayItems"] = 0;
-  }
+    if (isset($_SESSION["iUserDisplayItems"])) {
+      $_SESSION["iUserDisplayItems"] = 0;
+    }
 
-  // Create query
-  $sUserTableQuery = "";
-  $sUserTableQuery .= "SELECT * FROM `users`;";
+    // Create query
+    $sUserTableQuery = "";
+    $sUserTableQuery .= "SELECT * FROM `users`;";
+  }
 }
-
 
 
 // Execute Query on database connection and put the data into a Array
