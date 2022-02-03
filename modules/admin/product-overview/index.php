@@ -100,7 +100,7 @@ if (file_exists('../../../library/db.filterTerms.php')) {
             // Show Prev button only when there are items on prev
             if (isset($_SESSION["iProductDisplayItems"])) {
               if ($_SESSION["iProductDisplayItems"] > 0) {
-                $sPrevHtml = '<div class="flex-new radio">
+                $sPrevHtml = '<div class="flex-new radio no-margin">
                 <input type="submit" name="prev" class="button no-margin filter-btn" value="Vorige">
               </div>';
                 echo $sPrevHtml;
