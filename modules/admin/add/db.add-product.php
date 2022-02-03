@@ -17,8 +17,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
   // Check if button is pressed
   if (isset($_POST["addProductButton"])) {
     // Check if nothing is empty
-    if (!empty($_POST["p_name"]) && !empty($_POST["p_price"]) && !empty($_POST["p_category"]) && !empty($_POST["p_sector"]) && !empty($_POST["p_brand"]) && !empty($_POST["p_size"]) && !empty($_POST["p_color"]) && !empty($_POST["p_description"])) {
-
+    if (!empty($_POST["p_name"]) && !empty($_POST["p_price"]) && !empty($_POST["p_category"]) && !empty($_POST["p_sector"]) && !empty($_POST["p_brand"]) && !empty($_POST["aSizes"]) && !empty($_POST["p_color"]) && !empty($_POST["p_description"])) {
 
       // Clean inputs for not wanted characters
       $p_name = cleaninput($_POST['p_name'], 100);
@@ -26,13 +25,11 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $p_category = cleaninput($_POST['p_category'], 75);
       $p_sector = cleaninput($_POST['p_sector'], 100);
       $p_brand = cleaninput($_POST['p_brand'], 100);
-      $p_size = cleaninput($_POST['p_size'], 20);
+      $p_size = cleaninput(implode(", ", $_POST["aSizes"]), 20);
       $p_color = cleaninput($_POST['p_color'], 50);
       $p_description = cleaninput($_POST['p_description'], 700);
 
-
       //create one variable
-      // $_FILES['p_file']['name'] = "test.jpg";
       $sImgPath = "img_product/" . $_FILES['p_file']['name'];
       //use move uploaded file function to move your files
       move_uploaded_file($_FILES['p_file']['tmp_name'], $sImgPath);
@@ -41,10 +38,10 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $microtime =  $_SERVER['REQUEST_TIME'];
 
       // Rename uploaded file
-      rename("img_product/".$_FILES['p_file']['name'], "img_product/". $p_sector . "-". $microtime .  "." . pathinfo("img_product/".$_FILES['p_file']['name'])['extension']);
+      rename("img_product/" . $_FILES['p_file']['name'], "img_product/" . $p_sector . "-" . $microtime .  "." . pathinfo("img_product/" . $_FILES['p_file']['name'])['extension']);
 
       // Create string for img path for in db
-      $sDbImgPath = "img_product/". $p_sector . "-" . $microtime . "." . pathinfo("img_product/".$_FILES['p_file']['name'])['extension'];
+      $sDbImgPath = "img_product/" . $p_sector . "-" . $microtime . "." . pathinfo("img_product/" . $_FILES['p_file']['name'])['extension'];
 
       // Create header location url for a succesfull insert
       $sLocationSucces = "";
@@ -67,7 +64,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
         header($sLocationFailure);
       }
     } else {
-      header('Location: ' . ROOT_URL . 'modules/admin/add-product.php?msg=empty');
+      header('Location: ' . ROOT_URL . 'modules/admin/add/db.add-product.php?msg=empty');
     }
   }
 }

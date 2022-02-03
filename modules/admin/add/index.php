@@ -27,6 +27,22 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 ?>
 
+    <script>
+        function numberOfSizesConfirm() {
+            // Get number value
+            var numberValue = document.getElementById("numberOfSizes").value;
+            var sHtml = '';
+            // Generate Html
+            for (i = 0; i < numberValue; i++) {
+                sHtml += '<label>Maat</label><br><input type="text" name="aSizes[]" class="p-input"><br>';
+            }
+            // Add color
+            document.getElementById("sizesWrapper").style.backgroundColor = "DarkSlateGray";
+            // Add html
+            document.getElementById("sizesWrapper").innerHTML = sHtml;
+        }
+    </script>
+
     <main class="add-products">
         <section class="add-products-s">
             <div class="input-form">
@@ -71,8 +87,13 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <input type="text" name="p_name" id="p_name" class="p-input"><br>
                     <label>Prijs</label><br>
                     <input type="text" name="p_price" id="p_price" class="p-input"><br>
-                    <label>Maat</label><br>
-                    <input type="text" name="p_size" id="p_size" class="p-input"><br>
+                    <label>Aantal Maten</label><br>
+
+                    <input type="number" name="numberOfSizes" id="numberOfSizes" value="1">
+                    <div class="button" style="width: 30%!important;" onclick="numberOfSizesConfirm()">Druk Hier</div>
+                    <div class="sizeSelecterWrapper" id="sizesWrapper">
+
+                    </div>
                     <label>Kleur</label><br>
                     <input type="text" name="p_color" id="p_color" class="p-input"><br>
                     <label>Categorie</label><br>
