@@ -157,7 +157,6 @@ if (isset($sTableQuery)) {
 }
 // Check if there is a result, else create sTableHtml to return
 if (isset($_SESSION["aQueryResult"])) {
-  print_r($_SESSION["aQueryResult"]);
   $sTableHtml = "";
   for ($x = $_SESSION["iDisplayItems"] + 10, $y = $_SESSION["iDisplayItems"]; $y < $x && $y < count($_SESSION["aQueryResult"]) && $y >= 0; $y++) {
     $sTableHtml .= '
