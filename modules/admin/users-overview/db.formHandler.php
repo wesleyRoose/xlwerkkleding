@@ -58,6 +58,7 @@ if (isset($_POST["formSubmit"])) {
   $_SESSION["iUserDisplayItems"] += 2;
 }
 
+// If it is a return header from delete, generate a * select
 if (isset($_GET["msg"])) {
   if ($_GET["msg"] == "del") {
     // Unset session vars
@@ -76,14 +77,15 @@ if (isset($_GET["msg"])) {
 }
 
 
-// Execute Query on database connection and put the data into a Array
+// Check if there is a query, execute it and fetch result
 if (isset($sUserTableQuery)) {
   if ($oResult = $conn->query($sUserTableQuery)) {
-    // Generate Product Table
     while ($aRowResult = $oResult->fetch_assoc()) {
+      // Put result in array
       $aResult[] = $aRowResult;
     }
   }
+  // If there is a result, put it in a session var
   if (isset($aResult)) {
     $_SESSION["aUserQueryResult"] = $aResult;
   }
@@ -92,8 +94,11 @@ if (isset($sUserTableQuery)) {
 
 // Check if there is a result, else create sProductTableHtml to return
 if (isset($_SESSION["aUserQueryResult"])) {
+  // Start table html
   $sProductTableHtml = "";
+  // Loop through the first ten items after the counter
   for ($x = $_SESSION["iUserDisplayItems"] + 2, $y = $_SESSION["iUserDisplayItems"]; $y < $x && $y < count($_SESSION["aUserQueryResult"]) && $y >= 0; $y++) {
+    // Create table html
     $sProductTableHtml .= '
 <tr class="product-data-row">
   <td class="product-data">' . $_SESSION["aUserQueryResult"][$y]["id"] . '</td>
@@ -120,4 +125,5 @@ if (isset($_SESSION["aUserQueryResult"])) {
 } else {
   $sProductTableHtml = "<p>Geen Gebruiker(s) Gevonden</p>";
 }
+// Echo table to screen
 echo $sProductTableHtml;

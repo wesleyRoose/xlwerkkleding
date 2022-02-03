@@ -140,7 +140,7 @@ if (isset($_POST["formSubmit"])) {
   $sProductTableQuery .= "SELECT * FROM `product`";
 }
 
-// If it is a return header from delete
+// If it is a return header from delete, generate * select
 if (isset($_GET["msg"])) {
   if ($_GET["msg"] == "del") {
     // Unset session vars
