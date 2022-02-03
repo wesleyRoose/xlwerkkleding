@@ -1,10 +1,20 @@
 <?php
 
-$sHtml = '';
-
+// Set session var to keep track of how many items are displayed
+if (!isset($_SESSION["iUserDisplayItems"])) {
+  $_SESSION["iUserDisplayItems"] = 0;
+}
 
 // Check if button is pressed
 if (isset($_POST["formSubmit"])) {
+  // Unset session vars
+  if (isset($_SESSION["aUserQueryResult"])) {
+    unset($_SESSION["aUserQueryResult"]);
+  }
+
+  if (isset($_SESSION["iUserDisplayItems"])) {
+    $_SESSION["iUserDisplayItems"] = 0;
+  }
   // If there is a input text, filter unwanted characters
   if (!empty($_POST["search"]) && !empty($_POST["selectValue"])) {
     $sTextInput = cleaninput($_POST['search'], 50);
@@ -21,111 +31,71 @@ if (isset($_POST["formSubmit"])) {
   if (isset($sTextInput) && isset($sRadioValue)) {
     if ($sRadioValue == 'id') { // Check if the id is selected, if so dont use LIKE
       // If there is a text input, add it to the query
-      $sQuery = "SELECT * FROM `users` WHERE `" . $sRadioValue . "` = '" . $sTextInput . "'";
+      $sUserTableQuery = "SELECT * FROM `users` WHERE `" . $sRadioValue . "` = '" . $sTextInput . "'";
     } else {
       // If there is a text input, add it to the query
-      $sQuery = "SELECT * FROM `users` WHERE `" . $sRadioValue . "` LIKE '%" . $sTextInput . "%'";
+      $sUserTableQuery = "SELECT * FROM `users` WHERE `" . $sRadioValue . "` LIKE '%" . $sTextInput . "%'";
     }
-
-    // Execute Query on database connection and put the data into a Array
-    if ($oResult = $conn->query($sQuery)) {
-      // Generate Product Table
-      while ($aRow = $oResult->fetch_assoc()) {
-        $sHtml .= '
-<tr class="product-data-row">
-  <td class="product-data">' . $aRow["id"] . '</td>
-  <td class="product-data">' . $aRow["username"] . '</td>
-  <td class="product-data">' . $aRow["email"] . '</td>
-  <td class="product-data">' . $aRow["firstName"] . '</td>
-  <td class="product-data">' . $aRow["lastName"] . '</td>
-  <td class="product-data">' . $aRow["firm"] . '</td>
-  <td class="product-records-btns-cell">
-    <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/admin/users-view/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-eye"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-pencil"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/users-delete/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-trash"></i>
-      </a>
-    </div>
-  </td>
-</tr>
-      ';
-      }
-    }
-    echo $sHtml;
   }
   // if reset is pressed
 } else if (isset($_POST["formReset"])) {
-  // Create query
-  $sQuery = "";
-  $sQuery .= "SELECT * FROM `users`;";
-
-  // Execute Query on database connection and put the data into a Array
-  if ($oResult = $conn->query($sQuery)) {
-    // Generate Product Table
-    while ($aRow = $oResult->fetch_assoc()) {
-      $sHtml .= '
-<tr class="product-data-row">
-  <td class="product-data">' . $aRow["id"] . '</td>
-  <td class="product-data">' . $aRow["username"] . '</td>
-  <td class="product-data">' . $aRow["email"] . '</td>
-  <td class="product-data">' . $aRow["firstName"] . '</td>
-  <td class="product-data">' . $aRow["lastName"] . '</td>
-  <td class="product-data">' . $aRow["firm"] . '</td>
-  <td class="product-records-btns-cell">
-    <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/admin/users-view/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-eye"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-pencil"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/users-delete/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-trash"></i>
-      </a>
-    </div>
-  </td>
-</tr>';
-    }
+  // Unset session vars
+  if (isset($_SESSION["aUserQueryResult"])) {
+    unset($_SESSION["aUserQueryResult"]);
   }
-  echo $sHtml;
-  // if nothing is pressed
-} else {
-  // Create query
-  $sQuery = "";
-  $sQuery .= "SELECT * FROM `users`;";
 
-  // Execute Query on database connection and put the data into a Array
-  if ($oResult = $conn->query($sQuery)) {
-    // Generate Product Table
-    while ($aRow = $oResult->fetch_assoc()) {
-      $sHtml .= '
-<tr class="product-data-row">
-  <td class="product-data">' . $aRow["id"] . '</td>
-  <td class="product-data">' . $aRow["username"] . '</td>
-  <td class="product-data">' . $aRow["email"] . '</td>
-  <td class="product-data">' . $aRow["firstName"] . '</td>
-  <td class="product-data">' . $aRow["lastName"] . '</td>
-  <td class="product-data">' . $aRow["firm"] . '</td>
-  <td class="product-records-btns-cell">
-    <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/admin/users-view/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-eye"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-pencil"></i>
-      </a>
-      <a href=' . ROOT_URL . 'modules/admin/users-delete/index.php?user=' . $aRow["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-trash"></i>
-      </a>
-    </div>
-  </td>
-</tr>';
-    }
+  if (isset($_SESSION["iUserDisplayItems"])) {
+    $_SESSION["iUserDisplayItems"] = 0;
   }
-  echo $sHtml;
+  // Create query
+  $sUserTableQuery = "";
+  $sUserTableQuery .= "SELECT * FROM `users`;";
 }
+
+
+
+// Execute Query on database connection and put the data into a Array
+if (isset($sUserTableQuery)) {
+  if ($oResult = $conn->query($sUserTableQuery)) {
+    // Generate Product Table
+    while ($aRowResult = $oResult->fetch_assoc()) {
+      $aResult[] = $aRowResult;
+    }
+  }
+  if (isset($aResult)) {
+    $_SESSION["aUserQueryResult"] = $aResult;
+  }
+}
+
+
+// Check if there is a result, else create sProductTableHtml to return
+if (isset($_SESSION["aUserQueryResult"])) {
+  $sProductTableHtml = "";
+  for ($x = $_SESSION["iUserDisplayItems"] + 10, $y = $_SESSION["iUserDisplayItems"]; $y < $x && $y < count($_SESSION["aUserQueryResult"]) && $y >= 0; $y++) {
+    $sProductTableHtml .= '
+<tr class="product-data-row">
+  <td class="product-data">' . $_SESSION["aUserQueryResult"][$y]["id"] . '</td>
+  <td class="product-data">' . $_SESSION["aUserQueryResult"][$y]["username"] . '</td>
+  <td class="product-data">' . $_SESSION["aUserQueryResult"][$y]["email"] . '</td>
+  <td class="product-data">' . $_SESSION["aUserQueryResult"][$y]["firstName"] . '</td>
+  <td class="product-data">' . $_SESSION["aUserQueryResult"][$y]["lastName"] . '</td>
+  <td class="product-data">' . $_SESSION["aUserQueryResult"][$y]["firm"] . '</td>
+  <td class="product-records-btns-cell">
+    <div class="product-record-btns">
+      <a href=' . ROOT_URL . 'modules/admin/users-view/index.php?user=' . $_SESSION["aUserQueryResult"][$y]["id"] . ' class="product-data button small small-icon">
+        <i class="fas fa-eye"></i>
+      </a>
+      <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $_SESSION["aUserQueryResult"][$y]["id"] . ' class="product-data button small small-icon">
+        <i class="fas fa-pencil"></i>
+      </a>
+      <a href=' . ROOT_URL . 'modules/admin/users-delete/index.php?user=' . $_SESSION["aUserQueryResult"][$y]["id"] . ' class="product-data button small small-icon">
+        <i class="fas fa-trash"></i>
+      </a>
+    </div>
+  </td>
+</tr>';
+  }
+} else {
+  $sProductTableHtml = "<p>Geen Gebruiker(s) Gevonden</p>";
+}
+echo $sProductTableHtml;

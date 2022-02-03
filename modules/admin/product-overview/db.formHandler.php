@@ -1,8 +1,8 @@
 <?php
 
 // Set session var to keep track of how many items are displayed
-if (!isset($_SESSION["iDisplayItems"])) {
-  $_SESSION["iDisplayItems"] = 0;
+if (!isset($_SESSION["iProductDisplayItems"])) {
+  $_SESSION["iProductDisplayItems"] = 0;
 }
 
 
@@ -10,12 +10,12 @@ if (!isset($_SESSION["iDisplayItems"])) {
 // Check if button is pressed
 if (isset($_POST["formSubmit"])) {
   // Unset session vars
-  if (isset($_SESSION["aQueryResult"])) {
-    unset($_SESSION["aQueryResult"]);
+  if (isset($_SESSION["aProductQueryResult"])) {
+    unset($_SESSION["aProductQueryResult"]);
   }
 
-  if (isset($_SESSION["iDisplayItems"])) {
-    $_SESSION["iDisplayItems"] = 0;
+  if (isset($_SESSION["iProductDisplayItems"])) {
+    $_SESSION["iProductDisplayItems"] = 0;
   }
 
   // If there is a input text, filter unwanted characters
@@ -61,10 +61,10 @@ if (isset($_POST["formSubmit"])) {
     $bTextInput = true;
     if ($sRadioValue == 'p_id') { // Check if the id is selected, if so dont use LIKE
       // If there is a text input, add it to the query
-      $sTableQuery = "SELECT * FROM `product` WHERE `" . $sRadioValue . "` = '" . $sTextInput . "'";
+      $sProductTableQuery = "SELECT * FROM `product` WHERE `" . $sRadioValue . "` = '" . $sTextInput . "'";
     } else {
       // If there is a text input, add it to the query
-      $sTableQuery = "SELECT * FROM `product` WHERE `" . $sRadioValue . "` LIKE '%" . $sTextInput . "%'";
+      $sProductTableQuery = "SELECT * FROM `product` WHERE `" . $sRadioValue . "` LIKE '%" . $sTextInput . "%'";
     }
   } else {
     $bTextInput = false;
@@ -72,110 +72,104 @@ if (isset($_POST["formSubmit"])) {
 
   // If there is no user input
   if ($bTextInput != true && !isset($aSelectValues)) {
-    $sTableQuery = "";
-    $sTableQuery .= "SELECT * FROM `product`";
+    $sProductTableQuery = "";
+    $sProductTableQuery .= "SELECT * FROM `product`";
   }
 
-  // Check if there are dropdown values, if so add it to the sTableQuery if it exists
+  // Check if there are dropdown values, if so add it to the sProductTableQuery if it exists
   if ($bTextInput == true && isset($aSelectValues)) {
     // Check how many items where selected
     $iArrayLength = count($aSelectValues);
 
     // Complete the query
     if ($iArrayLength == 1) {
-      $sTableQuery .= " AND `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "'";
+      $sProductTableQuery .= " AND `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "'";
     } else if ($iArrayLength == 2) {
-      $sTableQuery .= " AND `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "'";
+      $sProductTableQuery .= " AND `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "'";
     } else if ($iArrayLength == 3) {
-      $sTableQuery .= " AND `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "' AND `" . $aSelectValues[2][0] . "` = '" . $aSelectValues[2][1] . "'";
+      $sProductTableQuery .= " AND `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "' AND `" . $aSelectValues[2][0] . "` = '" . $aSelectValues[2][1] . "'";
     }
     // If there is not a textinput but there are selected value(s)
   } else if ($bTextInput != true && isset($aSelectValues)) {
     // Check how many items where selected
     $iArrayLength = count($aSelectValues);
-    $sTableQuery = "";
+    $sProductTableQuery = "";
 
     // Complete the query
     if ($iArrayLength == 1) {
-      $sTableQuery .= "SELECT * FROM `product` WHERE `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "'";
+      $sProductTableQuery .= "SELECT * FROM `product` WHERE `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "'";
     } else if ($iArrayLength == 2) {
-      $sTableQuery .= "SELECT * FROM `product` WHERE `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "'";
+      $sProductTableQuery .= "SELECT * FROM `product` WHERE `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "'";
     } else if ($iArrayLength == 3) {
-      $sTableQuery .= "SELECT * FROM `product` WHERE `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "' AND `" . $aSelectValues[2][0] . "` = '" . $aSelectValues[2][1] . "'";
+      $sProductTableQuery .= "SELECT * FROM `product` WHERE `" . $aSelectValues[0][0] . "` = '" . $aSelectValues[0][1] . "' AND `" . $aSelectValues[1][0] . "` = '" . $aSelectValues[1][1] . "' AND `" . $aSelectValues[2][0] . "` = '" . $aSelectValues[2][1] . "'";
     }
   }
   // if reset is pressed
 } else if (isset($_POST["formReset"])) {
   // Unset session vars
-  if (isset($_SESSION["aQueryResult"])) {
-    unset($_SESSION["aQueryResult"]);
+  if (isset($_SESSION["aProductQueryResult"])) {
+    unset($_SESSION["aProductQueryResult"]);
   }
 
-  if (isset($_SESSION["iDisplayItems"])) {
-    $_SESSION["iDisplayItems"] = 0;
+  if (isset($_SESSION["iProductDisplayItems"])) {
+    $_SESSION["iProductDisplayItems"] = 0;
   }
 
   // Create query
-  $sTableQuery = "";
-  $sTableQuery .= "SELECT * FROM `product`";
+  $sProductTableQuery = "";
+  $sProductTableQuery .= "SELECT * FROM `product`";
 
 
   // if nothing is pressed
 } else if (isset($_POST["prev"])) {
-  $_SESSION["iDisplayItems"] -= 10;
+  $_SESSION["iProductDisplayItems"] -= 10;
 } else if (isset($_POST["next"])) {
-  $_SESSION["iDisplayItems"] += 10;
+  $_SESSION["iProductDisplayItems"] += 10;
 } else {
   // Unset session vars
-  if (isset($_SESSION["aQueryResult"])) {
-    unset($_SESSION["aQueryResult"]);
+  if (isset($_SESSION["aProductQueryResult"])) {
+    unset($_SESSION["aProductQueryResult"]);
   }
 
   // Create query
-  $sTableQuery = "";
-  $sTableQuery .= "SELECT * FROM `product`";
+  $sProductTableQuery = "";
+  $sProductTableQuery .= "SELECT * FROM `product`";
 }
 
-
-if (!isset($sTableHtml)) {
-  // Create query
-  $sTableQuery = "";
-  $sTableQuery .= "SELECT * FROM `product`";
-}
 
 // Execute Query on database connection and put the data into a Array
-if (isset($sTableQuery)) {
-  if ($oResult = $conn->query($sTableQuery)) {
+if (isset($sProductTableQuery)) {
+  if ($oResult = $conn->query($sProductTableQuery)) {
     // Generate Product Table
     while ($aRowResult = $oResult->fetch_assoc()) {
       $aResult[] = $aRowResult;
     }
   }
   if (isset($aResult)) {
-    $_SESSION["aQueryResult"] = $aResult;
+    $_SESSION["aProductQueryResult"] = $aResult;
   }
 }
-// Check if there is a result, else create sTableHtml to return
-if (isset($_SESSION["aQueryResult"])) {
-  $sTableHtml = "";
-  for ($x = $_SESSION["iDisplayItems"] + 10, $y = $_SESSION["iDisplayItems"]; $y < $x && $y < count($_SESSION["aQueryResult"]) && $y >= 0; $y++) {
-    $sTableHtml .= '
+// Check if there is a result, else create sProductTableHtml to return
+if (isset($_SESSION["aProductQueryResult"])) {
+  $sProductTableHtml = "";
+  for ($x = $_SESSION["iProductDisplayItems"] + 10, $y = $_SESSION["iProductDisplayItems"]; $y < $x && $y < count($_SESSION["aProductQueryResult"]) && $y >= 0; $y++) {
+    $sProductTableHtml .= '
 <tr class="product-data-row">
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_id"] . '</td>
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_name"] . '</td>
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_sector"] . '</td>
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_brand"] . '</td>
-  <td class="product-data">' . $_SESSION["aQueryResult"][$y]["p_category"] . '</td>
-  <td class="product-data">&#8364 ' . $_SESSION["aQueryResult"][$y]["p_price"] . '</td>
+  <td class="product-data">' . $_SESSION["aProductQueryResult"][$y]["p_id"] . '</td>
+  <td class="product-data">' . $_SESSION["aProductQueryResult"][$y]["p_name"] . '</td>
+  <td class="product-data">' . $_SESSION["aProductQueryResult"][$y]["p_sector"] . '</td>
+  <td class="product-data">' . $_SESSION["aProductQueryResult"][$y]["p_brand"] . '</td>
+  <td class="product-data">' . $_SESSION["aProductQueryResult"][$y]["p_category"] . '</td>
+  <td class="product-data">&#8364 ' . $_SESSION["aProductQueryResult"][$y]["p_price"] . '</td>
   <td class="product-records-btns-cell">
     <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_SESSION["aQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_SESSION["aProductQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
         <i class="fas fa-eye"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $_SESSION["aQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/product-edit/index.php?product=' . $_SESSION["aProductQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
         <i class="fas fa-pencil"></i>
       </a>
-      <a href=' . ROOT_URL . 'modules/admin/product-overview/db.deleteProduct.php?product=' . $_SESSION["aQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
+      <a href=' . ROOT_URL . 'modules/admin/product-overview/db.deleteProduct.php?product=' . $_SESSION["aProductQueryResult"][$y]["p_id"] . ' class="product-data button small small-icon">
         <i class="fas fa-trash"></i>
       </a>
     </div>
@@ -183,7 +177,7 @@ if (isset($_SESSION["aQueryResult"])) {
 </tr>';
   }
 } else {
-  $sTableHtml = "<p>Geen Producten Gevonden</p>";
+  $sProductTableHtml = "<p>Geen Producten Gevonden</p>";
 }
 
-echo $sTableHtml;
+echo $sProductTableHtml;
