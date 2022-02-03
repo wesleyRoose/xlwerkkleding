@@ -17,7 +17,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
   // Check if button is pressed
   if (isset($_POST["addProductButton"])) {
     // Check if nothing is empty
-    if (!empty($_POST["p_name"]) && !empty($_POST["p_price"]) && !empty($_POST["p_category"]) && !empty($_POST["p_sector"]) && !empty($_POST["p_brand"]) && !empty($_POST["aSizes"]) && !empty($_POST["p_color"]) && !empty($_POST["p_description"])) {
+    if (!empty($_POST["p_name"]) && !empty($_POST["p_price"]) && !empty($_POST["p_category"]) && !empty($_POST["p_sector"]) && !empty($_POST["p_brand"]) && !empty($_POST["aSizes"]) && !empty($_POST["aColors"]) && !empty($_POST["p_description"])) {
 
       // Clean inputs for not wanted characters
       $p_name = cleaninput($_POST['p_name'], 100);
@@ -26,7 +26,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
       $p_sector = cleaninput($_POST['p_sector'], 100);
       $p_brand = cleaninput($_POST['p_brand'], 100);
       $p_size = cleaninput(implode(", ", $_POST["aSizes"]), 20);
-      $p_color = cleaninput($_POST['p_color'], 50);
+      $p_color = cleaninput(implode(", ", $_POST['aColors']), 50);
       $p_description = cleaninput($_POST['p_description'], 700);
 
       //create one variable

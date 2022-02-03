@@ -29,6 +29,14 @@ foreach ($aSizes as $value) {
     $sSizeDropHtml .= '<option value="' . $value . '">' . $value . '</option>';
 }
 
+// Create Array from string
+$aColors = explode(", ", $aRow["p_color"]);
+$sColorDropHtml = "";
+// Generate Select Html
+foreach ($aColors as $value) {
+    $sColorDropHtml .= '<option value="' . $value . '">' . $value . '</option>';
+}
+
 ?>
 
 <main class="product-page">
@@ -54,7 +62,7 @@ foreach ($aSizes as $value) {
                                 ?>
                             </select>
                             <select name="Kleuren" class="sorter">
-                                <option value="<?php echo $aRow["p_color"] ?>"><?php echo $aRow["p_color"] ?></option>
+                                <?php echo $sColorDropHtml ?>
                             </select>
                         </div>
                         <button><a href="#" class="product-order-link">Bestel</a></button>
