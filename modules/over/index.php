@@ -9,6 +9,16 @@ if (file_exists('../../controller.php')) {
   exit;
 }
 
+if (file_exists('loadAboutData.php')) {
+  include('loadAboutData.php');
+} else {
+  $errorMessage = "";
+  $errorMessage .= "PHP ERROR: loadAboutData.php does not exist.";
+  echo $errorMessage;
+  exit;
+}
+
+
 ?>
 
 <main class="about">
