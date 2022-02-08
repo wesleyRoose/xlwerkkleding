@@ -27,10 +27,6 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 ?>
 
-    <script>
-
-    </script>
-
     <main class="add-products">
         <section class="add-products-s">
             <div class="input-form">

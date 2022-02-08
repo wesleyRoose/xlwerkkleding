@@ -19,8 +19,6 @@ function makeEditable(acc_id) {
   // Add select boxes, add product page
 function numberOfSizesConfirm(button) {
   if (button == 'reset') {
-      // Remove color
-      document.getElementById("sizesWrapper").style.backgroundColor = "";
       // Remove html
       document.getElementById("sizesWrapper").innerHTML = "";
   } else if (button == 'add') {
@@ -31,8 +29,6 @@ function numberOfSizesConfirm(button) {
       for (i = 0; i < numberValue; i++) {
           sHtml += '<label>Maat</label><br><input type="text" name="aSizes[]" class="p-input"><br>';
       }
-      // Add color
-      document.getElementById("sizesWrapper").style.backgroundColor = "DarkSlateGray";
       // Add html
       document.getElementById("sizesWrapper").innerHTML = sHtml;
   }
@@ -41,8 +37,6 @@ function numberOfSizesConfirm(button) {
   // Add select boxes, add product page
 function numberOfColorsConfirm(button) {
   if (button == 'reset') {
-      // Remove color
-      document.getElementById("colorWrapper").style.backgroundColor = "";
       // Remove html
       document.getElementById("colorWrapper").innerHTML = "";
   } else if (button == 'add') {
@@ -53,8 +47,6 @@ function numberOfColorsConfirm(button) {
       for (i = 0; i < numberValue; i++) {
           sHtml += '<label>Kleur</label><br><input type="text" name="aColors[]" class="p-input"><br>';
       }
-      // Add color
-      document.getElementById("colorWrapper").style.backgroundColor = "DarkSlateGray";
       // Add html
       document.getElementById("colorWrapper").innerHTML = sHtml;
   }
