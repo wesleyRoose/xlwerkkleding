@@ -179,6 +179,10 @@ tr {
   background-color: var(--main-color);
 }
 
+.not-visible {
+  opacity: 0;
+}
+
 @media (max-width:500px) {
   form {
     width: 250px;

@@ -22,89 +22,37 @@ if ($oResult = $conn->query($sQuery)) {
 
 
 <main class="admin-home">
-    <section class="admin-home">
-        <h1>Hallo <?php echo $aRow["firstName"]; ?></h1>
-        <div class="admin-home-wrapper">
-            <?php
-            // Create Query String
-            $sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'category'";
-            // Execute query and catch result in array
-            if ($oResult = $conn->query($sQuery)) {
-                $sHtml = "<div class='categories'>";
-                $sHtml .= "<h3>Bestaande Categoriën</h3>";
-                while ($aRow = $oResult->fetch_assoc()) {
-                    $sHtml .= "<div class='cs-item'>" . $aRow["value"] .
-                        '<button class="product-data button small small-icon">
-                            <i class="fas fa-trash no-margin"></i>
-                        </button>
-                    </div>';
-                }
-            }
-
-            $sCatagoryHtml = $sHtml . '</div>';
-
-            echo $sCatagoryHtml;
-
-            // Create Query String
-            $sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'sector'";
-            // Execute query and catch result in array
-            if ($oResult = $conn->query($sQuery)) {
-                $sHtml = "<div class='sectors'>";
-                $sHtml .= "<h3>Bestaande Sectoren</h3>";
-                while ($aRow = $oResult->fetch_assoc()) {
-                    $sHtml .= "<div class='cs-item'>" . $aRow["value"] .
-                        '<button class="product-data button small small-icon">
-                            <i class="fas fa-trash no-margin"></i>
-                        </button>
-                    </div>';
-                }
-            }
-
-            $sSectorHtml =  $sHtml . '</div>';
-            echo $sSectorHtml;
-
-            // Create Query String
-            $sQuery = "SELECT * FROM `filterterms` WHERE `term` = 'sector'";
-            // Execute query and catch result in array
-            if ($oResult = $conn->query($sQuery)) {
-                $sHtml = "<div class='small-users-overview'>";
-                $sHtml .= "<h3>PLACEHOLDER</h3>";
-                while ($aRow = $oResult->fetch_assoc()) {
-                    $sHtml .= "<div class='cs-item'>" . "PLACEHOLDER"/*$aRow["value"]*/ .
-                        '<button class="product-data button small small-icon">
-                            <i class="fas fa-trash no-margin"></i>
-                        </button>
-                    </div>';
-                }
-            }
-
-            $sSectorHtml =  $sHtml . '</div>';
-            echo $sSectorHtml;
-
-            // Create Query String
-            $sQuery = "SELECT * FROM `products` WHERE `term` = 'sector'";
-            // Execute query and catch result in array
-            if ($oResult = $conn->query($sQuery)) {
-                $sHtml = "<div class='small-products-overview'>";
-                $sHtml .= "<h3>Products Overview</h3>";
-                while ($aRow = $oResult->fetch_assoc()) {
-                    $sHtml .= "<div class='cs-item'>" . $aRow["value"] .
-                        '<button class="product-data button small small-icon">
-                            <i class="fas fa-trash no-margin"></i>
-                        </button>
-                    </div>';
-                }
-            }
-
-            $sSectorHtml =  $sHtml . '</div>';
-            echo $sSectorHtml;
-            ?>
-        </div>
-    </section>
     <section class="admin-options">
+        <div class="admin-name">
+            <h1>Welkom <?php echo $aRow["firstName"]; ?>.</h1>
+        </div>
+        <h3>Opties</h3>
         <div class="admin-options-content">
-            <h3>Opties</h3>
-            <div class="title-change-d">
+            <div class="add-about-content ds-form-style">
+                <h4>Voeg tekst toe voor over pagina</h4>
+                <form action="db.aboutContentAdd.php" method="post" class="add-about-form" autocomplete="off">
+                    <label>Over Header 1</label><br>
+                    <input type="text" name="o_hd_1" id="o_hd_1" class="over_input"><br>
+                    <label>Over Text 1</label><br>
+                    <textarea name="o_txt_1" id="o_txt_1" class="over_text_input" rows="8" placeholder="Type Here"></textarea><br>
+                    <label>Over Foto 1</label><br>
+                    <input type="file" name="o_fl_1" id="o_fl_1"><br>
+                    <input type="submit" value="Verzenden">
+                </form>
+            </div>
+            <div class="add-about-content ds-form-style">
+                <h4 class="not-visible">Not Visible</h4>
+                <form action="db.aboutContentAdd.php" method="post" class="add-about-form" autocomplete="off">
+                    <label>Over Header 2</label><br>
+                    <input type="text" name="o_hd_2" id="o_hd_2" class="over_input"><br>
+                    <label>Over Text 2</label><br>
+                    <textarea name="o_txt_2" id="o_txt_2" class="over_text_input" rows="8" placeholder="Type Here"></textarea><br>
+                    <label>Over Foto 2</label><br>
+                    <input type="file" name="o_fl_2" id="o_fl_2"><br>
+                    <input type="submit" value="Verzenden">
+                </form>
+            </div>
+            <div class="title-change-div ds-form-style">
                 <h4>Verander Slogan/Titel</h4>
                 <form action="db.titleChange.php" method="post" class="title_form" autocomplete="off">
                     <label>Nieuwe Slogan/Titel</label><br>

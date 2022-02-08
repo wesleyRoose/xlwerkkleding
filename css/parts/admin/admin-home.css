@@ -1,53 +1,25 @@
-.admin-home {
-    margin-top: 15px;
-}
+/* Admin Option Forms Styling */
 
-.admin-home-wrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    margin-top: 30px;
-}
-
-.cs-item {
-    padding: 0.5rem;
-    margin: 15px 0 15px 0;
-    background-color: var(--main-color);
-    border-radius: 3px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white);
-}
-
-div.cs-item:nth-last-of-type(odd) {
-    background-color: var(--odd-color);
-}
-
-.categories, .sectors, .small-users-overview, .small-products-overview {
-    width: 350px;
-    height: 500px;
-    overflow-y: scroll;
-    padding: 20px;
-    margin-left: 30px;
-    background-color: var(--light-gray);
-    color: var(--white);
-    border-radius: 3px;
-}
-
-.categories {
-    margin-left: 0 !important;
+.admin-name {
+    margin-bottom: 30px;
 }
 
 .admin-options {
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
-.title-change-d {
+.admin-options-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.ds-form-style {
     width: 350px;
     max-width: 350px;
     min-width: 350px;
-    margin-top: 30px;
 }
 
 @media (prefers-color-scheme: light) {
