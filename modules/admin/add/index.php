@@ -27,36 +27,6 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
 
 ?>
 
-    <script>
-        function numberOfSizesConfirm() {
-            // Get number value
-            var numberValue = document.getElementById("numberOfSizes").value;
-            var sHtml = '';
-            // Generate Html
-            for (i = 0; i < numberValue; i++) {
-                sHtml += '<label>Maat</label><br><input type="text" name="aSizes[]" class="p-input"><br>';
-            }
-            // Add color
-            document.getElementById("sizesWrapper").style.backgroundColor = "DarkSlateGray";
-            // Add html
-            document.getElementById("sizesWrapper").innerHTML = sHtml;
-        }
-
-        function numberOfColorsConfirm() {
-            // Get number value
-            var numberValue = document.getElementById("numberOfColors").value;
-            var sHtml = '';
-            // Generate Html
-            for (i = 0; i < numberValue; i++) {
-                sHtml += '<label>Kleur</label><br><input type="text" name="aColors[]" class="p-input"><br>';
-            }
-            // Add color
-            document.getElementById("colorWrapper").style.backgroundColor = "DarkSlateGray";
-            // Add html
-            document.getElementById("colorWrapper").innerHTML = sHtml;
-        }
-    </script>
-
     <main class="add-products">
         <section class="add-products-s">
             <div class="input-form">
@@ -104,12 +74,18 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <label>Aantal Maten</label><br>
 
                     <input type="number" name="numberOfSizes" id="numberOfSizes" value="1">
-                    <div class="button" style="width: 40%!important;" onclick="numberOfSizesConfirm()">Meer Maten</div>
+                    <div style="display: flex;">
+                        <div style="margin-right: 5px;" class="button" style="width: 40%!important;" onclick="numberOfSizesConfirm('add')">Meer Maten</div>
+                        <div style="margin-left: 5px;" class="button" style="width: 40%!important;" onclick="numberOfSizesConfirm('reset')">Reset</div>
+                    </div>
                     <div class="sizeSelecterWrapper" id="sizesWrapper">
                     </div>
                     <label>Aantal Kleuren</label><br>
                     <input type="number" name="numberOfColors" id="numberOfColors" value="1">
-                    <div class="button" style="width: 40%!important;" onclick="numberOfColorsConfirm()">Meer Kleuren</div>
+                    <div style="display: flex;">
+                        <div style="margin-right: 5px;" class="button" style="width: 40%!important;" onclick="numberOfColorsConfirm('add')">Meer Kleuren</div>
+                        <div style="margin-left: 5px;" class="button" style="width: 40%!important;" onclick="numberOfColorsConfirm('reset')">Reset</div>
+                    </div>
                     <div class="colorSelecterWrapper" id="colorWrapper">
 
                     </div>
@@ -134,8 +110,6 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <textarea name="p_description" id="p_description" rows="8" placeholder="Type Here"></textarea><br>
                     <input name="addProductButton" type="submit" value="Voeg Toe" class="button">
                 </form>
-
-
             </div>
         </section>
     </main>
