@@ -38,6 +38,15 @@ $pdf->Cell(58,5,': 0', 1, 1, );
 $pdf->line(10, 60, 200, 60);
 
 $pdf->ln(10); //line break
+$pdf->Cell(55, 5, 'paid by', 1, 0);
+$pdf->Cell(58, 5, ': Name', 1, 1);
+
+$pdf->line(155, 75, 195, 75);
+
+$pdf->ln(5); //line break
+$pdf->Cell(140, 5, '', 1, 0);
+$pdf->Cell(50, 5, ': Signature', 1, 1, 'c');
+
 
 $pdf->Output();
 ?>
