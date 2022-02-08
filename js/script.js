@@ -12,7 +12,7 @@ function toggleMenu() {
 // Function to make content editable
 
 function makeEditable(acc_id) {
-  document.getElementById(acc_id).setAttribute("contenteditable", "true");
+  document.getElementById(acc_id).toggleAttribute("contenteditable");
   document.getElementById(acc_id).classList.toggle("background-color");
 }
 

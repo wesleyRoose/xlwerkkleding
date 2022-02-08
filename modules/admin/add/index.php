@@ -41,6 +41,20 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
             // Add html
             document.getElementById("sizesWrapper").innerHTML = sHtml;
         }
+
+        function numberOfColorsConfirm() {
+            // Get number value
+            var numberValue = document.getElementById("numberOfColors").value;
+            var sHtml = '';
+            // Generate Html
+            for (i = 0; i < numberValue; i++) {
+                sHtml += '<label>Kleur</label><br><input type="text" name="aColors[]" class="p-input"><br>';
+            }
+            // Add color
+            document.getElementById("colorWrapper").style.backgroundColor = "DarkSlateGray";
+            // Add html
+            document.getElementById("colorWrapper").innerHTML = sHtml;
+        }
     </script>
 
     <main class="add-products">
@@ -90,12 +104,15 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <label>Aantal Maten</label><br>
 
                     <input type="number" name="numberOfSizes" id="numberOfSizes" value="1">
-                    <div class="button" style="width: 30%!important;" onclick="numberOfSizesConfirm()">Druk Hier</div>
+                    <div class="button" style="width: 40%!important;" onclick="numberOfSizesConfirm()">Meer Maten</div>
                     <div class="sizeSelecterWrapper" id="sizesWrapper">
+                    </div>
+                    <label>Aantal Kleuren</label><br>
+                    <input type="number" name="numberOfColors" id="numberOfColors" value="1">
+                    <div class="button" style="width: 40%!important;" onclick="numberOfColorsConfirm()">Meer Kleuren</div>
+                    <div class="colorSelecterWrapper" id="colorWrapper">
 
                     </div>
-                    <label>Kleur</label><br>
-                    <input type="text" name="p_color" id="p_color" class="p-input"><br>
                     <label>Categorie</label><br>
                     <select name="p_category" class="add-product-select webshop-filter-select">
                         <option value="nvt">Niet van Toepassing</option>

@@ -119,10 +119,10 @@ if (isset($_POST["formSubmit"])) {
   $sProductTableQuery = "";
   $sProductTableQuery .= "SELECT * FROM `product`";
 } else if (isset($_POST["prev"])) { // Check if previous button is pressed
-  // Remove 10 from the product display counter
+  // Remove ? from the product display counter
   $_SESSION["iProductDisplayItems"] -= 2;
 } else if (isset($_POST["next"])) { // Check if next button is pressed
-  // Remove 10 from the product display counter
+  // Add ? from the product display counter
   $_SESSION["iProductDisplayItems"] += 2;
 } else {  // if nothing is pressed
 

@@ -7,45 +7,22 @@ Session var $sessionStatus:
   2 ingelogd als admin
   6 uitgelogd
 
-<<<<<<< Updated upstream:documentatie/documentatie.txt
-Vragen:
- 1. Is er al een logo?
- 2. Wilt u een voorbeeld product toe sturen?
- 3. Wat voor informatie moet bij een product?
- 4. Kunnen we toegang krijgen tot shopify?
- 5. Voor welke beroepen is de site voor bedoeld?
- 6. Wanneer kunnen we weer een gesprek inplannen?
- 7. Is er een mogelijkheid om een bespreking te houden om de 2 weken, voor updates?
-
-
-Wat moet er nog gedaan worden(18-01-2022):
-1. sorteer functie maken.
-2. account pagina.
-
 Wat moet er nog gedaan worden(25-01-2022):
-1. products overview voor admins werkend krijgen
-2. users overview voor admins werkend krijgen
-3. dashboard voor admins
-4. eerste 20/25 producten inladen daarna de volgende 20/25(webshop)
-5. account pagina werkend
-6. meerdere maten per product fixen
-7. Easter Eggs
-
-Vragen voor klant:
-1. Is er een ander/nieuw browser icon(voor boven in de hoek, weet je)?
-2. Is dit het definitieve logo, oder nicht?
-3. Wat zijn de categorieën die er bij opbrengst minimaal nodig zijn?
-4. Hebben de foto's die jullie plaatsen een vaste grootte?
-5. Kunt u een slogan aanleveren?
-=======
-
-
-Wat moet er nog gedaan worden(03-02-2022):
 1. products overview voor admins werkend krijgen edit
 2. users overview voor admins werkend krijgen edit
-3. account pagina werkend edit
-4. meerdere maten per product fixen
-5. bestellingen
-6. facatures
-7. home pagina dynamisch
->>>>>>> Stashed changes:documentatie/documentatie
+3. Home pagina
+3. Bestel knop
+4. WinkelWagen
+5. account pagina werkend
+7. Easter Eggs
+
+
+//Gegevens DB server
+
+Voor FTP server:
+
+Adres: http://web0146.zxcs.nl/
+
+Gebruikersnaam: u126134p125885
+
+Wachtwoord: (>hiDqJSYMUIbAHA:E8ITYV%
