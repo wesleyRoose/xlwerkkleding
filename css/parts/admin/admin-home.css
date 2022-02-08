@@ -39,6 +39,17 @@ div.cs-item:nth-last-of-type(odd) {
     margin-left: 0 !important;
 }
 
+.admin-options {
+    margin-top: 30px;
+}
+
+.title-change-d {
+    width: 350px;
+    max-width: 350px;
+    min-width: 350px;
+    margin-top: 30px;
+}
+
 @media (prefers-color-scheme: light) {
     .categories, .sectors {
         background-color: var(--dark-gray);

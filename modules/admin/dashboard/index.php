@@ -101,6 +101,19 @@ if ($oResult = $conn->query($sQuery)) {
             ?>
         </div>
     </section>
+    <section class="admin-options">
+        <div class="admin-options-content">
+            <h3>Opties</h3>
+            <div class="title-change-d">
+                <h4>Verander Slogan/Titel</h4>
+                <form action="db.titleChange.php" method="post" class="title_form" autocomplete="off">
+                    <label>Nieuwe Slogan/Titel</label><br>
+                    <input type="text" name="title_change" id="title_change" class="title_change"><br>
+                    <input type="submit" value="Voeg toe">
+                </form>
+            </div>
+        </div>
+    </section>
 </main>
 
 <?php if ($_SESSION["sessionStatus"] == 1) {
