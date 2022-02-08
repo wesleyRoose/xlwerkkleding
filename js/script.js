@@ -24,10 +24,10 @@ function numberOfSizesConfirm(button) {
   } else if (button == 'add') {
       // Get number value
       var numberValue = document.getElementById("numberOfSizes").value;
-      var sHtml = '';
+      var sHtml = '<label>Extra Maten</label><br>';
       // Generate Html
       for (i = 0; i < numberValue; i++) {
-          sHtml += '<label>Maat</label><br><input type="text" name="aSizes[]" class="p-input"><br>';
+          sHtml += '<input placeholder="Maat..." type="text" name="aSizes[]" class="p-input"><br>';
       }
       // Add html
       document.getElementById("sizesWrapper").innerHTML = sHtml;
@@ -42,10 +42,10 @@ function numberOfColorsConfirm(button) {
   } else if (button == 'add') {
       // Get number value
       var numberValue = document.getElementById("numberOfColors").value;
-      var sHtml = '';
+      var sHtml = '<label>Extra Kleuren</label><br>';
       // Generate Html
       for (i = 0; i < numberValue; i++) {
-          sHtml += '<label>Kleur</label><br><input type="text" name="aColors[]" class="p-input"><br>';
+          sHtml += '<input placeholder="Kleur..." type="text" name="aColors[]" class="p-input"><br>';
       }
       // Add html
       document.getElementById("colorWrapper").innerHTML = sHtml;
