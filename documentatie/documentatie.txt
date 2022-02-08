@@ -8,8 +8,6 @@ Session var $sessionStatus:
   6 uitgelogd
 
 Wat moet er nog gedaan worden(25-01-2022):
-1. products overview voor admins werkend krijgen edit
-2. users overview voor admins werkend krijgen edit
 3. Home pagina
 3. Bestel knop
 4. WinkelWagen

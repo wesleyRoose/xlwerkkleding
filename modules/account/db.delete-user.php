@@ -10,18 +10,6 @@ if (file_exists('../../controller.php')) {
     exit;
 }
 
-// if ($_SESSION["sessionStatus"] != 1 && $_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
-//     header('Location: ' . ROOT_URL . 'index.php');
-// }
-
-// // Create query string
-// $sQuery = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
-
-// // Execute query and catch results in array
-// if ($oResult = $conn->query($sQuery)) {
-//     $aRow = $oResult->fetch_assoc();
-// }
-
 if(isset($_POST["del_user_btn"])) {
     $sQuery = "DELETE FROM `users` WHERE `users`.`id` = " . $_SESSION["sessionAccountId"];
 
@@ -33,4 +21,3 @@ if(isset($_POST["del_user_btn"])) {
     }
 
 }
-?>
