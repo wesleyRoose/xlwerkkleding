@@ -46,8 +46,8 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
   <main class="add-products">
     <section class="add-products-s">
       <div class="input-form">
-        <form action="db.add-product.php" method="post" class="product-form" id="product-form" autocomplete="off" enctype="multipart/form-data">
-          <h3 class="form-header">Hier kun je producten toevoegen</h3>
+        <form action="db.editProduct.php" method="post" class="product-form" id="product-form" autocomplete="off" enctype="multipart/form-data">
+          <h3 class="form-header">Hier kun je '<?php echo $aRow["p_name"] ?>' bijwerken</h3>
           <label>Product Naam</label><br>
           <input value="<?php echo $aRow['p_name'] ?>" type="text" name="p_name" id="p_name" class="p-input"><br>
           <label>Prijs</label><br>
@@ -76,23 +76,24 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
           </div>
           <label>Categorie</label><br>
           <select name="p_category" class="add-product-select webshop-filter-select">
-            <option value="nvt">Niet van Toepassing</option> <!-- Default value from db -->
+            <option value="<?php echo $aRow["p_category"] ?>"><?php echo $aRow["p_category"] ?></option> <!-- Default value from db -->
             <?php echo $sCatagoryHtml ?>
           </select><br>
           <label>Sectorgroep</label><br>
           <select name="p_sector" class="add-product-select webshop-filter-select">
-            <option value="nvt">Niet van Toepassing</option> <!-- Default value from db -->
+            <option value="<?php echo $aRow["p_sector"] ?>"><?php echo $aRow["p_sector"] ?></option> <!-- Default value from db -->
             <?php echo $sSectorHtml ?>
           </select><br>
           <label>Merk</label>
           <select name="p_brand" class="add-product-select webshop-filter-select">
-            <option value="nvt">Niet van Toepassing</option> <!-- Default value from db -->
+            <option value="<?php echo $aRow["p_brand"] ?>"> <?php echo $aRow["p_brand"] ?></option>
+            <!-- Default value from db -->
             <?php echo $sMerkHtml ?>
           </select><br>
           <label>Foto</label><br>
           <input type="file" name="p_file"><br>
           <label>Beschrijving</label><br>
-          <textarea value="<?php echo $aRow['p_description'] ?>" name="p_description" id="p_description" rows="8" placeholder="<?php echo $aRow['p_description'] ?>"></textarea><br>
+          <textarea name="p_description" id="p_description" rows="8"><?php echo $aRow['p_description'] ?></textarea><br>
           <input name="addProductButton" type="submit" value="Voeg Toe" class="button">
         </form>
       </div>
