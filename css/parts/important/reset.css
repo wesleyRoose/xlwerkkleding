@@ -163,6 +163,7 @@ tr {
 
 a {
   text-decoration: none;
+  color: var(--white);
 }
 
 /* Classes for simple element resets */

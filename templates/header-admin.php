@@ -16,7 +16,7 @@
     <title>XLwerkkleding - Admin</title>
 </head>
 
-<body>
+<body id="f-body">
     <div class="view">
         <noscript>
             <div class="noscript">

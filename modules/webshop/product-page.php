@@ -39,6 +39,7 @@ foreach ($aColors as $value) {
 
 ?>
 
+<div class="overlay" id="overlay"></div>
 <main class="product-page">
     <section class="product-page">
         <div class="page-wrapper">
@@ -65,7 +66,16 @@ foreach ($aColors as $value) {
                                 <?php echo $sColorDropHtml ?>
                             </select>
                         </div>
-                        <button><a href="#" class="product-order-link">Bestel</a></button>
+                        <button onclick="openBox();">Bestel</button>
+                        <div id="orderBox" class="order-box">
+                            <div class="order-box-content">
+                                <h3>Product is toegevoegd aan uw winkelmandje</h3>
+                                <div class="dialog-buttons">
+                                    <button class="no-margin"><a href="<?php echo ROOT_URL ?>modules/shopping-cart/index.php">Naar Cart</a></button>
+                                    <button onclick="closeBox();" class="no-margin" style="margin-left: 5px !important;">Shop Verder</button>
+                                </div>
+                            </div>
+                        </div>
                         <div class="description">
                             <h3 class="desc-title">Beschrijving</h3>
                             <li class="product-list-item smaller">

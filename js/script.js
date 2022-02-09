@@ -52,8 +52,24 @@ function numberOfColorsConfirm(button) {
   }
 }
 
+// Functions to open/close dialogbox
+
+var box = document.getElementById("orderBox");
+var overlay = document.getElementById("overlay");
+var fbody = document.getElementById("f-body");
+
+function openBox() {
+  box.style.display = "block";
+  overlay.style.display = "block";
+  fbody.style.overflowY = "hidden";
+}
+
+function closeBox() {
+  box.style.display = "none";
+  overlay.style.display = "none";
+  fbody.style.overflowY = "scroll";
+}
+
 //Make sure JS gets loaded
 
 console.log("JS Loaded - END");
-
-
