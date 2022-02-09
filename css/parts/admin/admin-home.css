@@ -6,14 +6,24 @@
 
 .admin-options {
     margin-top: 15px;
+    margin-bottom: 50px;
 }
 
 .admin-options-content {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-flow: column wrap;
     margin-top: 15px;
+}
+
+.admin-options-part {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.admin-options-part:first-of-type {
+    margin-top: 0;
 }
 
 .ds-form-style {
@@ -22,18 +32,22 @@
     min-width: 350px;
 }
 
-@media (prefers-color-scheme: light) {
-    .categories, .sectors {
-        background-color: var(--dark-gray);
-    }
-}
-
 @media (max-width: 500px) {
-    .admin-home-wrapper {
+    .admin-options-part {
         flex-flow: column nowrap;
+        justify-content: unset;
+        align-items: unset;
     }
 
-    .categories, .sectors, .small-users-overview, .small-products-overview {
-        margin: 30px 0 0 0;
+    .margin-left {
+        margin-left: 0 !important;
+    }
+
+    .ds-form-style {
+        margin-top: 50px;
+    }
+
+    .ds-form-style:first-of-type {
+        margin-top: 0;
     }
 }

@@ -58,6 +58,7 @@
             </div>
         </div>
     </footer>
+    <!--Load main JS file-->
     <script src="<?php echo ROOT_URL ?>js/script.js"></script>
 </div>
 </body>

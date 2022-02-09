@@ -77,51 +77,22 @@ if ($oResult = $conn->query($sQuery)) {
                 </div>
                 <div class="previous-orders">
                     <h4>Bestellingen</h4>
-                    <div class="previous-order">
-                        <div class="prev-order-data">
-                            <p class="prev-order-title">Reflecterende Jas</p>
-                            <p class="prev-order-date">18-1-2022</p>
-                        </div>
-                        <div class="prev-order-btn button small orange">
-                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
-                        </div>
-                    </div>
-                    <div class="previous-order">
-                        <div class="prev-order-data">
-                            <p class="prev-order-title">Reflecterende Jas</p>
-                            <p class="prev-order-date">18-1-2022</p>
-                        </div>
-                        <div class="prev-order-btn button small orange">
-                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
-                        </div>
-                    </div>
-                    <div class="previous-order">
-                        <div class="prev-order-data">
-                            <p class="prev-order-title">Reflecterende Jas</p>
-                            <p class="prev-order-date">18-1-2022</p>
-                        </div>
-                        <div class="prev-order-btn button small orange">
-                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
-                        </div>
-                    </div>
-                    <div class="previous-order">
-                        <div class="prev-order-data">
-                            <p class="prev-order-title">Reflecterende Jas</p>
-                            <p class="prev-order-date">18-1-2022</p>
-                        </div>
-                        <div class="prev-order-btn button small orange">
-                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
-                        </div>
-                    </div>
-                    <div class="previous-order">
-                        <div class="prev-order-data">
-                            <p class="prev-order-title">Reflecterende Jas</p>
-                            <p class="prev-order-date">18-1-2022</p>
-                        </div>
-                        <div class="prev-order-btn button small orange">
-                            <a href="#" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
-                        </div>
-                    </div>
+                    <?php
+
+                    for($i = 0; $i < 5; $i++) {
+                        echo 
+                        '<div class="previous-order">
+                            <div class="prev-order-data">
+                                <p class="prev-order-title">Reflecterende Jas</p>
+                                <p class="prev-order-date">18-1-2022</p>
+                            </div>
+                            <div class="prev-order-btn button small orange">
+                                <a href="' . ROOT_URL . 'factuur/factuur.php" class="prev-btn-link-color"><i class="fas fa-link no-margin"></i></a>
+                            </div>
+                        </div>';
+                    }
+
+                    ?>
                     <button style="margin-top: 24px;">Meer</button>
                 </div>
             </div>

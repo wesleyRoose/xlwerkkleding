@@ -45,11 +45,37 @@ div.card {
   text-decoration: underline;
 }
 
+.card-text-margin {
+  margin-top: 0px;
+}
+
 @media (max-width: 1024px) {
     .card {
         width: 100% !important;
     }
 }
+
+@media (max-width: 500px) {
+    .card {
+      display: flex;
+      flex-flow: row nowrap;
+      height: 100px !important;
+      width: 295.2px;
+      font-size: 12px;
+    }
+
+    .card-image {
+      height: 100px;
+      width: 100px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 0px;
+    }
+
+    .card-text-margin {
+      margin-top: 10px;
+    }
+}
+
 
 /* Slider Styling */
 
@@ -76,6 +102,7 @@ div.card {
   height: 500px;
   margin: auto;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .slideshowBoxContainer {

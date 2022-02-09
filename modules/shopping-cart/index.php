@@ -46,7 +46,9 @@ if ($_SESSION["sessionStatus"] != 2 && $_SESSION["sessionStatus"] != 1 || empty(
                 </div>
             </div>
             <div class="order-button">
-                <button>Afrekenen</button>
+                <button>
+                    <a href="<?php echo ROOT_URL ?>modules/webshop/checkout.php" class="white">Afrekenen</a>
+                </button>
             </div>
         </div>
     </section>

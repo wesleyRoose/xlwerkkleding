@@ -144,7 +144,7 @@ if (isset($_POST["formSubmit"])) {
   <div class="image">
     <img src=" ' . ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="card-image">
   </div>
-  <div class="text">
+  <div class="text f-width card-text-margin">
     <h3>' . $aRow["p_name"] . '</h3>
     <p>' . $aRow["p_sector"] . '</p>
     <a href="' . ROOT_URL . "modules/webshop/product-page.php?product=" . $aRow["p_id"] . '" class="card-link">Klik hier</a>

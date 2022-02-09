@@ -34,7 +34,7 @@
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>">Home</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/webshop/index.php">WebShop</a></li>
                             <li class="navitem"><a class="nav-item" href="<?php echo ROOT_URL ?>modules/account/index.php">Account</a></li>
-                            <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/logout.php">Logout</a></li>
+                            <li class="navitem"><a class="nav-item login" href="<?php echo ROOT_URL ?>modules/login/logout.php">Loguit</a></li>
                         </ul>
                     </div>
                 </nav>

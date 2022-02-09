@@ -161,6 +161,10 @@ tr {
   height: 60px;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Classes for simple element resets */
 
 .f-width {
@@ -175,8 +179,16 @@ tr {
   padding: 0 !important;
 }
 
+.margin-left {
+  margin-left: 200px !important; 
+}
+
 .background-color {
-  background-color: var(--main-color);
+  background-color: var(--main-color) !important;
+}
+
+.white {
+  color: var(--white) !important;
 }
 
 .not-visible {
