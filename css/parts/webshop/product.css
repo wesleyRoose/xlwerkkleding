@@ -96,10 +96,9 @@ select:first-of-type {
 
     .product-info {
         display: grid;
-        place-items: center;
     }
 
     .description {
-        margin-top: 50px;
+        margin-top: 25px;
     }
 }
