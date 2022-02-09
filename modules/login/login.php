@@ -41,10 +41,18 @@ $_SESSION["token"] = $token;
             </form>
             <?php
             if (!empty($_GET)) {
-                if ($_GET['login'] == 'fail') {
+                if(isset($_GET["login"])){
+                    if ($_GET['login'] == 'fail') {
+                        $sLoginMsg = '';
+                        $sLoginMsg = '<p>U bent niet ingelogd, probeer het nog een keer.</p>';
+                        echo $sLoginMsg;
+                    }
+                } else if($_GET['msg'] == 'del'){
                     $sLoginMsg = '';
-                    $sLoginMsg = '<p>U bent niet ingelogd, probeer het nog een keer.</p>';
+                    $sLoginMsg = '<p>Uw account is succesvol verwijdert!</p>';
                     echo $sLoginMsg;
+                } else {
+                    $sLoginMsg = "";
                 }
             }
             ?>

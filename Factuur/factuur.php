@@ -27,9 +27,8 @@ if (file_exists('../library/db.class.php')) {
     echo $errorMessage;
     exit;
   }
-
-
-require('../factuur/fpdf.php');
+  
+  require('../factuur/fpdf.php');
 
 
 
