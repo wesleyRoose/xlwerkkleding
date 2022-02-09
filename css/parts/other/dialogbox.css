@@ -12,7 +12,7 @@
 }
 
 .order-box-content {
-    padding: 2rem;
+    padding: 1.8rem;
 }
 
 .overlay {
@@ -46,6 +46,8 @@
       color: var(--black);
     }
 }
+
+/* Responsive Styling */
 
 @media (max-width: 500px) {
     .order-box {
