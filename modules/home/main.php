@@ -88,87 +88,22 @@ if ($_SESSION["sessionStatus"] == 1) {
         </div>
         <h3>Uitgelichte Producten</h3>
         <div class="cards">
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/placeholder.png" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image">
-                    <img src="<?php echo ROOT_URL ?>/img/koudblauw.jpg" alt="Placeholder Image" class="card-image">
-                </div>
-                <div class="text">
-                    <h3>Product 1</h3>
-                    <a href="#" class="card-link">Klik hier</a>
-                </div>
-            </div>
+            <?php
+
+            for($i = 0; $i < 50; $i++) {
+                echo 
+                '<div class="card">
+                    <div class="image">
+                        <img src=" ' . ROOT_URL . '/img/placeholder.png" alt="Placeholder Image" class="card-image">
+                    </div>
+                    <div class="text f-width card-text-margin">
+                        <h3>Product 1</h3>
+                        <a href="#" class="card-link">Klik hier</a>
+                    </div>
+                </div>';
+            }
+
+            ?>
         </div>
     </section>
 </main>
