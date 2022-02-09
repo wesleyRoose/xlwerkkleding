@@ -161,6 +161,10 @@ tr {
   height: 60px;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Classes for simple element resets */
 
 .f-width {
@@ -180,7 +184,11 @@ tr {
 }
 
 .background-color {
-  background-color: var(--main-color);
+  background-color: var(--main-color) !important;
+}
+
+.white {
+  color: var(--white) !important;
 }
 
 .not-visible {
