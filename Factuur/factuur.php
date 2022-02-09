@@ -31,7 +31,6 @@ if (file_exists('../library/db.class.php')) {
   require('../factuur/fpdf.php');
 
 
-
 $pdf = new FPDF('P', 'mm', 'A4');
 
 $pdf->AddPage();
@@ -47,20 +46,20 @@ $pdf->line(10, 25, 200, 25);
 
 //Eerste table
 $pdf->Ln(20);//line break
-$pdf->Cell(55,5,'Naam klant', 0, 0,);
+$pdf->Cell(35,5,'Naam klant', 0, 0,);
 $pdf->Cell(49,5,': ', 0, 0, );
 
 $pdf->Cell(45,5,'Postcode  : ', 0, 0,);
 $pdf->Cell(47,5,'7941 LZ Meppel', 0, 1, );
 
-$pdf->Cell(55,5,'Datum', 0, 0,);
+$pdf->Cell(35,5,'Datum', 0, 0,);
 $pdf->Cell(49,5,':', 0, 0, );
 
 $pdf->Cell(45,5,'Adres : ', 0, 0,);
 $pdf->Cell(49,5,'Synagogestraat 7 ', 0, 1, );
 
 
-$pdf->Cell(55,5,'Order nummer', 0, 0, );
+$pdf->Cell(35,5,'Order nummer', 0, 0, );
 $pdf->Cell(49,5,':', 0, 0, );
 
 $pdf->Cell(40,5,'Telefoon  : ', 0, 0,);
@@ -102,6 +101,11 @@ $pdf->ln(15); //line break
 $pdf->Cell(140, 15, '', 0, 0);
 $pdf->Cell(50, 5, ': Signature', 0, 1, 'c');
 
+//vierde lijn
+$pdf->line(10, 275, 200, 275);
+$pdf->cell(55, 5, '© XLwerkkleding - 2022 - Alle rechten voorbehouden
+
+', 0, 0);
 
 
 $pdf->Output();
