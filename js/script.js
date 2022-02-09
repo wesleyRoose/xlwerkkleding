@@ -73,5 +73,3 @@ function closeBox() {
 //Make sure JS gets loaded
 
 console.log("JS Loaded - END");
-
-
