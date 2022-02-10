@@ -31,7 +31,7 @@ class  db
       //Bind and excecute Statement
       $stmt = self::$oConnection->prepare($sPreparedSql);
       // Merge arrays together to use in the bind_params
-
+      
       $params = array_merge(array($sSql_types), $aValue);
       foreach ($params as $key => $value) {
         $params[$key] = &$params[$key];

@@ -18,6 +18,15 @@ if (file_exists('../../../library/db.filterTerms.php')) {
   exit;
 }
 
+// Unset session vars
+if (isset($_SESSION["aProductQueryResult"])) {
+  unset($_SESSION["aProductQueryResult"]);
+}
+
+if (isset($_SESSION["iProductDisplayItems"])) {
+  $_SESSION["iProductDisplayItems"] = 0;
+}
+
 if (file_exists('db.loadProductData.php')) {
   include('db.loadProductData.php');
 } else {
@@ -46,7 +55,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
   <main class="add-products">
     <section class="add-products-s">
       <div class="input-form">
-        <form action="db.editProduct.php" method="post" class="product-form" id="product-form" autocomplete="off" enctype="multipart/form-data">
+        <form action="db.editProduct.php?product=<?php echo $_GET["product"] ?>" method="post" class="product-form" id="product-form" autocomplete="off" enctype="multipart/form-data">
           <h3 class="form-header">Hier kun je '<?php echo $aRow["p_name"] ?>' bijwerken</h3>
           <label>Product Naam</label><br>
           <input value="<?php echo $aRow['p_name'] ?>" type="text" name="p_name" id="p_name" class="p-input"><br>
@@ -94,7 +103,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
           <input type="file" name="p_file"><br>
           <label>Beschrijving</label><br>
           <textarea name="p_description" id="p_description" rows="8"><?php echo $aRow['p_description'] ?></textarea><br>
-          <input name="addProductButton" type="submit" value="Voeg Toe" class="button">
+          <input name="editProductButton" type="submit" value="Bijwerken" button">
         </form>
       </div>
     </section>
