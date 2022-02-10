@@ -18,6 +18,7 @@ if ($oResult = $conn->query($sQuery)) {
     $aRow = $oResult->fetch_assoc();
 }
 
+
 ?>
 
 
@@ -40,6 +41,7 @@ if ($oResult = $conn->query($sQuery)) {
                         <input type="submit" value="Verzenden">
                     </form>
                 </div>
+
                 <div class="add-about-content ds-form-style margin-left">
                     <h4 class="not-visible">Not Visible</h4>
                     <form action="db.aboutContentAdd.php" method="post" class="add-about-form" autocomplete="off">

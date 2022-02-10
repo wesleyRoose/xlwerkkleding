@@ -103,9 +103,7 @@ $pdf->Cell(50, 5, ': Signature', 0, 1, 'c');
 
 //vierde lijn
 $pdf->line(10, 275, 200, 275);
-$pdf->cell(55, 5, '© XLwerkkleding - 2022 - Alle rechten voorbehouden
-
-', 0, 0);
+$pdf->cell(55, 5, '© XLwerkkleding - 2022 - Alle rechten voorbehouden', 0, 0);
 
 
 $pdf->Output();
