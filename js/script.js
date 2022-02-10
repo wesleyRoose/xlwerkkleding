@@ -58,6 +58,8 @@ var box = document.getElementById("orderBox");
 var overlay = document.getElementById("overlay");
 var fbody = document.getElementById("f-body");
 
+document.getElementById("f-body");
+
 function openBox() {
   box.style.display = "block";
   overlay.style.display = "block";
