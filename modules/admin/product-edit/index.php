@@ -18,6 +18,15 @@ if (file_exists('../../../library/db.filterTerms.php')) {
   exit;
 }
 
+// Unset session vars
+if (isset($_SESSION["aProductQueryResult"])) {
+  unset($_SESSION["aProductQueryResult"]);
+}
+
+if (isset($_SESSION["iProductDisplayItems"])) {
+  $_SESSION["iProductDisplayItems"] = 0;
+}
+
 if (file_exists('db.loadProductData.php')) {
   include('db.loadProductData.php');
 } else {
@@ -94,7 +103,7 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
           <input type="file" name="p_file"><br>
           <label>Beschrijving</label><br>
           <textarea name="p_description" id="p_description" rows="8"><?php echo $aRow['p_description'] ?></textarea><br>
-          <input name="addProductButton" type="submit" value="Bijwerken" button">
+          <input name="editProductButton" type="submit" value="Bijwerken" button">
         </form>
       </div>
     </section>

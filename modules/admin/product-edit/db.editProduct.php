@@ -22,18 +22,6 @@ $aData = [
   "p_description" => $_POST["p_description"]
 ];
 
-print_r($aData);
-echo "<br>";
-$sSql = "";
-$sSql .= "UPDATE `product` SET ";
-if (count($aData) == 8) {
-  // UPDATE MyGuests SET lastname='Doe' WHERE id=2
-  $sSql .= "p_name='" . $aData["p_name"] . "',p_price='" . $aData["p_price"] . "',p_category='" . $aData["p_category"] . "',p_sector='" . $aData["p_sector"] . "',p_brand='" . $aData["p_brand"] . "',p_size='" . $aData["p_size"] . "',p_color='" . $aData["p_color"] . "',p_description='" . $aData["p_description"] . "' WHERE p_id=" . $_GET["product"];
-  echo $sSql;
-} // If statement voor 9 $adata
-
-
-exit;
 
 // Create Query string
 $sQuery = '';
@@ -43,7 +31,6 @@ $sQuery = 'SELECT * FROM `product` WHERE p_id = "' . $_GET["product"] . '"';
 if ($oResult = $conn->query($sQuery)) {
   $aRow = $oResult->fetch_assoc();
 }
-
 
 // If img is uploaded, add it to array
 if ($_FILES['p_file']['size'] != 0) {
@@ -61,11 +48,27 @@ if ($_FILES['p_file']['size'] != 0) {
   $microtime =  $_SERVER['REQUEST_TIME'];
 
   // Rename uploaded file
-  rename("../add/img_product/" . $_FILES['p_file']['name'], "../add/img_product/" . $_POST["p_sector"] . "-" . $microtime .  "." . pathinfo("img_product/" . $_FILES['p_file']['name'])['extension']);
+  rename("../add/img_product/" . $_FILES['p_file']['name'], "../add/img_product/" . $_POST["p_sector"] . "-" . $microtime .  "." . pathinfo("../add/img_product/" . $_FILES['p_file']['name'])['extension']);
 
   // Create string for img path for in db
-  $sDbImgPath = "../add/img_product/" . $_POST["p_sector"] . "-" . $microtime . "." . pathinfo("../add/img_product/" . $_FILES['p_file']['name'])['extension'];
+  $sDbImgPath = "img_product/" . $_POST["p_sector"] . "-" . $microtime . "." . pathinfo("../add/img_product/" . $_FILES['p_file']['name'])['extension'];
 
   // Add file path to db
   $aData += ["p_foto" => $sDbImgPath];
+}
+
+// Create sql String
+$sSql = "";
+$sSql .= "UPDATE `product` SET ";
+// If count == 8, dont include p_foto
+if (count($aData) == 8) {
+  $sSql .= "p_name='" . $aData["p_name"] . "',p_price='" . $aData["p_price"] . "',p_category='" . $aData["p_category"] . "',p_sector='" . $aData["p_sector"] . "',p_brand='" . $aData["p_brand"] . "',p_size='" . $aData["p_size"] . "',p_color='" . $aData["p_color"] . "',p_description='" . $aData["p_description"] . "' WHERE p_id=" . $_GET["product"];
+} else if (count($aData) == 9) { // If count == 9, do include p_foto
+  $sSql .= "p_name='" . $aData["p_name"] . "',p_price='" . $aData["p_price"] . "',p_category='" . $aData["p_category"] . "',p_sector='" . $aData["p_sector"] . "',p_brand='" . $aData["p_brand"] . "',p_size='" . $aData["p_size"] . "',p_color='" . $aData["p_color"] . "',p_description='" . $aData["p_description"] . "' ,p_foto='" . $sDbImgPath . "' WHERE p_id=" . $_GET["product"];
+}
+
+//Execute query and return to overview with a url parameter
+if ($db->query($sSql)) {
+  header('Location: ' . ROOT_URL . 'modules/admin/product-overview/index.php?msg=edit');
+  exit;
 }
