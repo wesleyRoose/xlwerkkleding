@@ -70,6 +70,13 @@ function closeBox() {
   fbody.style.overflowY = "scroll";
 }
 
+function collectData(acc_id) {
+  var hiddenId = acc_id + 1;
+  console.log(document.getElementById(acc_id).innerHTML);
+  document.getElementById(hiddenId).value = document.getElementById(acc_id).innerHTML;
+}
+
+
 //Make sure JS gets loaded
 
 console.log("JS Loaded - END");
