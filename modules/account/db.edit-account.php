@@ -39,15 +39,17 @@ if (isset($_POST["edit_user_btn"])) {
     array_push($aData, $firm);
   }
 
-  // UPDATE `users` SET `id`='[value-1]',`username`='[value-2]',`password`='[value-3]',`email`='[value-4]',`firstName`='[value-5]',`lastName`='[value-6]',`phoneNumber`='[value-7]',`firm`='[value-8]',`rights`='[value-9]' WHERE 1
-
   // Create Sql string if array is not empty
   if (!empty($aData)) {
     $sSql = "";
-    $sSql = "UPDATE `users` SET ";
+    $sSql .= "UPDATE `users` SET `username`='" . $aData[2] . "', `email`='" . $aData[3] . "', `firstName`='" . $aData[0] . "', `lastName`='" . $aData[1] . "', `phoneNumber`='" . $aData[4] . "', `firm`='" . $aData[5] . "' WHERE id='" . $_SESSION["sessionAccountId"] . "'";
 
-    for($i = 0, $c = count($aData) - 2; $i++){
-      echo $i . " " . $c;
+    // Execute query
+    if ($db->query($sSql)) {
+      header('Location: ' . ROOT_URL . 'modules/account/index.php');
+      exit;
+    } else {
+      echo '<br>BreakLine: ' . __FILE__ . ' ' . __LINE__ . ';<br>';
     }
   } else { // if array is empty redirect to index
     header('Location: ' . ROOT_URL . 'modules/account/index.php');

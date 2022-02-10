@@ -70,10 +70,25 @@ function closeBox() {
   fbody.style.overflowY = "scroll";
 }
 
-function collectData(acc_id) {
-  var hiddenId = acc_id + 1;
-  console.log(document.getElementById(acc_id).innerHTML);
-  document.getElementById(hiddenId).value = document.getElementById(acc_id).innerHTML;
+function collectData() {
+  document.getElementById('acc_item_11').value = document.getElementById('acc_item_1').innerHTML;
+  makeEditable('acc_item_1');
+
+  document.getElementById('acc_item_21').value = document.getElementById('acc_item_2').innerHTML;
+  makeEditable('acc_item_2');
+
+  document.getElementById('acc_item_31').value = document.getElementById('acc_item_3').innerHTML;
+  makeEditable('acc_item_3');
+
+  document.getElementById('acc_item_41').value = document.getElementById('acc_item_4').innerHTML;
+  makeEditable('acc_item_4');
+
+  document.getElementById('acc_item_51').value = document.getElementById('acc_item_5').innerHTML;
+  makeEditable('acc_item_5');
+
+  document.getElementById('acc_item_61').value = document.getElementById('acc_item_6').innerHTML;
+  makeEditable('acc_item_6');
+
 }
 
 

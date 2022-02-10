@@ -10,6 +10,24 @@ if (file_exists('../../controller.php')) {
     exit;
 }
 
+// Unset session vars
+if (isset($_SESSION["aUserQueryResult"])) {
+    unset($_SESSION["aUserQueryResult"]);
+}
+
+if (isset($_SESSION["iUserDisplayItems"])) {
+    $_SESSION["iUserDisplayItems"] = 0;
+}
+
+// Unset session vars
+if (isset($_SESSION["aProductQueryResult"])) {
+    unset($_SESSION["aProductQueryResult"]);
+}
+
+if (isset($_SESSION["iProductDisplayItems"])) {
+    $_SESSION["iProductDisplayItems"] = 0;
+}
+
 if ($_SESSION["sessionStatus"] != 1 && $_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
     header('Location: ' . ROOT_URL . 'index.php');
 }
@@ -21,6 +39,8 @@ $sQuery = "SELECT * FROM `users` WHERE `id` = " . $_SESSION["sessionAccountId"];
 if ($oResult = $conn->query($sQuery)) {
     $aRow = $oResult->fetch_assoc();
 }
+
+
 ?>
 
 <main class="account-page">
@@ -34,51 +54,51 @@ if ($oResult = $conn->query($sQuery)) {
                             <i class="fas fa-user"></i>
                         </div>
                         <p class="account-page-info-text" id="acc_item_1"><?php echo $aRow["firstName"]; ?></p>
-                        <button class="small orange" onclick="makeEditable('acc_item_1'); collectData('acc_item_1');"><i class="fas fa-pencil no-margin"></i></button>
+                        <button class="small orange" onclick="makeEditable('acc_item_1');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user"></i>
                         </div>
                         <p class="account-page-info-text" id="acc_item_2"><?php echo $aRow["lastName"]; ?></p>
-                        <button class="small orange" onclick="makeEditable('acc_item_2'); collectData('acc_item_2');"><i class="fas fa-pencil no-margin"></i></button>
+                        <button class="small orange" onclick="makeEditable('acc_item_2');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-user-tag"></i>
                         </div>
                         <p class="account-page-info-text" id="acc_item_3"><?php echo $aRow["username"]; ?></p>
-                        <button class="small orange" onclick="makeEditable('acc_item_3'); collectData('acc_item_3');"><i class="fas fa-pencil no-margin"></i></button>
+                        <button class="small orange" onclick="makeEditable('acc_item_3');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <p class="account-page-info-text" id="acc_item_4"><?php echo $aRow["email"]; ?></p>
-                        <button class="small orange" onclick="makeEditable('acc_item_4'); collectData('acc_item_4');"><i class="fas fa-pencil no-margin"></i></button>
+                        <button class="small orange" onclick="makeEditable('acc_item_4');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <p class="account-page-info-text" id="acc_item_5"><?php echo $aRow["phoneNumber"]; ?></p>
-                        <button class="small orange" onclick="makeEditable('acc_item_5'); collectData('acc_item_5');"><i class="fas fa-pencil no-margin"></i></button>
+                        <button class="small orange" onclick="makeEditable('acc_item_5');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <div class="account-page-info-box">
                         <div class="account-page-icon">
                             <i class="fas fa-building"></i>
                         </div>
                         <p class="account-page-info-text" id="acc_item_6"><?php echo $aRow["firm"]; ?></p>
-                        <button class="small orange" onclick="makeEditable('acc_item_6'); collectData('acc_item_6');"><i class="fas fa-pencil no-margin"></i></button>
+                        <button class="small orange" onclick="makeEditable('acc_item_6');"><i class="fas fa-pencil no-margin"></i></button>
                     </div>
                     <form action="db.edit-account.php" method="post" class="f-width">
                         <input id="acc_item_11" name="firstName" style="display: none;" type="text">
                         <input id="acc_item_21" name="lastName" style="display: none;" type="text">
                         <input id="acc_item_31" name="username" style="display: none;" type="text">
                         <input id="acc_item_41" name="email" style="display: none;" type="text">
-                        <input id="acc_item_51" name="phoneNumber" style="display: none;" type="text">
+                        <input id="acc_item_51" name="phonenumber" style="display: none;" type="text">
                         <input id="acc_item_61" name="firm" style="display: none;" type="text">
-                        <input name="edit_user_btn" type="submit" value="Bewerk Profiel">
+                        <input onclick="collectData()" name="edit_user_btn" type="submit" value="Bewerk Profiel">
                     </form>
                     <form action="db.delete-user.php" method="post" class="f-width">
                         <input name="del_user_btn" type="submit" value="Verwijder Profiel">
