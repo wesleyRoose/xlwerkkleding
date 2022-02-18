@@ -14,6 +14,7 @@ if (file_exists('../../controller.php')) {
   <section class="service">
     <div class="service-wrapper">
       <h1></h1>
+      <div class="small-bar"></div>
       <p class="text no-padding">
 
       </p>

@@ -14,6 +14,7 @@ if (file_exists('../../controller.php')) {
   <section class="service">
     <div class="service-wrapper">
       <h1>Klachten</h1>
+      <div class="small-bar"></div>
       <p class="text no-padding">
         Het is natuurlijk vervelend als u een klacht heeft over de dienstverlening zoals u die ervaren heeft. 
         Toch vragen wij u vriendelijk om uw klacht via de e-mail aan de afdeling klantcontact door te geven. 
