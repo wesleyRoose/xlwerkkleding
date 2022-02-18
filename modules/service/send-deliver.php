@@ -48,7 +48,7 @@ if (file_exists('../../controller.php')) {
       <br>
       <p class="text no-padding">
         <b>Heeft u vragen?</b><br>
-        Mocht u nog vragen hebben dan kunt u contact met ons opnemen via info@bouwkledij.nl.
+        Mocht u nog vragen hebben dan kunt u contact met ons opnemen via <a href="mailto:info@bouwkledij.nl" style="color: var(--main-color);">info@bouwkledij.nl</a>.
       </p>
       <br>
     </div>
