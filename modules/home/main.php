@@ -118,7 +118,7 @@ if ($_SESSION["sessionStatus"] == 1) {
                     </div>
                     <div class="text f-width card-text-margin">
                         <h3>Product 1</h3>
-                        <a href="#" class="card-link">Klik hier</a>
+                        <a href="#" class="card-link">Klik hier <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>';
             }

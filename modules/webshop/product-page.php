@@ -91,7 +91,7 @@ foreach ($aColors as $value) {
                             ?>
 
                             <div class="description">
-                                <h3 class="desc-title">Beschrijving</h3>
+                                <h4 class="desc-title">Beschrijving</h4>
                                 <li class="product-list-item smaller">
                                     <?php echo $aRow["p_description"] ?>
                                 </li>
