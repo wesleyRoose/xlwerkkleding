@@ -10,17 +10,6 @@ if (file_exists('../../../admin-controller.php')) {
   exit;
 }
 
-
-// Unset session vars
-if (isset($_SESSION["aProductQueryResult"])) {
-  unset($_SESSION["aProductQueryResult"]);
-}
-
-if (isset($_SESSION["iProductDisplayItems"])) {
-  $_SESSION["iProductDisplayItems"] = 0;
-}
-
-
 if (file_exists('../../../library/db.filterTerms.php')) {
   include('../../../library/db.filterTerms.php');
 } else {
@@ -102,6 +91,8 @@ if (file_exists('../../../library/db.filterTerms.php')) {
             echo $errorMessage;
             exit;
           }
+
+
           ?>
         </table>
         <form action="index.php" method="post">

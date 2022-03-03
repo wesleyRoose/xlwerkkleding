@@ -5,8 +5,6 @@ if (!isset($_SESSION["iProductDisplayItems"])) {
   $_SESSION["iProductDisplayItems"] = 0;
 }
 
-
-
 // Check if button is pressed
 if (isset($_POST["formSubmit"])) {
   // Unset session vars
@@ -114,18 +112,18 @@ if (isset($_POST["formSubmit"])) {
   if (isset($_SESSION["iProductDisplayItems"])) {
     $_SESSION["iProductDisplayItems"] = 0;
   }
-
   // Create query
   $sProductTableQuery = "";
   $sProductTableQuery .= "SELECT * FROM `product`";
 } else if (isset($_POST["prev"])) { // Check if previous button is pressed
   // Remove ? from the product display counter
   $_SESSION["iProductDisplayItems"] -= 2;
+  echo 'Hello World';
 } else if (isset($_POST["next"])) { // Check if next button is pressed
   // Add ? from the product display counter
   $_SESSION["iProductDisplayItems"] += 2;
+  echo 'Hello World';
 } else {  // if nothing is pressed
-
   // Unset session vars
   if (isset($_SESSION["aProductQueryResult"])) {
     unset($_SESSION["aProductQueryResult"]);
@@ -134,7 +132,6 @@ if (isset($_POST["formSubmit"])) {
   if (isset($_SESSION["iProductDisplayItems"])) {
     $_SESSION["iProductDisplayItems"] = 0;
   }
-
   // Create query
   $sProductTableQuery = "";
   $sProductTableQuery .= "SELECT * FROM `product`";
@@ -205,5 +202,6 @@ if (isset($_SESSION["aProductQueryResult"])) {
 } else {
   $sProductTableHtml = "<p>Geen Producten Gevonden</p>";
 }
+
 // Echo table on screen
 echo $sProductTableHtml;
