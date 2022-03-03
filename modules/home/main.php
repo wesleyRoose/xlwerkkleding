@@ -92,10 +92,6 @@ if ($_SESSION["sessionStatus"] == 1) {
                     <img class="sliderImg" src="./img/placeholder.png" placeholder="Slider Image">
                     <div class="sliderText">Caption Three</div>
                 </div>
-
-                <!-- Volgende en Vorige knoppen -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </div>
         <br>
