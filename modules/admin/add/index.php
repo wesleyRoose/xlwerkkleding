@@ -90,6 +90,8 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                     <input type="text" name="p_name" id="p_name" class="p-input"><br>
                     <label>Prijs</label><br>
                     <input type="text" name="p_price" id="p_price" class="p-input"><br>
+                    <label>Maten</label><br>
+                    <input placeholder="Maat..." type="text" name="aSizes[]" class="p-input"><br>
                     <label>Aantal Maten</label><br>
 
                     <input type="number" name="numberOfSizes" id="numberOfSizes" value="1">
@@ -98,7 +100,9 @@ if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
                         <div style="margin-left: 5px;" class="button" style="width: 40%!important;" onclick="numberOfSizesConfirm('reset')">Reset</div>
                     </div>
                     <div class="sizeSelecterWrapper" id="sizesWrapper">
-                    </div>
+                    </div><br>
+                    <label>Kleur</label><br>
+                    <input placeholder="Kleur..." type="text" name="aColors[]" class="p-input"><br>
                     <label>Aantal Kleuren</label><br>
                     <input type="number" name="numberOfColors" id="numberOfColors" value="1">
                     <div style="display: flex;">
