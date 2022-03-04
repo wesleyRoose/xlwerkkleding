@@ -12,7 +12,11 @@ if (file_exists('../../controller.php')) {
 
 if (isset($_POST["registerSubmit"])) {
     // Check if everything is not empty
-    if (!empty($_POST["email"]) && !empty($_POST["username"]) && !empty($_POST["fName"]) && !empty($_POST["lName"]) && !empty($_POST["password"]) && !empty($_POST["repeatPassword"]) && !empty($_POST["phoneNumber"]) && !empty($_POST["firm"])) {
+    if (!empty($_POST["email"]) && !empty($_POST["username"]) && !empty($_POST["fName"]) && !empty($_POST["lName"]) && !empty($_POST["password"]) && !empty($_POST["repeatPassword"]) && !empty($_POST["phoneNumber"])) {
+        
+        if(empty($_POST["firm"])) {
+            $_POST["firm"] = "";
+        }
 
         // Catch Form Values and clean them for sql trickery
         $email = cleaninput($_POST["email"], 30);
@@ -40,7 +44,7 @@ if (isset($_POST["registerSubmit"])) {
 
         // Create and execute prepared statement
         if (preparedInsertIntoQuery($conn, 7, "users", $aRowNames, "sssssss", $aValues)) {
-            header('Location: ' . ROOT_URL . 'index.php');
+            header('Location: ' . ROOT_URL . 'modules/login/registreer-succes.php');
         }
     }
 }
