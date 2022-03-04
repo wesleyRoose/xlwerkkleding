@@ -21,6 +21,12 @@ if ($oResult = $conn->query($sQuery)) {
     $aRow = $oResult->fetch_assoc();
 }
 
+if(isset ($_GET["pressed"])){
+    var_dump($_GET);
+    var_dump($_POSt);
+    exit;
+}
+
 // Create Array from string
 $aSizes = explode(", ", $aRow["p_size"]);
 $sSizeDropHtml = "";
@@ -36,6 +42,8 @@ $sColorDropHtml = "";
 foreach ($aColors as $value) {
     $sColorDropHtml .= '<option value="' . $value . '">' . $value . '</option>';
 }
+
+
 
 ?>
 

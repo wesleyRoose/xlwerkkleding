@@ -16,6 +16,6 @@ if (file_exists('../../controller.php')) {
 <section class="succes">
     <div class="centered">
         <h1>Product(en) succesvol geüpload</h1>
-        <button class="button"><a class="btn-s" href="<?php echo ROOT_URL ?>modules/admin/add-product.php">GA TERUG</a></button>
+        <button class="button"><a class="btn-s" href="<?php echo ROOT_URL ?>modules/admin/add/index.php">GA TERUG</a></button>
     </div>
 </section>
