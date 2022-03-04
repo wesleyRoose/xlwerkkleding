@@ -2,6 +2,10 @@
   margin-top: 15px;
 }
 
+.product-overview-wrapper {
+  color: var(--white);
+}
+
 .product-overview-searchbar {
   display: flex;
   flex-flow: row nowrap;

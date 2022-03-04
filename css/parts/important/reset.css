@@ -140,7 +140,8 @@ input[type=password], input[type=text], input[type=email] {
 
 @media (max-width:500px) {
   input[type=password], input[type=text], input[type=email] {
-    width: 250px;
+    width: 100%;
+    min-width: 250px;
   }
 }
 

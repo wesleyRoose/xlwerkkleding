@@ -97,14 +97,16 @@ i {
 
 /* Responsive Code */
 
+@media (max-width: 768px) {
+  .block {
+    margin: 15px 0 15px 0;
+  }
+}
+
 @media (max-width: 500px) {
   .upper {
     flex-flow: column nowrap;
     justify-content: center;
-  }
-
-  .block {
-    margin: 15px 0 15px 0;
   }
 
   .bottom {

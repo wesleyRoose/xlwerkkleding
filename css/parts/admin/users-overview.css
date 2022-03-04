@@ -2,6 +2,10 @@
     margin-top: 15px;
 }
 
+.users-overview-wrapper {
+    color: var(--white);
+}
+
 .user-record {
     width: 100%;
     background-color: var(--sub-color);
