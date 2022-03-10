@@ -45,7 +45,27 @@ function fileExistsInclude($filePath)
     exit;
   }
 }
+// Get html content from Database
+function getHtmlContent($conn, $page, $location)
+{
+  // Execute Query on database connection and put the data into a Array
+  if ($oResult = $conn->query("SELECT * FROM `html` where `page` = '" . $page . "' AND `location` = '" . $location . "'")) {
+    $aResult = $oResult->fetch_assoc();
+    // Set result into a string
+    $sContent = $aResult['content'];
+    // Return string
+    return $sContent;
+  }
+}
 
+// Update Html content in Database
+function updateHtmlContent($conn, $sPage, $sLocation, $sContent)
+{
+  // Create Query
+  $sQuery = "UPDATE `html` SET `content` ='" . $sContent . "' WHERE `location` = '" . $sLocation . "' AND `page` = '" . $sPage . "'";
+  // Execute query
+  return $conn->query($sQuery);
+}
 // Connection Object, Number of Rows int, Name of the Table string, Names of the Rows in a Array, Variable types for the values in string format, Values of the Rows in a array format
 function preparedInsertIntoQuery($oConnect, $iNumberOfRows, $sTableName, $aRowNames, $sSql_types, $aValues)
 {

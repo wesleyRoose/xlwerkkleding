@@ -10,6 +10,7 @@ if (file_exists('../../../admin-controller.php')) {
   exit;
 }
 
+
 if ($_SESSION["sessionStatus"] != 2 || empty($_SESSION["sessionStatus"])) {
   header('Location: ' . ROOT_URL . 'index.php');
 } else {
