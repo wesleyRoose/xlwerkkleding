@@ -25,6 +25,7 @@ if (isset($_POST["submit"])) {
   // Catch vars
   $sSize = $_POST["sizes"];
   $sColors = $_POST["colors"];
+  $sQuantity = $_POST["quantity"];
 
   // Check if shopping cart session varriable is not set
   if (!isset($_SESSION["shoppingCart"])) {
@@ -32,7 +33,7 @@ if (isset($_POST["submit"])) {
     $_SESSION["shoppingCart"] = array();
   }
   // Create order array
-  $aOrder = array($_GET["product"], $sSize, $sColors);
+  $aOrder = array($_GET["product"], $sSize, $sColors, $sQuantity);
   // Add order array to shoppingcart
   array_push($_SESSION["shoppingCart"], $aOrder);
   // Return to product page

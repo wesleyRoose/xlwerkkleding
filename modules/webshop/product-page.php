@@ -78,6 +78,7 @@ foreach ($aColors as $value) {
                                 <select name="colors" class="sorter">
                                     <?php echo $sColorDropHtml ?>
                                 </select>
+                                <input type="number" name="quantity" value="1" class="sorter">
                             </div>
                             <input type="submit" value="BESTEL" name="submit">
                             <?php

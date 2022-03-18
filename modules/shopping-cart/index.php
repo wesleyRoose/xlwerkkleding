@@ -22,8 +22,6 @@ if (file_exists('../../library/db.filterTerms.php')) {
 
 include('defaultHtml.php');
 
-print_r($_SESSION["shoppingCart"]);
-
 ?>
 
 <main class="shopping-cart">
