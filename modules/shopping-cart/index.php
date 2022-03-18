@@ -1,5 +1,6 @@
 <?php
 
+
 if (file_exists('../../controller.php')) {
     include('../../controller.php');
 } else {
@@ -10,9 +11,19 @@ if (file_exists('../../controller.php')) {
 }
 
 
-if ($_SESSION["sessionStatus"] != 2 && $_SESSION["sessionStatus"] != 1 || empty($_SESSION["sessionStatus"])) {
-    header('Location: ' . ROOT_URL . 'index.php');
+if (file_exists('../../library/db.filterTerms.php')) {
+    include('../../library/db.filterTerms.php');
+} else {
+    $errorMessage = "";
+    $errorMessage .= "PHP ERROR: db.filterTerms.php does not exist.";
+    echo $errorMessage;
+    exit;
 }
+
+include('defaultHtml.php');
+
+print_r($_SESSION["shoppingCart"]);
+
 ?>
 
 <main class="shopping-cart">
@@ -20,30 +31,7 @@ if ($_SESSION["sessionStatus"] != 2 && $_SESSION["sessionStatus"] != 1 || empty(
         <div class="shopping-cart-wrapper">
             <h3>Uw Winkelmandje</h3>
             <div class="shopping-cart-items">
-                <div class="shopping-cart-item">
-                    <div class="shopping-cart-info">
-                        <div class="product-image small-image item-margin">
-
-                        </div>
-                        <div class="shopping-cart-product-number item-margin">
-                            1
-                        </div>
-                        <div class="shopping-cart-product-title item-margin">
-                            Leren Werkschoenen
-                        </div>
-                        <div class="shopping-cart-product-price item-margin">
-                            $25
-                        </div>
-                        <div class="shopping-cart-product-quantity item-margin">
-                            2x
-                        </div>
-                    </div>
-                    <div class="shopping-cart-buttons">
-                        <div class="product-data button small small-icon black">
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
+                <?php echo $sHtml ?>
             </div>
             <div class="order-button">
                 <button>
