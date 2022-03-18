@@ -28,7 +28,7 @@ if (isset($_SESSION["shoppingCart"]) && !empty($_SESSION["shoppingCart"])) {
           ' . $aRow["p_name"] . '
       </div>
       <div class="shopping-cart-product-price item-margin">
-      &#8364 ' . $aRow["p_price"] . '
+      &#8364 ' . $aRow["p_price"] . ' per stuk
       </div>
       <div class="shopping-cart-product-quantity item-margin">
           ' . $i[3] . 'x
