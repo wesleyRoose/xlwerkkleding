@@ -68,7 +68,7 @@ if ($_SESSION["sessionStatus"] == 1) {
     <section class="mainFlexContainer">
         <div class="home">
             <h1>Welkom</h1>
-            <p><?php echo PAGE_TITLE ?></p>
+            <p><?php echo getHtmlContent($conn, "main", "slogan"); ?></p>
         </div>
 
         <!-- Slideshow container -->
@@ -77,20 +77,20 @@ if ($_SESSION["sessionStatus"] == 1) {
 
                 <div class="mySlides">
                     <div class="numbertext">1 / 3</div>
-                    <img class="sliderImg" src="./img/placeholder.png" placeholder="Slider Image">
-                    <div class="sliderText">Caption Text</div>
+                    <img class="sliderImg" src="<?php echo ROOT_URL ?>modules/admin/dashboard/<?php echo getHtmlContent($conn, "main", "sliderImg1"); ?>" placeholder="Slider Image">
+                    <div class="sliderText"><?php echo getHtmlContent($conn, "main", "caption1"); ?></div>
                 </div>
 
                 <div class="mySlides">
                     <div class="numbertext">2 / 3</div>
-                    <img class="sliderImg" src="./img/placeholder.png" placeholder="Slider Image">
-                    <div class="sliderText">Caption Two</div>
+                    <img class="sliderImg" src="<?php echo ROOT_URL ?>modules/admin/dashboard/<?php echo getHtmlContent($conn, "main", "sliderImg2"); ?>" placeholder="Slider Image">
+                    <div class="sliderText"><?php echo getHtmlContent($conn, "main", "caption2"); ?></div>
                 </div>
 
                 <div class="mySlides">
                     <div class="numbertext">3 / 3</div>
-                    <img class="sliderImg" src="./img/placeholder.png" placeholder="Slider Image">
-                    <div class="sliderText">Caption Three</div>
+                    <img class="sliderImg" src="<?php echo ROOT_URL ?>modules/admin/dashboard/<?php echo getHtmlContent($conn, "main", "sliderImg3"); ?>" placeholder="Slider Image">
+                    <div class="sliderText"><?php echo getHtmlContent($conn, "main", "caption3"); ?></div>
                 </div>
             </div>
         </div>

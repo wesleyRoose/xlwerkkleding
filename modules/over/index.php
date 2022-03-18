@@ -9,16 +9,6 @@ if (file_exists('../../controller.php')) {
   exit;
 }
 
-if (file_exists('loadAboutData.php')) {
-  include('loadAboutData.php');
-} else {
-  $errorMessage = "";
-  $errorMessage .= "PHP ERROR: loadAboutData.php does not exist.";
-  echo $errorMessage;
-  exit;
-}
-
-
 ?>
 
 <main class="about">
@@ -27,23 +17,25 @@ if (file_exists('loadAboutData.php')) {
     <div class="about-wrapper">
       <div class="about-block about-text">
         <h4><?php
-            echo $sHtmlTopContent['title']; ?>
+            echo getHtmlContent($conn, "about", "topHeader");
+            ?>
         </h4>
-        <?php echo $sHtmlTopContent['content']; ?>
+        <?php echo getHtmlContent($conn, "about", "topText");
+        ?>
       </div>
       <div class="about-block">
-        <img src="<?php echo ROOT_URL ?>img/placeholder.png" alt="Placeholder Image" class="about-image">
+        <img src="<?php echo ROOT_URL ?>modules/admin/dashboard/<?php echo getHtmlContent($conn, "about", "topImg"); ?>" alt="Placeholder Image" class="about-image">
       </div>
     </div>
     <div class="about-wrapper">
       <div class="about-block">
-        <img src="<?php echo ROOT_URL ?>img/placeholder.png" alt="Placeholder Image" class="about-image">
+        <img src="<?php echo ROOT_URL ?>modules/admin/dashboard/<?php echo getHtmlContent($conn, "about", "lowerImg"); ?>" alt="Placeholder Image" class="about-image">
       </div>
       <div class="about-block about-text">
         <h4><?php
-            echo $sHtmlLowerContent['title']; ?>
+            echo getHtmlContent($conn, "about", "lowerHeader"); ?>
         </h4>
-        <?php echo $sHtmlLowerContent['content']; ?>
+        <?php echo getHtmlContent($conn, "about", "lowerText"); ?>
       </div>
     </div>
   </section>
