@@ -28,6 +28,17 @@ include('defaultHtml.php');
     <section class="shopping-cart">
         <div class="shopping-cart-wrapper">
             <h3>Uw Winkelmandje</h3>
+            <div class="message">
+                <?php
+                if (isset($_GET["msg"])) {
+                    if ($_GET["msg"] == "all") {
+                        echo "Uw winkelmandje is leeg gehaald.";
+                    } else if ($_GET["msg"] == "item") {
+                        echo "Het product is uit uw winkelmandje verwijderd";
+                    }
+                }
+                ?>
+            </div>
             <?php
             if ((!empty($_SESSION["shoppingCart"]))) {
                 echo '

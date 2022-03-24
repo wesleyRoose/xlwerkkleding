@@ -23,4 +23,4 @@ if (file_exists('../../library/db.filterTerms.php')) {
 
 unset($_SESSION["shoppingCart"]);
 
-header('Location: ' . ROOT_URL . 'modules/shopping-cart/index.php?deleteAll=succes');
+header('Location: ' . ROOT_URL . 'modules/shopping-cart/index.php?msg=all');

@@ -29,7 +29,7 @@ foreach ($_SESSION["shoppingCart"] as $i) {
     // Delete item from array
     unset($_SESSION["shoppingCart"][$j]);
     // Return do shoppingcart index
-    header('Location: ' . ROOT_URL . 'modules/shopping-cart/index.php?delete=succes');
+    header('Location: ' . ROOT_URL . 'modules/shopping-cart/index.php?msg=item');
     exit;
   }
   // Add to counter

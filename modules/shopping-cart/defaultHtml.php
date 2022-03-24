@@ -44,5 +44,5 @@ if (isset($_SESSION["shoppingCart"]) && !empty($_SESSION["shoppingCart"])) {
     $j++;
   }
 } else {
-  $sHtml .= '<b>Winkelwagen is leeg</b>';
+  $sHtml .= '<b>Uw winkelmandje heeft geen producten</b>';
 }
