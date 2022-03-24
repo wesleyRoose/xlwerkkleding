@@ -19,7 +19,7 @@ if (isset($_SESSION["shoppingCart"]) && !empty($_SESSION["shoppingCart"])) {
     $sHtml .= '<div class="shopping-cart-item">
     <div class="shopping-cart-info">
       <div class="product-image small-image item-margin">
-      <img src="' . ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="product-image">
+      <img src="' . ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] . '" alt="Placeholder Image" class="product-image small-image">
       </div>
       <div class="shopping-cart-product-number item-margin">
           ' . $j . '
