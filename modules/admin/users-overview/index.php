@@ -102,7 +102,7 @@ if (isset($_SESSION["iProductDisplayItems"])) {
               }
             }
             if (isset($_SESSION["iUserDisplayItems"]) && isset($_SESSION["aUserQueryResult"])) {
-              if ($_SESSION["iUserDisplayItems"] + 4 <= count($_SESSION["aUserQueryResult"])) {
+              if ($_SESSION["iUserDisplayItems"] + 10 <= count($_SESSION["aUserQueryResult"])) {
                 $sNextHtml = '<div class="flex-new radio">
                 <input type="submit" name="next" class="button no-margin filter-btn" value="Volgende">
               </div>';
