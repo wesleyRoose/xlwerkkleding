@@ -6,7 +6,7 @@
                 </a>
             </button>
             <div class="notification">
-                0
+                <?php echo count($_SESSION["shoppingCart"]); ?>
             </div>
         </div>
         <div class="upper">
@@ -33,7 +33,7 @@
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/send-deliver.php">Verzenden & Leveren</a>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/complaints.php">Klachten</a>
                 <a class="footer-link lower" href="<?php echo ROOT_URL ?>modules/service/disclaimer.php">Disclaimer</a>
-                </div>
+            </div>
             <div class="block">
                 <h3>Betaalmethoden</h3>
                 <div class="payment-options">
@@ -60,6 +60,7 @@
     </footer>
     <!--Load main JS file-->
     <script src="<?php echo ROOT_URL ?>js/script.js"></script>
-</div>
-</body>
-</html>
+    </div>
+    </body>
+
+    </html>

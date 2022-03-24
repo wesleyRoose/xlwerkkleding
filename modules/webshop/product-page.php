@@ -11,8 +11,6 @@ if (file_exists('../../controller.php')) {
 }
 
 
-
-
 // Create Query String
 $sQuery = "SELECT * FROM `product` WHERE `p_id` = '" . $_GET["product"] . "'";
 // Execute Query on database connection and put the data into a Array
@@ -21,7 +19,7 @@ if ($oResult = $conn->query($sQuery)) {
     $aRow = $oResult->fetch_assoc();
 }
 
-if(isset ($_GET["pressed"])){
+if (isset($_GET["pressed"])) {
     var_dump($_GET);
     var_dump($_POSt);
     exit;
@@ -57,7 +55,7 @@ foreach ($aColors as $value) {
 <main class="product-page">
     <section class="product-page">
         <div class="page-wrapper">
-            <form action="?state=pressed&product=<?php echo $_GET["product"] ?>" method="post">
+            <form action="addToShoppingcart.php?product=<?php echo $_GET["product"] ?>" method="post">
                 <div class="flex">
                     <div class="product-image-wrapper">
                         <img src="<?php echo ROOT_URL . 'modules/admin/add/' . $aRow["p_foto"] ?>" alt="Placeholder Image" class="product-image">
@@ -77,11 +75,12 @@ foreach ($aColors as $value) {
                                     echo $sSizeDropHtml;
                                     ?>
                                 </select>
-                                <select name="Kleuren" class="sorter">
+                                <select name="colors" class="sorter">
                                     <?php echo $sColorDropHtml ?>
                                 </select>
+                                <input type="number" name="quantity" value="1" class="sorter">
                             </div>
-                            <input type="submit" value="BESTEL">
+                            <input type="submit" value="BESTEL" name="submit">
                             <?php
                             if (isset($_GET["state"])) {
                                 if ($_GET["state"] == "pressed") {
@@ -89,8 +88,8 @@ foreach ($aColors as $value) {
                                     <div class="order-box-content">
                                         <h3>Product is toegevoegd aan uw winkelmandje</h3>
                                         <div class="dialog-buttons">
-                                            <button class="no-margin"><a href="' . ROOT_URL . 'modules/shopping-cart/index.php">Naar Cart</a></button>
-                                            <button class="no-margin" style="margin-left: 5px !important;"><a href="' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_GET["product"] . '">Shop Verder</a></button>
+                                            <div class="no-margin button"><a href="' . ROOT_URL . 'modules/shopping-cart/index.php">Naar Cart</a></div>
+                                            <div class="no-margin button" style="margin-left: 5px !important;"><a href="' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_GET["product"] . '">Shop Verder</a></div>
                                         </div>
                                     </div>
                                 </div>';
