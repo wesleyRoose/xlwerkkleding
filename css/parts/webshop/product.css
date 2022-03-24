@@ -20,6 +20,8 @@
     height: 500px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .product-info {
