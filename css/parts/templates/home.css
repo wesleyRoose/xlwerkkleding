@@ -33,6 +33,7 @@ div.card {
   height: 300px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  background-color: var(--white);
 }
 
 .card-link {
