@@ -110,7 +110,7 @@ if (file_exists('../../../library/db.filterTerms.php')) {
             }
             // Show next button only when there are items on next
             if (isset($_SESSION["iProductDisplayItems"]) && isset($_SESSION["aProductQueryResult"])) {
-              if ($_SESSION["iProductDisplayItems"] + 2 <= count($_SESSION["aProductQueryResult"])) {
+              if ($_SESSION["iProductDisplayItems"] + 10 <= count($_SESSION["aProductQueryResult"])) {
                 $sNextHtml = '<div class="flex-new radio">
                 <input type="submit" name="next" class="button no-margin filter-btn" value="Volgende">
               </div>';

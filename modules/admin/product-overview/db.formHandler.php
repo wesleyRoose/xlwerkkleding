@@ -117,11 +117,11 @@ if (isset($_POST["formSubmit"])) {
   $sProductTableQuery .= "SELECT * FROM `product`";
 } else if (isset($_POST["prev"])) { // Check if previous button is pressed
   // Remove ? from the product display counter
-  $_SESSION["iProductDisplayItems"] -= 2;
+  $_SESSION["iProductDisplayItems"] -= 10;
   echo 'Hello World';
 } else if (isset($_POST["next"])) { // Check if next button is pressed
   // Add ? from the product display counter
-  $_SESSION["iProductDisplayItems"] += 2;
+  $_SESSION["iProductDisplayItems"] += 10;
   echo 'Hello World';
 } else {  // if nothing is pressed
   // Unset session vars
@@ -174,7 +174,7 @@ if (isset($sProductTableQuery)) {
 if (isset($_SESSION["aProductQueryResult"])) {
   $sProductTableHtml = "";
   // Loop through the first ten items after the counter
-  for ($x = $_SESSION["iProductDisplayItems"] + 2, $y = $_SESSION["iProductDisplayItems"]; $y < $x && $y < count($_SESSION["aProductQueryResult"]) && $y >= 0; $y++) {
+  for ($x = $_SESSION["iProductDisplayItems"] + 10, $y = $_SESSION["iProductDisplayItems"]; $y < $x && $y < count($_SESSION["aProductQueryResult"]) && $y >= 0; $y++) {
     // Create a html table
     $sProductTableHtml .= '
 <tr class="product-data-row">

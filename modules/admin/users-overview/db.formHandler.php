@@ -52,10 +52,10 @@ if (isset($_POST["formSubmit"])) {
   $sUserTableQuery .= "SELECT * FROM `users`;";
 } else if (isset($_POST["prev"])) { // Check if previous button is pressed
   // Remove 10 from the product display counter
-  $_SESSION["iUserDisplayItems"] -= 2;
+  $_SESSION["iUserDisplayItems"] -= 10;
 } else if (isset($_POST["next"])) { // Check if next button is pressed
   // Remove 10 from the product display counter
-  $_SESSION["iUserDisplayItems"] += 2;
+  $_SESSION["iUserDisplayItems"] += 10;
 }
 
 // If it is a return header from delete, generate a * select
@@ -97,7 +97,7 @@ if (isset($_SESSION["aUserQueryResult"])) {
   // Start table html
   $sProductTableHtml = "";
   // Loop through the first ten items after the counter
-  for ($x = $_SESSION["iUserDisplayItems"] + 2, $y = $_SESSION["iUserDisplayItems"]; $y < $x && $y < count($_SESSION["aUserQueryResult"]) && $y >= 0; $y++) {
+  for ($x = $_SESSION["iUserDisplayItems"] + 10, $y = $_SESSION["iUserDisplayItems"]; $y < $x && $y < count($_SESSION["aUserQueryResult"]) && $y >= 0; $y++) {
     // Create table html
     $sProductTableHtml .= '
 <tr class="product-data-row">
