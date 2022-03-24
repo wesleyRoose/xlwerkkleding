@@ -31,6 +31,11 @@ include('defaultHtml.php');
             <div class="shopping-cart-items">
                 <?php echo $sHtml ?>
             </div>
+            <div class="del-button">
+                <button>
+                    Verwijder Alle
+                </button>
+            </div>
             <div class="order-button">
                 <button>
                     <a href="<?php echo ROOT_URL ?>modules/webshop/checkout.php" class="white">Afrekenen</a>

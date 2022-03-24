@@ -77,6 +77,7 @@ select:first-of-type {
     border: none;
     border-radius: 3px;
     padding: 0.2rem;
+    margin-left: 10px;
 }
 
 @media (max-width:1024px) {

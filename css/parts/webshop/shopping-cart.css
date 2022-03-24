@@ -38,9 +38,17 @@
     color: var(--black);
 }
 
+.del-button {
+    margin-left: 85%;
+}
+
 @media (max-width: 1024px) {
     .shopping-cart-item {
         height: 75px;
+    }
+
+    .del-button {
+        margin-left: 70%;
     }
 }
 
@@ -61,5 +69,9 @@
 
     .item-margin {
         margin: 5px;
+    }
+
+    .del-button {
+        margin-left: 60%;
     }
 }

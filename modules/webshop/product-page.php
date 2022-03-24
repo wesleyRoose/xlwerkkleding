@@ -108,8 +108,8 @@ foreach ($aColors as $value) {
                                     <div class="order-box-content">
                                         <h3>Product is toegevoegd aan uw winkelmandje</h3>
                                         <div class="dialog-buttons">
-                                            <div class="no-margin button"><a href="' . ROOT_URL . 'modules/shopping-cart/index.php">Naar Cart</a></div>
-                                            <div class="no-margin button" style="margin-left: 5px !important;"><a href="' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_GET["product"] . '">Shop Verder</a></div>
+                                            <div class="no-margin button text-center"><a href="' . ROOT_URL . 'modules/shopping-cart/index.php">Naar Cart</a></div>
+                                            <div class="no-margin button text-center" style="margin-left: 5px !important;"><a href="' . ROOT_URL . 'modules/webshop/product-page.php?product=' . $_GET["product"] . '">Shop Verder</a></div>
                                         </div>
                                     </div>
                                 </div>';
