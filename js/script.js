@@ -58,17 +58,19 @@ var box = document.getElementById("orderBox");
 var overlay = document.getElementById("overlay");
 var fbody = document.getElementById("f-body");
 
-function openBox() {
-  box.style.display = "block";
-  overlay.style.display = "block";
-  fbody.style.overflowY = "hidden";
-}
+document.getElementById("f-body");
 
-function closeBox() {
-  box.style.display = "none";
-  overlay.style.display = "none";
-  fbody.style.overflowY = "scroll";
-}
+// function openBox() {
+//   box.style.display = "block";
+//   overlay.style.display = "block";
+//   fbody.style.overflowY = "hidden";
+// }
+
+// function closeBox() {
+//   box.style.display = "none";
+//   overlay.style.display = "none";
+//   fbody.style.overflowY = "scroll";
+// }
 
 function collectData() {
   document.getElementById('acc_item_11').value = document.getElementById('acc_item_1').innerHTML;
