@@ -6,8 +6,11 @@
                 </a>
             </button>
             <div class="notification">
-                <?php echo count($_SESSION["shoppingCart"]); ?>
-            </div>
+                <?php if (isset($_SESSION["shoppingCart"])) {
+                    echo count($_SESSION["shoppingCart"]);
+                } else {
+                    echo "0";
+                } ?> </div>
         </div>
         <div class="upper">
             <div class="block">
