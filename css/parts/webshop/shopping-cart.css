@@ -27,6 +27,8 @@
 }
 
 .small-image {
+    max-width: 50px;
+    max-height: 50px;
     width: 50px !important;
     height: 50px !important;
     background-color: var(--black) !important;

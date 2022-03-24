@@ -1,5 +1,25 @@
 <?php
 
+if (!isset($_SESSION))
+{
+    session_start();
+}
+
+if(!empty($_GET["state"]) && false)
+{
+    if(!isset($_SESSION["state"]))
+    {
+        $_SESSION["state"] = 'pressed';
+        echo "<br>\n" . 'DEBUG: ' . __FILE__ . ' : ' . __LINE__ . "<br>\n";
+        exit;
+    }
+    else
+    {
+        unset($_SESSION["state"]);
+        echo "<br>\n" . 'DEBUG: ' . __FILE__ . ' : ' . __LINE__ . "<br>\n";
+        exit;
+    }
+}
 
 if (file_exists('../../controller.php')) {
     include('../../controller.php');
