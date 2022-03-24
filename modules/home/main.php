@@ -105,20 +105,26 @@ if ($_SESSION["sessionStatus"] == 1) {
         <h3>Uitgelichte Producten</h3>
         <div class="cards">
             <?php
-
-            for ($i = 0; $i < 50; $i++) {
-                echo
-                '<div class="card">
-                    <div class="image">
-                        <img src=" ' . ROOT_URL . '/img/placeholder.png" alt="Placeholder Image" class="card-image">
-                    </div>
-                    <div class="text f-width card-text-margin">
-                        <h3>Product 1</h3>
-                        <a href="#" class="card-link">Klik hier <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>';
+            // Create Sql string
+            $sSql = "SELECT * FROM product ORDER BY RAND() LIMIT 5";
+            // Execute sql and put result into array
+            if ($oResult = $conn->query($sSql)) {
+                while ($aRowResult = $oResult->fetch_assoc()) {
+                    $aResult[] = $aRowResult;
+                }
             }
 
+            foreach ($aResult as $i) {
+                echo '<div class="card">
+                <div class="image">
+                    <img src=" ' . ROOT_URL . 'modules/admin/add/' . $i["p_foto"] . '" alt="Placeholder Image" class="card-image">
+                </div>
+                <div class="text f-width card-text-margin">
+                    <h3>' . $i["p_name"] . '</h3>
+                    <a href="' . ROOT_URL . "modules/webshop/product-page.php?product=" . $i["p_id"] . '" class="card-link">Klik hier <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>';
+            }
             ?>
         </div>
     </section>
