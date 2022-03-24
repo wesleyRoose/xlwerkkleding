@@ -197,6 +197,10 @@ a {
   opacity: 0;
 }
 
+.center-text {
+  text-align: center;
+}
+
 /* @media (max-width:500px) {
   form {
     width: 250px;
