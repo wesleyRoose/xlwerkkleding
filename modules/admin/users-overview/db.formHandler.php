@@ -109,9 +109,6 @@ if (isset($_SESSION["aUserQueryResult"])) {
   <td class="product-data">' . $_SESSION["aUserQueryResult"][$y]["firm"] . '</td>
   <td class="product-records-btns-cell">
     <div class="product-record-btns">
-      <a href=' . ROOT_URL . 'modules/admin/users-view/index.php?user=' . $_SESSION["aUserQueryResult"][$y]["id"] . ' class="product-data button small small-icon">
-        <i class="fas fa-eye"></i>
-      </a>
       <a href=' . ROOT_URL . 'modules/admin/users-edit/index.php?user=' . $_SESSION["aUserQueryResult"][$y]["id"] . ' class="product-data button small small-icon">
         <i class="fas fa-pencil"></i>
       </a>

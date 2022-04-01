@@ -3,12 +3,12 @@
 //load controller
 if (file_exists('../../controller.php')) {
     include('../../controller.php');
-  } else {
+} else {
     $errorMessage = "";
     $errorMessage .= "PHP ERROR: controller.php does not exist.";
     echo $errorMessage;
     exit;
-  }
+}
 
 ?>
 </head>
@@ -75,7 +75,7 @@ if (file_exists('../../controller.php')) {
                     <input type="submit" name="registerSubmit" value="Registreer" class="button m-less">
                     <div class="reg-btn">
                         <a class="">Velden met * zijn verplicht!</a><br>
-                        <a class="register-btn lower" href="login.php">Log hier in</a>
+                        <a class="register-btn lower" href="index.php">Log hier in</a>
                     </div>
                 </form>
             </div>
